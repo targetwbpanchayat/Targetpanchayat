@@ -1,0 +1,8 @@
+{
+  "name": "Remix গ্রাম পঞ্চায়েত পরীক্ষা প্রস্তুতি (WB GP Exam Prep)",
+  "description": "পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার সম্পূর্ণ প্রস্তুতি প্ল্যাটফর্ম — স্টাডি মেটেরিয়াল, প্র্যাকটিস MCQ, পূর্ণাঙ্গ মক টেস্ট, পড়ার প্ল্যান ও জিমেইল ভেরিফিকেশন সহ।",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

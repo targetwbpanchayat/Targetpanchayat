@@ -1,0 +1,702 @@
+import { StudyChapter, Question } from "../../types";
+
+export const BENGALI_CH4_STUDY: StudyChapter = {
+  id: "bengali_ch4",
+  subjectId: "bengali",
+  chapterNumber: 4,
+  titleBn: "কারক, বিভক্তি এবং অনুসর্গ",
+  titleEn: "Karak, Bibhakti and Anusarga",
+  estimatedMinutes: 35,
+  importantNotesCount: 20,
+  summary: "কারকের সংজ্ঞা (ক্রিয়ান্বয়ি কারকম্), ৬ প্রকার কারক (কর্তা, কর্ম, করণ, সম্প্রদান/নিমিত্ত, অপাদান, অধিকরণ), বিভক্তি (প্রথমা থেকে সপ্তমী) এবং অনুসর্গের ভূমিকা ও ব্যবহার।",
+  subTopics: [
+    {
+      id: "bengali_ch4_sub1",
+      chapterId: "bengali_ch4",
+      subjectId: "bengali",
+      titleBn: "কারক ও বিভক্তির মূল ধারণা",
+      titleEn: "Basic Concept of Karak & Bibhakti",
+      orderIndex: 1,
+      summaryBn: "বাক্যের ক্রিয়াপদের সঙ্গে নামপদের সম্পর্ককে কারক বলে। বিভক্তি (প্রথমা/শূন্য, দ্বিতীয়া, তৃতীয়া, চতুর্থী, পঞ্চমী, ষষ্ঠী, সপ্তমী) এবং অনুসর্গ বা কর্মপ্রবচনীয়।",
+      keyConcepts: ["ক্রিয়ান্বয়ি কারকম্ (কারকের সংজ্ঞা)", "শব্দ বিভক্তি ৭ প্রকার", "শূন্য বিভক্তি (প্রথমা)", "বিভক্তি ও অনুসর্গের পার্থক্য"]
+    },
+    {
+      id: "bengali_ch4_sub2",
+      chapterId: "bengali_ch4",
+      subjectId: "bengali",
+      titleBn: "কর্তৃকারক ও কর্মকারক",
+      titleEn: "Nominative & Accusative Case",
+      orderIndex: 2,
+      summaryBn: "কে বা কারা দিয়ে প্রশ্নে কর্তৃকারক (মুখ্য, প্রযোজক, প্রযোজ্য, ব্যতিহার কর্তা)। কী বা কাকে দিয়ে প্রশ্নে কর্মকারক (মুখ্য কর্ম, গৌণ কর্ম, সমধাতুজ কর্ম)।",
+      keyConcepts: ["কে/কারা = কর্তৃকারক", "প্রযোজক কর্তা (মা শিশুকে চাঁদ দেখাচ্ছেন)", "ব্যতিহার কর্তা (বাঘে-মহিষে এক ঘাটে জল খায়)", "কী/কাকে = কর্মকারক", "মুখ্য কর্ম (বস্তুবাচক) ও গৌণ কর্ম (প্রাণীবাচক)", "সমধাতুজ কর্ম (বেশ এক ঘুম ঘুমিয়েছি)"]
+    },
+    {
+      id: "bengali_ch4_sub3",
+      chapterId: "bengali_ch4",
+      subjectId: "bengali",
+      titleBn: "করণকারক ও সম্প্রদান/নিমিত্ত কারক",
+      titleEn: "Instrumental & Dative Case",
+      orderIndex: 3,
+      summaryBn: "কী দ্বারা/কিসের সাহায্যে দিয়ে প্রশ্নে করণকারক (কলমে লেখেন, চোখে দেখি)। নিঃস্বার্থভাবে দান বোঝালে সম্প্রদান কারক (ভিক্ষুককে ভিক্ষা দাও, অন্ধজনে দেহ আলো)।",
+      keyConcepts: ["কী দিয়ে/দ্বারা/সহায়ে = করণকারক", "উপায়াত্মক করণ, হেত্বর্থক করণ", "নিঃস্বার্থ দান = সম্প্রদান কারক", "স্বার্থযুক্ত হলে কর্মকারক (ধোপাকে কাপড় দাও)"]
+    },
+    {
+      id: "bengali_ch4_sub4",
+      chapterId: "bengali_ch4",
+      subjectId: "bengali",
+      titleBn: "অপাদান কারক ও অধিকরণ কারক",
+      titleEn: "Ablative & Locative Case",
+      orderIndex: 4,
+      summaryBn: "কোথা হতে/থেকে, চলিত, পতিত, ভীত, উৎপন্ন হলে অপাদান কারক (গাছ থেকে ফল পড়ে, তিলে তৈল হয়)। কোথায়/কখন বোঝালে স্থান ও কালের অধিকরণ কারক (কালাধিকরণ, ভাবাধিকরণ, আধারাধিকরণ)।",
+      keyConcepts: ["কোথা হতে/ভীতি/উৎপন্ন = অপাদান কারক (তিলে তৈল হয়)", "কোথায়/কখন/বিষয়ে = অধিকরণ কারক (তিলে তৈল আছে)", "কালাধিকরণ (প্রভাতে সূর্য ওঠে)", "ভাবাধিকরণ (সূর্যোদয়ে অন্ধকার দূর হয়)", "বৈষয়িক অধিকরণ (তিনি ব্যাকরণে পণ্ডিত)"]
+    }
+  ],
+  content: {
+    introduction: "বাক্যের অন্তর্গত ক্রিয়াপদের সঙ্গে বিশেষ্য ও সর্বনাম পদের যে প্রত্যক্ষ সম্পর্ক থাকে, তাকে কারক বলে (সংস্কৃতে 'ক্রিয়ান্বয়ি কারকম্')। কারক নির্ণয়ের জন্য বিভক্তি ও অনুসর্গের ভূমিকা অপরিহার্য।",
+    sections: [
+      {
+        heading: "১. কারকের শ্রেণিবিভাগ ও বিভক্তির রূপ",
+        body: [
+          "১. কারক ছয় প্রকার: কর্তৃকারক, কর্মকারক, করণকারক, সম্প্রদান কারক, অপাদান কারক ও অধিকরণ কারক।",
+          "২. বিভক্তি: বাক্যে পদগুলোর পারস্পরিক সম্পর্ক বোঝাতে শব্দের শেষে যে বর্ণ বা বর্ণসমষ্টি যুক্ত হয়। যেমন: শূন্য (অ), কে, রে, দ্বারা, দিয়া, কর্তৃক, হতে, থেকে, চেয়ে, র, এর, এ, য়, তে।",
+          "৩. কর্তৃকারক: যে ক্রিয়া সম্পাদন করে (যেমন: 'রহিম' বই পড়ে)।",
+          "৪. কর্মকারক: যাকে আশ্রয় করে কর্তা ক্রিয়া সম্পাদন করে (যেমন: ডাক্তার 'রোগী' দেখছেন)।",
+          "৫. করণকারক: যার সাহায্যে কর্তা ক্রিয়া সম্পাদন করে (যেমন: তিনি 'কলমে' লেখেন)।"
+        ],
+        keyPoints: [
+          "কে/কারা দিয়ে প্রশ্ন করলে = কর্তৃকারক।",
+          "কী/কাকে দিয়ে প্রশ্ন করলে = কর্মকারক।",
+          "কী দিয়ে/কিসের সাহায্যে = করণকারক।"
+        ]
+      },
+      {
+        heading: "২. সম্প্রদান, অপাদান ও অধিকরণ কারক",
+        body: [
+          "৬. সম্প্রদান কারক: সত্য ত্যাগ করে কোনো কিছু নিঃস্বার্থভাবে দান করা (যেমন: 'ভিখারীকে' ভিক্ষা দাও)। কিন্তু স্বার্থ থাকলে কর্মকারক হয় (যেমন: 'ধোপাকে' কাপড় দাও - কর্মকারক)।",
+          "৭. অপাদান কারক: যা থেকে কিছু বিচ্যুত, পতিত, উৎপন্ন, মুক্ত, ভীত হয় (যেমন: 'গাছ থেকে' পাতা পড়ে, 'তিলে' তৈল হয়, 'পাপে' বিরত হও)।",
+          "৮. অধিকরণ কারক: ক্রিয়া সম্পাদনের স্থান, কাল ও বিষয় (যেমন: 'বনে' বাঘ থাকে, 'প্রভাতে' সূর্য ওঠে, তিনি 'অঙ্কে' কাঁচা)।"
+        ],
+        keyPoints: [
+          "'তিলে তৈল হয়' = অপাদান কারক (উৎপন্ন)।",
+          "'তিলে তৈল আছে' = অধিকরণ কারক (স্থান/আধার)।",
+          "'ধোপাকে কাপড় দাও' = কর্মকারক (সাময়িক/স্বার্থযুক্ত)।",
+          "'অন্ধজনে দেহ আলো' = সম্প্রদান কারক (নিঃস্বার্থ)।"
+        ]
+      }
+    ],
+    examTips: [
+      "'তিলে তৈল হয়' বনাম 'তিলে তৈল আছে' পার্থক্য লক্ষ্য করুন — প্রথমটি অপাদান (উৎপন্ন), দ্বিতীয়টি অধিকরণ (আধার)।",
+      "'ধোপাকে কাপড় দাও' কোন কারক? উত্তর: কর্মকারক (কারণ কাপড়টি ফেরত নেওয়া হবে)।",
+      "'ঘোড়ায় গাড়ি টানে' — ঘোড়ায় কোন কারক? উত্তর: কর্তৃকারকে 'য়' বিভক্তি।"
+    ],
+    quickRevisionPoints: [
+      "প্রযোজক কর্তা: যিনি পরিচালনা করেন (শিক্ষক ছাত্রকে পড়াচ্ছেন)।",
+      "প্রযোজ্য কর্তা: যাকে দিয়ে করানো হয় (ছাত্র)।",
+      "ব্যতিহার কর্তা: পরস্পরের মধ্যে ক্রিয়া (বাঘে-মহিষে যুদ্ধ)।",
+      "সমধাতুজ কর্ম: ক্রিয়া ও কর্ম একই ধাতু থেকে জাত (এমন খেলা আর খেলো না)।"
+    ]
+  }
+};
+
+export const BENGALI_CH4_QUESTIONS: Question[] = [
+  {
+    id: "vol2_ch4_q1",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "বাক্যের ক্রিয়াপদের সঙ্গে অন্যান্য পদের সম্বন্ধকে কী বলে?",
+    options: ["সমাস", "কারক", "সন্ধি", "প্রত্যয়"],
+    correctIndex: 1,
+    explanationBn: "ক্রিয়াপদের সঙ্গে নামপদের প্রত্যক্ষ সম্পর্ককে কারক বলে (ক্রিয়ান্বয়ি কারকম্)।",
+    difficulty: "easy",
+    tags: ["কারক", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch4_q2",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "বাংলায় কারক প্রধানত কয় প্রকার?",
+    options: ["৪ প্রকার", "৫ প্রকার", "৬ প্রকার", "৭ প্রকার"],
+    correctIndex: 2,
+    explanationBn: "কারক মোট ছয় প্রকার: কর্তা, কর্ম, করণ, সম্প্রদান, অপাদান ও অধিকরণ।",
+    difficulty: "easy",
+    tags: ["কারকের প্রকার", "৬ প্রকার"]
+  },
+  {
+    id: "vol2_ch4_q3",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "কোনো বিভক্তি চিহ্ন না থাকলে তাকে কোন বিভক্তি বলে?",
+    options: ["দ্বিতীয়া বিভক্তি", "শূন্য বা প্রথমা বিভক্তি", "তৃতীয়া বিভক্তি", "সপ্তমী বিভক্তি"],
+    correctIndex: 1,
+    explanationBn: "মূল শব্দের সঙ্গে দৃশ্যমান কোনো বিভক্তি চিহ্ন যুক্ত না থাকলে তাকে শূন্য বা প্রথমা বিভক্তি বলে।",
+    difficulty: "easy",
+    tags: ["শূন্য বিভক্তি", "প্রথমা"]
+  },
+  {
+    id: "vol2_ch4_q4",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "ক্রিয়াপদকে 'কে' বা 'কারা' দিয়ে প্রশ্ন করলে কোন কারক পাওয়া যায়?",
+    options: ["কর্মকারক", "কর্তৃকারক", "করণকারক", "অপাদান কারক"],
+    correctIndex: 1,
+    explanationBn: "যে ক্রিয়া সম্পাদন করে তাকে কর্তৃকারক বলে; 'কে' দিয়ে প্রশ্ন করলে কর্তা পাওয়া যায়।",
+    difficulty: "easy",
+    tags: ["কর্তৃকারক", "কে/কারা"]
+  },
+  {
+    id: "vol2_ch4_q5",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'ছেলেরা ফুটবল খেলছে' — 'ছেলেরা' কোন কারকে কোন বিভক্তি?",
+    options: ["কর্তৃকারকে শূন্য", "কর্মকারকে শূন্য", "করণকারকে প্রথমা", "অধিকরণে শূন্য"],
+    correctIndex: 0,
+    explanationBn: "ছেলেরা নিজেরা খেলছে, তাই কর্তৃকারকে শূন্য/প্রথমা বিভক্তি (বহুবচন নির্দেশক)।",
+    difficulty: "easy",
+    tags: ["কর্তৃকারক", "ছেলেরা"]
+  },
+  {
+    id: "vol2_ch4_q6",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'মা শিশুকে চাঁদ দেখাচ্ছেন' — এখানে 'মা' কোন ধরনের কর্তা?",
+    options: ["মুখ্য কর্তা", "প্রযোজক কর্তা", "প্রযোজ্য কর্তা", "ব্যতিহার কর্তা"],
+    correctIndex: 1,
+    explanationBn: "মূল কর্তা যখন অন্যকে কোনো কাজে নিয়োজিত করেন, তখন তাকে প্রযোজক কর্তা বলে।",
+    difficulty: "easy",
+    tags: ["প্রযোজক কর্তা", "মা"]
+  },
+  {
+    id: "vol2_ch4_q7",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'মা শিশুকে চাঁদ দেখাচ্ছেন' — বাক্যে 'শিশুকে' কোন ধরনের কর্তা?",
+    options: ["প্রযোজক কর্তা", "প্রযোজ্য কর্তা", "ব্যতিহার কর্তা", "সমধাতুজ কর্তা"],
+    correctIndex: 1,
+    explanationBn: "প্রযোজক কর্তার পরিচালনায় যে কাজ করে, তাকে প্রযোজ্য কর্তা বলে।",
+    difficulty: "easy",
+    tags: ["প্রযোজ্য কর্তা", "শিশুকে"]
+  },
+  {
+    id: "vol2_ch4_q8",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'বাঘে-মহিষে এক ঘাটে জল খায়' — 'বাঘে-মহিষে' কোন কর্তা?",
+    options: ["ব্যতিহার কর্তা", "প্রযোজক কর্তা", "প্রযোজ্য কর্তা", "মুখ্য কর্তা"],
+    correctIndex: 0,
+    explanationBn: "দুই কর্তা একত্রে একই ক্রিয়া সম্পাদন করলে তাকে ব্যতিহার কর্তা বলে।",
+    difficulty: "easy",
+    tags: ["ব্যতিহার কর্তা", "বাঘে-মহিষে"]
+  },
+  {
+    id: "vol2_ch4_q9",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "ক্রিয়াপদকে 'কী' বা 'কাকে' দিয়ে প্রশ্ন করলে কোন কারক পাওয়া যায়?",
+    options: ["কর্তৃকারক", "কর্মকারক", "করণকারক", "অপাদান কারক"],
+    correctIndex: 1,
+    explanationBn: "কর্তা যাকে অবলম্বন করে ক্রিয়া সম্পাদন করে তাকে কর্মকারক বলে।",
+    difficulty: "easy",
+    tags: ["কর্মকারক", "কী/কাকে"]
+  },
+  {
+    id: "vol2_ch4_q10",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'ডাক্তার ডাকো' — বাক্যে 'ডাক্তার' কোন কারকে কোন বিভক্তি?",
+    options: ["কর্তায় শূন্য", "কর্মে শূন্য", "করণে শূন্য", "সম্প্রদানে শূন্য"],
+    correctIndex: 1,
+    explanationBn: "কাকে ডাকবে? ডাক্তারকে (কর্মকারকে শূন্য বিভক্তি)।",
+    difficulty: "easy",
+    tags: ["ডাক্তার ডাকো", "কর্মকারক"]
+  },
+  {
+    id: "vol2_ch4_q11",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'বাবা আমাকে একটি কলম দিয়েছেন' — এখানে 'আমাকে' কোন কর্ম?",
+    options: ["মুখ্য কর্ম", "গৌণ কর্ম", "সমধাতুজ কর্ম", "উদ্দেশ্য কর্ম"],
+    correctIndex: 1,
+    explanationBn: "প্রাণীবাচক কর্মটি হলো গৌণ কর্ম এবং বস্তুবাচক কর্মটি (কলম) হলো মুখ্য কর্ম।",
+    difficulty: "easy",
+    tags: ["গৌণ কর্ম", "আমাকে"]
+  },
+  {
+    id: "vol2_ch4_q12",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'বেশ এক ঘুম ঘুমিয়েছি' — 'ঘুম' কোন কর্ম?",
+    options: ["মুখ্য কর্ম", "সমধাতুজ কর্ম", "গৌণ কর্ম", "বিধেয় কর্ম"],
+    correctIndex: 1,
+    explanationBn: "ক্রিয়া ও কর্ম একই ধাতু থেকে উৎপন্ন হলে তাকে সমধাতুজ কর্ম বলে।",
+    difficulty: "easy",
+    tags: ["সমধাতুজ কর্ম", "ঘুম"]
+  },
+  {
+    id: "vol2_ch4_q13",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "যার সাহায্যে ক্রিয়া সম্পাদিত হয়, তাকে কোন কারক বলে?",
+    options: ["কর্মকারক", "করণকারক", "অপাদান কারক", "অধিকরণ কারক"],
+    correctIndex: 1,
+    explanationBn: "'করণ' শব্দের অর্থ সহায়ক, মাধ্যম বা উপকরণ; যার দ্বারা কাজ করা হয় তা করণকারক।",
+    difficulty: "easy",
+    tags: ["করণকারক", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch4_q14",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'তিনি কলমে লেখেন' — 'কলমে' কোন কারকে কোন বিভক্তি?",
+    options: ["কর্মে সপ্তমী", "করণে সপ্তমী ('এ' বিভক্তি)", "অধিকরণে সপ্তমী", "কর্তায় সপ্তমী"],
+    correctIndex: 1,
+    explanationBn: "কলমের সাহায্যে লেখা হয়, তাই করণকারকে 'এ' বিভক্তি।",
+    difficulty: "easy",
+    tags: ["কলমে লেখেন", "করণকারক"]
+  },
+  {
+    id: "vol2_ch4_q15",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'শিকারি বিড়াল গোঁফে চেনা যায়' — 'গোঁফে' কোন কারক?",
+    options: ["কর্তৃকারক", "করণকারক", "অপাদান কারক", "অধিকরণ কারক"],
+    correctIndex: 1,
+    explanationBn: "গোঁফের লক্ষণ দ্বারা চেনা যায় (লক্ষণাত্মক করণকারক)।",
+    difficulty: "easy",
+    tags: ["গোঁফে চেনা যায়", "করণকারক"]
+  },
+  {
+    id: "vol2_ch4_q16",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "স্বত্ব ত্যাগ করে কাউকে কোনো কিছু চিরতরে দান করলে কোন কারক হয়?",
+    options: ["কর্মকারক", "সম্প্রদান কারক", "অপাদান কারক", "করণকারক"],
+    correctIndex: 1,
+    explanationBn: "নিঃস্বার্থভাবে চিরতরে দান করা বোঝালে সম্প্রদান কারক হয়।",
+    difficulty: "easy",
+    tags: ["সম্প্রদান কারক", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch4_q17",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'ভিখারীকে ভিক্ষা দাও' — 'ভিখারীকে' কোন কারকে কোন বিভক্তি?",
+    options: ["কর্মে ২য়া", "সম্প্রদানে ৪র্থী/২য়া ('কে' বিভক্তি)", "অপাদানে ২য়া", "অধিকরণে ২য়া"],
+    correctIndex: 1,
+    explanationBn: "ভিখারীকে নিঃস্বার্থভাবে দান করা হচ্ছে, তাই সম্প্রদান কারকে 'কে' বিভক্তি।",
+    difficulty: "easy",
+    tags: ["ভিখারীকে ভিক্ষা দাও", "সম্প্রদান"]
+  },
+  {
+    id: "vol2_ch4_q18",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'ধোপাকে কাপড় দাও' — 'ধোপাকে' কোন কারক?",
+    options: ["সম্প্রদান কারক", "কর্মকারক", "করণকারক", "অপাদান কারক"],
+    correctIndex: 1,
+    explanationBn: "ধোপাকে কাপড় চিরতরে দেওয়া হয় না, ধোয়ার পর ফেরত নেওয়া হয় (স্বার্থযুক্ত), তাই কর্মকারক।",
+    difficulty: "easy",
+    tags: ["ধোপাকে কাপড় দাও", "কর্মকারক"]
+  },
+  {
+    id: "vol2_ch4_q19",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'অন্ধজনে দেহ আলো' — 'অন্ধজনে' কোন কারক?",
+    options: ["কর্মকারক", "সম্প্রদান কারক", "করণকারক", "অধিকরণ কারক"],
+    correctIndex: 1,
+    explanationBn: "অন্ধজনে নিঃস্বার্থ আলো দান, তাই সম্প্রদান কারক।",
+    difficulty: "easy",
+    tags: ["অন্ধজনে দেহ আলো", "সম্প্রদান"]
+  },
+  {
+    id: "vol2_ch4_q20",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "যা থেকে কিছু বিচ্যুত, উৎপন্ন, পতিত, গৃহীত বা ভীত হয়, তাকে কী কারক বলে?",
+    options: ["করণকারক", "অপাদান কারক", "অধিকরণ কারক", "কর্মকারক"],
+    correctIndex: 1,
+    explanationBn: "বিচ্যুতি, ভীতি, মুক্তি, উৎপত্তি বোঝাতে অপাদান কারক হয়।",
+    difficulty: "easy",
+    tags: ["অপাদান কারক", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch4_q21",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'গাছ থেকে পাতা পড়ে' — 'গাছ থেকে' কোন কারকে কোন বিভক্তি/অনুসর্গ?",
+    options: ["অপাদানে পঞ্চমী অনুসর্গ ('থেকে')", "অধিকরণে পঞ্চমী", "করণে পঞ্চমী", "কর্মে পঞ্চমী"],
+    correctIndex: 0,
+    explanationBn: "গাছ থেকে বিচ্যুত হচ্ছে, তাই অপাদান কারকে পঞ্চমী অনুসর্গ।",
+    difficulty: "easy",
+    tags: ["গাছ থেকে পাতা পড়ে", "অপাদান"]
+  },
+  {
+    id: "vol2_ch4_q22",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'তিলে তৈল হয়' — বাক্যে 'তিলে' কোন কারক?",
+    options: ["অধিকরণ কারক", "অপাদান কারক", "করণকারক", "কর্মকারক"],
+    correctIndex: 1,
+    explanationBn: "তিল থেকে তেল উৎপন্ন হয়, তাই এটি অপাদান কারক।",
+    difficulty: "easy",
+    tags: ["তিলে তৈল হয়", "অপাদান কারক"]
+  },
+  {
+    id: "vol2_ch4_q23",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'তিলে তৈল আছে' — বাক্যে 'তিলে' কোন কারক?",
+    options: ["অপাদান কারক", "অধিকরণ কারক", "করণকারক", "কর্তৃকারক"],
+    correctIndex: 1,
+    explanationBn: "তিলের মধ্যে তেল অবস্থান করছে (আধার/স্থান), তাই এটি অধিকরণ কারক।",
+    difficulty: "easy",
+    tags: ["তিলে তৈল আছে", "অধিকরণ কারক"]
+  },
+  {
+    id: "vol2_ch4_q24",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'বুলবুলিতে ধান খেয়েছে, খাজনা দেব কিসে?' — 'বুলবুলিতে' কোন কারক?",
+    options: ["কর্মে সপ্তমী", "কর্তায় সপ্তমী ('তে' বিভক্তি)", "করণে সপ্তমী", "অপাদানে সপ্তমী"],
+    correctIndex: 1,
+    explanationBn: "বুলবুলি পাখি নিজে ধান খাচ্ছে (কর্তা), তাই কর্তৃকারকে 'তে' বিভক্তি।",
+    difficulty: "easy",
+    tags: ["বুলবুলিতে ধান খেয়েছে", "কর্তৃকারক"]
+  },
+  {
+    id: "vol2_ch4_q25",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "ক্রিয়া সম্পাদনের স্থান, কাল বা বিষয়কে কী বলে?",
+    options: ["অপাদান কারক", "অধিকরণ কারক", "করণকারক", "কর্মকারক"],
+    correctIndex: 1,
+    explanationBn: "ক্রিয়ার আধার বা স্থান-কাল-পাত্রকে অধিকরণ কারক বলে।",
+    difficulty: "easy",
+    tags: ["অধিকরণ কারক", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch4_q26",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'প্রভাতে সূর্য ওঠে' — 'প্রভাতে' কোন ধরনের অধিকরণ?",
+    options: ["স্থানাধিকরণ", "কালাধিকরণ", "ভাবাধিকরণ", "বৈষয়িক অধিকরণ"],
+    correctIndex: 1,
+    explanationBn: "প্রভাত একটি সময় বা কাল নির্দেশ করে, তাই এটি কালাধিকরণ।",
+    difficulty: "easy",
+    tags: ["প্রভাতে", "কালাধিকরণ"]
+  },
+  {
+    id: "vol2_ch4_q27",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'তিনি ব্যাকরণে পণ্ডিত' — 'ব্যাকরণে' কোন অধিকরণ?",
+    options: ["কালাধিকরণ", "স্থানাধিকরণ", "বৈষয়িক অধিকরণ", "ভাবাধিকরণ"],
+    correctIndex: 2,
+    explanationBn: "নির্দিষ্ট কোনো বিষয় বা শাস্ত্রে দক্ষতা প্রকাশ পেলে বৈষয়িক অধিকরণ হয়।",
+    difficulty: "easy",
+    tags: ["ব্যাকরণে পণ্ডিত", "বৈষয়িক অধিকরণ"]
+  },
+  {
+    id: "vol2_ch4_q28",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'সূর্যোদয়ে অন্ধকার দূর হয়' — 'সূর্যোদয়ে' কোন অধিকরণ?",
+    options: ["ভাবাধিকরণ", "কালাধিকরণ", "স্থানাধিকরণ", "ঐকদেশিক"],
+    correctIndex: 0,
+    explanationBn: "একটি ক্রিয়ার প্রভাবে অন্য ক্রিয়া সম্পন্ন হলে তাকে ভাবাধিকরণ বলে (ভাবাধিকরণে সপ্তমী)।",
+    difficulty: "easy",
+    tags: ["সূর্যোদয়ে", "ভাবাধিকরণ"]
+  },
+  {
+    id: "vol2_ch4_q29",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'পাপে বিরত হও' — 'পাপে' কোন কারক?",
+    options: ["অধিকরণ কারক", "অপাদান কারক", "করণকারক", "কর্মকারক"],
+    correctIndex: 1,
+    explanationBn: "পাপ থেকে বিরত হওয়া বোঝাচ্ছে (বিরতি), তাই অপাদান কারকে সপ্তমী।",
+    difficulty: "easy",
+    tags: ["পাপে বিরত হও", "অপাদান কারক"]
+  },
+  {
+    id: "vol2_ch4_q30",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'পুকুরে মাছ আছে' — পুকুর কোন ধরনের আধারাধিকরণ?",
+    options: ["ঐকদেশিক", "অভিব্যাপক", "বৈষয়িক", "কালাধিকরণ"],
+    correctIndex: 0,
+    explanationBn: "পুকুরের সম্পূর্ণ অংশে মাছ থাকে না, কোনো কোনো অংশে থাকে (ঐকদেশিক আধারাধিকরণ)।",
+    difficulty: "easy",
+    tags: ["পুকুরে মাছ আছে", "ঐকদেশিক"]
+  },
+  {
+    id: "vol2_ch4_q31",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'তিলে তেল আছে' — এটি কোন ধরনের আধারাধিকরণ?",
+    options: ["ঐকদেশিক", "অভিব্যাপক", "বৈষয়িক", "সাময়িক"],
+    correctIndex: 1,
+    explanationBn: "তিলের সমস্ত অংশজুড়ে তেল পরিব্যাপ্ত থাকে, তাই এটি অভিব্যাপক অধিকরণ।",
+    difficulty: "easy",
+    tags: ["অভিব্যাপক", "তিলে তেল আছে"]
+  },
+  {
+    id: "vol2_ch4_q32",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "'দ্বারা', 'দিয়া', 'কর্তৃক' ইত্যাদি কোন বিভক্তি/অনুসর্গ?",
+    options: ["দ্বিতীয়া", "তৃতীয়া", "পঞ্চমী", "সপ্তমী"],
+    correctIndex: 1,
+    explanationBn: "দ্বারা, দিয়া, কর্তৃক তৃতীয়া বিভক্তির দ্যোতক অনুসর্গ।",
+    difficulty: "easy",
+    tags: ["তৃতীয়া বিভক্তি", "দ্বারা দিয়া কর্তৃক"]
+  },
+  {
+    id: "vol2_ch4_q33",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "'হইতে', 'থেকে', 'চেয়ে' ইত্যাদি কোন বিভক্তি/অনুসর্গ?",
+    options: ["তৃতীয়া", "চতুর্থী", "পঞ্চমী", "ষষ্ঠী"],
+    correctIndex: 2,
+    explanationBn: "হইতে, থেকে, চেয়ে পঞ্চমী বিভক্তির দ্যোতক অনুসর্গ।",
+    difficulty: "easy",
+    tags: ["পঞ্চমী বিভক্তি", "হইতে থেকে চেয়ে"]
+  },
+  {
+    id: "vol2_ch4_q34",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "'র' এবং 'এর' কোন বিভক্তির চিহ্ন?",
+    options: ["পঞ্চমী", "ষষ্ঠী", "সপ্তমী", "দ্বিতীয়া"],
+    correctIndex: 1,
+    explanationBn: "র, এর ষষ্ঠী বিভক্তির চিহ্ন।",
+    difficulty: "easy",
+    tags: ["ষষ্ঠী বিভক্তি", "র/এর"]
+  },
+  {
+    id: "vol2_ch4_q35",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "'এ', 'য়', 'তে', 'এতে' কোন বিভক্তির চিহ্ন?",
+    options: ["চতুর্থী", "পঞ্চমী", "ষষ্ঠী", "সপ্তমী"],
+    correctIndex: 3,
+    explanationBn: "এ, য়, তে, এতে সপ্তমী বিভক্তির চিহ্ন।",
+    difficulty: "easy",
+    tags: ["সপ্তমী বিভক্তি", "এ য় তে"]
+  },
+  {
+    id: "vol2_ch4_q36",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'ঘোড়ায় গাড়ি টানে' — 'ঘোড়ায়' কোন কারকে কোন বিভক্তি?",
+    options: ["কর্তায় সপ্তমী ('য়' বিভক্তি)", "করণে সপ্তমী", "কর্মে সপ্তমী", "অপাদানে সপ্তমী"],
+    correctIndex: 0,
+    explanationBn: "ঘোড়া গাড়ি টানছে (কর্তা), তাই কর্তৃকারকে 'য়' বিভক্তি।",
+    difficulty: "easy",
+    tags: ["ঘোড়ায় গাড়ি টানে", "কর্তৃকারক"]
+  },
+  {
+    id: "vol2_ch4_q37",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'টাকায় সব হয়' — 'টাকায়' কোন কারকে কোন বিভক্তি?",
+    options: ["কর্মে সপ্তমী", "করণে সপ্তমী", "অপাদানে সপ্তমী", "অধিকরণে সপ্তমী"],
+    correctIndex: 1,
+    explanationBn: "টাকার দ্বারা বা উপায়ে সব হয়, তাই করণকারকে সপ্তমী।",
+    difficulty: "easy",
+    tags: ["টাকায় সব হয়", "করণকারক"]
+  },
+  {
+    id: "vol2_ch4_q38",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'ট্রেন স্টেশন ছাড়ল' — 'স্টেশন' কোন কারক?",
+    options: ["অধিকরণ কারক", "অপাদান কারক", "কর্মকারক", "করণকারক"],
+    correctIndex: 1,
+    explanationBn: "স্টেশন থেকে বিচ্ছিন্ন বা ছেড়ে চলে গেল, তাই অপাদান কারকে শূন্য বিভক্তি।",
+    difficulty: "easy",
+    tags: ["স্টেশন ছাড়ল", "অপাদান"]
+  },
+  {
+    id: "vol2_ch4_q39",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'নদীতে মাছ আছে' — 'নদীতে' কোন কারকে কোন বিভক্তি?",
+    options: ["অধিকরণে সপ্তমী ('তে' বিভক্তি)", "অপাদানে সপ্তমী", "করণে সপ্তমী", "কর্মে সপ্তমী"],
+    correctIndex: 0,
+    explanationBn: "নদী মাছের বাসস্থান বা আধার, তাই অধিকরণ কারকে সপ্তমী।",
+    difficulty: "easy",
+    tags: ["নদীতে মাছ আছে", "অধিকরণ"]
+  },
+  {
+    id: "vol2_ch4_q40",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'দশের লাঠি একের বোঝা' — 'লাঠি' কোন কারক?",
+    options: ["কর্মকারক", "করণকারক", "কর্তৃকারক", "অধিকরণ কারক"],
+    correctIndex: 1,
+    explanationBn: "লাঠি দিয়ে রক্ষা বা বহন করার উপায় বোঝাচ্ছে (করণকারক)।",
+    difficulty: "easy",
+    tags: ["দশের লাঠি", "করণ"]
+  },
+  {
+    id: "vol2_ch4_q41",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'আমারে তুমি করিবে ত্রাণ এ নহে মোর প্রার্থনা' — 'আমারে' কোন কারক?",
+    options: ["কর্মকারক", "কর্তৃকারক", "করণকারক", "অপাদান কারক"],
+    correctIndex: 0,
+    explanationBn: "কাকে ত্রাণ করিবে? আমারে (কর্মকারকে 'রে' বিভক্তি)।",
+    difficulty: "easy",
+    tags: ["আমারে", "কর্মকারক"]
+  },
+  {
+    id: "vol2_ch4_q42",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'বিপদে মোরে রক্ষা করো' — 'বিপদে' কোন কারক?",
+    options: ["অধিকরণ কারক", "অপাদান কারক", "করণকারক", "কর্মকারক"],
+    correctIndex: 1,
+    explanationBn: "বিপদ হতে রক্ষা বা মুক্তি, তাই অপাদান কারকে সপ্তমী।",
+    difficulty: "easy",
+    tags: ["বিপদে", "অপাদান কারক"]
+  },
+  {
+    id: "vol2_ch4_q43",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "যেসব শব্দ পদের পরে স্বাধীনভাবে বসে বিভক্তির কাজ করে, তাদের কী বলে?",
+    options: ["উপসর্গ", "অনুসর্গ বা কর্মপ্রবচনীয়", "প্রত্যয়", "ধাতু"],
+    correctIndex: 1,
+    explanationBn: "বিনা, দ্বারা, দিয়া, সাথে, চেয়ে প্রভৃতি শব্দ অনুসর্গ হিসেবে কাজ করে।",
+    difficulty: "easy",
+    tags: ["অনুসর্গ", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch4_q44",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub1",
+    questionBn: "নিচের কোনটি অনুসর্গের উদাহরণ?",
+    options: ["প্র", "বিনা", "পরা", "অপ"],
+    correctIndex: 1,
+    explanationBn: "'বিনা' একটি অনুসর্গ, বাকিগুলি উপসর্গ।",
+    difficulty: "easy",
+    tags: ["অনুসর্গ", "বিনা"]
+  },
+  {
+    id: "vol2_ch4_q45",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'পাগলে কিনা বলে, ছাগলে কিনা খায়' — 'পাগলে' কোন কারক?",
+    options: ["কর্তৃকারক ('এ' বিভক্তি)", "কর্মকারক", "করণকারক", "অধিকরণ কারক"],
+    correctIndex: 0,
+    explanationBn: "পাগল কথা বলছে এবং ছাগল খাচ্ছে (উভয়েই কর্তা), তাই কর্তৃকারকে 'এ' বিভক্তি।",
+    difficulty: "easy",
+    tags: ["পাগলে কিনা বলে", "কর্তৃকারক"]
+  },
+  {
+    id: "vol2_ch4_q46",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'মন দিয়া করো সবে বিদ্যা উপার্জন' — 'দিয়া' কী?",
+    options: ["উপসর্গ", "অনুসর্গ", "ধাতু", "বিভক্তি"],
+    correctIndex: 1,
+    explanationBn: "'দিয়া' হলো করণকারকের ৩য়া বিভক্তির দ্যোতক অনুসর্গ।",
+    difficulty: "easy",
+    tags: ["দিয়া", "অনুসর্গ"]
+  },
+  {
+    id: "vol2_ch4_q47",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'বাবাকে বড্ড ভয় পাই' — 'বাবাকে' কোন কারক?",
+    options: ["কর্মকারক", "অপাদান কারক ('কে' বিভক্তি)", "করণকারক", "কর্তৃকারক"],
+    correctIndex: 1,
+    explanationBn: "ভয়ের উৎস বা কারণ বোঝালে অপাদান কারক হয় (বাবাকে = অপাদানে ২য়া/কে বিভক্তি)।",
+    difficulty: "easy",
+    tags: ["বাবাকে ভয় পাই", "অপাদান"]
+  },
+  {
+    id: "vol2_ch4_q48",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub4",
+    questionBn: "'দুধ থেকে দই হয়' — 'দুধ থেকে' কোন কারক?",
+    options: ["করণকারক", "অপাদান কারক", "অধিকরণ কারক", "কর্মকারক"],
+    correctIndex: 1,
+    explanationBn: "দুধ থেকে দই উৎপন্ন বা রূপান্তরিত হচ্ছে, তাই অপাদান কারক।",
+    difficulty: "easy",
+    tags: ["দুধ থেকে দই", "অপাদান"]
+  },
+  {
+    id: "vol2_ch4_q49",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub2",
+    questionBn: "'আমাকে যেতে হবে' — 'আমাকে' কোন কারকে কোন বিভক্তি?",
+    options: ["কর্মে ২য়া", "কর্তায় ২য়া ('কে' বিভক্তি)", "সম্প্রদানে ২য়া", "করণে ২য়া"],
+    correctIndex: 1,
+    explanationBn: "যাওয়ার কর্তা আমি, কিন্তু 'কে' বিভক্তি যুক্ত হয়েছে (কর্তৃকারকে ২য়া বিভক্তি)।",
+    difficulty: "easy",
+    tags: ["আমাকে যেতে হবে", "কর্তায় ২য়া"]
+  },
+  {
+    id: "vol2_ch4_q50",
+    subjectId: "bengali",
+    chapterId: "bengali_ch4",
+    subTopicId: "bengali_ch4_sub3",
+    questionBn: "'লাঠির ঘায়ে সাপটি মরল' — 'লাঠির ঘায়ে' কোন কারক?",
+    options: ["করণকারক", "অপাদান কারক", "কর্মকারক", "অধিকরণ কারক"],
+    correctIndex: 0,
+    explanationBn: "লাঠির আঘাত মৃত্যুর উপায় বা অস্ত্র হিসেবে ব্যবহৃত হয়েছে (করণকারক)।",
+    difficulty: "easy",
+    tags: ["লাঠির ঘায়ে", "করণকারক"]
+  }
+];

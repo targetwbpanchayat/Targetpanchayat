@@ -1,0 +1,700 @@
+import { StudyChapter, Question } from "../../types";
+
+export const BENGALI_CH5_STUDY: StudyChapter = {
+  id: "bengali_ch5",
+  subjectId: "bengali",
+  chapterNumber: 5,
+  titleBn: "পদ পরিবর্তন (বিশেষ্য ও বিশেষণের পারস্পরিক রূপান্তর)",
+  titleEn: "Pod Poriborton (Noun and Adjective Transformation)",
+  estimatedMinutes: 30,
+  importantNotesCount: 20,
+  summary: "পদ কী, বাংলা ৫ প্রকার পদ (বিশেষ্য, বিশেষণ, সর্বনাম, অব্যয় ও ক্রিয়া) এবং বিশেষ্য থেকে বিশেষণ ও বিশেষণ থেকে বিশেষ্যে রূপান্তরের নিয়মাবলি ও ১০০টি অতি গুরুত্বপূর্ণ উদাহরণ।",
+  subTopics: [
+    {
+      id: "bengali_ch5_sub1",
+      chapterId: "bengali_ch5",
+      subjectId: "bengali",
+      titleBn: "পদের সংজ্ঞা ও পাঁচ প্রকার পদ",
+      titleEn: "Definition of Pod & 5 Types of Pod",
+      orderIndex: 1,
+      summaryBn: "বিভক্তিযুক্ত শব্দ বা ধাতুকে পদ বলে। বিশেষ্য, বিশেষণ, সর্বনাম, অব্যয় এবং ক্রিয়া।",
+      keyConcepts: ["বিভক্তিযুক্ত শব্দ = পদ", "নামপদ ও ক্রিয়াপদ", "৫ প্রকার পদ: বিশেষ্য, বিশেষণ, সর্বনাম, অব্যয়, ক্রিয়া"]
+    },
+    {
+      id: "bengali_ch5_sub2",
+      chapterId: "bengali_ch5",
+      subjectId: "bengali",
+      titleBn: "বিশেষ্য থেকে বিশেষণ রূপান্তর",
+      titleEn: "Noun to Adjective Transformation",
+      orderIndex: 2,
+      summaryBn: "অগ্নি > আগ্নেয়, অংশ > আংশিক, অণু > আণবিক, মন > মানসিক, ইতিহাস > ঐতিহাসিক, বিজ্ঞান > বৈজ্ঞানিক, নগর > নাগরিক, দিন > দৈনিক, ভূগোল > ভৌগোলিক, হেমন্ত > হৈমন্তিক।",
+      keyConcepts: ["ইক/ষ্ণিক প্রত্যয়যোগে পরিবর্তন", "অংশ > আংশিক, মন > মানসিক", "ইতিহাস > ঐতিহাসিক, ভূগোল > ভৌগোলিক", "অগ্নি > আগ্নেয়, শিব > শৈব, সূর্য > সৌর"]
+    },
+    {
+      id: "bengali_ch5_sub3",
+      chapterId: "bengali_ch5",
+      subjectId: "bengali",
+      titleBn: "বিশেষণ থেকে বিশেষ্য রূপান্তর",
+      titleEn: "Adjective to Noun Transformation",
+      orderIndex: 3,
+      summaryBn: "মধুর > মাধুর্য, সুন্দর > সৌন্দর্য, পণ্ডিত > পাণ্ডিত্য, কৃপণ > কার্পণ্য/কৃপণতা, তরুণ > তারুণ্য, শান্ত > শান্তি, গম্ভীর > গাম্ভীর্য, অলস > আলস্য, সরল > সারল্য/সরলতা।",
+      keyConcepts: ["র্য/য-ফলা প্রত্যয়যোগে ভাববাচক বিশেষ্য", "মধুর > মাধুর্য", "পণ্ডিত > পাণ্ডিত্য", "সুন্দর > সৌন্দর্য", "অলস > আলস্য/অলসতা"]
+    },
+    {
+      id: "bengali_ch5_sub4",
+      chapterId: "bengali_ch5",
+      subjectId: "bengali",
+      titleBn: "পরীক্ষায় বারবার আসা গুরুত্বপূর্ণ পদ পরিবর্তন",
+      titleEn: "Most Frequent Transformation Examples",
+      orderIndex: 4,
+      summaryBn: "জল > জলীয়, রক্ত > রক্তিমা/রক্তিম, পিতা > পৈতৃক, মাতা > মাতৃক, দেহ > দৈহিক, সময় > সাময়িক, লোক > লৌকিক, হেমন্ত > হৈমন্তিক, হেমন্তের ফসল > হৈমন্তিক।",
+      keyConcepts: ["পিতা > পৈতৃক", "মাতা > মাতৃক", "দেহ > দৈহিক", "লোক > লৌকিক", "হেমন্ত > হৈমন্তিক", "অরণ্য > আরণ্যক"]
+    }
+  ],
+  content: {
+    introduction: "বাক্যে ব্যবহৃত বিভক্তিযুক্ত শব্দকে পদ বলে। বাংলা ভাষায় পদ প্রধানত পাঁচ প্রকার: বিশেষ্য, বিশেষণ, সর্বনাম, অব্যয় ও ক্রিয়া। পদ পরিবর্তনের মাধ্যমে একটি পদকে অন্য পদে (বিশেষ করে বিশেষ্য থেকে বিশেষণ এবং বিশেষণ থেকে বিশেষ্যে) রূপান্তর করা হয়।",
+    sections: [
+      {
+        heading: "১. বিশেষ্য থেকে বিশেষণে রূপান্তর",
+        body: [
+          "১. ইতিহাস > ঐতিহাসিক, বিজ্ঞান > বৈজ্ঞানিক, ভূগোল > ভৌগোলিক, নগর > নাগরিক, সমাজ > সামাজিক।",
+          "২. দিন > দৈনিক, মাস > মাসিক, বৎসর/বছর > বাৎসরিক, সপ্তাহ > সাপ্তাহিক, হেমন্ত > হৈমন্তিক।",
+          "৩. অগ্নি > আগ্নেয়, অংশ > আংশিক, অণু > আণবিক, বায়ু > বায়বীয়, সূর্য > সৌর, পৃথিবী > পার্থিব।",
+          "৪. পিতা > পৈতৃক, মাতা > মাতৃক, ভ্রাতা > ভ্রাতৃক, দেহ > দৈহিক, আত্মা > আত্মিক, ঈশ্বর > ঐশ্বরিক।"
+        ],
+        keyPoints: [
+          "ইতিহাস > ঐতিহাসিক; ভূগোল > ভৌগোলিক; বিজ্ঞান > বৈজ্ঞানিক।",
+          "অগ্নি > আগ্নেয়; সূর্য > সৌর; পৃথিবী > পার্থিব।",
+          "হেমন্ত > হৈমন্তিক; লোক > লৌকিক; অরণ্য > আরণ্যক।"
+        ]
+      },
+      {
+        heading: "২. বিশেষণ থেকে বিশেষ্যে রূপান্তর",
+        body: [
+          "৫. সুন্দর > সৌন্দর্য, মধুর > মাধুর্য, পণ্ডিত > পাণ্ডিত্য, অলস > আলস্য, তরুণ > তারুণ্য, গম্ভীর > গাম্ভীর্য।",
+          "৬. শান্ত > শান্তি, মুক্ত > মুক্তি, ক্লান্ত > ক্লান্তি, দীপ্ত > দীপ্তি, রক্ত > রক্তিম / রক্তিমা।",
+          "৭. সরল > সারল্য বা সরলতা, চপল > চাপল্য বা চপলতা, কৃপণ > কার্পণ্য বা কৃপণতা, উদার > ঔদার্য বা উদারতা।"
+        ],
+        keyPoints: [
+          "পণ্ডিত > পাণ্ডিত্য; সুন্দর > সৌন্দর্য; মধুর > মাধুর্য।",
+          "উদার > ঔদার্য; গম্ভীর > গাম্ভীর্য; তরুণ > তারুণ্য।",
+          "শান্ত > শান্তি; মুক্ত > মুক্তি।"
+        ]
+      }
+    ],
+    examTips: [
+      "'অগ্নি' শব্দের বিশেষণ পদ কী? উত্তর: আগ্নেয়।",
+      "'ইতিহাস' শব্দের বিশেষণ রূপ কোনটি? উত্তর: ঐতিহাসিক।",
+      "'পণ্ডিত' শব্দের বিশেষ্য রূপ কী? উত্তর: পাণ্ডিত্য।",
+      "'ভূগোল' শব্দের বিশেষণ রূপ কোনটি? উত্তর: ভৌগোলিক।"
+    ],
+    quickRevisionPoints: [
+      "বিশেষ্য = বস্তু, ব্যক্তি বা গুণের নাম (যেমন: ইতিহাস, সৌন্দর্য)।",
+      "বিশেষণ = দোষ, গুণ, অবস্থা বা বৈশিষ্ট্য নির্দেশক (যেমন: ঐতিহাসিক, সুন্দর)।",
+      "অণু > আণবিক; মন > মানসিক; দেহ > দৈহিক; জল > জলীয়।"
+    ]
+  }
+};
+
+export const BENGALI_CH5_QUESTIONS: Question[] = [
+  {
+    id: "vol2_ch5_q1",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub1",
+    questionBn: "বাক্যে ব্যবহৃত বিভক্তিযুক্ত শব্দকে কী বলে?",
+    options: ["ধ্বনি", "বর্ণ", "পদ", "বাক্যাংশ"],
+    correctIndex: 2,
+    explanationBn: "বাক্যে ব্যবহারের উপযোগী বিভক্তিযুক্ত শব্দ বা ধাতুকে পদ বলে।",
+    difficulty: "easy",
+    tags: ["পদ", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch5_q2",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub1",
+    questionBn: "বাংলায় পদ প্রধানত কয় প্রকার?",
+    options: ["৩ প্রকার", "৪ প্রকার", "৫ প্রকার", "৬ প্রকার"],
+    correctIndex: 2,
+    explanationBn: "বাংলা ব্যাকরণে পদ প্রধানত ৫ প্রকার: বিশেষ্য, বিশেষণ, সর্বনাম, অব্যয় ও ক্রিয়া।",
+    difficulty: "easy",
+    tags: ["পদের প্রকার", "৫ প্রকার"]
+  },
+  {
+    id: "vol2_ch5_q3",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'ইতিহাস' শব্দের সঠিক বিশেষণ পদ কোনটি?",
+    options: ["ইতিহাসিত", "ঐতিহাসিক", "ইতিহাসীয়", "ঐতিহাস্য"],
+    correctIndex: 1,
+    explanationBn: "ইতিহাস + ষ্ণিক/ইক = ঐতিহাসিক।",
+    difficulty: "easy",
+    tags: ["ইতিহাস", "ঐতিহাসিক"]
+  },
+  {
+    id: "vol2_ch5_q4",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'অগ্নি' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["আগ্নেয়", "অগ্নিক", "অগ্নিময়", "আগ্নি"],
+    correctIndex: 0,
+    explanationBn: "অগ্নি + এয় (ষ্ণেয়) = আগ্নেয়।",
+    difficulty: "easy",
+    tags: ["অগ্নি", "আগ্নেয়"]
+  },
+  {
+    id: "vol2_ch5_q5",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'অণু' শব্দের বিশেষণ রূপ কী?",
+    options: ["অণুক", "আণবিক", "আণু", "অণুময়"],
+    correctIndex: 1,
+    explanationBn: "অণু + ইক = আণবিক।",
+    difficulty: "easy",
+    tags: ["অণু", "আণবিক"]
+  },
+  {
+    id: "vol2_ch5_q6",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'ভূগোল' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["ভূগোলিক", "ভৌগোলিক", "ভূগোলীয়", "ভৌগোল"],
+    correctIndex: 1,
+    explanationBn: "ভূগোল + ইক = ভৌগোলিক।",
+    difficulty: "easy",
+    tags: ["ভূগোল", "ভৌগোলিক"]
+  },
+  {
+    id: "vol2_ch5_q7",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'বিজ্ঞান' শব্দের বিশেষণ রূপ কী?",
+    options: ["বৈজ্ঞানিক", "বিজ্ঞানী", "বিজ্ঞ", "বিজ্ঞানময়"],
+    correctIndex: 0,
+    explanationBn: "বিজ্ঞান + ইক = বৈজ্ঞানিক।",
+    difficulty: "easy",
+    tags: ["বিজ্ঞান", "বৈজ্ঞানিক"]
+  },
+  {
+    id: "vol2_ch5_q8",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'দিন' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["দিনিক", "দৈনিক", "দিনময়", "দানিক"],
+    correctIndex: 1,
+    explanationBn: "দিন + ইক = দৈনিক।",
+    difficulty: "easy",
+    tags: ["দিন", "দৈনিক"]
+  },
+  {
+    id: "vol2_ch5_q9",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'বছর' বা 'বৎসর' শব্দের বিশেষণ রূপ কী?",
+    options: ["বাৎসরিক", "বাৎসরিকতা", "বৎসরীয়", "বাছরিক"],
+    correctIndex: 0,
+    explanationBn: "বৎসর + ইক = বাৎসরিক।",
+    difficulty: "easy",
+    tags: ["বৎসর", "বাৎসরিক"]
+  },
+  {
+    id: "vol2_ch5_q10",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'নগর' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["নগরীয়", "নাগরিক", "নগরবাসী", "নাগর"],
+    correctIndex: 1,
+    explanationBn: "নগর + ইক = নাগরিক।",
+    difficulty: "easy",
+    tags: ["নগর", "নাগরিক"]
+  },
+  {
+    id: "vol2_ch5_q11",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'হেমন্ত' শব্দের বিশেষণ পদ কী?",
+    options: ["হৈমন্তিক", "হৈমন্ত", "হেমন্তীয়", "হৈমন্তী"],
+    correctIndex: 0,
+    explanationBn: "হেমন্ত + ইক = হৈমন্তিক।",
+    difficulty: "easy",
+    tags: ["হেমন্ত", "হৈমন্তিক"]
+  },
+  {
+    id: "vol2_ch5_q12",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'পিতা' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["পৈতৃক", "পিতৃক", "পৈত্রী", "পিতাতুল্য"],
+    correctIndex: 0,
+    explanationBn: "পিতৃ + ইক = পৈতৃক।",
+    difficulty: "easy",
+    tags: ["পিতা", "পৈতৃক"]
+  },
+  {
+    id: "vol2_ch5_q13",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'মাতা' শব্দের বিশেষণ রূপ কী?",
+    options: ["মাতৃক", "মাতৃসুলভ", "মাতৃতুল্য", "মৈত্রী"],
+    correctIndex: 0,
+    explanationBn: "মাতৃ + ক = মাতৃক।",
+    difficulty: "easy",
+    tags: ["মাতা", "মাতৃক"]
+  },
+  {
+    id: "vol2_ch5_q14",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'সূর্য' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["সৌর", "সূর্যীয়", "সৌর্য", "সূর্যময়"],
+    correctIndex: 0,
+    explanationBn: "সূর্য + অ (অণ্) = সৌর।",
+    difficulty: "easy",
+    tags: ["সূর্য", "সৌর"]
+  },
+  {
+    id: "vol2_ch5_q15",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'পৃথিবী' শব্দের বিশেষণ রূপ কী?",
+    options: ["পার্থিব", "পৃথিবীয়", "পার্থিবতা", "পৃথ্বী"],
+    correctIndex: 0,
+    explanationBn: "পৃথ্বী/পৃথিবী + অ = পার্থিব।",
+    difficulty: "easy",
+    tags: ["পৃথিবী", "পার্থিব"]
+  },
+  {
+    id: "vol2_ch5_q16",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'শিব' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["শৈব", "শিবীয়", "শিবময়", "শিবা"],
+    correctIndex: 0,
+    explanationBn: "শিব + অ = শৈব।",
+    difficulty: "easy",
+    tags: ["শিব", "শৈব"]
+  },
+  {
+    id: "vol2_ch5_q17",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'লোক' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["লৌকিক", "লোকীয়", "লোকজ", "লৌকিকতা"],
+    correctIndex: 0,
+    explanationBn: "লোক + ইক = লৌকিক।",
+    difficulty: "easy",
+    tags: ["লোক", "লৌকিক"]
+  },
+  {
+    id: "vol2_ch5_q18",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'দেহ' শব্দের বিশেষণ রূপ কী?",
+    options: ["দৈহিক", "দেহী", "দেহময়", "দৈহিকতা"],
+    correctIndex: 0,
+    explanationBn: "দেহ + ইক = দৈহিক।",
+    difficulty: "easy",
+    tags: ["দেহ", "দৈহিক"]
+  },
+  {
+    id: "vol2_ch5_q19",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'অংশ' শব্দের বিশেষণ পদ কোনটি?",
+    options: ["আংশিক", "অংশীদার", "অংশভাগী", "আংশিকতা"],
+    correctIndex: 0,
+    explanationBn: "অংশ + ইক = আংশিক।",
+    difficulty: "easy",
+    tags: ["অংশ", "আংশিক"]
+  },
+  {
+    id: "vol2_ch5_q20",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'অরণ্য' শব্দের বিশেষণ পদ কী?",
+    options: ["আরণ্যক", "অরণ্যময়", "অরণ্যানী", "অরণ্যচারী"],
+    correctIndex: 0,
+    explanationBn: "অরণ্য + ক = আরণ্যক।",
+    difficulty: "easy",
+    tags: ["অরণ্য", "আরণ্যক"]
+  },
+  {
+    id: "vol2_ch5_q21",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'সুন্দর' শব্দের বিশেষ্য রূপ কোনটি?",
+    options: ["সৌন্দর্য", "সুন্দরী", "সুন্দরতা", "সৌন্দর্যময়"],
+    correctIndex: 0,
+    explanationBn: "সুন্দর + য (ষ্ণ্য) = সৌন্দর্য (গুণবাচক বিশেষ্য)।",
+    difficulty: "easy",
+    tags: ["সুন্দর", "সৌন্দর্য"]
+  },
+  {
+    id: "vol2_ch5_q22",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'মধুর' শব্দের বিশেষ্য রূপ কী?",
+    options: ["মাধুর্য", "মধুরতা", "মধু", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "মধুর থেকে মাধুর্য ও মধুরতা উভয় বিশেষ্য পদই ব্যাকরণগতভাবে শুদ্ধ।",
+    difficulty: "easy",
+    tags: ["মধুর", "মাধুর্য"]
+  },
+  {
+    id: "vol2_ch5_q23",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'পণ্ডিত' শব্দের বিশেষ্য পদ কোনটি?",
+    options: ["পাণ্ডিত্য", "পণ্ডিতা", "পণ্ডিতি", "পণ্ডিতম্মন্য"],
+    correctIndex: 0,
+    explanationBn: "পণ্ডিত + য = পাণ্ডিত্য।",
+    difficulty: "easy",
+    tags: ["পণ্ডিত", "পাণ্ডিত্য"]
+  },
+  {
+    id: "vol2_ch5_q24",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'অলস' শব্দের বিশেষ্য রূপ কোনটি?",
+    options: ["আলস্য", "অলসতা", "অলসিনী", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "অলস বিশেষণ পদের ভাববাচক বিশেষ্য আলস্য এবং অলসতা।",
+    difficulty: "easy",
+    tags: ["অলস", "আলস্য"]
+  },
+  {
+    id: "vol2_ch5_q25",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'তরুণ' শব্দের বিশেষ্য রূপ কী?",
+    options: ["তারুণ্য", "তরুণী", "তরুণতা", "তারুণ্যতা"],
+    correctIndex: 0,
+    explanationBn: "তরুণ + য = তারুণ্য।",
+    difficulty: "easy",
+    tags: ["তরুণ", "তারুণ্য"]
+  },
+  {
+    id: "vol2_ch5_q26",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'গম্ভীর' শব্দের বিশেষ্য পদ কোনটি?",
+    options: ["গাম্ভীর্য", "গম্ভীরতা", "গাম্ভীর্যপূর্ণ", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "গম্ভীর থেকে গাম্ভীর্য ও গম্ভীরতা।",
+    difficulty: "easy",
+    tags: ["গম্ভীর", "গাম্ভীর্য"]
+  },
+  {
+    id: "vol2_ch5_q27",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'উদার' শব্দের বিশেষ্য রূপ কী?",
+    options: ["ঔদার্য", "উদারতা", "ঔদারিক", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "উদার থেকে ঔদার্য এবং উদারতা উভয়ই বিশেষ্য।",
+    difficulty: "easy",
+    tags: ["উদার", "ঔদার্য"]
+  },
+  {
+    id: "vol2_ch5_q28",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'কৃপণ' শব্দের বিশেষ্য রূপ কোনটি?",
+    options: ["কার্পণ্য", "কৃপণতা", "কার্পণিক", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "কৃপণ থেকে কার্পণ্য ও কৃপণতা উভয়ই শুদ্ধ।",
+    difficulty: "easy",
+    tags: ["কৃপণ", "কার্পণ্য"]
+  },
+  {
+    id: "vol2_ch5_q29",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'শান্ত' শব্দের বিশেষ্য পদ কোনটি?",
+    options: ["শান্তি", "শান্ততা", "প্রশান্ত", "শান্তিময়"],
+    correctIndex: 0,
+    explanationBn: "শম্ + তি = শান্তি (বিশেষ্য)।",
+    difficulty: "easy",
+    tags: ["শান্ত", "শান্তি"]
+  },
+  {
+    id: "vol2_ch5_q30",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'মুক্ত' শব্দের বিশেষ্য রূপ কী?",
+    options: ["মুক্তি", "মুক্ততা", "উন্মুক্ত", "মুক্তিময়"],
+    correctIndex: 0,
+    explanationBn: "মুচ্ + তি = মুক্তি।",
+    difficulty: "easy",
+    tags: ["মুক্ত", "মুক্তি"]
+  },
+  {
+    id: "vol2_ch5_q31",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'জল' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["জলীয়", "জলাশয়", "জলজ", "জলীয়তা"],
+    correctIndex: 0,
+    explanationBn: "জল + ঈয় = জলীয়।",
+    difficulty: "easy",
+    tags: ["জল", "জলীয়"]
+  },
+  {
+    id: "vol2_ch5_q32",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'বায়ু' শব্দের বিশেষণ রূপ কী?",
+    options: ["বায়বীয়", "বায়ুমান", "বায়ব", "বায়ুময়"],
+    correctIndex: 0,
+    explanationBn: "বায়ু + ঈয় = বায়বীয়।",
+    difficulty: "easy",
+    tags: ["বায়ু", "বায়বীয়"]
+  },
+  {
+    id: "vol2_ch5_q33",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'মন' শব্দের বিশেষণ পদ কোনটি?",
+    options: ["মানসিক", "মনময়", "মনন", "মানসিকতা"],
+    correctIndex: 0,
+    explanationBn: "মনস্ + ইক = মানসিক।",
+    difficulty: "easy",
+    tags: ["মন", "মানসিক"]
+  },
+  {
+    id: "vol2_ch5_q34",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'সময়' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["সাময়িক", "সময়ানুগ", "সময়োচিত", "সাময়িকতা"],
+    correctIndex: 0,
+    explanationBn: "সময় + ইক = সাময়িক।",
+    difficulty: "easy",
+    tags: ["সময়", "সাময়িক"]
+  },
+  {
+    id: "vol2_ch5_q35",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'সমাজ' শব্দের বিশেষণ পদ কী?",
+    options: ["সামাজিক", "সমাজবদ্ধ", "সামাজিকতা", "সমাজচ্যুত"],
+    correctIndex: 0,
+    explanationBn: "সমাজ + ইক = সামাজিক।",
+    difficulty: "easy",
+    tags: ["সমাজ", "সামাজিক"]
+  },
+  {
+    id: "vol2_ch5_q36",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'সরল' শব্দের বিশেষ্য রূপ কোনটি?",
+    options: ["সারল্য", "সরলতা", "সরলী", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "সরল থেকে সারল্য ও সরলতা।",
+    difficulty: "easy",
+    tags: ["সরল", "সারল্য"]
+  },
+  {
+    id: "vol2_ch5_q37",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'চপল' শব্দের বিশেষ্য পদ কী?",
+    options: ["চাপল্য", "চপলতা", "চপলা", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "চপল থেকে চাপল্য এবং চপলতা।",
+    difficulty: "easy",
+    tags: ["চপল", "চাপল্য"]
+  },
+  {
+    id: "vol2_ch5_q38",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'উপন্যাস' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["ঔপন্যাসিক", "উপন্যাসী", "উপন্যাসিক", "ঔপন্যাস"],
+    correctIndex: 0,
+    explanationBn: "উপন্যাস + ইক = ঔপন্যাসিক।",
+    difficulty: "easy",
+    tags: ["উপন্যাস", "ঔপন্যাসিক"]
+  },
+  {
+    id: "vol2_ch5_q39",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'বেদ' শব্দের বিশেষণ পদ কী?",
+    options: ["বৈদিক", "বেদান্ত", "বেদজ্ঞ", "বেদীয়"],
+    correctIndex: 0,
+    explanationBn: "বেদ + ইক = বৈদিক।",
+    difficulty: "easy",
+    tags: ["বেদ", "বৈদিক"]
+  },
+  {
+    id: "vol2_ch5_q40",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'গ্রাম' শব্দের বিশেষণ পদ কোনটি?",
+    options: ["গ্রামীণ", "গ্রাম্য", "গেঁয়ো", "সবকটিই সঠিক"],
+    correctIndex: 3,
+    explanationBn: "গ্রাম থেকে গ্রামীণ, গ্রাম্য ও গেঁয়ো সবগুলোই বিশেষণ রূপ।",
+    difficulty: "easy",
+    tags: ["গ্রাম", "গ্রামীণ"]
+  },
+  {
+    id: "vol2_ch5_q41",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'রক্ত' শব্দের বিশেষণ পদ কোনটি?",
+    options: ["রক্তিম", "রক্তাক্ত", "রক্তিমা", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "রক্তিম এবং রক্তাক্ত উভয়ই বিশেষণ পদ।",
+    difficulty: "easy",
+    tags: ["রক্ত", "রক্তিম"]
+  },
+  {
+    id: "vol2_ch5_q42",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'ক্লান্ত' শব্দের বিশেষ্য পদ কোনটি?",
+    options: ["ক্লান্তি", "ক্লান্ততা", "শ্রান্ত", "পরিশ্রান্ত"],
+    correctIndex: 0,
+    explanationBn: "ক্লান্ত (বিশেষণ) > ক্লান্তি (বিশেষ্য)।",
+    difficulty: "easy",
+    tags: ["ক্লান্ত", "ক্লান্তি"]
+  },
+  {
+    id: "vol2_ch5_q43",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'স্বর্ণ' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["স্বর্ণময়", "স্বর্ণালী", "স্বর্ণাভ", "সবকটিই সঠিক"],
+    correctIndex: 3,
+    explanationBn: "স্বর্ণময়, স্বর্ণালী সবই বিশেষণ রূপ।",
+    difficulty: "easy",
+    tags: ["স্বর্ণ", "স্বর্ণময়"]
+  },
+  {
+    id: "vol2_ch5_q44",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'ধর্ম' শব্দের বিশেষণ রূপ কী?",
+    options: ["ধার্মিক", "ধর্মীয়", "ধর্মপরায়ণ", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "ধর্ম + ইক = ধার্মিক / ধর্ম + ঈয় = ধর্মীয়।",
+    difficulty: "easy",
+    tags: ["ধর্ম", "ধার্মিক"]
+  },
+  {
+    id: "vol2_ch5_q45",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'বীর' শব্দের বিশেষ্য রূপ কোনটি?",
+    options: ["বীরত্ব", "বীর্য", "বীরাঙ্গনা", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "বীর থেকে বীরত্ব ও বীর্য দুটোই ভাববাচক বিশেষ্য।",
+    difficulty: "easy",
+    tags: ["বীর", "বীরত্ব"]
+  },
+  {
+    id: "vol2_ch5_q46",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'মাটি' শব্দের বিশেষণ রূপ কোনটি?",
+    options: ["মেঠো", "মাটির", "মেটে", "ক ও গ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "মাটি থেকে মেটে বা মেঠো দুটোই বিশেষণ।",
+    difficulty: "easy",
+    tags: ["মাটি", "মেটে"]
+  },
+  {
+    id: "vol2_ch5_q47",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'কণ্ঠ' শব্দের বিশেষণ পদ কী?",
+    options: ["কণ্ঠ্য", "কণ্ঠনালীয়", "কণ্ঠাগত", "কণ্ঠস্বর"],
+    correctIndex: 0,
+    explanationBn: "কণ্ঠ + য = কণ্ঠ্য।",
+    difficulty: "easy",
+    tags: ["কণ্ঠ", "কণ্ঠ্য"]
+  },
+  {
+    id: "vol2_ch5_q48",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'মহৎ' শব্দের বিশেষ্য রূপ কী?",
+    options: ["মহত্ত্ব", "মহিমা", "মহীয়ান", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "মহৎ থেকে মহত্ত্ব ও মহিমা বিশেষ্য রূপ।",
+    difficulty: "easy",
+    tags: ["মহৎ", "মহত্ত্ব"]
+  },
+  {
+    id: "vol2_ch5_q49",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub2",
+    questionBn: "'আত্মা' শব্দের বিশেষণ পদ কী?",
+    options: ["আত্মিক", "আত্মীয়", "আত্মগত", "ক ও খ উভয়ই"],
+    correctIndex: 3,
+    explanationBn: "আত্মা থেকে আত্মিক ও আত্মীয় দুটোই বিশেষণ রূপ।",
+    difficulty: "easy",
+    tags: ["আত্মা", "আত্মিক"]
+  },
+  {
+    id: "vol2_ch5_q50",
+    subjectId: "bengali",
+    chapterId: "bengali_ch5",
+    subTopicId: "bengali_ch5_sub3",
+    questionBn: "'নম্র' শব্দের বিশেষ্য পদ কোনটি?",
+    options: ["নম্রতা", "নম্রভাব", "নমনীয়", "নমনীয়তা"],
+    correctIndex: 0,
+    explanationBn: "নম্র (বিশেষণ) > নম্রতা (ভাববাচক বিশেষ্য)।",
+    difficulty: "easy",
+    tags: ["নম্র", "নম্রতা"]
+  }
+];

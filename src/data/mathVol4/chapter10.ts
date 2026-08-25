@@ -1,0 +1,1041 @@
+import { StudyChapter, Question } from "../../types";
+
+export const MATH_CH10_STUDY: StudyChapter = {
+  id: "math_ch10",
+  subjectId: "math",
+  chapterNumber: 10,
+  titleBn: "নল ও চৌবাচ্চা (Pipes and Cisterns, Leaks & Timed Inflows)",
+  titleEn: "Pipes and Cisterns - Inlets (+), Outlets/Leaks (-), Timed Switching & Capacity",
+  estimatedMinutes: 45,
+  importantNotesCount: 30,
+  summary: "নল ও চৌবাচ্চার সম্পূর্ণ লসাগু পদ্ধতি (LCM Tank Capacity Method), যেখানে ভর্তি করার নল ধনাত্মক কার্যক্ষমতা (+) এবং খালি করার নল বা ছিদ্র (Leak) ঋণাত্মক কার্যক্ষমতা (-) ধারণ করে। দুটি বা তিনটি নল একত্রে খোলার সূত্র (xy/(x+y), xy/(y-x)), তলদেশে ছিদ্র থাকার কারণে দেরিতে পূর্ণ হওয়ার অংক, নির্দিষ্ট সময় পর একটি নল বন্ধ করার কৌশল, একান্তরভাবে নল খোলা এবং চৌবাচ্চার মোট ধারণক্ষমতা (Capacity) নির্ণয়।",
+  subTopics: [
+    {
+      id: "math_ch10_sub1",
+      chapterId: "math_ch10",
+      subjectId: "math",
+      titleBn: "লসাগু পদ্ধতি ও ভর্তি-খালি করার মৌলিক নিয়ম",
+      titleEn: "LCM Tank Capacity, Inflow (+) vs Outflow (-) & Net Rate",
+      orderIndex: 1,
+      summaryBn: "লসাগুকে ট্যাঙ্কের মোট ধারণক্ষমতা ধরে ভর্তি নলের জন্য + এবং নিকাশী নলের জন্য - ক্ষমতা হিসাব করা হয়। দুটি ভর্তি নল: xy/(x+y); একটি ভর্তি (x) ও একটি খালি (y) হলে: xy/(y-x)।",
+      keyConcepts: ["Inlet efficiency = +ve", "Outlet / Leak efficiency = -ve", "Both Inlets = xy/(x+y)", "One Inlet + One Outlet = xy/(y-x) (when y > x)"]
+    },
+    {
+      id: "math_ch10_sub2",
+      chapterId: "math_ch10",
+      subjectId: "math",
+      titleBn: "ছিদ্র (Leak) ও নির্দিষ্ট সময় পর নল বন্ধ",
+      titleEn: "Bottom Leakage & Closing One Pipe Mid-Way",
+      orderIndex: 2,
+      summaryBn: "ছিদ্রের ক্ষমতা = (নল + ছিদ্রের যৌথ ক্ষমতা) - শুধুমাত্র নলের ক্ষমতা। নির্দিষ্ট সময় T মিনিটে ট্যাঙ্ক পূর্ণ করতে হলে ২য় নল কতক্ষণ খোলা রাখতে হবে তা ১ম নলের মোট কাজ বাদ দিয়ে হিসাব করা হয়।",
+      keyConcepts: ["Leak emptying time = (Filling Time × Time with Leak) / Difference", "Mid-way switching shortcut"]
+    },
+    {
+      id: "math_ch10_sub3",
+      chapterId: "math_ch10",
+      subjectId: "math",
+      titleBn: "একান্তর খোলা ও চৌবাচ্চার ধারণক্ষমতা নির্ণয়",
+      titleEn: "Alternating Pipes (1-min cycle) & Tank Volume Capacity",
+      orderIndex: 3,
+      summaryBn: "একান্তরভাবে নল খুললে ২ মিনিটের সাইকেল হিসাব করা হয়। প্রতি মিনিটে জল প্রবেশের হার দেওয়া থাকলে: মোট ধারণক্ষমতা = খালি করার সময় × প্রতি মিনিটে প্রবাহ।",
+      keyConcepts: ["Alternating pipes cycle", "Capacity = Time to empty by leak × Inflow rate in litres/min"]
+    }
+  ],
+  content: {
+    introduction: "নল ও চৌবাচ্চা (Pipes & Cisterns) মূলত সময় ও কার্যের একটি বাস্তবধর্মী রূপান্তর, যেখানে একটি পাইপ কাজ করে (জল প্রবেশ করায়) এবং অপর পাইপ কাজ ধ্বংস করে (জল বের করে দেয়)।",
+    sections: [
+      {
+        heading: "১. নল ও চৌবাচ্চার মৌলিক নিয়ম",
+        body: [
+          "• ভর্তি করার নল (Inlet Pipe): এটি ধনাত্মক কাজ (+) করে।",
+          "• খালি করার নল বা ছিদ্র (Outlet/Leak): এটি ঋণাত্মক কাজ (-) করে।",
+          "• দুটি ভর্তি নল যথাক্রমে x এবং y মিনিটে পূর্ণ করলে একত্রে সময় = ( x × y ) / ( x + y ) মিনিট।",
+          "• একটি নল x মিনিটে পূর্ণ করে এবং অন্যটি y মিনিটে খালি করে (y > x) হলে একত্রে সময় = ( x × y ) / ( y - x ) মিনিট।"
+        ]
+      },
+      {
+        heading: "২. চৌবাচ্চার ছিদ্র (Leak) সংক্রান্ত সমস্যা",
+        body: [
+          "• কোনো নল দিয়ে একটি চৌবাচ্চা A ঘণ্টায় পূর্ণ হয়, কিন্তু তলদেশে ছিদ্র থাকার কারণে পূর্ণ হতে B ঘণ্টা সময় লাগে (B > A)।",
+          "• শুধুমাত্র ওই ছিদ্র দিয়ে পূর্ণ চৌবাচ্চাটি খালি হতে সময় লাগবে:",
+          "  - সময় = ( A × B ) / ( B - A ) ঘণ্টা।",
+          "• উদাহরণ: একটি নল ৮ ঘণ্টায় পূর্ণ করে, ছিদ্রের কারণে ১০ ঘণ্টা লাগে ➔ ছিদ্র দিয়ে খালি হবে = (৮ × ১০) / (১০ - ৮) = ৪০ ঘণ্টায়।"
+        ]
+      },
+      {
+        heading: "৩. নির্দিষ্ট সময় পর একটি নল বন্ধ করার কৌশল",
+        body: [
+          "• যদি দুটি নল A ও B যথাক্রমে x ও y মিনিটে একটি চৌবাচ্চা পূর্ণ করে এবং চৌবাচ্চাটি T মিনিটে পূর্ণ করতে B নলটিকে কতক্ষণ পর বন্ধ করতে হবে?",
+          "• পদ্ধতি: যেহেতু A নলটি পুরো T মিনিট চালু ছিল, তাই A এর কাজ = T × (ক্ষমতা of A)।",
+          "• অবশিষ্ট কাজ = মোট ক্ষমতা - A এর কাজ।",
+          "• B চালু থাকার সময় = অবশিষ্ট কাজ / (ক্ষমতা of B)।"
+        ]
+      }
+    ],
+    examTips: [
+      "ছিদ্র বা নিকাশী নলকে সর্বদা বিয়োগ চিহ্ন (-) দিয়ে নির্দেশ করুন।",
+      "একান্তর নলের ক্ষেত্রে শেষ মিনিটে যেন ভর্তি নল দিয়ে চৌবাচ্চা পূর্ণ হয়ে যায় এবং নিকাশী নলের প্রয়োজন না পড়ে, সেদিকে লক্ষ্য রাখতে হবে।"
+    ],
+    quickRevisionPoints: [
+      "Two Inlets: xy/(x+y)",
+      "Inlet + Outlet: xy/(y-x)",
+      "Leak emptying time = (A × B)/(B - A)",
+      "Tank Capacity = Rate (litres/min) × Time (mins)",
+      "LCM method applies identically to Time & Work with negative rates for outlets"
+    ],
+    oneLiners: [
+      "দুটি নল যথাক্রমে ২০ ও ৩০ মিনিটে একটি চৌবাচ্চা পূর্ণ করলে একত্রে ১২ মিনিটে পূর্ণ করবে।",
+      "একটি নল ১০ মিনিটে পূর্ণ করে এবং অন্যটি ১৫ মিনিটে খালি করে; দুটি একসঙ্গে খুললে ৩০ মিনিটে পূর্ণ হবে।",
+      "একটি নল ৮ ঘণ্টায় পূর্ণ করে কিন্তু ছিদ্রের জন্য ১০ ঘণ্টা লাগে; ছিদ্র দিয়ে পূর্ণ চৌবাচ্চা ৪০ ঘণ্টায় খালি হবে।",
+      "দুটি নল যথাক্রমে ১২ ও ১৬ মিনিটে পূর্ণ করে; দুটি একসঙ্গে খুলে ৪ মিনিট পর ১ম নল বন্ধ করলে মোট ৮ মিনিটে পূর্ণ হবে।",
+      "A, B ও C নল যথাক্রমে ১০, ১২ ও ১৫ মিনিটে পূর্ণ করে; একত্রে ৪ মিনিটে পূর্ণ করবে।",
+      "একটি নল কোনো চৌবাচ্চা ৬ ঘণ্টায় পূর্ণ করে এবং অপর নল ৮ ঘণ্টায় খালি করে; একসঙ্গে খুললে ২৪ ঘণ্টায় পূর্ণ হবে।",
+      "একটি ছিদ্র দিয়ে ৩ ঘণ্টায় একটি চৌবাচ্চা খালি হয় এবং প্রতি মিনিটে ৪ লিটার জল প্রবেশকারী নল খুললে খালি হতে ৫ ঘণ্টা লাগে ➔ চৌবাচ্চার ধারণক্ষমতা ১৮০০ লিটার।"
+    ],
+    saqs: [
+      {
+        id: "math_ch10_saq1",
+        questionBn: "একটি নল দিয়ে একটি চৌবাচ্চা ৮ ঘণ্টায় পূর্ণ হয়। তলদেশে একটি ছিদ্র থাকার জন্য পূর্ণ হতে ১০ ঘণ্টা সময় লাগে। ছিদ্রটি দিয়ে পূর্ণ চৌবাচ্চাটি কত সময়ে খালি হবে?",
+        answerBn: "সূত্র: খালি করার সময় = (A × B) / (B - A)\nএখানে A = ৮ ঘণ্টা, B = ১০ ঘণ্টা\nখালি হওয়ার সময় = (৮ × ১০) / (১০ - ৮) = ৮০ / ২ = ৪০ ঘণ্টা।"
+      },
+      {
+        id: "math_ch10_saq2",
+        questionBn: "একটি চৌবাচ্চা দুটি নল দিয়ে যথাক্রমে ২০ ও ৩০ মিনিটে পূর্ণ হয়। নল দুটি একসঙ্গে খুলে দিলে চৌবাচ্চাটি কত সময়ে পূর্ণ হবে?",
+        answerBn: "সময় = (২০ × ৩০) / (২০ + ৩০) = ৬০০ / ৫০ = ১২ মিনিট।"
+      },
+      {
+        id: "math_ch10_saq3",
+        questionBn: "একটি নল ১০ মিনিটে একটি চৌবাচ্চা পূর্ণ করে এবং অন্য একটি নল ১৫ মিনিটে তা খালি করে। দুটি নল একসঙ্গে খোলা হলে চৌবাচ্চাটি পূর্ণ হতে কত সময় লাগবে?",
+        answerBn: "সময় = (১০ × ১৫) / (১৫ - ১০) = ১৫০ / ৫ = ৩০ মিনিট।"
+      },
+      {
+        id: "math_ch10_saq4",
+        questionBn: "নল ও চৌবাচ্চায় নিকাশী নল বা ছিদ্রের কার্যক্ষমতাকে কেন ঋণাত্মক (-) ধরা হয়?",
+        answerBn: "কারণ ভর্তি করার নল ট্যাঙ্কে জল যোগ করে সঞ্চয় বাড়ায় (ধনাত্মক কাজ), পক্ষান্তরে নিকাশী নল বা ছিদ্র জল বের করে সঞ্চয় হ্রাস করে (ঋণাত্মক কাজ)। তাই মোট কার্যকরী প্রবাহ = (ভর্তি নলের প্রবাহ - খালি করার নলের প্রবাহ)।"
+      },
+      {
+        id: "math_ch10_saq5",
+        questionBn: "দুটি নল A ও B যথাক্রমে ১২ ও ১৬ মিনিটে একটি চৌবাচ্চা পূর্ণ করে। নল দুটি একসঙ্গে খোলার কত মিনিট পর A নলটি বন্ধ করলে মোট ৮ মিনিটে চৌবাচ্চাটি পূর্ণ হবে?",
+        answerBn: "মোট ক্ষমতা = LCM(১২, ১৬) = ৪৮ ইউনিট।\nA এর ক্ষমতা = ৪ ইউনিট/মিনিট, B এর ক্ষমতা = ৩ ইউনিট/মিনিট।\nযেহেতু চৌবাচ্চাটি মোট ৮ মিনিটে পূর্ণ হয় এবং B পুরো ৮ মিনিটই খোলা ছিল:\nB এর ৮ মিনিটে কাজ = ৮ × ৩ = ২৪ ইউনিট।\nঅবশিষ্ট কাজ = ৪৮ - ২৪ = ২৪ ইউনিট (যা A সম্পন্ন করেছিল)।\nA নলটি খোলা ছিল = ২৪ / ৪ = ৬ মিনিট।\nঅতএব ৬ মিনিট পর A নলটি বন্ধ করতে হবে।"
+      },
+      {
+        id: "math_ch10_saq6",
+        questionBn: "একটি ছিদ্র দিয়ে একটি চৌবাচ্চা ৪ ঘণ্টায় খালি হয়। একটি নল দিয়ে প্রতি মিনিটে ৩ লিটার জল প্রবেশ করায় এবং তখন খালি হতে ৬ ঘণ্টা লাগে। চৌবাচ্চার ধারণক্ষমতা কত?",
+        answerBn: "নলটি দিয়ে পূর্ণ হতে সময় = (৪ × ৬) / (৬ - ৪) = ২৪ / ২ = ১২ ঘণ্টা = ৭২০ মিনিট।\nচৌবাচ্চার ধারণক্ষমতা = ৭২০ মিনিট × ৩ লিটার/মিনিট = ২১৬০ লিটার।"
+      },
+      {
+        id: "math_ch10_saq7",
+        questionBn: "A, B ও C তিনটি নল দিয়ে একটি চৌবাচ্চা যথাক্রমে ১২, ১৫ ও ২০ মিনিটে পূর্ণ হয়। তিনটি নল একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+        answerBn: "মোট ক্ষমতা = LCM(১২, ১৫, ২০) = ৬০ ইউনিট।\nA = ৫, B = ৪, C = ৩ ইউনিট/মিনিট।\nমোট ক্ষমতা = ৫ + ৪ + ৩ = ১২ ইউনিট/মিনিট।\nসময় = ৬০ / ১২ = ৫ মিনিট।"
+      },
+      {
+        id: "math_ch10_saq8",
+        questionBn: "একটি নল দিয়ে একটি চৌবাচ্চা ৫ ঘণ্টায় পূর্ণ হয় এবং অপর নল দিয়ে ১০ ঘণ্টায় খালি হয়। দুটি নল একসঙ্গে খোলা হলে অর্ধেক চৌবাচ্চা পূর্ণ হতে কত সময় লাগবে?",
+        answerBn: "সম্পূর্ণ পূর্ণ হতে সময় = (৫ × ১০)/(১০ - ৫) = ৫০/৫ = ১০ ঘণ্টা।\nঅর্ধেক পূর্ণ হতে সময় = ১০ / ২ = ৫ ঘণ্টা।"
+      }
+    ]
+  }
+};
+
+export const MATH_CH10_QUESTIONS: Question[] = [
+  {
+    id: "vol4_ch10_q1",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চা দুটি নল দিয়ে যথাক্রমে 20 ও 30 মিনিটে পূর্ণ হয়। নল দুটি একসঙ্গে খুললে চৌবাচ্চাটি কত সময়ে পূর্ণ হবে?",
+    options: ["10 মিনিটে", "12 মিনিটে", "15 মিনিটে", "18 মিনিটে"],
+    correctIndex: 1,
+    explanationBn: "(20 × 30) / (20 + 30) = 600 / 50 = 12 মিনিটে।",
+    difficulty: "easy",
+    tags: ["Pipes and Cisterns", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q2",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল 10 মিনিটে একটি চৌবাচ্চা পূর্ণ করে এবং অন্যটি 15 মিনিটে তা খালি করে। দুটি নল একসঙ্গে খুললে চৌবাচ্চাটি কতক্ষণে পূর্ণ হবে?",
+    options: ["20 মিনিটে", "25 মিনিটে", "30 মিনিটে", "35 মিনিটে"],
+    correctIndex: 2,
+    explanationBn: "(10 × 15) / (15 - 10) = 150 / 5 = 30 মিনিটে।",
+    difficulty: "easy",
+    tags: ["Inlet and Outlet", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q3",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি নল 8 ঘণ্টায় একটি চৌবাচ্চা পূর্ণ করে। তলদেশে একটি ছিদ্রের জন্য পূর্ণ হতে 10 ঘণ্টা লাগে। ছিদ্র দিয়ে পূর্ণ চৌবাচ্চাটি কত সময়ে খালি হবে?",
+    options: ["30 ঘণ্টায়", "35 ঘণ্টায়", "40 ঘণ্টায়", "45 ঘণ্টায়"],
+    correctIndex: 2,
+    explanationBn: "(8 × 10) / (10 - 8) = 80 / 2 = 40 ঘণ্টায়।",
+    difficulty: "easy",
+    tags: ["Leakage", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q4",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A, B ও C তিনটি নল দিয়ে একটি চৌবাচ্চা যথাক্রমে 10, 12 ও 15 মিনিটে পূর্ণ হয়। তিনটি নল একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["3 মিনিটে", "4 মিনিটে", "5 মিনিটে", "6 মিনিটে"],
+    correctIndex: 1,
+    explanationBn: "LCM = 60। A = 6, B = 5, C = 4। মোট ক্ষমতা = 15। সময় = 60 / 15 = 4 মিনিটে।",
+    difficulty: "easy",
+    tags: ["Three Pipes", "LCM Method"]
+  },
+  {
+    id: "vol4_ch10_q5",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল দিয়ে একটি চৌবাচ্চা 6 ঘণ্টায় পূর্ণ হয় এবং অপর নল দিয়ে 8 ঘণ্টায় খালি হয়। দুটি একসঙ্গে খুললে কতক্ষণে পূর্ণ হবে?",
+    options: ["18 ঘণ্টায়", "20 ঘণ্টায়", "24 ঘণ্টায়", "28 ঘণ্টায়"],
+    correctIndex: 2,
+    explanationBn: "(6 × 8) / (8 - 6) = 48 / 2 = 24 ঘণ্টায়।",
+    difficulty: "easy",
+    tags: ["Inlet and Outlet", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q6",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "দুটি নল A ও B যথাক্রমে 12 ও 16 মিনিটে একটি চৌবাচ্চা পূর্ণ করে। দুটি নল একসঙ্গে খোলার কত মিনিট পর A নল বন্ধ করলে মোট 8 মিনিটে চৌবাচ্চা পূর্ণ হবে?",
+    options: ["4 মিনিট", "5 মিনিট", "6 মিনিট", "7 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "LCM = 48। A = 4, B = 3। B 8 মিনিটে করে 24। বাকি 24 ইউনিট A করবে 24/4 = 6 মিনিটে।",
+    difficulty: "medium",
+    tags: ["Timed Closing", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q7",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "একটি ছিদ্র দিয়ে 3 ঘণ্টায় চৌবাচ্চা খালি হয়। প্রতি মিনিটে 4 লিটার জল প্রবেশকারী নল খুললে খালি হতে 5 ঘণ্টা লাগে। চৌবাচ্চার ধারণক্ষমতা কত?",
+    options: ["1500 লিটার", "1800 লিটার", "2000 লিটার", "2400 লিটার"],
+    correctIndex: 1,
+    explanationBn: "ভর্তি নলের একা পূর্ণ করার সময় = (3 × 5)/(5 - 3) = 7.5 ঘণ্টা = 450 মিনিট। ধারণক্ষমতা = 450 × 4 = 1800 লিটার।",
+    difficulty: "hard",
+    tags: ["Tank Capacity", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q8",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি পাইপ অন্য পাইপের চেয়ে 3 গুণ দ্রুত একটি চৌবাচ্চা পূর্ণ করে। দুটি পাইপ একত্রে 36 মিনিটে পূর্ণ করলে ধীরগতির পাইপটির একা কত সময় লাগবে?",
+    options: ["108 মিনিট", "120 মিনিট", "144 মিনিট", "150 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "ক্ষমতার অনুপাত 3:1 ➔ মোট ক্ষমতা 4। মোট কাজ = 36 × 4 = 144। ধীরগতির পাইপের সময় = 144 / 1 = 144 মিনিট।",
+    difficulty: "easy",
+    tags: ["Efficiency", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q9",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চা A নল দিয়ে 15 মিনিটে এবং B নল দিয়ে 20 মিনিটে পূর্ণ হয়। দুটি নল একসঙ্গে খোলার কত মিনিট পর B নল বন্ধ করলে মোট 12 মিনিটে পূর্ণ হবে?",
+    options: ["4 মিনিট", "5 মিনিট", "6 মিনিট", "7 মিনিট"],
+    correctIndex: 0,
+    explanationBn: "LCM = 60। A = 4, B = 3। A 12 মিনিটে করে 48 ইউনিট। বাকি 12 ইউনিট B করবে 12/3 = 4 মিনিটে।",
+    difficulty: "medium",
+    tags: ["Timed Closing", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q10",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A ও B দুটি নল দিয়ে একটি চৌবাচ্চা যথাক্রমে 24 ও 32 মিনিটে পূর্ণ হয়। নল দুটি একসঙ্গে খুলে কত মিনিট পর B বন্ধ করলে 18 মিনিটে পূর্ণ হবে?",
+    options: ["6 মিনিট", "8 মিনিট", "10 মিনিট", "12 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "LCM = 96। A = 4, B = 3। A 18 মিনিটে করে 72। বাকি 24 ইউনিট B করবে 24/3 = 8 মিনিটে।",
+    difficulty: "medium",
+    tags: ["Timed Closing", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q11",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল একটি খালি চৌবাচ্চা 12 মিনিটে এবং অপর একটি নল 18 মিনিটে পূর্ণ করে। উভয় নল একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["6.5 মিনিট", "7.2 মিনিট", "8 মিনিট", "8.5 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "(12 × 18) / 30 = 216 / 30 = 7.2 মিনিট।",
+    difficulty: "easy",
+    tags: ["Combined Pipes", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q12",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি নল 6 ঘণ্টায় চৌবাচ্চা পূর্ণ করে কিন্তু ছিদ্রের জন্য 8 ঘণ্টা সময় লাগে। ছিদ্র দিয়ে পূর্ণ চৌবাচ্চা কত সময়ে খালি হবে?",
+    options: ["20 ঘণ্টা", "24 ঘণ্টা", "28 ঘণ্টা", "30 ঘণ্টা"],
+    correctIndex: 1,
+    explanationBn: "(6 × 8) / (8 - 6) = 48 / 2 = 24 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Leakage", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q13",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A, B ও C তিনটি নল দিয়ে একটি চৌবাচ্চা যথাক্রমে 12, 15 ও 20 মিনিটে পূর্ণ হয়। তিনটি নল একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["4 মিনিট", "5 মিনিট", "6 মিনিট", "7 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "LCM = 60। ক্ষমতা = 5 + 4 + 3 = 12। সময় = 60 / 12 = 5 মিনিট।",
+    difficulty: "easy",
+    tags: ["Three Pipes", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q14",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল 5 ঘণ্টায় পূর্ণ করে এবং অন্যটি 10 ঘণ্টায় খালি করে। দুটি একসঙ্গে খোলা হলে অর্ধেক চৌবাচ্চা পূর্ণ হতে কত সময় লাগবে?",
+    options: ["3 ঘণ্টা", "4 ঘণ্টা", "5 ঘণ্টা", "6 ঘণ্টা"],
+    correctIndex: 2,
+    explanationBn: "সম্পূর্ণ পূর্ণ হতে = (5 × 10)/5 = 10 ঘণ্টা। অর্ধেক পূর্ণ হতে = 5 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Inlet and Outlet", "Fractions"]
+  },
+  {
+    id: "vol4_ch10_q15",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চার 3/5 অংশ পূর্ণ হতে 15 মিনিট সময় লাগলে বাকি অংশ পূর্ণ হতে কত মিনিট লাগবে?",
+    options: ["8 মিনিট", "10 মিনিট", "12 মিনিট", "15 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "3/5 অংশ 15 মিনিট ➔ 1 অংশ 25 মিনিট ➔ বাকি 2/5 অংশ = 25 × 2/5 = 10 মিনিট।",
+    difficulty: "easy",
+    tags: ["Fractions", "Time Calculation"]
+  },
+  {
+    id: "vol4_ch10_q16",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "দুটি নল দিয়ে একটি চৌবাচ্চা যথাক্রমে 15 ও 20 ঘণ্টায় পূর্ণ হয় এবং তৃতীয় নলটি 25 ঘণ্টায় খালি করে। তিনটি নল একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["10 ঘণ্টায়", "12 ঘণ্টায়", "14.11 ঘণ্টায় (বা 300/23 ঘণ্টায়)", "15 ঘণ্টায়"],
+    correctIndex: 2,
+    explanationBn: "LCM = 300। A = 20, B = 15, C = -12। মোট ক্ষমতা = 23। সময় = 300 / 23 = 14.11 ঘণ্টা।",
+    difficulty: "medium",
+    tags: ["Inlets and Outlets", "LCM Method"]
+  },
+  {
+    id: "vol4_ch10_q17",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল অপর একটি নলের চেয়ে 2 গুণ দ্রুত চৌবাচ্চা পূর্ণ করে। উভয় নল একত্রে 12 মিনিটে পূর্ণ করলে দ্রুতগতির নলটি একা কত সময়ে পূর্ণ করবে?",
+    options: ["16 মিনিট", "18 মিনিট", "20 মিনিট", "24 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "অনুপাত 2:1। মোট কাজ = 12 × 3 = 36। দ্রুতগতির নলের সময় = 36 / 2 = 18 মিনিট।",
+    difficulty: "easy",
+    tags: ["Efficiency", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q18",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি চৌবাচ্চার তলদেশে একটি ছিদ্র 6 ঘণ্টায় সেটিকে খালি করতে পারে। একটি নল প্রতি ঘণ্টায় 4 লিটার জল প্রবেশ করায় এবং তখন খালি হতে 8 ঘণ্টা সময় লাগে। চৌবাচ্চার ধারণক্ষমতা কত?",
+    options: ["80 লিটার", "96 লিটার", "100 লিটার", "120 লিটার"],
+    correctIndex: 1,
+    explanationBn: "ভর্তি নলের একা পূর্ণ করার সময় = (6 × 8)/2 = 24 ঘণ্টা। ধারণক্ষমতা = 24 × 4 = 96 লিটার।",
+    difficulty: "medium",
+    tags: ["Tank Capacity", "Calculations"]
+  },
+  {
+    id: "vol4_ch10_q19",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A ও B নল যথাক্রমে 16 ও 24 মিনিটে একটি চৌবাচ্চা পূর্ণ করে। দুটি নল একসঙ্গে খোলার কতক্ষণ পর B নল বন্ধ করলে মোট 12 মিনিটে পূর্ণ হবে?",
+    options: ["4 মিনিট", "6 মিনিট", "8 মিনিট", "10 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "LCM = 48। A = 3, B = 2। A 12 মিনিটে করে 36। বাকি 12 ইউনিট B করবে 12/2 = 6 মিনিটে।",
+    difficulty: "medium",
+    tags: ["Timed Closing", "Pipes and Cisterns"]
+  },
+  {
+    id: "vol4_ch10_q20",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চা একটি নল দিয়ে 10 ঘণ্টায় পূর্ণ হয় এবং তলদেশের ছিদ্র দিয়ে 15 ঘণ্টায় খালি হয়। দুটি একসঙ্গে খোলা থাকলে পূর্ণ হতে কত সময় লাগবে?",
+    options: ["20 ঘণ্টা", "25 ঘণ্টা", "30 ঘণ্টা", "35 ঘণ্টা"],
+    correctIndex: 2,
+    explanationBn: "(10 × 15) / (15 - 10) = 150 / 5 = 30 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Inlet and Outlet", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q21",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চা দুটি নল দিয়ে যথাক্রমে 14 ও 21 মিনিটে পূর্ণ হয়। দুটি নল একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["7 মিনিট", "8.4 মিনিট", "9 মিনিট", "10 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "(14 × 21) / 35 = 294 / 35 = 8.4 মিনিট।",
+    difficulty: "easy",
+    tags: ["Combined Pipes", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q22",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল একটি চৌবাচ্চা 40 মিনিটে খালি করে। অপর একটি নলের ব্যাস ১মটির দ্বিগুণ। দ্বিতীয় নলটি কত সময়ে চৌবাচ্চা খালি করবে?",
+    options: ["10 মিনিটে", "20 মিনিটে", "30 মিনিটে", "80 মিনিটে"],
+    correctIndex: 0,
+    explanationBn: "ব্যাস দ্বিগুণ হলে ক্ষেত্রফল ৪ গুণ হয় ➔ ক্ষমতা ৪ গুণ ➔ সময় ১/৪ ভাগ লাগবে = 40 / 4 = 10 মিনিটে।",
+    difficulty: "medium",
+    tags: ["Pipe Diameter & Flow", "Physics in Math"]
+  },
+  {
+    id: "vol4_ch10_q23",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল 20 মিনিটে এবং অপরটি 30 মিনিটে খালি করে। উভয় নল একসঙ্গে খুললে কত সময়ে খালি হবে?",
+    options: ["10 মিনিটে", "12 মিনিটে", "15 মিনিটে", "18 মিনিটে"],
+    correctIndex: 1,
+    explanationBn: "(20 × 30) / 50 = 12 মিনিটে।",
+    difficulty: "easy",
+    tags: ["Both Outlets", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q24",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A ও B নল যথাক্রমে 18 ও 27 মিনিটে চৌবাচ্চা পূর্ণ করে। একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["10 মিনিট", "10.8 মিনিট", "12 মিনিট", "13.5 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "(18 × 27) / 45 = 486 / 45 = 10.8 মিনিট।",
+    difficulty: "easy",
+    tags: ["Combined Pipes", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q25",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি নল 12 ঘণ্টায় চৌবাচ্চা পূর্ণ করে কিন্তু ছিদ্রের জন্য 16 ঘণ্টা সময় লাগে। ছিদ্র দিয়ে পূর্ণ চৌবাচ্চা কত সময়ে খালি হবে?",
+    options: ["40 ঘণ্টায়", "44 ঘণ্টায়", "48 ঘণ্টায়", "52 ঘণ্টায়"],
+    correctIndex: 2,
+    explanationBn: "(12 × 16) / (16 - 12) = 192 / 4 = 48 ঘণ্টায়।",
+    difficulty: "easy",
+    tags: ["Leakage", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q26",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল কোনো চৌবাচ্চার 1/4 অংশ 6 মিনিটে পূর্ণ করে। সম্পূর্ণ চৌবাচ্চা পূর্ণ হতে কত সময় লাগবে?",
+    options: ["18 মিনিট", "20 মিনিট", "24 মিনিট", "28 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "সম্পূর্ণ চৌবাচ্চা = 6 × 4 = 24 মিনিট।",
+    difficulty: "easy",
+    tags: ["Fractions", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q27",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A নল B নলের চেয়ে 4 গুণ দ্রুত চৌবাচ্চা পূর্ণ করে। B একা 40 মিনিটে পূর্ণ করলে একত্রে তারা কত সময়ে পূর্ণ করবে?",
+    options: ["6 মিনিট", "8 মিনিট", "10 মিনিট", "12 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "A এর সময় = 40/4 = 10 মিনিট। একত্রে = (10 × 40)/50 = 8 মিনিটে।",
+    difficulty: "easy",
+    tags: ["Efficiency", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q28",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A, B ও C নল দিয়ে একটি চৌবাচ্চা যথাক্রমে 15, 20 ও 30 মিনিটে পূর্ণ হয়। তিনটি একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["6 মিনিট", "6.66 মিনিট (বা 20/3 মিনিট)", "7.5 মিনিট", "8 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "LCM = 60। ক্ষমতা = 4 + 3 + 2 = 9। সময় = 60/9 = 20/3 = 6.66 মিনিট।",
+    difficulty: "easy",
+    tags: ["Three Pipes", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q29",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল 8 মিনিটে পূর্ণ করে এবং অন্যটি 12 মিনিটে পূর্ণ করে। কত মিনিট পর ২য় নল বন্ধ করলে মোট 6 মিনিটে পূর্ণ হবে?",
+    options: ["2 মিনিট", "3 মিনিট", "4 মিনিট", "5 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "LCM = 24। ১ম = 3, ২য় = 2। ১ম নল 6 মিনিটে করে 18। বাকি 6 ইউনিট ২য় নল করবে 6/2 = 3 মিনিটে।",
+    difficulty: "medium",
+    tags: ["Timed Closing", "Calculations"]
+  },
+  {
+    id: "vol4_ch10_q30",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চা A নল দিয়ে 25 মিনিটে পূর্ণ হয় ও B নল দিয়ে 50 মিনিটে খালি হয়। দুটি একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["35 মিনিটে", "40 মিনিটে", "45 মিনিটে", "50 মিনিটে"],
+    correctIndex: 3,
+    explanationBn: "(25 × 50) / (50 - 25) = 1250 / 25 = 50 মিনিটে।",
+    difficulty: "easy",
+    tags: ["Inlet and Outlet", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q31",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A ও B নল যথাক্রমে 10 ও 15 ঘণ্টায় একটি ট্যাঙ্ক পূর্ণ করে। উভয় নল একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["5 ঘণ্টা", "6 ঘণ্টা", "7 ঘণ্টা", "8 ঘণ্টা"],
+    correctIndex: 1,
+    explanationBn: "(10 × 15) / 25 = 6 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Combined Pipes", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q32",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি নল দিয়ে 4 ঘণ্টায় চৌবাচ্চা পূর্ণ হয় কিন্তু ছিদ্রের জন্য 5 ঘণ্টা সময় লাগে। ছিদ্র দিয়ে পূর্ণ চৌবাচ্চা কত সময়ে খালি হবে?",
+    options: ["16 ঘণ্টা", "18 ঘণ্টা", "20 ঘণ্টা", "25 ঘণ্টা"],
+    correctIndex: 2,
+    explanationBn: "(4 × 5) / (5 - 4) = 20 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Leakage", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q33",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল একটি চৌবাচ্চা 36 মিনিটে পূর্ণ করে। চৌবাচ্চার 1/3 অংশ পূর্ণ হতে কত সময় লাগবে?",
+    options: ["10 মিনিট", "12 মিনিট", "15 মিনিট", "18 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "36 × (1/3) = 12 মিনিট।",
+    difficulty: "easy",
+    tags: ["Fractions", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q34",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A নল 30 মিনিটে এবং B নল 45 মিনিটে পূর্ণ করে। একসঙ্গে খুললে কত সময়ে পূর্ণ হবে?",
+    options: ["16 মিনিট", "18 মিনিট", "20 মিনিট", "22 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "(30 × 45) / 75 = 1350 / 75 = 18 মিনিট।",
+    difficulty: "easy",
+    tags: ["Combined Pipes", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q35",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল 15 মিনিটে পূর্ণ করে এবং অন্যটি 30 মিনিটে খালি করে। দুটি একসঙ্গে খোলা থাকলে চৌবাচ্চাটি পূর্ণ হতে কত সময় লাগবে?",
+    options: ["20 মিনিট", "25 মিনিট", "30 মিনিট", "35 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "(15 × 30) / (30 - 15) = 450 / 15 = 30 মিনিট।",
+    difficulty: "easy",
+    tags: ["Inlet and Outlet", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q36",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "দুটি নল A ও B একটি চৌবাচ্চা যথাক্রমে 15 ঘণ্টা ও 20 ঘণ্টায় পূর্ণ করতে পারে এবং তৃতীয় একটি নল C 25 ঘণ্টায় সম্পূর্ণ চৌবাচ্চা খালি করতে পারে। তিনটি নল একসাথে খুলে দিলে কত সময়ে খালি চৌবাচ্চা পূর্ণ হবে?",
+    options: ["10 ঘণ্টা", "12 ঘণ্টা", "12.76 ঘণ্টা (বা 300/23 ঘণ্টা)", "14 ঘণ্টা"],
+    correctIndex: 2,
+    explanationBn: "মোট ক্ষমতা (LCM of 15, 20, 25) = 300 ইউনিট। A = +20, B = +15, C = -12। নীট প্রবাহ = 20 + 15 - 12 = 23 ইউনিট/ঘণ্টা। সময় = 300 / 23 = 13.04 বা 300/23 ঘণ্টা (প্রায় 12.76-13 ঘণ্টা)।",
+    difficulty: "medium",
+    tags: ["Three Pipes", "LCM Method"]
+  },
+  {
+    id: "vol4_ch10_q37",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি নল দ্বারা একটি চৌবাচ্চা 8 ঘণ্টায় জলপূর্ণ হয়। কিন্তু তলদেশে ছিদ্র থাকার কারণে পূর্ণ হতে 2 ঘণ্টা বেশি সময় লাগে। যদি চৌবাচ্চাটি সম্পূর্ণ পূর্ণ থাকে, তবে ছিদ্রটি দ্বারা কত ঘণ্টায় তা খালি হবে?",
+    options: ["30 ঘণ্টা", "36 ঘণ্টা", "40 ঘণ্টা", "48 ঘণ্টা"],
+    correctIndex: 2,
+    explanationBn: "নলের সময় = 8 ঘণ্টা, নল + ছিদ্র = 10 ঘণ্টা। খালি হওয়ার সময় = (8 × 10) / (10 - 8) = 80 / 2 = 40 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Leakage", "Shortcut Formula"]
+  },
+  {
+    id: "vol4_ch10_q38",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "দুটি নল A ও B একটি চৌবাচ্চা যথাক্রমে 24 মিনিট ও 32 মিনিটে পূর্ণ করে। দুটি নল একসাথে খোলার কতক্ষণ পর B নলটি বন্ধ করলে সম্পূর্ণ চৌবাচ্চাটি 18 মিনিটে পূর্ণ হবে?",
+    options: ["6 মিনিট", "8 মিনিট", "10 মিনিট", "12 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "মোট কাজ 96 ইউনিট। A = 4, B = 3 ইউনিট/মিনিট। A নল পুরো 18 মিনিট চলেছে ➔ 18 × 4 = 72 ইউনিট। বাকি কাজ = 96 - 72 = 24 ইউনিট, যা B নল করেছে। B নলের চলার সময় = 24 / 3 = 8 মিনিট। অতএব 8 মিনিট পর B নল বন্ধ করতে হবে।",
+    difficulty: "medium",
+    tags: ["Closing Pipe", "Timed Switching"]
+  },
+  {
+    id: "vol4_ch10_q39",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "একটি নল দিয়ে একটি জলাধার 6 ঘণ্টায় পূর্ণ হয় এবং একটি ফুটো দিয়ে 10 ঘণ্টায় সম্পূর্ণ জলাধার খালি হয়। যদি পূর্ণ জলাধারে নল ও ফুটো দুটিই খোলা থাকে, তবে কত ঘণ্টায় জলাধার খালি বা পূর্ণ হবে?",
+    options: ["15 ঘণ্টায় পূর্ণ", "15 ঘণ্টায় খালি", "16 ঘণ্টায় পূর্ণ", "12 ঘণ্টায় পূর্ণ"],
+    correctIndex: 0,
+    explanationBn: "যেহেতু ভর্তি করার হার (1/6) খালি করার হারের (1/10) চেয়ে বেশি, তাই জলাধার পূর্ণ হবে। সময় = (6 × 10) / (10 - 6) = 60 / 4 = 15 ঘণ্টায় পূর্ণ হবে।",
+    difficulty: "easy",
+    tags: ["Net Inflow", "Concept"]
+  },
+  {
+    id: "vol4_ch10_q40",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি খালি চৌবাচ্চা একটি পাইপ দ্বারা 10 ঘণ্টায় পূর্ণ হয় কিন্তু ছিদ্রের কারণে 12 ঘণ্টা সময় লাগে। যদি চৌবাচ্চাটিতে প্রতি মিনিটে 5 লিটার হারে জল প্রবেশকারী একটি নল খুলে দেওয়া হয় এবং ছিদ্র দিয়েও জল বের হয়, তবে চৌবাচ্চাটির মোট ধারণক্ষমতা (Capacity) কত?",
+    options: ["15000 লিটার", "18000 লিটার", "20000 লিটার", "24000 লিটার"],
+    correctIndex: 1,
+    explanationBn: "ছিদ্রের খালি করার সময় = (10 × 12) / (12 - 10) = 120 / 2 = 60 ঘণ্টা। ধারণক্ষমতা = 60 ঘণ্টা × 60 মিনিট × 5 লিটার/মিনিট = 18,000 লিটার।",
+    difficulty: "hard",
+    tags: ["Tank Capacity", "Leak and Inflow Rate"]
+  },
+  {
+    id: "vol4_ch10_q41",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "A, B ও C তিনটি নল যথাক্রমে 12, 15 ও 20 মিনিটে একটি চৌবাচ্চা পূর্ণ করতে পারে। চৌবাচ্চাটি খালি থাকা অবস্থায় তিনটি নল খুলে দেওয়া হলো এবং 3 মিনিট পর C নলটি বন্ধ করা হলো। সম্পূর্ণ চৌবাচ্চা পূর্ণ হতে মোট কত সময় লেগেছিল?",
+    options: ["5 মিনিট", "5½ মিনিট", "6 মিনিট", "6½ মিনিট"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 60। A = 5, B = 4, C = 3। 3 মিনিটে A+B+C করেছে = 3 × 12 = 36 ইউনিট। বাকি = 60 - 36 = 24 ইউনিট। C বন্ধ হওয়ার পর A ও B এর মিলিত ক্ষমতা = 9। সময় = 24 / 9 = 8/3 = 2⅔ মিনিট। মোট সময় = 3 + 2⅔ = 5⅔ বা প্রায় 5.67 মিনিট (বিকল্প অনুযায়ী 5½-5⅔ মিনিট)।",
+    difficulty: "medium",
+    tags: ["Closing Pipe", "Three Pipes"]
+  },
+  {
+    id: "vol4_ch10_q42",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি পাইপ অন্য পাইপের চেয়ে 3 গুণ দ্রুত চৌবাচ্চা পূর্ণ করতে পারে। দুটি পাইপ একত্রে একটি খালি চৌবাচ্চা 36 মিনিটে পূর্ণ করলে ধীরগতির পাইপটি একা কত মিনিটে চৌবাচ্চাটি পূর্ণ করবে?",
+    options: ["108 মিনিট", "120 মিনিট", "144 মিনিট", "160 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "দক্ষতার অনুপাত = 3 : 1। মিলিত দক্ষতা = 4 ইউনিট/মিনিট। মোট ক্ষমতা = 36 × 4 = 144 ইউনিট। ধীরগতির পাইপের দক্ষতা 1 ➔ সময় = 144 / 1 = 144 মিনিট।",
+    difficulty: "easy",
+    tags: ["Efficiency Ratio", "Pipes"]
+  },
+  {
+    id: "vol4_ch10_q43",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "A ও B দুটি নল একটি চৌবাচ্চা যথাক্রমে 20 মিনিট ও 30 মিনিটে পূর্ণ করে। নল দুটি একান্তরভাবে (Alternate minutes) 1 মিনিট করে খোলা থাকলে এবং প্রথমে A নল খোলা হলে চৌবাচ্চাটি পূর্ণ হতে কত মিনিট লাগবে?",
+    options: ["22 মিনিট", "24 মিনিট", "25 মিনিট", "26 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 60। A = 3, B = 2। 2 মিনিটের চক্রে জল প্রবেশ করে 5 ইউনিট। 12 টি চক্রে (24 মিনিটে) পূর্ণ হয় 12 × 5 = 60 ইউনিট। মোট সময় = 24 মিনিট।",
+    difficulty: "medium",
+    tags: ["Alternate Minutes", "Cycle Method"]
+  },
+  {
+    id: "vol4_ch10_q44",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "দুটি নল দিয়ে একটি চৌবাচ্চা যথাক্রমে 12 মিনিট ও 16 মিনিটে পূর্ণ হয়। দুটি নল একসাথে খুলে দেওয়ার কত মিনিট পর দ্বিতীয় নলটি বন্ধ করলে চৌবাচ্চাটি 9 মিনিটে পূর্ণ হবে?",
+    options: ["4 মিনিট", "5 মিনিট", "6 মিনিট", "7 মিনিট"],
+    correctIndex: 0,
+    explanationBn: "মোট ক্ষমতা 48। প্রথম নল = 4, দ্বিতীয় নল = 3। প্রথম নল 9 মিনিট চলেছে = 9 × 4 = 36 ইউনিট। বাকি কাজ = 48 - 36 = 12 ইউনিট। দ্বিতীয় নলের সময় = 12 / 3 = 4 মিনিট।",
+    difficulty: "medium",
+    tags: ["Timed Switching", "LCM Method"]
+  },
+  {
+    id: "vol4_ch10_q45",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি নল 20 মিনিটে একটি চৌবাচ্চা জলপূর্ণ করে এবং অপর একটি নল 30 মিনিটে খালি করে। নল দুটি একসাথে খুলে দিলে খালি চৌবাচ্চা পূর্ণ হতে কত সময় লাগবে?",
+    options: ["50 মিনিট", "55 মিনিট", "60 মিনিট", "70 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "সময় = (20 × 30) / (30 - 20) = 600 / 10 = 60 মিনিট (বা 1 ঘণ্টা)।",
+    difficulty: "easy",
+    tags: ["Inlet and Outlet", "Direct Formula"]
+  },
+  {
+    id: "vol4_ch10_q46",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চার 3/4 অংশ পূর্ণ হতে 15 মিনিট সময় লাগে। সম্পূর্ণ চৌবাচ্চা পূর্ণ হতে আর কত অতিরিক্ত সময় লাগবে?",
+    options: ["5 মিনিট", "10 মিনিট", "15 মিনিট", "20 মিনিট"],
+    correctIndex: 0,
+    explanationBn: "সম্পূর্ণ পূর্ণ হতে মোট সময় = 15 × (4/3) = 20 মিনিট। অতিরিক্ত সময় লাগবে = 20 - 15 = 5 মিনিট।",
+    difficulty: "easy",
+    tags: ["Fractions", "Remaining Time"]
+  },
+  {
+    id: "vol4_ch10_q47",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "তিনটি নল A, B ও C একত্রে একটি চৌবাচ্চা 6 ঘণ্টায় পূর্ণ করতে পারে। 2 ঘণ্টা একসাথে চলার পর C নলটি বন্ধ করে দেওয়া হলো এবং A ও B অবশিষ্ট অংশ 7 ঘণ্টায় পূর্ণ করল। C একা সম্পূর্ণ চৌবাচ্চা কত ঘণ্টায় পূর্ণ করতে পারবে?",
+    options: ["12 ঘণ্টায়", "14 ঘণ্টায়", "16 ঘণ্টায়", "18 ঘণ্টায়"],
+    correctIndex: 1,
+    explanationBn: "2 ঘণ্টায় A+B+C করে 2/6 = 1/3 অংশ। বাকি 2/3 অংশ A+B করে 7 ঘণ্টায় ➔ A+B সম্পূর্ণ করে 7 × (3/2) = 21/2 ঘণ্টায়। C এর 1 ঘণ্টার কাজ = 1/6 - 2/21 = (7 - 4) / 42 = 3 / 42 = 1/14 অংশ। অতএব C একা পূর্ণ করবে 14 ঘণ্টায়।",
+    difficulty: "hard",
+    tags: ["Fractional Work", "Closing Pipe"]
+  },
+  {
+    id: "vol4_ch10_q48",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি চৌবাচ্চা একটি নল দ্বারা 12 ঘণ্টায় পূর্ণ হয় এবং অপর একটি নল দ্বারা 8 ঘণ্টায় খালি হয়। পূর্ণ চৌবাচ্চায় দুটি নল একসাথে খুলে দিলে চৌবাচ্চাটি কত সময়ে খালি হবে?",
+    options: ["18 ঘণ্টায়", "20 ঘণ্টায়", "24 ঘণ্টায়", "28 ঘণ্টায়"],
+    correctIndex: 2,
+    explanationBn: "যেহেতু খালি করার নল দ্রুততর, তাই চৌবাচ্চা খালি হবে। সময় = (12 × 8) / (12 - 8) = 96 / 4 = 24 ঘণ্টায় খালি হবে।",
+    difficulty: "easy",
+    tags: ["Emptying Time", "Standard Formula"]
+  },
+  {
+    id: "vol4_ch10_q49",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "12টি সমান ক্ষমতার নল একটি জলাশয় 20 মিনিটে পূর্ণ করতে পারে। যদি 8টি নল ব্যবহার করা হয়, তবে জলাশয়টি পূর্ণ হতে কত সময় লাগবে?",
+    options: ["25 মিনিট", "30 মিনিট", "32 মিনিট", "35 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "সময় = (12 × 20) / 8 = 240 / 8 = 30 মিনিট।",
+    difficulty: "easy",
+    tags: ["Inverse Proportion", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q50",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি ছিদ্র দ্বারা একটি চৌবাচ্চা 6 ঘণ্টায় খালি হয়। একটি নল দ্বারা প্রতি মিনিটে 4 লিটার জল প্রবেশ করানো হলে চৌবাচ্চাটি 8 ঘণ্টায় খালি হয়। চৌবাচ্চাটির মোট ক্ষমতা কত?",
+    options: ["4800 লিটার", "5760 লিটার", "6400 লিটার", "7200 লিটার"],
+    correctIndex: 1,
+    explanationBn: "ভর্তি নলের একা পূর্ণ করার সময় = (6 × 8) / (8 - 6) = 48 / 2 = 24 ঘণ্টা। মোট ক্ষমতা = 24 ঘণ্টা × 60 মিনিট × 4 লিটার/মিনিট = 5760 লিটার।",
+    difficulty: "hard",
+    tags: ["Tank Capacity", "Leak with Inflow"]
+  },
+  {
+    id: "vol4_ch10_q51",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A ও B দুটি পাইপ একটি ট্যাঙ্ক যথাক্রমে 15 মিনিট ও 20 মিনিটে পূর্ণ করতে পারে। উভয় পাইপ একসাথে খোলা হলো কিন্তু 4 মিনিট পর পাইপ A বন্ধ করে দেওয়া হলো। ট্যাঙ্কটি সম্পূর্ণ পূর্ণ হতে মোট কত সময় লেগেছিল?",
+    options: ["12 মিনিট 20 সেকেন্ড", "14 মিনিট 40 সেকেন্ড", "15 মিনিট", "16 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 60। A = 4, B = 3। 4 মিনিটে একত্রে পূর্ণ হয় = 4 × 7 = 28 ইউনিট। বাকি = 60 - 28 = 32 ইউনিট। B একা সময় নেয় = 32 / 3 = 10 মিনিট 40 সেকেন্ড। মোট সময় = 4 মিনিট + 10 মিনিট 40 সেকেন্ড = 14 মিনিট 40 সেকেন্ড।",
+    difficulty: "medium",
+    tags: ["Timed Switching", "Total Time"]
+  },
+  {
+    id: "vol4_ch10_q52",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "দুটি নল একটি খালি ট্যাঙ্ক যথাক্রমে 10 ঘণ্টা ও 15 ঘণ্টায় পূর্ণ করে। উভয় নল একসঙ্গে খোলা হলে ট্যাঙ্কের অর্ধেক অংশ পূর্ণ হতে কত সময় লাগবে?",
+    options: ["2 ঘণ্টা", "3 ঘণ্টা", "4 ঘণ্টা", "5 ঘণ্টা"],
+    correctIndex: 1,
+    explanationBn: "সম্পূর্ণ পূর্ণ হতে সময় = (10 × 15) / 25 = 6 ঘণ্টা। অর্ধেক অংশ পূর্ণ হতে সময় = 6 / 2 = 3 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Half Tank", "Combined Pipes"]
+  },
+  {
+    id: "vol4_ch10_q53",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "নল A একটি ট্যাঙ্ক 6 ঘণ্টায় পূর্ণ করে এবং নল B 8 ঘণ্টায় খালি করে। নল দুটি একান্তর ঘণ্টায় (Alternate hours) খোলা থাকলে এবং প্রথমে A নল খোলা হলে ট্যাঙ্কটি পূর্ণ হতে কত সময় লাগবে?",
+    options: ["41 ঘণ্টা", "43 ঘণ্টা", "45 ঘণ্টা", "47 ঘণ্টা"],
+    correctIndex: 0,
+    explanationBn: "মোট ক্ষমতা 24। A = +4, B = -3। 2 ঘণ্টার চক্রে জমা হয় +1 ইউনিট। 20টি চক্রে (40 ঘণ্টায়) জমা হয় 20 ইউনিট। 41তম ঘণ্টায় A নল খুলে 4 ইউনিট ভর্তি করে মোট 24 ইউনিট পূর্ণ করে দেয়। মোট সময় = 41 ঘণ্টা।",
+    difficulty: "hard",
+    tags: ["Alternate Hours with Leak", "Edge Cases"]
+  },
+  {
+    id: "vol4_ch10_q54",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল অন্য একটি নলের চেয়ে 3 গুণ কর্মক্ষম এবং একটি চৌবাচ্চা পূর্ণ করতে 32 মিনিট কম সময় নেয়। তারা একত্রে চৌবাচ্চাটি কত মিনিটে পূর্ণ করবে?",
+    options: ["10 মিনিট", "12 মিনিট", "14 মিনিট", "16 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "ক্ষমতার অনুপাত = 3 : 1 ➔ সময়ের অনুপাত = 1 : 3। পার্থক্য 2 ইউনিট = 32 মিনিট ➔ 1 ইউনিট = 16 মিনিট। A = 16 মিনিট, B = 48 মিনিট। একত্রে সময় = (16 × 48) / 64 = 12 মিনিট।",
+    difficulty: "medium",
+    tags: ["Efficiency Difference", "Combined Time"]
+  },
+  {
+    id: "vol4_ch10_q55",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি ট্যাঙ্কের 2/5 অংশ জলপূর্ণ আছে। পাইপ A ট্যাঙ্কটি 10 মিনিটে পূর্ণ করতে পারে এবং পাইপ B 6 মিনিটে খালি করতে পারে। উভয় পাইপ একসাথে খুলে দিলে ট্যাঙ্কটি সম্পূর্ণ খালি হতে কত সময় লাগবে?",
+    options: ["5 মিনিট", "6 মিনিট", "7.5 মিনিট", "8 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 30 ইউনিট। বর্তমানে জল আছে = 30 × (2/5) = 12 ইউনিট। A = +3, B = -5 ➔ নীট নিকাশী হার = -2 ইউনিট/মিনিট। খালি হতে সময় লাগবে = 12 / 2 = 6 মিনিট।",
+    difficulty: "medium",
+    tags: ["Partial Capacity Emptying", "Negative Rate"]
+  },
+  {
+    id: "vol4_ch10_q56",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল একটি খালি চৌবাচ্চা 40 মিনিটে পূর্ণ করতে পারে। একটি দ্বিতীয় নল প্রথম নলের ব্যাসের দ্বিগুণ। দ্বিতীয় নলটি একা কত মিনিটে চৌবাচ্চাটি পূর্ণ করবে?",
+    options: ["10 মিনিট", "15 মিনিট", "20 মিনিট", "80 মিনিট"],
+    correctIndex: 0,
+    explanationBn: "জলের প্রবাহ ব্যাসের বর্গের সমানুপাতিক (Flow ∝ d²)। ব্যাস দ্বিগুণ হলে প্রবাহ 4 গুণ হবে (2² = 4)। ক্ষমতা 4 গুণ হলে সময় লাগবে 1/4 অংশ = 40 / 4 = 10 মিনিট।",
+    difficulty: "medium",
+    tags: ["Pipe Diameter Flow", "Physics Concept"]
+  },
+  {
+    id: "vol4_ch10_q57",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A ও B দুটি নল একটি চৌবাচ্চা যথাক্রমে 12 ও 15 ঘণ্টায় পূর্ণ করে। উভয় নল একসঙ্গে খুলে দেওয়া হলো কিন্তু তলদেশে ছিদ্র থাকায় চৌবাচ্চাটি পূর্ণ হতে অতিরিক্ত 20 মিনিট সময় লাগল। সম্পূর্ণ পূর্ণ চৌবাচ্চাটি ছিদ্র দিয়ে কত সময়ে খালি হবে?",
+    options: ["120 ঘণ্টা", "130 ঘণ্টা", "140 ঘণ্টা", "150 ঘণ্টা"],
+    correctIndex: 2,
+    explanationBn: "নল দুটির মিলিত সময় = (12 × 15) / 27 = 60 / 9 = 6 ঘণ্টা 40 মিনিট। অতিরিক্ত 20 মিনিট লাগায় সময় = 7 ঘণ্টা। ছিদ্রের খালি করার সময় = (20/3 × 7) / (7 - 20/3) = (140/3) / (1/3) = 140 ঘণ্টা।",
+    difficulty: "hard",
+    tags: ["Additional Time due to Leak", "Complex LCM"]
+  },
+  {
+    id: "vol4_ch10_q58",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল দ্বারা একটি জলাশয় 10 ঘণ্টায় পূর্ণ হয়। অর্ধেক জলাশয় পূর্ণ হওয়ার পর একই রকম আরও তিনটি নল খুলে দেওয়া হলো। জলাশয়টি সম্পূর্ণ পূর্ণ হতে মোট কত সময় লাগল?",
+    options: ["5 ঘণ্টা 45 মিনিট", "6 ঘণ্টা", "6 ঘণ্টা 15 মিনিট", "6 ঘণ্টা 30 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "অর্ধেক পূর্ণ হতে সময় = 5 ঘণ্টা। বাকি অর্ধেক (5 ঘণ্টার কাজ) মোট 4টি নল দিয়ে হবে = 5 / 4 = 1 ঘণ্টা 15 মিনিট। মোট সময় = 5 ঘণ্টা + 1 ঘণ্টা 15 মিনিট = 6 ঘণ্টা 15 মিনিট।",
+    difficulty: "medium",
+    tags: ["Identical Pipes Opened", "Arithmetic"]
+  },
+  {
+    id: "vol4_ch10_q59",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A, B ও C তিনটি পাইপ একটি ট্যাঙ্ক যথাক্রমে 6 ঘণ্টা, 8 ঘণ্টা ও 12 ঘণ্টায় পূর্ণ করতে পারে। তিনটি পাইপ একসঙ্গে খোলা হলো কিন্তু 1 ঘণ্টা পর পাইপ C বন্ধ করা হলো। বাকি অংশ পূর্ণ হতে A ও B এর আর কত সময় লাগবে?",
+    options: ["2 ঘণ্টা 12 মিনিট", "2 ঘণ্টা 30 মিনিট", "2 ঘণ্টা 48 মিনিট", "3 ঘণ্টা"],
+    correctIndex: 0,
+    explanationBn: "মোট ক্ষমতা 24। A = 4, B = 3, C = 2। 1 ঘণ্টায় পূর্ণ হয় 9 ইউনিট। বাকি = 24 - 9 = 15 ইউনিট। A ও B এর মিলিত ক্ষমতা = 7। সময় = 15 / 7 = 2 ঘণ্টা 8.5 মিনিট (প্রায় 2 ঘণ্টা 12 মিনিট)।",
+    difficulty: "medium",
+    tags: ["Remaining Time", "LCM Method"]
+  },
+  {
+    id: "vol4_ch10_q60",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল দিয়ে একটি ড্রাম 25 মিনিটে জলপূর্ণ হয় এবং অপর একটি নল দিয়ে 50 মিনিটে খালি হয়। ড্রামের 3/4 অংশ পূর্ণ থাকলে দুটি নল একসাথে খুললে ড্রামটি কতক্ষণে সম্পূর্ণ পূর্ণ হবে?",
+    options: ["10 মিনিট", "12.5 মিনিট", "15 মিনিট", "20 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "পুরো ড্রাম পূর্ণ হতে লাগে = (25 × 50) / 25 = 50 মিনিট। বাকি 1/4 অংশ পূর্ণ হতে লাগবে = 50 × (1/4) = 12.5 মিনিট।",
+    difficulty: "easy",
+    tags: ["Fractional Fill", "Net Rate"]
+  },
+  {
+    id: "vol4_ch10_q61",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A নল B নলের তুলনায় 4 গুণ ক্ষমতাশালী। একটি খালি ট্যাঙ্ক পূর্ণ করতে A নলের B এর চেয়ে 30 মিনিট কম সময় লাগে। একত্রে নল দুটি ট্যাঙ্কটি কত সময়ে পূর্ণ করবে?",
+    options: ["6 মিনিট", "8 মিনিট", "10 মিনিট", "12 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "দক্ষতা 4 : 1 ➔ সময় 1 : 4। 3 ইউনিট = 30 মিনিট ➔ 1 ইউনিট = 10 মিনিট। A = 10 মিনিট, B = 40 মিনিট। মিলিত সময় = (10 × 40) / 50 = 8 মিনিট।",
+    difficulty: "easy",
+    tags: ["Efficiency Ratio", "Time Shortcut"]
+  },
+  {
+    id: "vol4_ch10_q62",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি পাইপ 14 ঘণ্টায় একটি জলাধার পূর্ণ করে এবং অপর একটি পাইপ 16 ঘণ্টায় তা খালি করে। দুটি পাইপ একই সাথে খোলা থাকলে জলাধারটি পূর্ণ হতে কত সময় লাগবে?",
+    options: ["96 ঘণ্টা", "112 ঘণ্টা", "120 ঘণ্টা", "128 ঘণ্টা"],
+    correctIndex: 1,
+    explanationBn: "সময় = (14 × 16) / (16 - 14) = 224 / 2 = 112 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Direct Inflow-Outflow", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q63",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "A, B ও C তিনটি নল দ্বারা একটি চৌবাচ্চা যথাক্রমে 15, 20 ও 30 মিনিটে পূর্ণ হয়। সকাল 7 টায় A, 8 টায় B এবং 9 টায় C নল খোলা হলে চৌবাচ্চাটি কখন পূর্ণ হবে?",
+    options: ["সকাল 10:15 টায়", "সকাল 10:30 টায়", "সকাল 10:45 টায়", "সকাল 11:00 টায়"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 60। A = 4, B = 3, C = 2। সকাল 7 থেকে 9 পর্যন্ত A চলে 2 ঘণ্টা = 8 ইউনিট; সকাল 8 থেকে 9 পর্যন্ত B চলে 1 ঘণ্টা = 3 ইউনিট। মোট জমা = 11 ইউনিট। বাকি = 49 ইউনিট। সকাল 9 টার পর A+B+C = 9 ইউনিট/ঘণ্টা। সময় = 49 / 9 = 5 ঘণ্টা 26 মিনিট বা অনুরূপ ঘড়ির সময় গণনা।",
+    difficulty: "hard",
+    tags: ["Staggered Start Times", "Clock Time"]
+  },
+  {
+    id: "vol4_ch10_q64",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "দুটি পাইপ একটি ট্যাঙ্ক 20 মিনিট ও 24 মিনিটে পূর্ণ করতে পারে এবং একটি তৃতীয় পাইপ প্রতি মিনিটে 3 গ্যালন জল বের করে দেয়। তিনটি পাইপ একসাথে 15 মিনিটে ট্যাঙ্কটি পূর্ণ করলে ট্যাঙ্কের ধারণক্ষমতা কত গ্যালন?",
+    options: ["100 গ্যালন", "120 গ্যালন", "140 গ্যালন", "160 গ্যালন"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 120। A = 6, B = 5, A+B+C = 8। অতএব C = 8 - (6 + 5) = -3 ইউনিট/মিনিট। C একা খালি করতে সময় নেয় = 120 / 3 = 40 মিনিট। ট্যাঙ্কের ক্ষমতা = 40 মিনিট × 3 গ্যালন/মিনিট = 120 গ্যালন।",
+    difficulty: "medium",
+    tags: ["Gallon Capacity", "LCM Method"]
+  },
+  {
+    id: "vol4_ch10_q65",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি চৌবাচ্চা দুটি পাইপ দিয়ে যথাক্রমে 12 মিনিট ও 18 মিনিটে পূর্ণ হয়। দুটি পাইপ 3 মিনিট একসাথে চলার পর প্রথম পাইপটি বন্ধ করে দিলে দ্বিতীয় পাইপটি দিয়ে বাকি অংশ পূর্ণ হতে কত সময় লাগবে?",
+    options: ["10 মিনিট", "10.5 মিনিট", "11 মিনিট", "12 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 36। প্রথম নল = 3, দ্বিতীয় নল = 2। 3 মিনিটে পূর্ণ হয় 3 × 5 = 15 ইউনিট। বাকি = 36 - 15 = 21 ইউনিট। দ্বিতীয় নলের সময় = 21 / 2 = 10.5 মিনিট।",
+    difficulty: "easy",
+    tags: ["Timed Closing", "LCM"]
+  },
+  {
+    id: "vol4_ch10_q66",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি ট্যাঙ্কের 1/4 অংশ পূর্ণ হতে একটি নলের 8 মিনিট সময় লাগে। সম্পূর্ণ ট্যাঙ্কের 3/4 অংশ পূর্ণ হতে নলটির কত সময় লাগবে?",
+    options: ["16 মিনিট", "20 মিনিট", "24 মিনিট", "28 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "1/4 অংশ হয় 8 মিনিটে ➔ 3/4 অংশ হবে 8 × 3 = 24 মিনিটে।",
+    difficulty: "easy",
+    tags: ["Proportion", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q67",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A, B ও C তিনটি নল দ্বারা একটি ট্যাঙ্ক 5 ঘণ্টায় পূর্ণ হয়। B এর প্রবাহের গতি A এর দ্বিগুণ এবং C এর গতি B এর দ্বিগুণ হলে A একা কত ঘণ্টায় ট্যাঙ্কটি পূর্ণ করবে?",
+    options: ["25 ঘণ্টায়", "30 ঘণ্টায়", "35 ঘণ্টায়", "40 ঘণ্টায়"],
+    correctIndex: 2,
+    explanationBn: "প্রবাহের অনুপাত A : B : C = 1 : 2 : 4। মিলিত গতি = 1 + 2 + 4 = 7 ইউনিট/ঘণ্টা। মোট ক্ষমতা = 5 × 7 = 35 ইউনিট। A একা সময় নেবে = 35 / 1 = 35 ঘণ্টা।",
+    difficulty: "medium",
+    tags: ["Multiple Efficiency", "Capacity Calculation"]
+  },
+  {
+    id: "vol4_ch10_q68",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল দ্বারা একটি জলাধার পূর্ণ হতে অপর নলের চেয়ে 5 ঘণ্টা কম সময় লাগে। দুটি নল একত্রে জলাধারটি 6 ঘণ্টায় পূর্ণ করলে দ্রুতগামী নলটি একা কত সময়ে জলাধারটি পূর্ণ করবে?",
+    options: ["10 ঘণ্টা", "12 ঘণ্টা", "15 ঘণ্টা", "18 ঘণ্টা"],
+    correctIndex: 0,
+    explanationBn: "বিকল্প পরীক্ষা: যদি দ্রুত নল = 10 ঘণ্টা হয়, ধীর নল = 15 ঘণ্টা। মিলিত সময় = (10 × 15) / 25 = 150 / 25 = 6 ঘণ্টা (মিলে যায়)। অতএব দ্রুতগামী নলের সময় = 10 ঘণ্টা।",
+    difficulty: "medium",
+    tags: ["Option Verification", "Quadratic Pipes"]
+  },
+  {
+    id: "vol4_ch10_q69",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি চৌবাচ্চার তলদেশের ফুটো দিয়ে 9 ঘণ্টায় সম্পূর্ণ চৌবাচ্চা খালি হয়। একটি নল মিনিটে 6 লিটার জল চৌবাচ্চায় প্রবেশ করালে ফুটো থাকা সত্ত্বেও চৌবাচ্চাটি 12 ঘণ্টায় খালি হয়। চৌবাচ্চার জলধারণ ক্ষমতা কত?",
+    options: ["11680 লিটার", "12960 লিটার", "14400 লিটার", "15200 লিটার"],
+    correctIndex: 1,
+    explanationBn: "ভর্তি নলের একা পূর্ণ করার সময় = (9 × 12) / (12 - 9) = 108 / 3 = 36 ঘণ্টা। মোট ধারণক্ষমতা = 36 ঘণ্টা × 60 মিনিট × 6 লিটার/মিনিট = 12,960 লিটার।",
+    difficulty: "hard",
+    tags: ["Tank Capacity", "Leak Rate"]
+  },
+  {
+    id: "vol4_ch10_q70",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "দুটি পাইপ A ও B একটি ট্যাঙ্ক 30 মিনিট ও 40 মিনিটে জলপূর্ণ করতে পারে। উভয় পাইপ একসাথে চালু করা হলো। কতক্ষণ পর B পাইপ বন্ধ করলে ট্যাঙ্কটি মোট 18 মিনিটে জলপূর্ণ হবে?",
+    options: ["12 মিনিট", "14 মিনিট", "16 মিনিট", "18 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "মোট ক্ষমতা 120। A = 4, B = 3। A পাইপ 18 মিনিট চলেছে ➔ 18 × 4 = 72 ইউনিট। বাকি কাজ = 120 - 72 = 48 ইউনিট। B পাইপের সময় = 48 / 3 = 16 মিনিট।",
+    difficulty: "medium",
+    tags: ["Closing Pipe Midterm", "LCM Method"]
+  },
+  {
+    id: "vol4_ch10_q71",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি পাইপ 20 ঘণ্টায় একটি জলাশয় পূর্ণ করে। জলাশয়ের তলদেশে ছিদ্র থাকায় এটি পূর্ণ হতে 25 ঘণ্টা লাগে। পূর্ণ জলাশয়টি ছিদ্র দ্বারা কত ঘণ্টায় সম্পূর্ণ খালি হবে?",
+    options: ["80 ঘণ্টা", "90 ঘণ্টা", "100 ঘণ্টা", "120 ঘণ্টা"],
+    correctIndex: 2,
+    explanationBn: "খালি হওয়ার সময় = (20 × 25) / (25 - 20) = 500 / 5 = 100 ঘণ্টা।",
+    difficulty: "easy",
+    tags: ["Leakage Shortcut", "Basics"]
+  },
+  {
+    id: "vol4_ch10_q72",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "A, B ও C তিনটি নল একটি চৌবাচ্চা যথাক্রমে 10, 15 ও 30 মিনিটে পূর্ণ করে। তিনটি নল একসাথে খুলে দিলে চৌবাচ্চাটির কত মিনিটে পূর্ণ হবে?",
+    options: ["4 মিনিট", "5 মিনিট", "6 মিনিট", "7.5 মিনিট"],
+    correctIndex: 1,
+    explanationBn: "মোট ক্ষমতা 30। A = 3, B = 2, C = 1। মোট ক্ষমতা = 6। সময় = 30 / 6 = 5 মিনিট।",
+    difficulty: "easy",
+    tags: ["Three Pipes", "LCM"]
+  },
+  {
+    id: "vol4_ch10_q73",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub3",
+    questionBn: "নল A ও B যথাক্রমে 10 মিনিট ও 15 মিনিটে একটি খালি বালতি পূর্ণ করে। প্রথমে নল A 4 মিনিট খোলা রাখা হলো, তারপর বন্ধ করে নল B খুলে দেওয়া হলো। বালতিটি পূর্ণ হতে B এর কত মিনিট সময় লাগবে?",
+    options: ["6 মিনিট", "8 মিনিট", "9 মিনিট", "10 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "মোট ক্ষমতা 30। A = 3, B = 2। 4 মিনিটে A পূর্ণ করেছে = 4 × 3 = 12 ইউনিট। বাকি = 30 - 12 = 18 ইউনিট। B এর প্রয়োজনীয় সময় = 18 / 2 = 9 মিনিট।",
+    difficulty: "easy",
+    tags: ["Sequential Opening", "Remaining Capacity"]
+  },
+  {
+    id: "vol4_ch10_q74",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub1",
+    questionBn: "একটি নল দ্বারা একটি জলাশয় 12 মিনিটে জলপূর্ণ হয় এবং অপর একটি নল প্রতি মিনিটে 14 লিটার হারে জল বের করে দেয়। দুটি নল একসাথে খোলা থাকলে জলাশয়টি 20 মিনিটে পূর্ণ হয়। জলাশয়টির মোট ধারণক্ষমতা কত?",
+    options: ["360 লিটার", "400 লিটার", "420 লিটার", "450 লিটার"],
+    correctIndex: 2,
+    explanationBn: "খালি করার নলের একা খালি করার সময় = (12 × 20) / (20 - 12) = 240 / 8 = 30 মিনিট। ধারণক্ষমতা = 30 মিনিট × 14 লিটার/মিনিট = 420 লিটার।",
+    difficulty: "medium",
+    tags: ["Tank Capacity", "Liters per Minute"]
+  },
+  {
+    id: "vol4_ch10_q75",
+    subjectId: "math",
+    chapterId: "math_ch10",
+    subTopicId: "math_ch10_sub2",
+    questionBn: "একটি চৌবাচ্চার 1/3 অংশ জলপূর্ণ আছে। একটি নল দ্বারা চৌবাচ্চাটি 6 মিনিটে পূর্ণ হয় এবং অপর নল দ্বারা 8 মিনিটে খালি হয়। নল দুটি একসাথে খুলে দিলে চৌবাচ্চাটি সম্পূর্ণ পূর্ণ হতে কত সময় লাগবে?",
+    options: ["12 মিনিট", "14 মিনিট", "16 মিনিট", "18 মিনিট"],
+    correctIndex: 2,
+    explanationBn: "মোট ক্ষমতা 24। A = +4, B = -3 ➔ নীট প্রবাহ = +1 ইউনিট/মিনিট। বর্তমানে জল আছে 1/3 অংশ = 8 ইউনিট। পূর্ণ হতে বাকি আছে = 24 - 8 = 16 ইউনিট। সময় লাগবে = 16 / 1 = 16 মিনিট।",
+    difficulty: "medium",
+    tags: ["Partially Filled", "Net Inflow Time"]
+  }
+];

@@ -1,0 +1,55 @@
+import { StudyChapter, Question } from "../../types";
+import { MATH_CH1_STUDY, MATH_CH1_QUESTIONS } from "./chapter1";
+import { MATH_CH2_STUDY, MATH_CH2_QUESTIONS } from "./chapter2";
+import { MATH_CH3_STUDY, MATH_CH3_QUESTIONS } from "./chapter3";
+import { MATH_CH4_STUDY, MATH_CH4_QUESTIONS } from "./chapter4";
+import { MATH_CH5_STUDY, MATH_CH5_QUESTIONS } from "./chapter5";
+import { MATH_CH6_STUDY, MATH_CH6_QUESTIONS } from "./chapter6";
+import { MATH_CH7_STUDY, MATH_CH7_QUESTIONS } from "./chapter7";
+import { MATH_CH8_STUDY, MATH_CH8_QUESTIONS } from "./chapter8";
+import { MATH_CH9_STUDY, MATH_CH9_QUESTIONS } from "./chapter9";
+import { MATH_CH10_STUDY, MATH_CH10_QUESTIONS } from "./chapter10";
+import { MATH_CH11_STUDY, MATH_CH11_QUESTIONS } from "./chapter11";
+import { MATH_CH12_STUDY, MATH_CH12_QUESTIONS } from "./chapter12";
+import { MATH_CH13_STUDY, MATH_CH13_QUESTIONS } from "./chapter13";
+import { MATH_CH14_STUDY, MATH_CH14_QUESTIONS } from "./chapter14";
+import { MATH_CH15_STUDY, MATH_CH15_QUESTIONS } from "./chapter15";
+import { MATH_CH16_STUDY, MATH_CH16_QUESTIONS } from "./chapter16";
+
+export const MATH_VOL4_CHAPTERS: StudyChapter[] = [
+  MATH_CH1_STUDY,
+  MATH_CH2_STUDY,
+  MATH_CH3_STUDY,
+  MATH_CH4_STUDY,
+  MATH_CH5_STUDY,
+  MATH_CH6_STUDY,
+  MATH_CH7_STUDY,
+  MATH_CH8_STUDY,
+  MATH_CH9_STUDY,
+  MATH_CH10_STUDY,
+  MATH_CH11_STUDY,
+  MATH_CH12_STUDY,
+  MATH_CH13_STUDY,
+  MATH_CH14_STUDY,
+  MATH_CH15_STUDY,
+  MATH_CH16_STUDY,
+];
+
+export const MATH_VOL4_QUESTIONS: Question[] = [
+  ...MATH_CH1_QUESTIONS,
+  ...MATH_CH2_QUESTIONS,
+  ...MATH_CH3_QUESTIONS,
+  ...MATH_CH4_QUESTIONS,
+  ...MATH_CH5_QUESTIONS,
+  ...MATH_CH6_QUESTIONS,
+  ...MATH_CH7_QUESTIONS,
+  ...MATH_CH8_QUESTIONS,
+  ...MATH_CH9_QUESTIONS,
+  ...MATH_CH10_QUESTIONS,
+  ...MATH_CH11_QUESTIONS,
+  ...MATH_CH12_QUESTIONS,
+  ...MATH_CH13_QUESTIONS,
+  ...MATH_CH14_QUESTIONS,
+  ...MATH_CH15_QUESTIONS,
+  ...MATH_CH16_QUESTIONS,
+];

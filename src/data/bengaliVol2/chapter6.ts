@@ -1,0 +1,701 @@
+import { StudyChapter, Question } from "../../types";
+
+export const BENGALI_CH6_STUDY: StudyChapter = {
+  id: "bengali_ch6",
+  subjectId: "bengali",
+  chapterNumber: 6,
+  titleBn: "লিঙ্গ, বচন ও পুরুষ",
+  titleEn: "Gender, Number and Person in Bengali Grammar",
+  estimatedMinutes: 30,
+  importantNotesCount: 20,
+  summary: "লিঙ্গের প্রকারভেদ (পুংলিঙ্গ, স্ত্রীলিঙ্গ, ক্লীবলিঙ্গ, উভলিঙ্গ), নিত্য স্ত্রীলিঙ্গ ও নিত্য পুংলিঙ্গ, বচনের প্রকারভেদ (একবচন ও বহুবচন), বহুবচন গঠনের প্রত্যয় এবং পুরুষের প্রকারভেদ (উত্তম, মধ্যম ও প্রথম পুরুষ)।",
+  subTopics: [
+    {
+      id: "bengali_ch6_sub1",
+      chapterId: "bengali_ch6",
+      subjectId: "bengali",
+      titleBn: "লিঙ্গের সংজ্ঞা ও প্রকারভেদ",
+      titleEn: "Definition & Types of Gender",
+      orderIndex: 1,
+      summaryBn: "লিঙ্গ শব্দের অর্থ চিহ্ন বা লক্ষণ। ৪ প্রকার: পুংলিঙ্গ (পিতা, বালক), স্ত্রীলিঙ্গ (মাতা, বালিকা), ক্লীবলিঙ্গ (বই, কলম), উভলিঙ্গ (মানুষ, সন্তান, শিশু, পাখি)।",
+      keyConcepts: ["লিঙ্গ = চিহ্ন/লক্ষণ", "পুংলিঙ্গ, স্ত্রীলিঙ্গ, ক্লীবলিঙ্গ, উভলিঙ্গ", "উভলিঙ্গের উদাহরণ: মানুষ, সন্তান, ডাক্তার, কবি, পুলিশ"]
+    },
+    {
+      id: "bengali_ch6_sub2",
+      chapterId: "bengali_ch6",
+      subjectId: "bengali",
+      titleBn: "নিত্য স্ত্রীলিঙ্গ ও নিত্য পুংলিঙ্গ শব্দ",
+      titleEn: "Invariable Genders (Always Feminine/Masculine)",
+      orderIndex: 2,
+      summaryBn: "নিত্য স্ত্রীলিঙ্গ (যার পুংলিঙ্গ রূপ হয় না): সতীন, সধবা, এয়ো, বিধবা, ডাইনি, রূপসী, কুলটা। নিত্য পুংলিঙ্গ: কবিরাজ, বিপত্নীক, ঢাকি, কৃতদার, অকৃতদার।",
+      keyConcepts: ["নিত্য স্ত্রীলিঙ্গ: সতীন, সধবা, এয়ো, বিধবা, ডাইনি, রূপসী", "নিত্য পুংলিঙ্গ: কবিরাজ, বিপত্নীক, ঢাকি, কৃতদার, সেনাপতি"]
+    },
+    {
+      id: "bengali_ch6_sub3",
+      chapterId: "bengali_ch6",
+      subjectId: "bengali",
+      titleBn: "বচনের প্রকারভেদ ও বহুবচনের নিয়ম",
+      titleEn: "Number (Singular, Plural & Suffixes)",
+      orderIndex: 3,
+      summaryBn: "বচন অর্থ সংখ্যার ধারণা। একবচন ও বহুবচন। প্রাণীবাচক বহুবচন (গণ, বৃন্দ, মণ্ডলী, বর্গ), অপ্রাণীবাচক (গুচ্ছ, পুঞ্জ, রাশি, রাজি, দাম, নিচয়), দ্বিরুক্তি প্রয়োগ।",
+      keyConcepts: ["বচন = সংখ্যার ধারণা", "প্রাণীবাচক বহুবচন: ছাত্রবৃন্দ, সুধীবৃন্দ, ভক্তমণ্ডলী, শিক্ষকগণ", "অপ্রাণীবাচক বহুবচন: পর্বতমালা, কুসুমদাম, মেঘপুঞ্জ, কমলরাজি", "দ্বৈত বহুবচন দোষ (সকল ছাত্রগণ ভুল -> সকল ছাত্র / ছাত্রগণ)"]
+    },
+    {
+      id: "bengali_ch6_sub4",
+      chapterId: "bengali_ch6",
+      subjectId: "bengali",
+      titleBn: "পুরুষের প্রকারভেদ ও প্রয়োগ",
+      titleEn: "Person (First, Second & Third Person)",
+      orderIndex: 4,
+      summaryBn: "উত্তম পুরুষ (আমি, আমরা, আমাকে), মধ্যম পুরুষ (তুমি, তোমরা, আপনি, তোরা) এবং প্রথম পুরুষ বা নাম পুরুষ (সে, তারা, তিনি, রাম, যদু)।",
+      keyConcepts: ["উত্তম পুরুষ: আমি, আমরা (বক্তা নিজে)", "মধ্যম পুরুষ: তুমি, আপনি, তুই (শ্রোতা)", "প্রথম পুরুষ (নাম পুরুষ): সে, তিনি, রাম (যার সম্বন্ধে বলা হয়)"]
+    }
+  ],
+  content: {
+    introduction: "বাংলা ব্যাকরণে লিঙ্গ, বচন ও পুরুষ রূপতত্ত্বের অন্যতম গুরুত্বপূর্ণ অংশ। লিঙ্গ দিয়ে পুরুষ-স্ত্রী-অচেতন ভেদ, বচন দিয়ে সংখ্যার ধারণা এবং পুরুষ দিয়ে বক্তা-শ্রোতা-অন্যের অবস্থান নির্ধারিত হয়।",
+    sections: [
+      {
+        heading: "১. লিঙ্গ ও তার রূপান্তর",
+        body: [
+          "১. লিঙ্গ চার প্রকার: পুংলিঙ্গ (বাবা, ভাই), স্ত্রীলিঙ্গ (মা, বোন), ক্লীবলিঙ্গ (জল, পাথর, টেবিল), উভলিঙ্গ (সন্তান, শিশু, পাখি, মানুষ, ডাক্তার)।",
+          "২. নিত্য স্ত্রীলিঙ্গ: সতীন, সধবা, এয়ো, বিধবা, ডাইনি, রূপসী, কুলটা, অন্তঃসত্ত্বা।",
+          "৩. নিত্য পুংলিঙ্গ: কবিরাজ, বিপত্নীক, ঢাকি, কৃতদার, অকৃতদার, কাপুরুষ।",
+          "৪. স্ত্রীপ্রত্যয়: ঈ (নর > নারী), নী (বাঘ > বাঘিনী, কামার > কামারনী), আনী (ইন্দ্র > ইন্দ্রাণী, মাতুল > মাতুলানী)।"
+        ],
+        keyPoints: [
+          "উভলিঙ্গ: সন্তান, মানুষ, শিশু, পাখি, বাঙালি।",
+          "নিত্য স্ত্রীলিঙ্গ: সতীন, সধবা, এয়ো, বিধবা, ডাইনি।",
+          "নিত্য পুংলিঙ্গ: কবিরাজ, বিপত্নীক, কৃতদার, ঢাকি।"
+        ]
+      },
+      {
+        heading: "২. বচন ও পুরুষের নিয়ম",
+        body: [
+          "৫. বচন দুই প্রকার: একবচন (একটি বস্তু বা প্রাণী) ও বহুবচন (একাধিক)।",
+          "৬. অপ্রাণীবাচক বহুবচন শব্দ: মালা (পর্বতমালা), গুচ্ছ (কেশগুচ্ছ), পুঞ্জ (মেঘপুঞ্জ), রাজি (তারকারাজি), দাম (কুসুমদাম), নিচয় (পুষ্পনিচয়)।",
+          "৭. দ্বৈত বহুবচন প্রয়োগের ভুল: 'সকল শিক্ষকগণ' অশুদ্ধ — সঠিক হলো 'সকল শিক্ষক' অথবা 'শিক্ষকগণ' ('সব মানুষগুলো' ভুল -> 'সব মানুষ' বা 'মানুষগুলো')।",
+          "৮. পুরুষ তিন প্রকার: উত্তম পুরুষ (আমি/আমরা), মধ্যম পুরুষ (তুমি/তোমরা/আপনি) এবং প্রথম পুরুষ (সে/তিনি/তারা/যেকোনো নাম)।"
+        ],
+        keyPoints: [
+          "পর্বতের বহুবচন = পর্বতমালা; কুসুমের বহুবচন = কুসুমদাম।",
+          "বাংলায় Third Person-কে বলে প্রথম পুরুষ বা নাম পুরুষ।",
+          "একত্রে দুটি বহুবচন প্রত্যয় প্রয়োগ ব্যাকরণগত ভুল (দ্বৈত প্রয়োগের দোষ)।"
+        ]
+      }
+    ],
+    examTips: [
+      "'সন্তান' কোন লিঙ্গের শব্দ? উত্তর: উভলিঙ্গ।",
+      "নিচের কোনটি নিত্য স্ত্রীলিঙ্গ শব্দ? উত্তর: সতীন / সধবা / এয়ো।",
+      "'কুসুম' শব্দের সঠিক বহুবচন কোনটি? উত্তর: কুসুমদাম।",
+      "বাংলা ব্যাকরণে 'Third Person'-কে কী বলা হয়? উত্তর: প্রথম পুরুষ (বা নাম পুরুষ)।"
+    ],
+    quickRevisionPoints: [
+      "উত্তম পুরুষ = আমি, আমরা, মোরা, আমাকে।",
+      "মধ্যম পুরুষ = তুমি, তোমরা, আপনি, তোরা, তোমাদিগকে।",
+      "প্রথম পুরুষ = সে, তাহারা, তিনি, রাম, শ্যাম, ছাত্রটি।"
+    ]
+  }
+};
+
+export const BENGALI_CH6_QUESTIONS: Question[] = [
+  {
+    id: "vol2_ch6_q1",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub1",
+    questionBn: "'লিঙ্গ' শব্দের ব্যাকরণগত অর্থ কী?",
+    options: ["শব্দ", "চিহ্ন বা লক্ষণ", "বাক্য", "পুরুষ"],
+    correctIndex: 1,
+    explanationBn: "লিঙ্গ শব্দের সংস্কৃত ব্যাকরণগত অর্থ হলো চিহ্ন, লক্ষণ বা প্রকৃতি।",
+    difficulty: "easy",
+    tags: ["লিঙ্গ", "অর্থ"]
+  },
+  {
+    id: "vol2_ch6_q2",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub1",
+    questionBn: "বাংলা ভাষায় লিঙ্গ প্রধানত কয় প্রকার?",
+    options: ["২ প্রকার", "৩ প্রকার", "৪ প্রকার", "৫ প্রকার"],
+    correctIndex: 2,
+    explanationBn: "বাংলায় লিঙ্গ ৪ প্রকার: পুংলিঙ্গ, স্ত্রীলিঙ্গ, ক্লীবলিঙ্গ এবং উভলিঙ্গ।",
+    difficulty: "easy",
+    tags: ["লিঙ্গের প্রকার", "৪ প্রকার"]
+  },
+  {
+    id: "vol2_ch6_q3",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub1",
+    questionBn: "নিচের কোনটি উভলিঙ্গ শব্দের উদাহরণ?",
+    options: ["বই", "সন্তান", "বালিকা", "পিতা"],
+    correctIndex: 1,
+    explanationBn: "'সন্তান' দ্বারা ছেলে বা মেয়ে উভয়কেই বোঝানো যায়, তাই এটি উভলিঙ্গ।",
+    difficulty: "easy",
+    tags: ["উভলিঙ্গ", "সন্তান"]
+  },
+  {
+    id: "vol2_ch6_q4",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub1",
+    questionBn: "নিচের কোনটি ক্লীবলিঙ্গ শব্দ?",
+    options: ["শিশু", "পাখি", "কলম", "কবি"],
+    correctIndex: 2,
+    explanationBn: "'কলম' একটি অপ্রাণিবাচক অচেতন বস্তু, তাই এটি ক্লীবলিঙ্গ।",
+    difficulty: "easy",
+    tags: ["ক্লীবলিঙ্গ", "কলম"]
+  },
+  {
+    id: "vol2_ch6_q5",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "যেসব স্ত্রীবাচক শব্দের কোনো পুংলিঙ্গ রূপ নেই, তাদের কী বলে?",
+    options: ["নিত্য স্ত্রীলিঙ্গ", "উভলিঙ্গ", "ক্লীবলিঙ্গ", "সাধারণ স্ত্রীলিঙ্গ"],
+    correctIndex: 0,
+    explanationBn: "যেসব শব্দের কোনো পুরুষবাচক প্রতিশব্দ নেই, তাদের নিত্য স্ত্রীলিঙ্গ শব্দ বলে।",
+    difficulty: "easy",
+    tags: ["নিত্য স্ত্রীলিঙ্গ", "সংজ্ঞা"]
+  },
+  {
+    id: "vol2_ch6_q6",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "নিচের কোনটি নিত্য স্ত্রীলিঙ্গ শব্দের উদাহরণ?",
+    options: ["সতীন", "শিক্ষিকা", "গায়িকা", "জননী"],
+    correctIndex: 0,
+    explanationBn: "'সতীন', 'সধবা', 'এয়ো' ইত্যাদি নিত্য স্ত্রীলিঙ্গ শব্দ।",
+    difficulty: "easy",
+    tags: ["নিত্য স্ত্রীলিঙ্গ", "সতীন"]
+  },
+  {
+    id: "vol2_ch6_q7",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "নিচের কোনটি নিত্য পুংলিঙ্গ শব্দ?",
+    options: ["ডাক্তার", "কবিরাজ", "শিক্ষক", "বাঘ"],
+    correctIndex: 1,
+    explanationBn: "'কবিরাজ', 'বিপত্নীক', 'ঢাকি' ইত্যাদি নিত্য পুংলিঙ্গ শব্দ।",
+    difficulty: "easy",
+    tags: ["নিত্য পুংলিঙ্গ", "কবিরাজ"]
+  },
+  {
+    id: "vol2_ch6_q8",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'বিপত্নীক' শব্দটির অর্থ কী?",
+    options: ["পত্নীযুক্ত", "যার স্ত্রী মারা গেছে", "অবিবাহিত", "বহুবিবাহকারী"],
+    correctIndex: 1,
+    explanationBn: "যার স্ত্রী মারা গেছে তাকে বিপত্নীক বলা হয় (নিত্য পুংলিঙ্গ)।",
+    difficulty: "easy",
+    tags: ["বিপত্নীক", "অর্থ"]
+  },
+  {
+    id: "vol2_ch6_q9",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'ইন্দ্র' শব্দের সঠিক স্ত্রীলিঙ্গ রূপ কোনটি?",
+    options: ["ইন্দ্রা", "ইন্দ্রাণী", "ইন্দ্রিকা", "ইন্দ্রিনী"],
+    correctIndex: 1,
+    explanationBn: "ইন্দ্র + আনী = ইন্দ্রাণী।",
+    difficulty: "easy",
+    tags: ["ইন্দ্রাণী", "স্ত্রীলিঙ্গ"]
+  },
+  {
+    id: "vol2_ch6_q10",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'মাতুল' শব্দের স্ত্রীলিঙ্গ রূপ কী?",
+    options: ["মাতুলী", "মাতুলানী", "মাতুলা", "মাতুলিকা"],
+    correctIndex: 1,
+    explanationBn: "মাতুল (মামা) এর স্ত্রীলিঙ্গ মাতুলানী (মামি)।",
+    difficulty: "easy",
+    tags: ["মাতুলানী", "মাতুল"]
+  },
+  {
+    id: "vol2_ch6_q11",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'বচন' শব্দের ব্যাকরণগত অর্থ কী?",
+    options: ["কথা", "সংখ্যার ধারণা", "বাক্য", "ভাষণ"],
+    correctIndex: 1,
+    explanationBn: "ব্যাকরণে বচন বলতে বিশেষ্য বা সর্বনামের সংখ্যার ধারণাকে বোঝায়।",
+    difficulty: "easy",
+    tags: ["বচন", "সংখ্যার ধারণা"]
+  },
+  {
+    id: "vol2_ch6_q12",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "বাংলায় বচন কয় প্রকার?",
+    options: ["২ প্রকার", "৩ প্রকার", "৪ প্রকার", "১ প্রকার"],
+    correctIndex: 0,
+    explanationBn: "বাংলা ভাষায় বচন দুই প্রকার: একবচন ও বহুবচন।",
+    difficulty: "easy",
+    tags: ["বচন", "২ প্রকার"]
+  },
+  {
+    id: "vol2_ch6_q13",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "নিচের কোন প্রত্যয়টি কেবল অপ্রাণিবাচক শব্দের বহুবচনে ব্যবহৃত হয়?",
+    options: ["বৃন্দ", "গণ", "রাজি", "বর্গ"],
+    correctIndex: 2,
+    explanationBn: "রাজি (যেমন: তারকারাজি, দ্বীপরাজি) কেবল অপ্রাণিবাচক শব্দে ব্যবহৃত হয়। বৃন্দ, গণ, বর্গ প্রাণিবাচক শব্দে বসে।",
+    difficulty: "easy",
+    tags: ["অপ্রাণিবাচক বহুবচন", "রাজি"]
+  },
+  {
+    id: "vol2_ch6_q14",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'কুসুম' শব্দের সঙ্গে কোন বহুবচনবাচক শব্দ বসে?",
+    options: ["দাম", "মালা", "বৃন্দ", "বর্গ"],
+    correctIndex: 0,
+    explanationBn: "কুসুমের বহুবচন রূপ হলো 'কুসুমদাম' (পুষ্পস্তবক/ফুলের সমষ্টি)।",
+    difficulty: "easy",
+    tags: ["কুসুমদাম", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q15",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'পর্বত' শব্দের সঙ্গে কোন বহুবচনবাচক শব্দ বসে?",
+    options: ["বৃন্দ", "মালা", "দাম", "মণ্ডল"],
+    correctIndex: 1,
+    explanationBn: "পর্বতের শ্রেণি বা সমষ্টিকে 'পর্বতমালা' বলা হয়।",
+    difficulty: "easy",
+    tags: ["পর্বতমালা", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q16",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'মেঘ' শব্দের সঙ্গে কোনটি ব্যবহৃত হয়?",
+    options: ["বৃন্দ", "পুঞ্জ", "দাম", "বর্গ"],
+    correctIndex: 1,
+    explanationBn: "মেঘের সমষ্টি হলো 'মেঘপুঞ্জ'।",
+    difficulty: "easy",
+    tags: ["মেঘপুঞ্জ", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q17",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'সুধী' শব্দের সাথে কোন বহুবচনবাচক প্রত্যয় যুক্ত হয়?",
+    options: ["দাম", "বৃন্দ", "পুঞ্জ", "রাজি"],
+    correctIndex: 1,
+    explanationBn: "সুধীজনদের ক্ষেত্রে 'সুধীবৃন্দ' ব্যবহৃত হয়।",
+    difficulty: "easy",
+    tags: ["সুধীবৃন্দ", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q18",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'সকল ছাত্রগণ উপস্থিত আছে' — বাক্যটিতে কী ধরনের ত্রুটি রয়েছে?",
+    options: ["বানান ভুল", "গুরুচণ্ডালী দোষ", "দ্বৈত বহুবচন দোষ", "লিঙ্গঘটিত ভুল"],
+    correctIndex: 2,
+    explanationBn: "একত্রে 'সকল' এবং 'গণ' দুটি বহুবচন শব্দ ব্যবহৃত হওয়ায় এটি দ্বৈত বহুবচন দোষে দুষ্ট।",
+    difficulty: "easy",
+    tags: ["দ্বৈত বহুবচন", "ব্যাকরণগত ভুল"]
+  },
+  {
+    id: "vol2_ch6_q19",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "বাংলা ব্যাকরণে 'পুরুষ' কয় প্রকার?",
+    options: ["২ প্রকার", "৩ প্রকার", "৪ প্রকার", "৫ প্রকার"],
+    correctIndex: 1,
+    explanationBn: "পুরুষ তিন প্রকার: উত্তম পুরুষ (First Person), মধ্যম পুরুষ (Second Person) এবং প্রথম পুরুষ (Third Person)।",
+    difficulty: "easy",
+    tags: ["পুরুষ", "৩ প্রকার"]
+  },
+  {
+    id: "vol2_ch6_q20",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "বক্তা নিজে কোন পুরুষের অন্তর্গত?",
+    options: ["উত্তম পুরুষ", "মধ্যম পুরুষ", "প্রথম পুরুষ", "নাম পুরুষ"],
+    correctIndex: 0,
+    explanationBn: "বক্তা নিজেকে বোঝাতে যে সর্বনাম ব্যবহার করে তা উত্তম পুরুষ (আমি, আমরা)।",
+    difficulty: "easy",
+    tags: ["উত্তম পুরুষ", "বক্তা"]
+  },
+  {
+    id: "vol2_ch6_q21",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "'তুমি', 'তোমরা', 'আপনি' কোন পুরুষের উদাহরণ?",
+    options: ["উত্তম পুরুষ", "মধ্যম পুরুষ", "প্রথম পুরুষ", "কোনোটিই নয়"],
+    correctIndex: 1,
+    explanationBn: "শ্রোতাকে সম্বোধন করে যে পদ ব্যবহৃত হয় তা মধ্যম পুরুষ।",
+    difficulty: "easy",
+    tags: ["মধ্যম পুরুষ", "তুমি তোমরা"]
+  },
+  {
+    id: "vol2_ch6_q22",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "ইংরেজি ব্যাকরণের 'Third Person'-কে বাংলায় কী বলা হয়?",
+    options: ["উত্তম পুরুষ", "মধ্যম পুরুষ", "প্রথম পুরুষ বা নাম পুরুষ", "তৃতীয় পুরুষ"],
+    correctIndex: 2,
+    explanationBn: "Third Person-কে বাংলা ব্যাকরণে প্রথম পুরুষ বা নাম পুরুষ বলা হয়।",
+    difficulty: "easy",
+    tags: ["প্রথম পুরুষ", "Third Person"]
+  },
+  {
+    id: "vol2_ch6_q23",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "নিচের কোনটি প্রথম পুরুষ (বা নাম পুরুষ)-এর উদাহরণ?",
+    options: ["আমি", "তুমি", "তিনি", "আমরা"],
+    correctIndex: 2,
+    explanationBn: "'তিনি' হলেন উপস্থিত শ্রোতা বা বক্তা ছাড়া অন্য কোনো ব্যক্তি (প্রথম পুরুষ)।",
+    difficulty: "easy",
+    tags: ["তিনি", "প্রথম পুরুষ"]
+  },
+  {
+    id: "vol2_ch6_q24",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub1",
+    questionBn: "'পাখি' শব্দটি কোন লিঙ্গ?",
+    options: ["পুংলিঙ্গ", "স্ত্রীলিঙ্গ", "ক্লীবলিঙ্গ", "উভলিঙ্গ"],
+    correctIndex: 3,
+    explanationBn: "'পাখি' দ্বারা পুরুষ বা স্ত্রী উভয় জাতীয় পাখিকে বোঝায়, তাই এটি উভলিঙ্গ।",
+    difficulty: "easy",
+    tags: ["পাখি", "উভলিঙ্গ"]
+  },
+  {
+    id: "vol2_ch6_q25",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'সধবা' শব্দটির বিপরীত লিঙ্গ কোনটি?",
+    options: ["সধব", "বিধবা", "এর পুংলিঙ্গ নেই (নিত্য স্ত্রীলিঙ্গ)", "বিপত্নীক"],
+    correctIndex: 2,
+    explanationBn: "'সধবা' একটি নিত্য স্ত্রীলিঙ্গ শব্দ, এর কোনো পুরুষবাচক রূপ নেই।",
+    difficulty: "easy",
+    tags: ["সধবা", "নিত্য স্ত্রীলিঙ্গ"]
+  },
+  {
+    id: "vol2_ch6_q26",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'ধাত্রী' শব্দটির পুংলিঙ্গ রূপ কোনটি?",
+    options: ["ধাতা", "ধাত্র", "ধা", "ধাত্রক"],
+    correctIndex: 0,
+    explanationBn: "ধাতা (পুংলিঙ্গ) > ধাত্রী (স্ত্রীলিঙ্গ)।",
+    difficulty: "easy",
+    tags: ["ধাতা", "ধাত্রী"]
+  },
+  {
+    id: "vol2_ch6_q27",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'নেতা' শব্দের সঠিক স্ত্রীলিঙ্গ রূপ কী?",
+    options: ["নেতানি", "নেত্রী", "নেতিকা", "নেত্রিনী"],
+    correctIndex: 1,
+    explanationBn: "নেতা > নেত্রী (তা স্থানে ত্রী)।",
+    difficulty: "easy",
+    tags: ["নেতা", "নেত্রী"]
+  },
+  {
+    id: "vol2_ch6_q28",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'অভিনেতা' শব্দের স্ত্রীলিঙ্গ রূপ কোনটি?",
+    options: ["অভিনেত্রী", "অভিনেতানি", "অভিনয়ী", "অভিনেতিকা"],
+    correctIndex: 0,
+    explanationBn: "অভিনেতা > অভিনেত্রী।",
+    difficulty: "easy",
+    tags: ["অভিনেতা", "অভিনেত্রী"]
+  },
+  {
+    id: "vol2_ch6_q29",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'শ্রীমান' শব্দের সঠিক স্ত্রীলিঙ্গ রূপ কী?",
+    options: ["শ্রীমতী", "শ্রীমতি", "শ্রীমতা", "শ্রীময়ী"],
+    correctIndex: 0,
+    explanationBn: "শ্রীমান > শ্রীমতী (মান স্থানে মতী)।",
+    difficulty: "easy",
+    tags: ["শ্রীমান", "শ্রীমতী"]
+  },
+  {
+    id: "vol2_ch6_q30",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'বুদ্ধিমান' শব্দের স্ত্রীলিঙ্গ রূপ কোনটি?",
+    options: ["বুদ্ধিমতি", "বুদ্ধিমতী", "বুদ্ধিময়ী", "বুদ্ধিমতা"],
+    correctIndex: 1,
+    explanationBn: "বুদ্ধিমান > বুদ্ধিমতী (মান স্থানে মতী)।",
+    difficulty: "easy",
+    tags: ["বুদ্ধিমান", "বুদ্ধিমতী"]
+  },
+  {
+    id: "vol2_ch6_q31",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'কাগজ' শব্দের সঙ্গে কোন বহুবচন প্রত্যয়টি বসে?",
+    options: ["পত্র", "রাজি", "দাম", "বৃন্দ"],
+    correctIndex: 0,
+    explanationBn: "কাগজের বহুবচন রূপে 'কাগজপত্র' ব্যবহৃত হয়।",
+    difficulty: "easy",
+    tags: ["কাগজপত্র", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q32",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'দ্বীপ' শব্দের সঙ্গে কোন বহুবচন শব্দ বসে?",
+    options: ["রাজি বা পুঞ্জ", "দাম", "বৃন্দ", "মণ্ডল"],
+    correctIndex: 0,
+    explanationBn: "দ্বীপের বহুবচন দ্বীপরাজি বা দ্বীপপুঞ্জ।",
+    difficulty: "easy",
+    tags: ["দ্বীপপুঞ্জ", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q33",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'ভক্ত' শব্দের সাথে কোনটি বসে?",
+    options: ["দাম", "মণ্ডলী", "রাজি", "গুচ্ছ"],
+    correctIndex: 1,
+    explanationBn: "ভক্তের বহুবচন ভক্তমণ্ডলী।",
+    difficulty: "easy",
+    tags: ["ভক্তমণ্ডলী", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q34",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'শিক্ষক' শব্দের সঙ্গে কোন বহুবচন প্রত্যয় মানানসই?",
+    options: ["রাজি", "পুঞ্জ", "সমাজ বা গণ", "দাম"],
+    correctIndex: 2,
+    explanationBn: "শিক্ষকগণ বা শিক্ষকসমাজ মানানসই।",
+    difficulty: "easy",
+    tags: ["শিক্ষকগণ", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q35",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "'মোরা একটি ফুলকে বাঁচাবো বলে যুদ্ধ করি' — 'মোরা' কোন পুরুষ?",
+    options: ["উত্তম পুরুষ", "মধ্যম পুরুষ", "প্রথম পুরুষ", "নাম পুরুষ"],
+    correctIndex: 0,
+    explanationBn: "'মোরা' হলো 'আমরা'-র কাব্যিক রূপ (উত্তম পুরুষ বহুবচন)।",
+    difficulty: "easy",
+    tags: ["মোরা", "উত্তম পুরুষ"]
+  },
+  {
+    id: "vol2_ch6_q36",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "'তোরা সব জয়ধ্বনি কর' — 'তোরা' কোন পুরুষ?",
+    options: ["উত্তম পুরুষ", "মধ্যম পুরুষ", "প্রথম পুরুষ", "কোনোটিই নয়"],
+    correctIndex: 1,
+    explanationBn: "'তোরা' হলো মধ্যম পুরুষের তুচ্ছার্থক বা ঘনিষ্ঠ বহুবচন রূপ।",
+    difficulty: "easy",
+    tags: ["তোরা", "মধ্যম পুরুষ"]
+  },
+  {
+    id: "vol2_ch6_q37",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'বিদ্যান' শব্দের সঠিক স্ত্রীলিঙ্গ রূপ কোনটি?",
+    options: ["বিদূষী", "বিদ্যানী", "বিদ্যবতী", "বিদ্যা"],
+    correctIndex: 0,
+    explanationBn: "বিদ্যান (বিদ্বান) > বিদূষী।",
+    difficulty: "easy",
+    tags: ["বিদূষী", "স্ত্রীলিঙ্গ"]
+  },
+  {
+    id: "vol2_ch6_q38",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'গরীয়ান' শব্দের স্ত্রীলিঙ্গ রূপ কী?",
+    options: ["গরীয়সী", "গরীয়ানী", "গরিয়সী", "গরিষ্ঠা"],
+    correctIndex: 0,
+    explanationBn: "গরীয়ান > গরীয়সী।",
+    difficulty: "easy",
+    tags: ["গরীয়ান", "গরীয়সী"]
+  },
+  {
+    id: "vol2_ch6_q39",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'সম্রাট' শব্দের সঠিক স্ত্রীলিঙ্গ রূপ কোনটি?",
+    options: ["সম্রাজ্ঞী", "সম্রাটী", "সম্রাটিনী", "রাণী"],
+    correctIndex: 0,
+    explanationBn: "সম্রাট > সম্রাজ্ঞী।",
+    difficulty: "easy",
+    tags: ["সম্রাট", "সম্রাজ্ঞী"]
+  },
+  {
+    id: "vol2_ch6_q40",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'যুবক' শব্দের স্ত্রীলিঙ্গ রূপ কী?",
+    options: ["যুবতী", "যুবিকা", "যুবতিনী", "তরুণী"],
+    correctIndex: 0,
+    explanationBn: "যুবক > যুবতী।",
+    difficulty: "easy",
+    tags: ["যুবক", "যুবতী"]
+  },
+  {
+    id: "vol2_ch6_q41",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'মৃগ' শব্দের স্ত্রীলিঙ্গ রূপ কোনটি?",
+    options: ["মৃগী", "মৃগয়া", "মৃগিনী", "মৃগিকা"],
+    correctIndex: 0,
+    explanationBn: "মৃগ > মৃগী।",
+    difficulty: "easy",
+    tags: ["মৃগ", "মৃগী"]
+  },
+  {
+    id: "vol2_ch6_q42",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub1",
+    questionBn: "'বাঙালি' শব্দটি কোন লিঙ্গের দৃষ্টান্ত?",
+    options: ["পুংলিঙ্গ", "স্ত্রীলিঙ্গ", "উভলিঙ্গ", "ক্লীবলিঙ্গ"],
+    correctIndex: 2,
+    explanationBn: "'বাঙালি' জাতিবাচক শব্দ, যা পুরুষ-মহিলা নির্বিশেষে উভয়কেই বোঝায়।",
+    difficulty: "easy",
+    tags: ["বাঙালি", "উভলিঙ্গ"]
+  },
+  {
+    id: "vol2_ch6_q43",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'এয়ো' শব্দটি কোন লিঙ্গ?",
+    options: ["নিত্য স্ত্রীলিঙ্গ", "উভলিঙ্গ", "ক্লীবলিঙ্গ", "নিত্য পুংলিঙ্গ"],
+    correctIndex: 0,
+    explanationBn: "'এয়ো' (সধবা নারী) একটি নিত্য স্ত্রীলিঙ্গ শব্দ।",
+    difficulty: "easy",
+    tags: ["এয়ো", "নিত্য স্ত্রীলিঙ্গ"]
+  },
+  {
+    id: "vol2_ch6_q44",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'ঢাকি' শব্দটির কোনো স্ত্রীলিঙ্গ নেই, তাই এটি—",
+    options: ["নিত্য পুংলিঙ্গ", "নিত্য স্ত্রীলিঙ্গ", "উভলিঙ্গ", "ক্লীবলিঙ্গ"],
+    correctIndex: 0,
+    explanationBn: "'ঢাকি' হলো নিত্য পুংলিঙ্গ শব্দ।",
+    difficulty: "easy",
+    tags: ["ঢাকি", "নিত্য পুংলিঙ্গ"]
+  },
+  {
+    id: "vol2_ch6_q45",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'বালি' শব্দের সাথে কোনটি বসে?",
+    options: ["রাশি", "দাম", "বৃন্দ", "মণ্ডলী"],
+    correctIndex: 0,
+    explanationBn: "বালির বহুবচন বালুরাশি বা বালিরাশি।",
+    difficulty: "easy",
+    tags: ["বালুরাশি", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q46",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "'তারকা' শব্দের সঙ্গে কোন বহুবচন শব্দ বসে?",
+    options: ["রাজি", "দাম", "বৃন্দ", "বর্গ"],
+    correctIndex: 0,
+    explanationBn: "তারকার বহুবচন তারকারাজি।",
+    difficulty: "easy",
+    tags: ["তারকারাজি", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q47",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub4",
+    questionBn: "'সে প্রতিদিন স্কুলে যায়' — 'সে' কোন পুরুষ?",
+    options: ["প্রথম পুরুষ", "উত্তম পুরুষ", "মধ্যম পুরুষ", "কোনোটিই নয়"],
+    correctIndex: 0,
+    explanationBn: "'সে' হলো প্রথম পুরুষ (বা নাম পুরুষ)।",
+    difficulty: "easy",
+    tags: ["সে", "প্রথম পুরুষ"]
+  },
+  {
+    id: "vol2_ch6_q48",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub3",
+    questionBn: "বিশেষ্যের দ্বিরুক্তির মাধ্যমে বহুবচন হয়েছে কোনটিতে?",
+    options: ["হাঁড়ি হাঁড়ি সন্দেশ", "অনেক লোক", "সকল ছাত্র", "পাখির দল"],
+    correctIndex: 0,
+    explanationBn: "'হাঁড়ি হাঁড়ি' একই শব্দের পুনরাবৃত্তি (দ্বিরুক্তি) দ্বারা বহুবচন বোঝায়।",
+    difficulty: "easy",
+    tags: ["দ্বিরুক্তি", "বহুবচন"]
+  },
+  {
+    id: "vol2_ch6_q49",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'যোগী' শব্দের স্ত্রীলিঙ্গ রূপ কোনটি?",
+    options: ["যোগিনী", "যোগিকা", "যোগ্যা", "যোগিনীয়া"],
+    correctIndex: 0,
+    explanationBn: "যোগী > যোগিনী।",
+    difficulty: "easy",
+    tags: ["যোগী", "যোগিনী"]
+  },
+  {
+    id: "vol2_ch6_q50",
+    subjectId: "bengali",
+    chapterId: "bengali_ch6",
+    subTopicId: "bengali_ch6_sub2",
+    questionBn: "'সন্ন্যাসী' শব্দের স্ত্রীলিঙ্গ রূপ কী?",
+    options: ["সন্ন্যাসিনী", "সন্ন্যাসিকা", "সন্ন্যাসীনি", "সন্ন্যাস্যা"],
+    correctIndex: 0,
+    explanationBn: "সন্ন্যাসী > সন্ন্যাসিনী (দন্ত্য-ন-এ হ্রস্ব ই-কার)।",
+    difficulty: "easy",
+    tags: ["সন্ন্যাসী", "সন্ন্যাসিনী"]
+  }
+];

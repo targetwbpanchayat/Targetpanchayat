@@ -1,0 +1,864 @@
+import { StudyChapter, Question } from "../../types";
+
+export const CHAPTER_2_STUDY: StudyChapter = {
+  id: "panchayat_ch2",
+  subjectId: "panchayat",
+  chapterNumber: 2,
+  titleBn: "পশ্চিমবঙ্গ পঞ্চায়েত আইন, ১৯৭৩",
+  titleEn: "West Bengal Panchayat Act, 1973",
+  estimatedMinutes: 30,
+  importantNotesCount: 20,
+  summary: "১৯৭৩ সালের পশ্চিমবঙ্গ পঞ্চায়েত আইনের ভিত্তি, ৪-স্তর থেকে ৩-স্তরে রূপান্তর, ১৯৭৮ সালের ঐতিহাসিক নির্বাচন, দলীয় প্রতীক, ১৯৯২/১৯৯৪/২০১০ সালের সংশোধনী এবং প্রশাসনিক বিধিবিধান।",
+  subTopics: [
+    {
+      id: "panchayat_ch2_sub1",
+      chapterId: "panchayat_ch2",
+      subjectId: "panchayat",
+      titleBn: "১৯৭৩ আইনের ভিত্তি ও বাস্তবায়ন",
+      titleEn: "Foundation & Implementation of 1973 Act",
+      orderIndex: 1,
+      summaryBn: "১৯৫৭ ও ১৯৬৩ সালের পুরাতন আইন বাতিল, ১৯৭৪ সালে রাষ্ট্রপতির সম্মতি লাভ এবং ৪-স্তরীয় ব্যবস্থার অবসান ঘটিয়ে ৩-স্তরীয় পঞ্চায়েত চালু।",
+      keyConcepts: ["১৯৫৭ ও ১৯৬৩ সালের আইন বাতিল", "১৯৭৪ সালের জুন মাসে রাষ্ট্রপতির সম্মতি", "৪-স্তর (গ্রাম, অঞ্চল, আঞ্চলিক ও জেলা) থেকে ৩-স্তরে রূপান্তর", "মোট ৪টি তফসিল (Schedules)"]
+    },
+    {
+      id: "panchayat_ch2_sub2",
+      chapterId: "panchayat_ch2",
+      subjectId: "panchayat",
+      titleBn: "১৯৭৮ সালের ঐতিহাসিক নির্বাচন ও দলীয় প্রতীক",
+      titleEn: "1978 Historic Election & Political Party Symbols",
+      orderIndex: 2,
+      summaryBn: "ভারতে প্রথম দলীয় প্রতীকে নির্বাচন, নিয়মিত ৫ বছর অন্তর ভোটদান এবং পঞ্চায়েত ব্যবস্থার আধুনিকীকরণ।",
+      keyConcepts: ["১৯৭৮ সালে প্রথম দলীয় প্রতীকে ভোট", "বামফ্রন্ট সরকারের আমলে ঐতিহাসিক নির্বাচন", "নিয়মিত প্রতি ৫ বছর অন্তর নির্বাচন"]
+    },
+    {
+      id: "panchayat_ch2_sub3",
+      chapterId: "panchayat_ch2",
+      subjectId: "panchayat",
+      titleBn: "গুরুত্বপূর্ণ সংশোধনীসমূহ (১৯৯২, ১৯৯৪, ২০০৩ ও ২০১০)",
+      titleEn: "Key Amendments (1992, 1994, 2003, 2010)",
+      orderIndex: 3,
+      summaryBn: "১৯৯২ সালে গ্রাম সংসদ, ১৯৯৪ সালে গ্রাম সভা, ২০০৩ সালে গ্রামোন্নয়ন কমিটি (VDC), ২০১০ সালে নারীদের ৫০% সংরক্ষণ।",
+      keyConcepts: ["১৯৯২ সংশোধনী - গ্রাম সংসদ যুক্তকরণ", "১৯৯৪ সংশোধনী - গ্রাম সভা স্পষ্টকরণ", "২০০৩ সংশোধনী - গ্রামোন্নয়ন কমিটি (VDC)", "২০১০ সংশোধনী - মহিলাদের ৫০% আসন সংরক্ষণ"]
+    },
+    {
+      id: "panchayat_ch2_sub4",
+      chapterId: "panchayat_ch2",
+      subjectId: "panchayat",
+      titleBn: "প্রশাসনিক প্রতিষ্ঠান ও আধিকারিকদের ভূমিকা",
+      titleEn: "Administrative Bodies & Role of Officers",
+      orderIndex: 4,
+      summaryBn: "রাজ্য নির্বাচন কমিশন (১৯৯৪), প্রথম রাজ্য অর্থ কমিশন (১৯৯৫), BDO (পঞ্চায়েত সমিতি EO), জেলাশাসক (জেলা পরিষদ EO), সচিব ও ট্যাক্স কালেক্টর।",
+      keyConcepts: ["রাজ্য নির্বাচন কমিশন (১৯৯৪)", "রাজ্য অর্থ কমিশন (১৯৯৫)", "BDO - পঞ্চায়েত সমিতির এক্সিকিউটিভ অফিসার", "DM - জেলা পরিষদের এক্সিকিউটিভ অফিসার", "সচিব (Secretary) - স্থায়ী সরকারি কর্মী ও নথিপত্র সংরক্ষক"]
+    },
+    {
+      id: "panchayat_ch2_sub5",
+      chapterId: "panchayat_ch2",
+      subjectId: "panchayat",
+      titleBn: "আর্থিক ব্যবস্থাপনা, অডিট ও অনাস্থা প্রস্তাব",
+      titleEn: "Financial Management, Audit & No-Confidence Motion",
+      orderIndex: 5,
+      summaryBn: "গ্রাম পঞ্চায়েত ফান্ড, ELFA অডিট, ১/৩ সদস্যের স্বাক্ষরে অনাস্থা প্রস্তাব, ১৫ দিনের নোটিশে তলবি সভা।",
+      keyConcepts: ["গ্রাম পঞ্চায়েত ফান্ড (ফান্ড)", "ELFA (Examiner of Local Fund Accounts) অডিট", "অনাস্থা প্রস্তাব - ১/৩ সদস্যের নোটিশ BDO-কে", "১৫ দিনের মধ্যে তলবি সভা ও পদচ্যুতি", "মাসে অন্তত ১টি সাধারণ সভা বাধ্যতামূলক"]
+    }
+  ],
+  content: {
+    introduction: "১৯৭৩ সালের পশ্চিমবঙ্গ পঞ্চায়েত আইন (West Bengal Panchayat Act, 1973) রাজ্যের স্থানীয় স্বায়ত্তশাসনের রূপরেখা সম্পূর্ণ পুনর্গঠন করে। এটি পুরাতন ৪-স্তরীয় ব্যবস্থার জটিলতা দূর করে আধুনিক ত্রিস্তরীয় পঞ্চায়েত কাঠামো প্রতিষ্ঠা করে।",
+    sections: [
+      {
+        heading: "১. আইনের ঐতিহাসিক ভিত্তি ও বাস্তবায়ন (1973 Act Foundation)",
+        body: [
+          "১৯৭৩ সালের পশ্চিমবঙ্গ পঞ্চায়েত আইনটি বিধানসভায় পাস হওয়ার পর ১৯৭৪ সালের জুন মাসে ভারতের রাষ্ট্রপতির আনুষ্ঠানিক সম্মতি লাভ করে এবং কার্যকর হয়।",
+          "এই আইনের মাধ্যমে ১৯৫৭ সালের পশ্চিমবঙ্গ পঞ্চায়েত আইন এবং ১৯৬৩ সালের পশ্চিমবঙ্গ জেলা পরিষদ আইন বাতিল করা হয়।",
+          "পূর্বে পশ্চিমবঙ্গে গ্রাম পঞ্চায়েত, অঞ্চল পঞ্চায়েত, আঞ্চলিক পরিষদ ও জেলা পরিষদ নিয়ে ৪ স্তরীয় ব্যবস্থা ছিল। ১৯৭৩ সালের আইন তা ভেঙে ৩ স্তরীয় ব্যবস্থা চালু করে।"
+        ],
+        keyPoints: [
+          "আধুনিক পশ্চিমবঙ্গ পঞ্চায়েত আইনে মোট ৪টি তফসিল (Schedules) রয়েছে।",
+          "১৯৭৮ সালে ভারতে প্রথমবার পশ্চিমবঙ্গে রাজনৈতিক দলের দলীয় প্রতীকে পঞ্চায়েত নির্বাচন অনুষ্ঠিত হয়।"
+        ]
+      },
+      {
+        heading: "২. বিভিন্ন সংশোধনী ও সংস্কারসমূহ",
+        body: [
+          "১৯৯২ সালের সংশোধনী: পঞ্চায়েত আইনে 'গ্রাম সংসদ' (Gram Sansad) শব্দটি যুক্ত হয়। প্রতিটি বুথ এলাকার ভোটারদের নিয়ে এটি গঠিত হয়।",
+          "১৯৯৪ সালের সংশোধনী: সমগ্র গ্রাম পঞ্চায়েত এলাকার সমস্ত ভোটারদের নিয়ে 'গ্রাম সভা' (Gram Sabha) গঠনকে সুস্পষ্ট করা হয়। একই বছরে রাজ্য নির্বাচন কমিশন গঠিত হয়।",
+          "২০০৩ সালের সংশোধনী: স্থানীয় মানুষের অংশগ্রহণ বাড়াতে পঞ্চায়েত আইনে গ্রামোন্নয়ন কমিটি (Village Development Committee - VDC) যুক্ত হয়।",
+          "২০১০ সালের সংশোধনী: পঞ্চায়েতের সমস্ত স্তরে মহিলাদের জন্য আসন সংরক্ষণ ৩৩% থেকে বাড়িয়ে ৫০% (অর্ধেক) করা হয়।"
+        ],
+        tables: {
+          headers: ["সংশোধনী সাল", "মূল সংযোজন / পরিবর্তন"],
+          rows: [
+            ["১৯৯২", "বুথ স্তরে 'গ্রাম সংসদ' ধারণা যুক্তকরণ"],
+            ["১৯৯৪", "সমগ্র পঞ্চায়েতের 'গ্রাম সভা' এবং রাজ্য নির্বাচন কমিশন গঠন"],
+            ["১৯৯৫", "পশ্চিমবঙ্গে প্রথম রাজ্য অর্থ কমিশন গঠন"],
+            ["২০০৩", "গ্রামোন্নয়ন কমিটি (VDC) সংযোজন"],
+            ["২০১০", "মহিলাদের আসন সংরক্ষণ ৩৩% থেকে ৫০%-এ বৃদ্ধি"]
+          ]
+        }
+      },
+      {
+        heading: "৩. সদস্য সংখ্যা, ভোটার অনুপাত ও বৈঠক",
+        body: [
+          "গ্রাম পঞ্চায়েতের সদস্য সংখ্যা: ন্যূনতম ৫ জন এবং সর্বাধিক ৩০ জন।",
+          "সমতল এলাকায় প্রতি ৯০০ জন ভোটারের জন্য ১ জন এবং পাহাড়ি এলাকায় প্রতি ৪০০ জন ভোটারের জন্য ১ জন সদস্য নির্বাচিত হন।",
+          "পঞ্চায়েত সমিতিতে সাধারণত প্রতি ৪,৫০০ ভোটারের জন্য ১ জন এবং জেলা পরিষদে প্রতি ৬০,০০০ ভোটারের জন্য ১ জন সদস্য নির্বাচিত হন।",
+          "পঞ্চায়েতের প্রতিটি স্তরে প্রতি মাসে অন্তত ১টি সাধারণ সভা করা আইনত বাধ্যতামূলক।"
+        ],
+        tables: {
+          headers: ["পঞ্চায়েত স্তর", "ভোটার অনুপাত (সমতল)", "ভোটার অনুপাত (পাহাড়)", "প্রশাসনিক নির্বাহী আধিকারিক"],
+          rows: [
+            ["গ্রাম পঞ্চায়েত", "প্রতি ৯০০ ভোটার = ১ সদস্য", "প্রতি ৪০০ ভোটার = ১ সদস্য", "নির্বাহী সহায়ক / সচিব"],
+            ["পঞ্চায়েত সমিতি", "প্রতি ৪,৫০০ ভোটার = ১ সদস্য", "-", "BDO (Executive Officer)"],
+            ["জেলা পরিষদ", "প্রতি ৬০,০০০ ভোটার = ১ সদস্য", "-", "DM (Executive Officer)"]
+          ]
+        }
+      },
+      {
+        heading: "৪. অনাস্থা প্রস্তাব, অডিট ও আর্থিক কাঠামো",
+        body: [
+          "প্রধান বা সভাপতিকে অপসারণ করতে হলে মোট নির্বাচিত সদস্যের অন্তত ১/৩ অংশের স্বাক্ষরসহ BDO-র কাছে লিখিত নোটিশ দিতে হয়।",
+          "নোটিশ পাওয়ার পর BDO ১৫ দিনের সময় দিয়ে বিশেষ তলবি সভা ডাকেন। সভার মোট সদস্যের অর্ধেকের বেশি ভোটে অনাস্থা পাস হয়।",
+          "নতুন প্রধান নির্বাচিত হওয়ার প্রথম ১ বছর এবং একবার অনাস্থা প্রস্তাব খারিজ হলে পরবর্তী ১ বছর কোনো নতুন অনাস্থা প্রস্তাব আনা যায় না।",
+          "পঞ্চায়েতের বাধ্যতামূলক সরকারি হিসাব নিরীক্ষা করে 'এগজামিনার অফ লোকাল ফান্ড অ্যাকাউন্টস' (ELFA)।"
+        ]
+      }
+    ],
+    examTips: [
+      "পশ্চিমবঙ্গ পঞ্চায়েত আইন পাস হয় ১৯৭৩ সালে, রাষ্ট্রপতির সম্মতি পায় ১৯৭৪ সালে এবং প্রথম নির্বাচন হয় ১৯৭৮ সালে।",
+      "পশ্চিমবঙ্গে কলকাতা জেলায় কোনো পঞ্চায়েত বা জেলা পরিষদ নেই।",
+      "দার্জিলিং জেলায় ত্রিস্তর পঞ্চায়েতের বদলে দ্বিস্তরীয় ব্যবস্থা (মহকুমা পরিষদ ও গ্রাম পঞ্চায়েত) রয়েছে।"
+    ],
+    quickRevisionPoints: [
+      "সমতল এলাকায় ১ জন গ্রাম পঞ্চায়েত সদস্য: ৯০০ ভোটারের জন্য।",
+      "পাহাড়ে ১ জন গ্রাম পঞ্চায়েত সদস্য: ৪০০ ভোটারের জন্য।",
+      "পঞ্চায়েত সমিতিতে ১ জন সদস্য: ৪৫০০ ভোটারের জন্য।",
+      "জেলা পরিষদে ১ জন সদস্য: ৬০,০০০ ভোটারের জন্য।",
+      "অনাস্থা প্রস্তাবের নোটিশে স্বাক্ষর লাগে: ১/৩ সদস্যের।"
+    ]
+  }
+};
+
+export const CHAPTER_2_QUESTIONS: Question[] = [
+  // --- PDF MCQs (1 to 50) ---
+  {
+    id: "vol1_ch2_q1",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "পশ্চিমবঙ্গ পঞ্চায়েত আইন কত সালে বিধানসভায় পাস হয়?",
+    options: ["1957", "1973", "1978", "1992"],
+    correctIndex: 1,
+    explanationBn: "পশ্চিমবঙ্গ পঞ্চায়েত আইন ১৯৭৩ সালে পাস হয় এবং ১৯৭৪ সালে কার্যকর হয়।",
+    difficulty: "easy",
+    tags: ["১৯৭৩ আইন", "পশ্চিমবঙ্গ"]
+  },
+  {
+    id: "vol1_ch2_q2",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub2",
+    questionBn: "১৯৭৩ সালের আইন অনুযায়ী পশ্চিমবঙ্গে প্রথম পঞ্চায়েত ভোট কবে হয়?",
+    options: ["1974", "1977", "1978", "1980"],
+    correctIndex: 2,
+    explanationBn: "বামফ্রন্ট সরকারের আমলে ১৯৭৮ সালে পশ্চিমবঙ্গে প্রথম ঐতিহাসিক ত্রিস্তর পঞ্চায়েত ভোট হয়।",
+    difficulty: "easy",
+    tags: ["১৯৭৮ ভোট", "প্রথম নির্বাচন"]
+  },
+  {
+    id: "vol1_ch2_q3",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "পশ্চিমবঙ্গের বর্তমান পঞ্চায়েত ব্যবস্থা কটি স্তরের?",
+    options: ["২ স্তরের", "৩ স্তরের", "৪ স্তরের", "১ স্তরের"],
+    correctIndex: 1,
+    explanationBn: "গ্রাম পঞ্চায়েত, পঞ্চায়েত সমিতি ও জেলা পরিষদ নিয়ে এটি ত্রিস্তরীয় ব্যবস্থা।",
+    difficulty: "easy",
+    tags: ["ত্রিস্তর", "কাঠামো"]
+  },
+  {
+    id: "vol1_ch2_q4",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "একটি গ্রাম পঞ্চায়েতের সর্বনিম্ন সদস্য সংখ্যা কত হতে পারে?",
+    options: ["৩ জন", "৫ জন", "৭ জন", "১০ জন"],
+    correctIndex: 1,
+    explanationBn: "আইন অনুযায়ী একটি গ্রাম পঞ্চায়েতে কমপক্ষে ৫ জন নির্বাচিত সদস্য থাকতে হবে।",
+    difficulty: "easy",
+    tags: ["সর্বনিম্ন সদস্য", "৫ জন"]
+  },
+  {
+    id: "vol1_ch2_q5",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "একটি গ্রাম পঞ্চায়েতের সর্বোচ্চ সদস্য সংখ্যা কত হতে পারে?",
+    options: ["২০ জন", "২৫ জন", "৩০ জন", "৩৫ জন"],
+    correctIndex: 2,
+    explanationBn: "জনসংখ্যার ওপর ভিত্তি করে সর্বোচ্চ ৩০ জন সদস্য একটি গ্রাম পঞ্চায়েতে থাকতে পারেন।",
+    difficulty: "easy",
+    tags: ["সর্বোচ্চ সদস্য", "৩০ জন"]
+  },
+  {
+    id: "vol1_ch2_q6",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "সমতল এলাকায় কতজন ভোটারের জন্য ১ জন গ্রাম পঞ্চায়েত সদস্য নির্বাচিত হন?",
+    options: ["৫০০ জন", "৭০০ জন", "৯০০ জন", "১০০০ জন"],
+    correctIndex: 2,
+    explanationBn: "সাধারণত প্রতি ৯০০ জন ভোটারের মাথাপিছু একজন করে গ্রাম পঞ্চায়েত সদস্য নির্বাচিত হন।",
+    difficulty: "easy",
+    tags: ["৯০০ ভোটার", "সমতল"]
+  },
+  {
+    id: "vol1_ch2_q7",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "পঞ্চায়েত সমিতিতে কতজন ভোটারের জন্য ১ জন সদস্য নির্বাচিত হন?",
+    options: ["৩০০০ জন", "৪৫০০ জন", "৫০০০ জন", "৬০০০ জন"],
+    correctIndex: 1,
+    explanationBn: "ব্লক স্তরে পঞ্চায়েত সমিতির জন্য প্রতি ৪৫০০ ভোটারের জন্য একজন সদস্য নির্বাচিত হন।",
+    difficulty: "easy",
+    tags: ["৪৫০০ ভোটার", "পঞ্চায়েত সমিতি"]
+  },
+  {
+    id: "vol1_ch2_q8",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "জেলা পরিষদে কতজন ভোটারের জন্য ১ জন সদস্য নির্বাচিত হন?",
+    options: ["৪০,০০০ জন", "৫০,০০০ জন", "৬০,০০০ জন", "৭০,০০০ জন"],
+    correctIndex: 2,
+    explanationBn: "জেলা স্তরের সর্বোচ্চ সংস্থায় প্রতি ৬০,০০০ ভোটারের জন্য একজন সদস্য নির্বাচিত হন।",
+    difficulty: "easy",
+    tags: ["৬০,০০০ ভোটার", "জেলা পরিষদ"]
+  },
+  {
+    id: "vol1_ch2_q9",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "পাহাড়ি এলাকায় কতজন ভোটারের জন্য ১ জন গ্রাম পঞ্চায়েত সদস্য নির্বাচিত হন?",
+    options: ["৩০০ জন", "৪০০ জন", "৫০০ জন", "৬০০ জন"],
+    correctIndex: 1,
+    explanationBn: "পাহাড়ে জনসংখ্যার ঘনত্ব কম হওয়ায় ৪০০ ভোটারের জন্যই একজন সদস্য নির্বাচিত হন।",
+    difficulty: "easy",
+    tags: ["৪০০ ভোটার", "পাহাড়"]
+  },
+  {
+    id: "vol1_ch2_q10",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "গ্রাম পঞ্চায়েতের প্রধানকে কে নির্বাচিত করেন?",
+    options: ["গ্রামের সাধারণ মানুষ", "নির্বাচিত সদস্যরা", "BDO", "রাজ্যপাল"],
+    correctIndex: 1,
+    explanationBn: "জনগণ সরাসরি সদস্যদের ভোট দেন, আর সদস্যরা নিজেদের মধ্য থেকে পরোক্ষভাবে প্রধান নির্বাচন করেন।",
+    difficulty: "easy",
+    tags: ["প্রধান নির্বাচন", "পরোক্ষ"]
+  },
+  {
+    id: "vol1_ch2_q11",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "গ্রাম পঞ্চায়েতের প্রধানকে অপসারণ করতে কত অংশের সদস্যের স্বাক্ষর লাগে?",
+    options: ["১/২", "১/৩", "২/৩", "১/৪"],
+    correctIndex: 1,
+    explanationBn: "অনাস্থা প্রস্তাব আনতে হলে মোট সদস্যের এক-তৃতীয়াংশের (১/৩) স্বাক্ষর দিয়ে নোটিশ দিতে হয়।",
+    difficulty: "easy",
+    tags: ["অনাস্থা", "১/৩ অংশ"]
+  },
+  {
+    id: "vol1_ch2_q12",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রাম সংসদের ধারণা কবে পশ্চিমবঙ্গ পঞ্চায়েত আইনে যুক্ত হয়?",
+    options: ["1973", "1992", "1994", "2003"],
+    correctIndex: 1,
+    explanationBn: "মানুষের সরাসরি অংশগ্রহণ বাড়াতে ১৯৯২ সালের সংশোধনীতে গ্রাম সংসদ যুক্ত করা হয়।",
+    difficulty: "easy",
+    tags: ["গ্রাম সংসদ", "১৯৯২"]
+  },
+  {
+    id: "vol1_ch2_q13",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রাম সভার ধারণা কবে পঞ্চায়েত আইনে সুস্পষ্ট করা হয়?",
+    options: ["1973", "1992", "1994", "2003"],
+    correctIndex: 2,
+    explanationBn: "গোটা পঞ্চায়েত এলাকার ভোটারদের নিয়ে গঠিত গ্রাম সভার কথা ১৯৯৪ সালের সংশোধনীতে সুস্পষ্ট হয়।",
+    difficulty: "easy",
+    tags: ["গ্রাম সভা", "১৯৯৪"]
+  },
+  {
+    id: "vol1_ch2_q14",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রাম সংসদের সভা বছরে সাধারণত কবার বসে?",
+    options: ["১ বার", "২ বার", "৩ বার", "৪ বার"],
+    correctIndex: 1,
+    explanationBn: "নিয়ম অনুযায়ী বছরে দুটি সাধারণ সভা করা গ্রাম সংসদের জন্য বাধ্যতামূলক (মে ও নভেম্বর)।",
+    difficulty: "easy",
+    tags: ["গ্রাম সংসদ সভা", "২ বার"]
+  },
+  {
+    id: "vol1_ch2_q15",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রাম সংসদের সভা কোন কোন মাসে অনুষ্ঠিত হয়?",
+    options: ["জানুয়ারি ও জুলাই", "মে ও নভেম্বর", "এপ্রিল ও অক্টোবর", "মার্চ ও সেপ্টেম্বর"],
+    correctIndex: 1,
+    explanationBn: "পঞ্চায়েত আইন অনুযায়ী মে এবং নভেম্বর মাসে গ্রাম সংসদের অর্ধবার্ষিক সভা ডাকা হয়।",
+    difficulty: "easy",
+    tags: ["মে ও নভেম্বর", "গ্রাম সংসদ"]
+  },
+  {
+    id: "vol1_ch2_q16",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রাম সভার বার্ষিক সাধারণ সভা সাধারণত কোন মাসে অনুষ্ঠিত হয়?",
+    options: ["মে", "নভেম্বর", "ডিসেম্বর", "জানুয়ারি"],
+    correctIndex: 2,
+    explanationBn: "বছরের শেষের দিকে ডিসেম্বর মাসে গ্রাম সভার বার্ষিক সাধারণ সভা অনুষ্ঠিত হয়।",
+    difficulty: "easy",
+    tags: ["ডিসেম্বর", "গ্রাম সভা"]
+  },
+  {
+    id: "vol1_ch2_q17",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রাম সংসদের সভার কোরাম কত শতাংশ?",
+    options: ["5%", "10%", "15%", "20%"],
+    correctIndex: 1,
+    explanationBn: "গ্রাম সংসদের সভা বৈধ হতে মোট ভোটারের ১০ শতাংশ বা ১/১০ অংশের উপস্থিতি দরকার।",
+    difficulty: "easy",
+    tags: ["কোরাম", "১০%"]
+  },
+  {
+    id: "vol1_ch2_q18",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রাম সভার বার্ষিক সভার কোরাম কত শতাংশ?",
+    options: ["5%", "10%", "15%", "20%"],
+    correctIndex: 0,
+    explanationBn: "গ্রাম সভার ক্ষেত্রে মোট ভোটারের ৫ শতাংশ বা ১/২০ অংশের উপস্থিতি থাকলেই সভা হয়।",
+    difficulty: "easy",
+    tags: ["কোরাম", "৫%"]
+  },
+  {
+    id: "vol1_ch2_q19",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "পশ্চিমবঙ্গে পঞ্চায়েত নির্বাচনে মহিলাদের জন্য ৫০% সংরক্ষণ কবে চালু হয়?",
+    options: ["2008", "2010", "2012", "2013"],
+    correctIndex: 1,
+    explanationBn: "মহিলাদের ক্ষমতায়নের লক্ষ্যে ২০১০ সালের সংশোধনীতে ৫০% সংরক্ষণের বিল পাস হয়।",
+    difficulty: "easy",
+    tags: ["২০১০", "৫০% সংরক্ষণ"]
+  },
+  {
+    id: "vol1_ch2_q20",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "পঞ্চায়েত সমিতির সরকারি নির্বাহী আধিকারিক (Executive Officer) কে?",
+    options: ["SDO", "BDO", "DM", "SP"],
+    correctIndex: 1,
+    explanationBn: "ব্লক ডেভেলপমেন্ট অফিসার বা BDO হলেন পদাধিকারবলে পঞ্চায়েত সমিতির এক্সিকিউটিভ অফিসার।",
+    difficulty: "easy",
+    tags: ["BDO", "EO"]
+  },
+  {
+    id: "vol1_ch2_q21",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "জেলা পরিষদের সরকারি নির্বাহী আধিকারিক (Executive Officer) কে?",
+    options: ["BDO", "SDO", "DM", "ADM"],
+    correctIndex: 2,
+    explanationBn: "জেলাশাসক (District Magistrate - DM) পদাধিকারবলে জেলা পরিষদের নির্বাহী আধিকারিক হিসেবে কাজ করেন।",
+    difficulty: "easy",
+    tags: ["DM", "জেলা পরিষদ"]
+  },
+  {
+    id: "vol1_ch2_q22",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "গ্রাম পঞ্চায়েতের সচিবকে (Secretary) কে নিয়োগ করেন?",
+    options: ["BDO", "রাজ্য সরকার", "প্রধান", "জেলাশাসক"],
+    correctIndex: 1,
+    explanationBn: "পঞ্চায়েত সচিব রাজ্য সরকার দ্বারা নিয়োজিত একজন স্থায়ী সরকারি কর্মী।",
+    difficulty: "easy",
+    tags: ["সচিব", "নিয়োগ"]
+  },
+  {
+    id: "vol1_ch2_q23",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "গ্রাম পঞ্চায়েতের কাজ পরিচালনার জন্য কয়টি উপ-সমিতি থাকে?",
+    options: ["৩টি", "৪টি", "৫টি", "৬টি"],
+    correctIndex: 2,
+    explanationBn: "স্বাস্থ্য, অর্থ, শিক্ষা, পূর্ত ইত্যাদি বিষয় দেখার জন্য মোট ৫টি উপ-সমিতি গঠন করা হয়।",
+    difficulty: "easy",
+    tags: ["উপ-সমিতি", "৫টি"]
+  },
+  {
+    id: "vol1_ch2_q24",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "পঞ্চায়েত সমিতিতে কয়টি স্থায়ী সমিতি থাকে?",
+    options: ["৫টি", "৭টি", "১০টি", "১২টি"],
+    correctIndex: 2,
+    explanationBn: "ব্লকের বিভিন্ন কাজ সুষ্ঠুভাবে পরিচালনার জন্য পঞ্চায়েত সমিতিতে মোট ১০টি স্থায়ী সমিতি থাকে।",
+    difficulty: "easy",
+    tags: ["১০টি স্থায়ী সমিতি", "পঞ্চায়েত সমিতি"]
+  },
+  {
+    id: "vol1_ch2_q25",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "জেলা পরিষদে কয়টি স্থায়ী সমিতি গঠিত হয়?",
+    options: ["৫টি", "৮টি", "১০টি", "১২টি"],
+    correctIndex: 2,
+    explanationBn: "জেলা স্তরেও সার্বিক কাজের দায়িত্ব পালনের জন্য ১০টি স্থায়ী সমিতি গঠন করা হয়।",
+    difficulty: "easy",
+    tags: ["১০টি স্থায়ী সমিতি", "জেলা পরিষদ"]
+  },
+  {
+    id: "vol1_ch2_q26",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "গ্রাম পঞ্চায়েতের অর্থ ও পরিকল্পনা উপ-সমিতির সভাপতি কে হন?",
+    options: ["উপ-প্রধান", "প্রধান", "বিরোধী দলনেতা", "BDO"],
+    correctIndex: 1,
+    explanationBn: "পদাধিকারবলে গ্রাম পঞ্চায়েতের নির্বাচিত প্রধান নিজেই অর্থ ও পরিকল্পনা উপ-সমিতির সভাপতিত্ব করেন।",
+    difficulty: "easy",
+    tags: ["অর্থ ও পরিকল্পনা", "প্রধান"]
+  },
+  {
+    id: "vol1_ch2_q27",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "নির্বাচনের পর গ্রাম পঞ্চায়েতের প্রথম সভা কে আহ্বান করেন?",
+    options: ["BDO", "প্রধান", "সচিব", "SDO"],
+    correctIndex: 0,
+    explanationBn: "BDO বা তাঁর নিযুক্ত কোনো আধিকারিক প্রথম সভা ডাকেন, যেখানে প্রধান ও উপ-প্রধান নির্বাচন হয়।",
+    difficulty: "easy",
+    tags: ["প্রথম সভা", "BDO"]
+  },
+  {
+    id: "vol1_ch2_q28",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "গ্রামোন্নয়ন কমিটি (VDC) কবে পশ্চিমবঙ্গ পঞ্চায়েত আইনে যুক্ত হয়?",
+    options: ["1994", "2003", "2010", "2015"],
+    correctIndex: 1,
+    explanationBn: "স্থানীয় মানুষের অংশগ্রহণ আরও বাড়াতে ২০০৩ সালের সংশোধনীতে VDC যুক্ত হয়।",
+    difficulty: "medium",
+    tags: ["VDC", "২০০৩"]
+  },
+  {
+    id: "vol1_ch2_q29",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "পশ্চিমবঙ্গের কোন জেলায় কোনো জেলা পরিষদ নেই?",
+    options: ["দার্জিলিং", "কালিম্পং", "মালদা", "কলকাতা"],
+    correctIndex: 3,
+    explanationBn: "কলকাতা সম্পূর্ণ একটি শহরাঞ্চল হওয়ায় সেখানে কোনো জেলা পরিষদ বা পঞ্চায়েত নেই।",
+    difficulty: "easy",
+    tags: ["কলকাতা", "ব্যতিক্রম"]
+  },
+  {
+    id: "vol1_ch2_q30",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "শিলিগুড়ি মহকুমা পরিষদের নির্বাচন কে পরিচালনা করে?",
+    options: ["ভারতের নির্বাচন কমিশন", "রাজ্য নির্বাচন কমিশন", "জেলাশাসক", "BDO"],
+    correctIndex: 1,
+    explanationBn: "রাজ্যের সমস্ত পঞ্চায়েত ও পৌর স্তরের নির্বাচন রাজ্য নির্বাচন কমিশন স্বাধীনভাবে পরিচালনা করে।",
+    difficulty: "easy",
+    tags: ["রাজ্য নির্বাচন কমিশন", "শিলিগুড়ি"]
+  },
+  {
+    id: "vol1_ch2_q31",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "গ্রাম পঞ্চায়েতে প্রতি মাসে অন্তত কটি সাধারণ সভা করা বাধ্যতামূলক?",
+    options: ["১টি", "২টি", "৩টি", "৪টি"],
+    correctIndex: 0,
+    explanationBn: "আইন অনুযায়ী প্রতি মাসে অন্তত একবার সব সদস্যদের নিয়ে সাধারণ সভা করতে হবে।",
+    difficulty: "easy",
+    tags: ["মাসিক সভা", "১টি"]
+  },
+  {
+    id: "vol1_ch2_q32",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "পঞ্চায়েত সমিতির পদাধিকারবলে সদস্য কারা হন?",
+    options: ["পঞ্চায়েত প্রধানরা", "ব্লকের বিধায়করা", "ব্লকের সাংসদরা", "সবকটি"],
+    correctIndex: 3,
+    explanationBn: "ব্লক এলাকার সমস্ত গ্রাম পঞ্চায়েত প্রধান, সংশ্লিষ্ট বিধানসভার বিধায়ক ও লোকসভার সাংসদরা পদাধিকারবলে পঞ্চায়েত সমিতির সদস্য হন।",
+    difficulty: "easy",
+    tags: ["পদাধিকারবলে সদস্য"]
+  },
+  {
+    id: "vol1_ch2_q33",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "জেলা পরিষদের পদাধিকারবলে সদস্য কারা হন?",
+    options: ["পঞ্চায়েত সমিতির সভাপতিরা", "জেলার বিধায়করা", "জেলার সাংসদরা", "সবকটি"],
+    correctIndex: 3,
+    explanationBn: "পঞ্চায়েত সমিতির সভাপতি, জেলার বিধায়ক ও সাংসদরা জেলা পরিষদের পদাধিকারবলে সদস্য।",
+    difficulty: "easy",
+    tags: ["জেলা পরিষদ সদস্য"]
+  },
+  {
+    id: "vol1_ch2_q34",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "১৯৭৩ সালের পঞ্চায়েত আইনটি রাষ্ট্রপতির সম্মতি কবে লাভ করে?",
+    options: ["1973", "1974", "1975", "1976"],
+    correctIndex: 1,
+    explanationBn: "রাজ্যপাল হয়ে রাষ্ট্রপতির কাছে যাওয়ার পর ১৯৭৪ সালের জুন মাসে এটি আনুষ্ঠানিক সম্মতি পায়।",
+    difficulty: "medium",
+    tags: ["রাষ্ট্রপতি সম্মতি", "১৯৭৪"]
+  },
+  {
+    id: "vol1_ch2_q35",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "১৯৫৭ সালের পশ্চিমবঙ্গ পঞ্চায়েত আইন কে বাতিল করে?",
+    options: ["১৯৭৩ সালের আইন", "১৯৯২ সালের আইন", "১৯৯৪ সালের আইন", "কোনোটিই নয়"],
+    correctIndex: 0,
+    explanationBn: "১৯৭৩ সালের নতুন পঞ্চায়েত আইনটি পুরাতন ১৯৫৭ সালের আইনকে বাতিল করে দেয়।",
+    difficulty: "easy",
+    tags: ["১৯৫৭ আইন", "বাতিল"]
+  },
+  {
+    id: "vol1_ch2_q36",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "গ্রাম পঞ্চায়েতের নিজস্ব তহবিলের নাম কী?",
+    options: ["গ্রাম তহবিল", "পঞ্চায়েত ফান্ড", "গ্রাম পঞ্চায়েত ফান্ড", "স্থানীয় তহবিল"],
+    correctIndex: 2,
+    explanationBn: "সমস্ত নিজস্ব আয় ও সরকারি অনুদান এই 'গ্রাম পঞ্চায়েত ফান্ড' (Gram Panchayat Fund)-এ জমা হয়।",
+    difficulty: "easy",
+    tags: ["গ্রাম পঞ্চায়েত ফান্ড"]
+  },
+  {
+    id: "vol1_ch2_q37",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "প্রধান এক টানা কতদিন বিনানুমতিতে অনুপস্থিত থাকলে পদত্যাগ করেছেন বলে ধরা হয়?",
+    options: ["১৫ দিন", "১ মাস", "৩ মাস", "৬ মাস"],
+    correctIndex: 3,
+    explanationBn: "বিনা নোটিশে টানা ৬ মাস অনুপস্থিত থাকলে আইনত তাঁর পদ শূন্য বলে ঘোষণা করা হয়।",
+    difficulty: "medium",
+    tags: ["অনুপস্থিতি", "৬ মাস"]
+  },
+  {
+    id: "vol1_ch2_q38",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "অনাস্থা প্রস্তাব আনতে হলে BDO-কে কতদিন আগে লিখিত নোটিশ দিতে হয়?",
+    options: ["৭ দিন", "১৫ দিন", "৩০ দিন", "৬০ দিন"],
+    correctIndex: 1,
+    explanationBn: "তলবি সভা ডাকার জন্য BDO-কে অন্তত ১৫ দিন আগে লিখিত নোটিশ জমা দিতে হয়।",
+    difficulty: "easy",
+    tags: ["অনাস্থা নোটিশ", "১৫ দিন"]
+  },
+  {
+    id: "vol1_ch2_q39",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "পঞ্চায়েতের হিসাব বা আর্থিক অডিট করে কোন সংস্থা?",
+    options: ["ক্যাগ (CAG)", "রাজ্য সরকার", "পরীক্ষক, স্থানীয় তহবিল হিসাব (E.L.F.A)", "BDO"],
+    correctIndex: 2,
+    explanationBn: "Examiner of Local Fund Accounts (ELFA) পঞ্চায়েতের বাধ্যতামূলক সরকারি অডিট করে থাকে।",
+    difficulty: "medium",
+    tags: ["ELFA", "অডিট"]
+  },
+  {
+    id: "vol1_ch2_q40",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "পঞ্চায়েতের প্রতিটি স্তরে তফসিলি জাতি/উপজাতির জন্য সংরক্ষণ কিসের ভিত্তিতে হয়?",
+    options: ["শিক্ষা", "জমির পরিমাণ", "জনসংখ্যা", "আয়"],
+    correctIndex: 2,
+    explanationBn: "ওই নির্দিষ্ট এলাকায় SC বা ST-দের মোট জনসংখ্যার অনুপাত অনুযায়ী আসন সংরক্ষিত হয়।",
+    difficulty: "easy",
+    tags: ["SC/ST সংরক্ষণ"]
+  },
+  {
+    id: "vol1_ch2_q41",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "পঞ্চায়েত সমিতির সাধারণ কার্যকাল কোথা থেকে শুরু হয়?",
+    options: ["ভোটের দিন থেকে", "প্রথম সভার দিন থেকে", "শপথ নেওয়ার দিন থেকে", "ফলাফল ঘোষণার দিন থেকে"],
+    correctIndex: 1,
+    explanationBn: "পঞ্চায়েতের যেকোনো স্তরের ৫ বছরের মেয়াদ তাদের প্রথম সভার দিন থেকে গণনা করা হয়।",
+    difficulty: "easy",
+    tags: ["প্রথম সভা", "কার্যকাল"]
+  },
+  {
+    id: "vol1_ch2_q42",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "গ্রাম পঞ্চায়েতের কোনো সদস্য পদত্যাগ করতে চাইলে কাকে পদত্যাগপত্র দেবেন?",
+    options: ["প্রধান", "BDO", "SDO", "DM"],
+    correctIndex: 1,
+    explanationBn: "পঞ্চায়েতের নির্বাচিত সদস্যকে তাঁর লিখিত ইস্তফাপত্র BDO-র কাছে জমা দিতে হয়।",
+    difficulty: "easy",
+    tags: ["পদত্যাগ", "BDO"]
+  },
+  {
+    id: "vol1_ch2_q43",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub3",
+    questionBn: "কোনো সমতল পঞ্চায়েত এলাকায় মোট ভোটার সংখ্যা ৯০০০ হলে সদস্য সংখ্যা কত হবে?",
+    options: ["৫ জন", "১০ জন", "১৫ জন", "২০ জন"],
+    correctIndex: 1,
+    explanationBn: "সমতলে প্রতি ৯০০ জনের জন্য ১ জন সদস্য, তাই ৯০০০ ভোটারের জন্য (৯০০০/৯০০) = ১০ জন সদস্য হবেন।",
+    difficulty: "easy",
+    tags: ["হিসাব", "১০ জন"]
+  },
+  {
+    id: "vol1_ch2_q44",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "পশ্চিমবঙ্গের পঞ্চায়েত ও গ্রামোন্নয়ন দপ্তর কোন মন্ত্রকের অধীনে থাকে?",
+    options: ["স্বরাষ্ট্র মন্ত্রক", "পঞ্চায়েত ও গ্রামোন্নয়ন মন্ত্রক (P&RD)", "অর্থ মন্ত্রক", "আইন মন্ত্রক"],
+    correctIndex: 1,
+    explanationBn: "রাজ্য সরকারের পঞ্চায়েত ও গ্রামোন্নয়ন মন্ত্রক (P&RD Department) এই দপ্তর পরিচালনা করে।",
+    difficulty: "easy",
+    tags: ["P&RD", "মন্ত্রক"]
+  },
+  {
+    id: "vol1_ch2_q45",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "পঞ্চায়েত সমিতির নাম সাধারণত কী অনুসারে রাখা হয়?",
+    options: ["গ্রামের নাম", "জেলার নাম", "ব্লকের নাম", "মহকুমার নাম"],
+    correctIndex: 2,
+    explanationBn: "পঞ্চায়েত সমিতি ব্লক স্তরে গঠিত হওয়ায় সংশ্লিষ্ট ব্লকের নামেই এর নামকরণ করা হয় (যেমন- রতুয়া-১ পঞ্চায়েত সমিতি)।",
+    difficulty: "easy",
+    tags: ["ব্লকের নাম"]
+  },
+  {
+    id: "vol1_ch2_q46",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "গ্রাম পঞ্চায়েতের বার্ষিক বাজেট কে অনুমোদন করে?",
+    options: ["গ্রাম সভা", "পঞ্চায়েত সমিতি", "জেলা পরিষদ", "BDO"],
+    correctIndex: 1,
+    explanationBn: "গ্রাম পঞ্চায়েত বাজেট তৈরি করে সাধারণ সভায় পাস করার পর তা অনুমোদনের জন্য উচ্চতর স্তর পঞ্চায়েত সমিতিতে পাঠায়।",
+    difficulty: "easy",
+    tags: ["বাজেট অনুমোদন"]
+  },
+  {
+    id: "vol1_ch2_q47",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "পঞ্চায়েত সমিতির বার্ষিক বাজেট কে অনুমোদন করে?",
+    options: ["রাজ্য সরকার", "জেলা পরিষদ", "জেলাশাসক", "BDO"],
+    correctIndex: 1,
+    explanationBn: "পঞ্চায়েত সমিতির বাজেট উচ্চতর স্তর হিসেবে জেলা পরিষদ অনুমোদন করে থাকে।",
+    difficulty: "easy",
+    tags: ["জেলা পরিষদ অনুমোদন"]
+  },
+  {
+    id: "vol1_ch2_q48",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "জেলা পরিষদের বার্ষিক বাজেট কে অনুমোদন করে?",
+    options: ["মুখ্যমন্ত্রী", "রাজ্য সরকার", "অর্থ কমিশন", "কেন্দ্র সরকার"],
+    correctIndex: 1,
+    explanationBn: "জেলা পরিষদ সর্বোচ্চ স্তর হওয়ায় তাদের বাজেট সরাসরি রাজ্য সরকারের পঞ্চায়েত দপ্তর অনুমোদন করে।",
+    difficulty: "easy",
+    tags: ["রাজ্য সরকার", "জেলা পরিষদ বাজেট"]
+  },
+  {
+    id: "vol1_ch2_q49",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "গ্রাম পঞ্চায়েতের নিজস্ব কর ও ফি আদায়কারী কে?",
+    options: ["সচিব", "ট্যাক্স কালেক্টর", "ভিলেজ পুলিশ", "সহায়ক"],
+    correctIndex: 1,
+    explanationBn: "গ্রাম পঞ্চায়েত নিজস্ব কর ও ফি তোলার জন্য ট্যাক্স কালেক্টর (Tax Collector) নিয়োগ করে।",
+    difficulty: "easy",
+    tags: ["ট্যাক্স কালেক্টর"]
+  },
+  {
+    id: "vol1_ch2_q50",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "গ্রাম পঞ্চায়েতের সব অফিশিয়াল নথিপত্র ও রেজোলিউশন কে সংরক্ষণ করেন?",
+    options: ["প্রধান", "সহায়ক", "সচিব (Secretary)", "BDO"],
+    correctIndex: 2,
+    explanationBn: "পঞ্চায়েতের সমস্ত অফিশিয়াল নথিপত্র এবং রেজোলিউশন সংরক্ষণের আইনি দায়িত্ব সচিবের।",
+    difficulty: "easy",
+    tags: ["সচিব", "নথিপত্র"]
+  },
+
+  // --- Converted One-Liners into MCQs (51 to 80) ---
+  {
+    id: "vol1_ch2_ol1",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "১৯৬৩ সালের পশ্চিমবঙ্গ জেলা পরিষদ আইনটি কোন আইনের দ্বারা বাতিল হয়ে যায়?",
+    options: ["১৯৭২ সালের আইন", "১৯৭৩ সালের পশ্চিমবঙ্গ পঞ্চায়েত আইন", "১৯৯২ সালের আইন", "১৯৯৪ সালের আইন"],
+    correctIndex: 1,
+    explanationBn: "১৯৭৩ সালের পশ্চিমবঙ্গ পঞ্চায়েত আইনটি ১৯৬৩ সালের জেলা পরিষদ আইনকেও বাতিল করে।",
+    difficulty: "medium",
+    tags: ["১৯৬৩ আইন"]
+  },
+  {
+    id: "vol1_ch2_ol2",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "পশ্চিমবঙ্গ পঞ্চায়েত আইনে (১৯৭৩) মোট কতগুলি তফসিল (Schedules) রয়েছে?",
+    options: ["২টি", "৩টি", "৪টি", "৫টি"],
+    correctIndex: 2,
+    explanationBn: "পশ্চিমবঙ্গ পঞ্চায়েত আইন ১৯৭৩-এ মোট ৪টি তফসিল সন্নিবেশিত রয়েছে।",
+    difficulty: "medium",
+    tags: ["৪টি তফসিল"]
+  },
+  {
+    id: "vol1_ch2_ol3",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "গ্রাম পঞ্চায়েতের প্রধান ও উপ-প্রধান কীভাবে নির্বাচিত হন?",
+    options: ["সরাসরি ভোটারদের ভোটে", "প্রথম সভায় নির্বাচিত সদস্যদের ভোটে", "BDO দ্বারা মনোনীত", "জেলাশাসক দ্বারা নিযুক্ত"],
+    correctIndex: 1,
+    explanationBn: "প্রথম বৈঠকে নির্বাচিত সদস্যরা নিজেদের মধ্য থেকে ভোট দিয়ে প্রধান ও উপ-প্রধান নির্বাচন করেন।",
+    difficulty: "easy",
+    tags: ["পরোক্ষ ভোট"]
+  },
+  {
+    id: "vol1_ch2_ol4",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "পদাধিকারবলে জেলা পরিষদের সর্বোচ্চ প্রশাসনিক নির্বাহী আধিকারিক হিসেবে কে কাজ করেন?",
+    options: ["BDO", "SDO", "জেলাশাসক (DM)", "বিভাগীয় কমিশনার"],
+    correctIndex: 2,
+    explanationBn: "জেলার জেলাশাসক (DM) পদাধিকারবলে জেলা পরিষদের এক্সিকিউটিভ অফিসার হিসেবে দায়িত্ব পালন করেন।",
+    difficulty: "easy",
+    tags: ["জেলাশাসক", "DM"]
+  },
+  {
+    id: "vol1_ch2_ol5",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "জনস্বাস্থ্য ও পরিবেশ উপ-সমিতির সভাপতি সাধারণত কে হন?",
+    options: ["প্রধান", "উপ-প্রধান", "সচিব", "BDO"],
+    correctIndex: 1,
+    explanationBn: "নিয়ম অনুযায়ী গ্রাম পঞ্চায়েতের উপ-প্রধান জনস্বাস্থ্য ও পরিবেশ উপ-সমিতির সভাপতিত্ব করেন।",
+    difficulty: "easy",
+    tags: ["উপ-প্রধান", "জনস্বাস্থ্য"]
+  },
+  {
+    id: "vol1_ch2_ol6",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub1",
+    questionBn: "দার্জিলিং জেলায় ত্রিস্তর পঞ্চায়েতের বদলে কোন দ্বিস্তরীয় কাঠামো কার্যকর রয়েছে?",
+    options: ["গ্রাম পঞ্চায়েত ও পঞ্চায়েত সমিতি", "গ্রাম পঞ্চায়েত ও মহকুমা পরিষদ", "পঞ্চায়েত সমিতি ও জেলা পরিষদ", "কোনোটিই নয়"],
+    correctIndex: 1,
+    explanationBn: "দার্জিলিংয়ে জেলা পরিষদের পরিবর্তে শিলিগুড়ি মহকুমা পরিষদ এবং পাহাড়ে GTA ও গ্রাম পঞ্চায়েত ব্যবস্থা রয়েছে।",
+    difficulty: "medium",
+    tags: ["দার্জিলিং", "মহকুমা পরিষদ"]
+  },
+  {
+    id: "vol1_ch2_ol7",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub5",
+    questionBn: "পশ্চিমবঙ্গে পঞ্চায়েত ব্যবস্থাকে গ্রামীণ উন্নয়নের কোন প্রধান দায়িত্ব দেওয়া হয়েছে?",
+    options: ["নজরদারি সংস্থা", "মূল নোডাল এজেন্সি (Nodal Agency)", "উপদেষ্টা পর্ষদ", "শুধুমাত্র কর সংগ্রহকারী"],
+    correctIndex: 1,
+    explanationBn: "রাজ্য সরকার পঞ্চায়েতকে গ্রামীণ উন্নয়ন ও সরকারি প্রকল্পের মূল নোডাল এজেন্সি হিসেবে স্বীকৃতি দিয়েছে।",
+    difficulty: "easy",
+    tags: ["নোডাল এজেন্সি"]
+  },
+  {
+    id: "vol1_ch2_ol8",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "পশ্চিমবঙ্গে প্রথম স্বাধীন রাজ্য নির্বাচন কমিশন কবে গঠিত হয়?",
+    options: ["1978", "1992", "1994", "1995"],
+    correctIndex: 2,
+    explanationBn: "১৯৯৪ সালে পশ্চিমবঙ্গে পঞ্চায়েত ও পুরভোট পরিচালনার জন্য স্বাধীন রাজ্য নির্বাচন কমিশন গঠিত হয়।",
+    difficulty: "medium",
+    tags: ["১৯৯৪", "SEC"]
+  },
+  {
+    id: "vol1_ch2_ol9",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "পশ্চিমবঙ্গে প্রথম রাজ্য অর্থ কমিশন (SFC) কবে গঠিত হয়?",
+    options: ["1992", "1994", "1995", "1998"],
+    correctIndex: 2,
+    explanationBn: "১৯৯৫ সালে পশ্চিমবঙ্গে প্রথম রাজ্য অর্থ কমিশন গঠিত হয়।",
+    difficulty: "medium",
+    tags: ["১৯৯৫", "SFC"]
+  },
+  {
+    id: "vol1_ch2_ol10",
+    subjectId: "panchayat",
+    chapterId: "panchayat_ch2",
+    subTopicId: "panchayat_ch2_sub4",
+    questionBn: "এলাকার বিধায়ক (MLA) ও সাংসদরা (MP) পঞ্চায়েত সমিতি ও জেলা পরিষদে কোন বিষয়ে ভোট দিতে পারেন না?",
+    options: ["বাজেট পাস", "উন্নয়ন পরিকল্পনা", "অনাস্থা প্রস্তাব", "সাধারণ আলোচনা"],
+    correctIndex: 2,
+    explanationBn: "পদাধিকারবলে সদস্য হলেও বিধায়ক ও সাংসদরা অনাস্থা প্রস্তাবে ভোটাধিকার প্রয়োগ করতে পারেন না।",
+    difficulty: "hard",
+    tags: ["বিধায়ক", "অনাস্থা ভোট"]
+  }
+];
