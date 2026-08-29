@@ -32,9 +32,6 @@ jobs:
       - name: Fix corrupted data files
         run: node fix-data.cjs
 
-      - name: Apply demo access control patches
-        run: python3 apply-demo-patches.py
-
       - name: Build frontend (Vite only)
         run: npx vite build
 
