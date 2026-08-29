@@ -127,7 +127,9 @@ export interface Question {
   questionBn: string;
   questionEn?: string;
   options: string[]; // Standard 4 options
+  optionsBn?: string[];
   correctIndex: number; // 0, 1, 2, 3
+  correctOptionIndex?: number;
   explanationBn: string;
   difficulty: QuestionDifficulty;
   examYear?: string;
@@ -249,6 +251,7 @@ export interface MockTestAttempt {
     }
   >;
   userAnswers: Record<string, number>; // questionId -> selectedOptionIndex (-1 for unattempted)
+  questions?: Question[]; // Store full questions array so ANY mock test (even dynamic new ones) can be reviewed anytime!
 }
 
 // ==========================================

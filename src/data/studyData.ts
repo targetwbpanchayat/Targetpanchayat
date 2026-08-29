@@ -3,6 +3,7 @@ import { VOL_1_CHAPTERS } from "./panchayatVol1";
 import { BENGALI_VOL2_CHAPTERS } from "./bengaliVol2";
 import { ENGLISH_VOL3_STUDY_CHAPTERS } from "./englishVol3";
 import { MATH_VOL4_CHAPTERS } from "./mathVol4";
+import { GK_VOL5_CHAPTERS } from "./gkVol5";
 
 export const STUDY_CHAPTERS: StudyChapter[] = [
   // --- পঞ্চায়েত ব্যবস্থা ও গ্রামীণ উন্নয়ন (Volume 1 Material from Uploaded PDF) ---
@@ -16,5 +17,9 @@ export const STUDY_CHAPTERS: StudyChapter[] = [
 
   // --- গণিত ও পাটিগণিত (Volume 4 Complete Study Chapters) ---
   ...MATH_VOL4_CHAPTERS,
+
+  // --- সাধারণ জ্ঞান ও জিকে (Volume 5 Complete Study Chapters) ---
+  ...GK_VOL5_CHAPTERS,
 ];
+
 

@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { MockTest, MockTestAttempt, Question, SubjectId, UserProgress } from "../types";
+import { cleanQuestionText } from "../utils/testGenerator";
 import { MOCK_TESTS } from "../data/mockTests";
 import { saveUserProgress } from "../utils/storage";
 
@@ -47,6 +48,8 @@ export const MockTestView: React.FC<MockTestViewProps> = ({
   // Result state
   const [latestAttempt, setLatestAttempt] = useState<MockTestAttempt | null>(null);
   const [activeReviewFilter, setActiveReviewFilter] = useState<"all" | "correct" | "wrong" | "unanswered">("all");
+  const [testListTab, setTestListTab] = useState<"all" | "vol6_practice" | "pyq" | "mega">("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     if (initialTestId) {
@@ -206,19 +209,79 @@ export const MockTestView: React.FC<MockTestViewProps> = ({
 
   // 1. SCREEN: LIST OF MOCK TESTS
   if (activeScreen === "list") {
+    const filteredTests = MOCK_TESTS.filter((t) => {
+      // Tab filter
+      if (testListTab === "vol6_practice") {
+        if (!t.id.startsWith("mock_vol6_practice")) return false;
+      } else if (testListTab === "pyq") {
+        if (!t.id.startsWith("mock_pyq")) return false;
+      } else if (testListTab === "mega") {
+        if (t.id.startsWith("mock_vol6_practice") || t.id.startsWith("mock_pyq")) return false;
+      }
+
+      // Search filter
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const matchTitle = t.titleBn.toLowerCase().includes(q) || t.titleEn.toLowerCase().includes(q);
+        const matchCat = t.postCategory.toLowerCase().includes(q);
+        return matchTitle || matchCat;
+      }
+
+      return true;
+    });
+
+    const vol6PracticeCount = MOCK_TESTS.filter((t) => t.id.startsWith("mock_vol6_practice")).length;
+    const pyqCount = MOCK_TESTS.filter((t) => t.id.startsWith("mock_pyq")).length;
+    const megaCount = MOCK_TESTS.length - vol6PracticeCount - pyqCount;
+
     return (
       <div className="space-y-6 pb-12 animate-in fade-in duration-200">
-        <div>
-          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 font-bengali">
-            পূর্ণাঙ্গ মক টেস্ট (Full Length Mock Tests)
-          </h1>
-          <p className="text-xs text-slate-500 font-bengali">
-            পশ্চিমবঙ্গ পঞ্চায়েত রিক্রুটমেন্ট পরীক্ষার সিলেবাস ও নেগেটিভ মার্কিং অনুযায়ী প্রস্তুত মক টেস্ট
-          </p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 font-bengali">
+              পূর্ণাঙ্গ মক টেস্ট (Full Length Mock Tests)
+            </h1>
+            <p className="text-xs text-slate-500 font-bengali">
+              ভলিউম ৬ প্র্যাকটিস সেট (৩০টি সেট), ২০১৮ অফিশিয়াল প্রশ্নপত্র ও অধ্যায়ভিত্তিক মেগা মক টেস্ট
+            </p>
+          </div>
+
+          {/* Search bar */}
+          <div className="w-full sm:w-72">
+            <input
+              type="text"
+              placeholder="মক টেস্ট খুঁজুন (উদাঃ সেট ১, EA 2018)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full px-4 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 placeholder-slate-400 font-bengali focus:outline-none focus:border-emerald-500 shadow-xs"
+            />
+          </div>
+        </div>
+
+        {/* Category Tabs */}
+        <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 pb-3">
+          {[
+            { id: "all", label: `সব টেস্ট (${MOCK_TESTS.length})` },
+            { id: "vol6_practice", label: `ভলিউম ৬ প্র্যাকটিস সেট (${vol6PracticeCount})` },
+            { id: "pyq", label: `অফিশিয়াল প্রশ্নপত্র ২০১৮ (${pyqCount})` },
+            { id: "mega", label: `কম্বাইন্ড ও স্পেশাল টেস্ট (${megaCount})` },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setTestListTab(tab.id as any)}
+              className={`px-3.5 py-1.5 rounded-xl text-xs font-bold font-bengali transition-colors cursor-pointer ${
+                testListTab === tab.id
+                  ? "bg-emerald-600 text-white shadow-xs"
+                  : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-50"
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {MOCK_TESTS.map((test) => {
+          {filteredTests.map((test) => {
             const previousAttempts = progress.mockTestAttempts?.filter((a) => a.testId === test.id) || [];
             const bestScore = previousAttempts.length > 0
               ? Math.max(...previousAttempts.map((a) => a.percentage))
@@ -407,7 +470,7 @@ export const MockTestView: React.FC<MockTestViewProps> = ({
 
               {/* Question Statement */}
               <h3 className="text-base sm:text-lg font-bold text-slate-900 font-bengali leading-relaxed">
-                {q.questionBn}
+                {cleanQuestionText(q.questionBn)}
               </h3>
 
               {/* 4 Options */}
@@ -681,7 +744,7 @@ export const MockTestView: React.FC<MockTestViewProps> = ({
                   </div>
 
                   <h3 className="text-sm sm:text-base font-bold text-slate-900 font-bengali">
-                    {q.questionBn}
+                    {cleanQuestionText(q.questionBn)}
                   </h3>
 
                   {/* Options */}

@@ -5,7 +5,14 @@
 
 import React, { useState, useEffect } from "react";
 import { UserProfile, UserProgress, SubjectId } from "./types";
-import { getUserProfile, getUserProgress, saveUserProgress, updateDailyStreak, clearUserData, saveUserProfile } from "./utils/storage";
+import {
+  getUserProfile,
+  getUserProgress,
+  saveUserProgress,
+  updateDailyStreak,
+  clearUserData,
+  saveUserProfile,
+} from "./utils/storage";
 import { Navbar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
 import { MobileNav } from "./components/MobileNav";
@@ -15,8 +22,10 @@ import { DashboardView } from "./components/DashboardView";
 import { StudyView } from "./components/StudyView";
 import { StudyPlanView } from "./components/StudyPlanView";
 import { PracticeView } from "./components/PracticeView";
-import { MockTestView } from "./components/MockTestView";
+import { FullMockTestView } from "./components/FullMockTestView";
+import { ShortMockTestView } from "./components/ShortMockTestView";
 import { QuizView } from "./components/QuizView";
+import { TestsHubView } from "./components/TestsHubView";
 import { CurrentAffairsView } from "./components/CurrentAffairsView";
 import { PYQView } from "./components/PYQView";
 import { ReportView } from "./components/ReportView";
@@ -109,7 +118,7 @@ export default function App() {
 
   const handleSelectMockTestFromAnywhere = (testId: string) => {
     setSelectedMockTestId(testId);
-    setActiveTab("mock_test");
+    setActiveTab("full_mock_test");
   };
 
   const handleLaunchPracticeFromChapter = (subjectId: SubjectId) => {
@@ -183,16 +192,42 @@ export default function App() {
                 />
               )}
 
-              {activeTab === "mock_test" && (
-                <MockTestView
+              {activeTab === "tests" && (
+                <TestsHubView
                   progress={progress}
                   setProgress={setProgress}
+                  initialSubTab="full_mock"
                   initialTestId={selectedMockTestId}
                 />
               )}
 
+              {(activeTab === "full_mock_test" || activeTab === "mock_test") && (
+                <TestsHubView
+                  progress={progress}
+                  setProgress={setProgress}
+                  initialSubTab="full_mock"
+                  initialTestId={selectedMockTestId}
+                />
+              )}
+
+              {activeTab === "short_mock_test" && (
+                <TestsHubView
+                  progress={progress}
+                  setProgress={setProgress}
+                  initialSubTab="short_mock"
+                />
+              )}
+
               {activeTab === "quiz" && (
-                <QuizView
+                <TestsHubView
+                  progress={progress}
+                  setProgress={setProgress}
+                  initialSubTab="quiz"
+                />
+              )}
+
+              {activeTab === "pyq" && (
+                <PYQView
                   progress={progress}
                   setProgress={setProgress}
                 />
@@ -200,10 +235,6 @@ export default function App() {
 
               {activeTab === "current_affairs" && (
                 <CurrentAffairsView />
-              )}
-
-              {activeTab === "pyq" && (
-                <PYQView />
               )}
 
               {activeTab === "report" && (
@@ -238,4 +269,3 @@ export default function App() {
     </div>
   );
 }
-

@@ -11,6 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { CURRENT_AFFAIRS_ITEMS } from "../data/currentAffairs";
+import { cleanQuestionText } from "../utils/testGenerator";
 
 export const CurrentAffairsView: React.FC = () => {
   const [search, setSearch] = useState("");
@@ -122,7 +123,7 @@ export const CurrentAffairsView: React.FC = () => {
                         নমুনা সম্ভাব্য প্রশ্ন:
                       </span>
                       <p className="text-xs text-slate-800 font-bengali font-medium">
-                        {item.practiceQuestion.questionBn}
+                        {cleanQuestionText(item.practiceQuestion.questionBn)}
                       </p>
                       <div className="text-xs font-bold text-emerald-800 font-bengali">
                         উত্তর: {item.practiceQuestion.options[item.practiceQuestion.correctIndex]}

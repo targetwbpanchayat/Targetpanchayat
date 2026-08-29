@@ -1,712 +1,1354 @@
 import { StudyChapter, Question } from "../../types";
 
 export const BENGALI_CH10_STUDY: StudyChapter = {
-  id: "bengali_ch10",
-  subjectId: "bengali",
-  chapterNumber: 10,
-  titleBn: "বাগধারা, প্রবাদ-প্রবচন ও এককথায় প্রকাশ",
-  titleEn: "Bengali Idioms, Proverbs & One-word Substitutions",
-  estimatedMinutes: 35,
-  importantNotesCount: 20,
-  summary: "বহুল প্রচলিত বাগধারা ও তাদের বিশিষ্টার্থ, লোকায়ত প্রবাদ-প্রবচনের অন্তর্নিহিত তাৎপর্য এবং পরীক্ষায় সর্বাধিক আগত এককথায় প্রকাশ বা বাক্যসংকোচন।",
-  subTopics: [
+  "id": "bengali_ch10",
+  "subjectId": "bengali",
+  "chapterNumber": 10,
+  "titleBn": "সমার্থক শব্দ ও প্রতিশব্দ (৫০টি অতি গুরুত্বপূর্ণ শব্দ ও সম্পূর্ণ সংকলন)",
+  "titleEn": "Samarthak Shabda - 50 Comprehensive High Frequency Synonyms with Bengali Meanings",
+  "estimatedMinutes": 45,
+  "importantNotesCount": 45,
+  "summary": "বাংলা ভাষায় একই অর্থ প্রকাশকারী ভিন্ন ভিন্ন শব্দকে সমার্থক শব্দ বা প্রতিশব্দ বলে। পঞ্চায়েত, ক্লার্কশিপ ও ডব্লিউবিসিএস পরীক্ষার জন্য বাছাই করা ৫০টি অতি গুরুত্বপূর্ণ মূল শব্দ এবং তাদের প্রতিটি বিকল্প সমার্থকের পুঙ্খানুপুঙ্খ তালিকা।",
+  "subTopics": [
     {
-      id: "bengali_ch10_sub1",
-      chapterId: "bengali_ch10",
-      subjectId: "bengali",
-      titleBn: "গুরুত্বপূর্ণ বাগধারা ও তাদের বিশিষ্টার্থ",
-      titleEn: "Important Idioms & Distinct Meanings",
-      orderIndex: 1,
-      summaryBn: "অগাধ জলের মাছ (চালাক ব্যক্তি), অকূল পাথার (ভীষণ বিপদ), অকালকূষ্মাণ্ড (অপদার্থ), ঊনপাঁজুরে (হতভাগ্য), কাকভূশণ্ডি (দীর্ঘজীবী ব্যক্তি), চিনে জোঁক (নাছোড়বান্দা), তামার বিষ (অর্থের কুপ্রভাব), বিড়াল তপস্বী (ভণ্ড সাধু)।",
-      keyConcepts: ["অগাধ জলের মাছ = খুব চালাক", "অকালকূষ্মাণ্ড = অপদার্থ/অকর্মণ্য", "তামার বিষ = অর্থের কুপ্রভাব", "বিড়াল তপস্বী = ভণ্ড সাধু", "চিনে জোঁক = নাছোড়বান্দা"]
+      "id": "bengali_ch10_sub1",
+      "chapterId": "bengali_ch10",
+      "subjectId": "bengali",
+      "titleBn": "প্রকৃতি, আকাশ, পৃথিবী ও মহাজাগতিক প্রতিশব্দ",
+      "titleEn": "Nature, Celestial & Terrestrial Synonyms",
+      "orderIndex": 1,
+      "summaryBn": "অগ্নি (অনল, পাবক, হুতাশন, বৈশ্বানর), পৃথিবী (অবনী, মেদিনী), সূর্য (মার্তণ্ড, সবিতা, অর্ক), বিদ্যুৎ (সৌদামিনী, চপলা)।",
+      "keyConcepts": [
+        "অগ্নি: হুতাশন, বৈশ্বানর",
+        "সূর্য: মার্তণ্ড, সবিতা, মিহির",
+        "বিদ্যুৎ: সৌদামিনী, ক্ষণপ্রভা"
+      ]
     },
     {
-      id: "bengali_ch10_sub2",
-      chapterId: "bengali_ch10",
-      subjectId: "bengali",
-      titleBn: "প্রবাদ-প্রবচন ও বাস্তব প্রয়োগ",
-      titleEn: "Proverbs & Practical Application",
-      orderIndex: 2,
-      summaryBn: "অতি সন্ন্যাসীতে গাজন নষ্ট (অধিক কর্তৃত্বে কাজ পণ্ড), নাচতে না জানলে উঠোন বাঁকা (নিজের অক্ষমতা অন্যের ওপর চাপানো), চোরে না শোনে ধর্মের কাহিনী, গাছে কাঁঠাল গোঁফে তেল, মেঘ না চাইতেই জল।",
-      keyConcepts: ["অতি সন্ন্যাসীতে গাজন নষ্ট", "গাছে কাঁঠাল গোঁফে তেল (প্রাপ্তির পূর্বেই ভোগাসক্তি)", "মেঘ না চাইতেই জল (অপ্রত্যাশিত প্রাপ্তি)", "ডুবন্ত মানুষ খড়কুটো ধরে"]
+      "id": "bengali_ch10_sub2",
+      "chapterId": "bengali_ch10",
+      "subjectId": "bengali",
+      "titleBn": "জীবজন্তু, উদ্ভিদ ও জলজ প্রতিশব্দ",
+      "titleEn": "Fauna, Flora & Water Synonyms",
+      "orderIndex": 2,
+      "summaryBn": "পদ্ম (অরবিন্দ, শতদল, উৎপল), হাতি (দ্বিপ, করি, মাতঙ্গ), সাপ (অহি, পন্নগ, আশীবিষ), ভ্রমর (দ্বিরেফ, ষটপদ)।",
+      "keyConcepts": [
+        "পদ্ম: অরবিন্দ, রাজীব",
+        "হাতি: দ্বিপ, মাতঙ্গ, করি",
+        "ভ্রমর: দ্বিরেফ, ষটপদ",
+        "সাপ: অহি, আশীবিষ"
+      ]
     },
     {
-      id: "bengali_ch10_sub3",
-      chapterId: "bengali_ch10",
-      subjectId: "bengali",
-      titleBn: "এককথায় প্রকাশ (বাক্যসংকোচন - ব্যক্তি ও চরিত্র)",
-      titleEn: "One Word Substitution (Person & Nature)",
-      orderIndex: 3,
-      summaryBn: "যা সহজে জানা যায় না (দুর্জ্ঞেয়), যে নারীর স্বামী বিদেশে থাকে (প্রোষিতভর্তৃকা), যে নারী নিজে বর বরণ করে (স্বয়ংবরা), যে বহুরূপ ধারণ করতে পারে (বহুরূপী), ইতিহাস রচনা করেন যিনি (ঐতিহাসিক)।",
-      keyConcepts: ["প্রোষিতভর্তৃকা = যার স্বামী বিদেশে থাকে", "স্বয়ংবরা = যে নিজে বর নির্বাচন করে", "অসূর্যম্পশ্যা = যে নারী সূর্যকে দেখেনি", "অনন্যোপায় = যার অন্য কোনো উপায় নেই"]
-    },
-    {
-      id: "bengali_ch10_sub4",
-      chapterId: "bengali_ch10",
-      subjectId: "bengali",
-      titleBn: "এককথায় প্রকাশ (প্রকৃতি, সময় ও বিশেষত্ব)",
-      titleEn: "One Word Substitution (Nature & Attributes)",
-      orderIndex: 4,
-      summaryBn: "যা পূর্বে দেখা যায়নি (অদৃষ্টপূর্ব), যা পূর্বে শোনা যায়নি (অশ্রুতপূর্ব), একই সময়ে বর্তমান (সমসাময়িক), দিনের শেষ ভাগ (অপরাহ্ণ), দিনের প্রথম ভাগ (পূর্বাহ্ণ), হরিণের চর্ম (অজিন)।",
-      keyConcepts: ["অদৃষ্টপূর্ব = যা পূর্বে দেখা যায়নি", "অজিন = হরিণের চর্ম", "অক্ষির সমীপে = সমক্ষ", "অক্ষির অগোচরে = পরোক্ষ", "যাহা জলে ও স্থলে চরে = উভচর"]
+      "id": "bengali_ch10_sub3",
+      "chapterId": "bengali_ch10",
+      "subjectId": "bengali",
+      "titleBn": "৫০টি মাস্টার সমার্থক শব্দ সংকলন চার্ট",
+      "titleEn": "50 Master Synonyms Compendium",
+      "orderIndex": 3,
+      "summaryBn": "পরীক্ষায় সর্বাধিক আসা ৫০টি শব্দের প্রামাণ্য চার্ট ও বিকল্প শব্দের সঠিক অর্থ প্রয়োগ।",
+      "keyConcepts": [
+        "পরভৃত (কোকিল) vs পরভৃৎ (কাক)",
+        "জলধি / অর্ণব (সমুদ্র)",
+        "৫০টি মাস্টার তালিকা"
+      ]
     }
   ],
-  content: {
-    introduction: "বাংলা ভাষা ও সাহিত্যের সমৃদ্ধি ফুটে ওঠে তার সমৃদ্ধ বাগধারা, প্রবাদ-প্রবচন এবং বাক্যসংকোচন বা এককথায় প্রকাশের মাধুর্যে। প্রতিযোগিতামূলক পরীক্ষার ক্ষেত্রে এই অধ্যায়টি অত্যন্ত স্কোরিং।",
-    sections: [
+  "content": {
+    "introduction": "একই অর্থবোধক ভিন্ন ভিন্ন শব্দকে সমার্থক শব্দ বা প্রতিশব্দ (Synonyms) বলে। সমৃদ্ধ শব্দভাণ্ডার আয়ত্ত করার জন্য প্রতিশব্দের জ্ঞান অত্যন্ত আবশ্যক।",
+    "sections": [
       {
-        heading: "১. বাছাই করা শীর্ষস্থানীয় বাগধারা",
-        body: [
-          "১. অকূল পাথার = মহাবিপদ।",
-          "২. অকালকূষ্মাণ্ড = অপদার্থ, অকেজো ব্যক্তি।",
-          "৩. অগাধ জলের মাছ = অতিশয় চতুর ব্যক্তি।",
-          "৪. অমাবস্যার চাঁদ = দুর্লভ বস্তু।",
-          "৫. আকাশকুসুম = অসম্ভব কল্পনা।",
-          "৬. উত্তম-মধ্যম = প্রহার বা মারধর।",
-          "৭. কাকভূশণ্ডি = দীর্ঘজীবী ব্যক্তি।",
-          "৮. তামার বিষ = অর্থের কুপ্রভাব।",
-          "৯. বিড়াল তপস্বী = ভণ্ড সাধু।",
-          "১০. সাক্ষী গোপাল = নিষ্ক্রিয় দর্শক।"
+        "heading": "১. ৫০টি অতি গুরুত্বপূর্ণ শব্দের প্রামাণ্য প্রতিশব্দ তালিকা",
+        "body": [
+          "• 'পরভৃত' অর্থ কোকিল (অন্যের দ্বারা প্রতিপালিত), কিন্তু 'পরভৃৎ' অর্থ কাক (অন্যকে প্রতিপালন করে)।",
+          "• পদ্ম: অরবিন্দ, শতদল, রাজীব, উৎপল, নলিন, পঙ্কজ, সরোজ।",
+          "• সূর্য: রবি, ভানু, ভাস্কর, তপন, মার্তণ্ড, দিনমণি, সবিতা, আদিত্য, মিহির, অর্ক।",
+          "• বিদ্যুৎ: সৌদামিনী, ক্ষণপ্রভা, চপলা, দামিনী, শম্পা, বিজলি।"
         ],
-        keyPoints: [
-          "কাকভূশণ্ডি = দীর্ঘজীবী ব্যক্তি।",
-          "তামার বিষ = অর্থের কুপ্রভাব।",
-          "সাক্ষী গোপাল = নিষ্ক্রিয় দর্শক।",
-          "আকাশকুসুম = অসম্ভব কল্পনা।"
-        ]
-      },
-      {
-        heading: "২. শীর্ষস্থানীয় এককথায় প্রকাশ (বাক্যসংকোচন)",
-        body: [
-          "১১. যে নারী কখনো সূর্যকে দেখেনি = অসূর্যম্পশ্যা।",
-          "১২. যে নারীর স্বামী বিদেশে অবস্থান করে = প্রোষিতভর্তৃকা।",
-          "১৩. যে পুরুষের স্ত্রী বিদেশে থাকে = প্রোষিতপত্নীক।",
-          "১৪. হরিণের চর্ম = অজিন।",
-          "১৫. যা পূর্বে দেখা যায়নি = অদৃষ্টপূর্ব।",
-          "১৬. একই সময়ে বর্তমান = সমসাময়িক।",
-          "১৭. অক্ষির সমীপে = সমক্ষ; অক্ষির অগোচরে = পরোক্ষ।",
-          "১৮. যা দমন করা কঠিন = দুর্দমনীয়।"
-        ],
-        keyPoints: [
-          "সূর্য না দেখা নারী = অসূর্যম্পশ্যা।",
-          "হরিণের চামড়া = অজিন।",
-          "উপকার স্বীকার করে যে = কৃতজ্ঞ; উপকারীর অপকার করে যে = কৃতঘ্ন।"
-        ]
+        "tables": {
+          "headers": [
+            "মূল শব্দ",
+            "গুরুত্বপূর্ণ সমার্থক শব্দ ও প্রতিশব্দসমূহ"
+          ],
+          "rows": [
+            [
+              "অগ্নি",
+              "অনল, পাবক, বহ্নি, হুতাশন, শিখী, কৃশানু, বৈশ্বানর, বিভাবসু, দহন"
+            ],
+            [
+              "অন্ধকার",
+              "আঁধার, তমিস্রা, তিমির, অমারতি, অন্ধকারাবৃত, তমঃ"
+            ],
+            [
+              "অশ্ব",
+              "ঘোড়া, ঘোটক, তুরগ, তুরঙ্গম, বাজি, হয়, সৈন্ধব"
+            ],
+            [
+              "আকাশ",
+              "গগন, অম্বর, ব্যোম, নভঃ, দ্যুলোক, অন্তরিক্ষ, খলোক, ফলক"
+            ],
+            [
+              "ইচ্ছা",
+              "আকাঙ্ক্ষা, অভিলাষ, কামনা, বাসনা, স্পৃহা, বাঞ্ছা, সাধ, রুচি"
+            ],
+            [
+              "কপোত",
+              "পায়রা, পারাবত, কবুতর, রক্তদৃক"
+            ],
+            [
+              "কোকিল",
+              "পরভৃত, পিক, বসন্তদূত, কোয়েল, মধুকণ্ঠ"
+            ],
+            [
+              "কাক",
+              "পরভৃৎ, বায়স, পরপুষ্ট, বলিভুক, করট"
+            ],
+            [
+              "কপাল",
+              "ললাট, ভাল, ভাগ্য, অদৃষ্ট, নিয়তি"
+            ],
+            [
+              "কান",
+              "কর্ণ, শ্রবণ, শ্রুতি, শ্রবণেন্দ্রিয়"
+            ],
+            [
+              "কন্যা",
+              "মেয়ে, দুহিতা, আত্মজা, তনয়া, নন্দিনী, সূতা"
+            ],
+            [
+              "চন্দ্র / চাঁদ",
+              "শশী, শশাঙ্ক, ইন্দু, বিধু, সোম, রজনীকান্ত, সুধাংশু, হিমাংশু, মৃগাঙ্ক, কলানাথ"
+            ],
+            [
+              "চোখ",
+              "অক্ষি, নয়ন, নেত্র, লোচন, চক্ষু, অক্ষিকোটর, অক্ষিপট"
+            ],
+            [
+              "জল",
+              "বারি, অম্বু, নীর, সলিল, পয়ঃ, তোয়, উদক, জীবন, অপ"
+            ],
+            [
+              "তীর / কূল",
+              "তট, পার, সৈকত, পুলিন, ধার, কূল"
+            ],
+            [
+              "দিন",
+              "দিবস, দিবা, অহঃ, বার, বাসর"
+            ],
+            [
+              "দাঁত",
+              "দন্ত, রশন, দশন, দ্বিজ"
+            ],
+            [
+              "নদী",
+              "তটিনী, তরঙ্গিণী, স্রোতস্বিনী, নির্ঝরিণী, শৈবালিনী, গাঙ, কল্লোলিনী"
+            ],
+            [
+              "পর্বত",
+              "পাহাড়, গিরি, অচল, শৈল, ভূধর, মহীধর, শৃঙ্গী, অদ্রি, ক্ষিতিধর"
+            ],
+            [
+              "পদ্ম",
+              "কমল, শতদল, রাজীব, উৎপল, নলিন, পঙ্কজ, অরবিন্দ, কঞ্জ, তামরস, সরোজ"
+            ],
+            [
+              "পাখি",
+              "পক্ষী, বিহগ, বিহঙ্গম, খেচর, দ্বিজ, শকুন্ত, পতত্র"
+            ],
+            [
+              "পৃথিবী",
+              "ধরণী, ধরা, বসুন্ধরা, অবনী, মেদিনী, বসুমতী, ক্ষিতি, জগত, মহী, বিশ্ব"
+            ],
+            [
+              "ফুল",
+              "পুষ্প, কুসুম, প্রসূন, রঙ্গন, মঞ্জরী"
+            ],
+            [
+              "বৃক্ষ",
+              "গাছ, তরু, দ্রুম, পাদপ, মহীরুহ, শাখী, বিটপী"
+            ],
+            [
+              "বায়ু / বাতাস",
+              "পবন, অনিল, সমীর, সমীরণ, মারুত, গন্ধবহ, বাত, মারুতী"
+            ],
+            [
+              "বিদ্যুৎ",
+              "বিজলি, তড়িৎ, ক্ষণপ্রভা, চপলা, চঞ্চলা, সৌদামিনী, দামিনী, শম্পা"
+            ],
+            [
+              "মেঘ",
+              "জলদ, নীরদ, তোয়দ, অম্বুদ, বারিদ, জলধর, জীমূত, ঘন, পয়োধর"
+            ],
+            [
+              "মাতা / মা",
+              "জননী, গর্ভধারিণী, প্রসূতি, অম্বা, প্রসবিত্রী, মাতা"
+            ],
+            [
+              "পিতা / বাবা",
+              "জনক, তাত, জন্মদাতা, প্রপিতা, পিতা"
+            ],
+            [
+              "পুত্র",
+              "ছেলে, তনয়, আত্মজ, সুত, নন্দন, দারক"
+            ],
+            [
+              "ভ্রমর",
+              "মধুপ, মধুকর, অলি, ভৃঙ্গ, ষটপদ, দ্বিরেফ, মধুলিহ"
+            ],
+            [
+              "মানুষ",
+              "মনুষ্য, নর, মানব, লোক, মানবজাতি, মর্ত্যবাসী"
+            ],
+            [
+              "ময়ূর",
+              "কেকা, শিখণ্ডী, কলাপী, বহী, ময়ূরক"
+            ],
+            [
+              "রাজা",
+              "নৃপতি, নরপতি, ভূপতি, মহীপাল, ভূপাল, সম্রাট, রাজাধিরাজ"
+            ],
+            [
+              "রাত্রি",
+              "রাত, রজনী, যামিনী, নিশি, নিশীথিনী, শর্বরী, বিভাবরী, ক্ষণদা, তমোময়ী"
+            ],
+            [
+              "শরীর / দেহ",
+              "গা, তনু, কায়া, কলেবর, অঙ্গ, গাত্র, অবয়ব"
+            ],
+            [
+              "সাপ / সর্প",
+              "অহি, ভুজঙ্গ, ভুজঙ্গম, নাগ, ফণী, উরগ, আশীবিষ, বিষধর, পন্নগ"
+            ],
+            [
+              "সিংহ",
+              "কেশরী, মৃগেন্দ্র, পশুরাজ, হরি, শার্দূল, মৃগরাজ"
+            ],
+            [
+              "হাতি / হস্তী",
+              "গজ, দ্বিরদ, করি, দন্তী, মাতঙ্গ, বারণ, কুঞ্জর, দ্বিপ, নাগ"
+            ],
+            [
+              "সূর্য",
+              "রবি, ভানু, ভাস্কর, তপন, মার্তণ্ড, দিনমণি, সবিতা, আদিত্য, দিবাকর, মিহির, অর্ক"
+            ],
+            [
+              "স্বর্গ",
+              "সুরলোক, দেবলোক, দ্যুলোক, অমরাবতী, ত্রিদিব, বৈকুণ্ঠ"
+            ],
+            [
+              "সোনা / স্বর্ণ",
+              "হেম, কনক, কাঞ্চন, সুবর্ণ, হিরণ্য, চারুরূপ"
+            ],
+            [
+              "সমুদ্র / সাগর",
+              "জলধি, রত্নাকর, অর্ণব, পয়োনিধি, বারিধি, সিন্ধু, অম্বুধি, তোয়ধি, পারাবার"
+            ],
+            [
+              "স্ত্রী / পত্নী",
+              "জায়া, ভার্যা, অর্ধাঙ্গিনী, কলত্র, গৃহিণী, দারা, ঘরণী"
+            ],
+            [
+              "স্বামী / পতি",
+              "কান্ত, বর, নাথ, দয়িত, প্রাণনাথ, ভর্তা"
+            ],
+            [
+              "হরিণ",
+              "মৃগ, কুরঙ্গ, কুরঙ্গম, সারঙ্গ, এণ"
+            ],
+            [
+              "হাত",
+              "হস্ত, কর, বাহু, ভুজ, পাণি"
+            ],
+            [
+              "বোন / ভগিনী",
+              "সহোদরা, ভগিনী, আত্মজা, সোদরা"
+            ],
+            [
+              "ভাই / ভ্রাতা",
+              "সহোদর, সোদর, ভ্রাতা, অনুজ"
+            ],
+            [
+              "সুগন্ধ",
+              "সৌরভ, সুবাস, আমোদ, সুরভি, পরিমল"
+            ]
+          ]
+        }
       }
     ],
-    examTips: [
-      "'তামার বিষ' বাগধারার অর্থ কী? উত্তর: অর্থের কুপ্রভাব।",
-      "'অসূর্যম্পশ্যা' কথার অর্থ কী? উত্তর: যে নারী কখনো সূর্য দেখেনি।",
-      "'হরিণের চামড়া'-কে এককথায় কী বলে? উত্তর: অজিন।",
-      "'উপকারকের অপকার করে যে' তাকে কী বলে? উত্তর: কৃতঘ্ন।"
+    "examTips": [
+      "'পরভৃত' (ত-যুক্ত) মানে কোকিল, আর 'পরভৃৎ' (ৎ-যুক্ত) মানে কাক।",
+      "'মার্তণ্ড', 'সবিতা', 'মিহির', 'অর্ক' হলো সূর্যের প্রতিশব্দ।",
+      "'দ্বিরেফ', 'ষটপদ', 'অলি', 'ভৃঙ্গ' হলো ভ্রমরের প্রতিশব্দ।"
     ],
-    quickRevisionPoints: [
-      "কৃতজ্ঞ = যে উপকারের উপকার স্বীকার করে।",
-      "কৃতঘ্ন = যে উপকারের অপকার করে।",
-      "অকৃতজ্ঞ = যে উপকারের উপকার স্বীকার করে না।"
+    "quickRevisionPoints": [
+      "অগ্নি = বৈশ্বানর, হুতাশন, পাবক, শিখী।",
+      "হাতি = দ্বিপ, করি, মাতঙ্গ, কুঞ্জর।",
+      "সাপ = অহি, আশীবিষ, পন্নগ, উরগ।"
+    ],
+    "oneLiners": [
+      "'মার্তণ্ড' এবং 'সবিতা' হলো সূর্যের অত্যন্ত প্রচলিত দুটি প্রতিশব্দ।",
+      "'দ্বিরেফ' এবং 'ষটপদ' হলো ভ্রমরের সমার্থক শব্দ।",
+      "'পরভৃত' হলো কোকিল এবং 'পরভৃৎ' হলো কাক।"
+    ],
+    "saqs": [
+      {
+        "id": "bengali_ch10_saq1",
+        "questionBn": "'পরভৃত' এবং 'পরভৃৎ' শব্দদুটির সমার্থক অর্থের পার্থক্য কী?",
+        "answerBn": "'পরভৃত' (ত-যুক্ত) অর্থ হলো 'কোকিল' (যেহেতু কোকিলের ছানা কাকের বাসায় প্রতিপালিত হয়); আর 'পরভৃৎ' (ৎ-যুক্ত) অর্থ হলো 'কাক' (যে কোকিলের ছানাকে প্রতিপালন করে)।"
+      }
     ]
   }
 };
 
 export const BENGALI_CH10_QUESTIONS: Question[] = [
   {
-    id: "vol2_ch10_q1",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'অকালকূষ্মাণ্ড' বাগধারাটির প্রকৃত অর্থ কী?",
-    options: ["অসময়ের কুমড়ো", "অপদার্থ বা অকেজো ব্যক্তি", "খুব জ্ঞানী ব্যক্তি", "ভীষণ চালাক"],
-    correctIndex: 1,
-    explanationBn: "অকালকূষ্মাণ্ড বাগধারাটির অর্থ অপদার্থ বা অকেজো মানুষ।",
-    difficulty: "easy",
-    tags: ["অকালকূষ্মাণ্ড", "বাগধারা"]
+    "id": "vol2_ch10_q1",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "নিচের কোনটি 'সূর্য' শব্দের সমার্থক নয়?",
+    "options": [
+      "সুধাংশু",
+      "মার্তণ্ড",
+      "সবিতা",
+      "মিহির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'সুধাংশু' হলো চাঁদের প্রতিশব্দ; মার্তণ্ড, সবিতা ও মিহির হলো সূর্যের প্রতিশব্দ।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q2",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'অগাধ জলের মাছ' বাগধারাটির অর্থ কী?",
-    options: ["খুব চালাক ব্যক্তি", "বড় মাছ", "গভীর সমুদ্রের প্রাণী", "সহজ সরল লোক"],
-    correctIndex: 0,
-    explanationBn: "অগাধ জলের মাছ বলতে অতি চতুর বা ধূর্ত ব্যক্তিকে বোঝায়।",
-    difficulty: "easy",
-    tags: ["অগাধ জলের মাছ", "বাগধারা"]
+    "id": "vol2_ch10_q2",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'পরভৃত' শব্দের অর্থ কী?",
+    "options": [
+      "কোকিল",
+      "কাক",
+      "ময়ূর",
+      "টিয়া"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'পরভৃত' হলো কোকিল; আর 'পরভৃৎ' হলো কাক।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q3",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'অমাবস্যার চাঁদ' বাগধারাটির সঠিক অর্থ কোনটি?",
-    options: ["অন্ধকার রাত", "দুর্লভ বস্তু বা ব্যক্তি", "সুন্দর বস্তু", "অশুভ লক্ষণ"],
-    correctIndex: 1,
-    explanationBn: "অমাবস্যার চাঁদ বলতে দুর্লভ বা কদাচিৎ দৃষ্ট বস্তুকে বোঝায়।",
-    difficulty: "easy",
-    tags: ["অমাবস্যার চাঁদ", "বাগধারা"]
+    "id": "vol2_ch10_q3",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'দ্বিরেফ' ও 'ষটপদ' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "ভ্রমর",
+      "হাতি",
+      "সিংহ",
+      "সাপ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ভ্রমরের ছয়টি পা এবং দুটি 'র' ধ্বনি (ভ্রমর) থাকায় একে ষটপদ ও দ্বিরেফ বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q4",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'আকাশকুসুম' বাগধারাটির অর্থ কী?",
-    options: ["আকাশের তারা", "অসম্ভব বা অবাস্তব কল্পনা", "সুন্দর ফুল", "উঁচু গাছ"],
-    correctIndex: 1,
-    explanationBn: "আকাশকুসুম অর্থ অবাস্তব বা অলীক কল্পনা।",
-    difficulty: "easy",
-    tags: ["আকাশকুসুম", "বাগধারা"]
+    "id": "vol2_ch10_q4",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "নিচের কোনটি 'পদ্ম' শব্দের সমার্থক শব্দ?",
+    "options": [
+      "অরবিন্দ",
+      "অনিল",
+      "অদ্রি",
+      "অহি"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অরবিন্দ, রাজীব, উৎপল, নলিন হলো পদ্মের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q5",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'তামার বিষ' কথাটির অর্থ কী?",
-    options: ["তামার পাত্রের বিষ", "অর্থের কুপ্রভাব বা অহংকার", "মারাত্মক বিষ", "দারিদ্র্য"],
-    correctIndex: 1,
-    explanationBn: "তামার বিষ বলতে হঠাৎ প্রচুর ধনসম্পদ লাভের ফলে জাত অহংকার বা কুপ্রভাবকে বোঝায়।",
-    difficulty: "easy",
-    tags: ["তামার বিষ", "অর্থের কুপ্রভাব"]
+    "id": "vol2_ch10_q5",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'সৌদামিনী' ও 'শম্পা' কোন শব্দের প্রতিশব্দ?",
+    "options": [
+      "বিদ্যুৎ",
+      "মেঘ",
+      "সূর্য",
+      "আকাশ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সৌদামিনী, চপলা, ক্ষণপ্রভা, দামিনী ও শম্পা হলো বিদ্যুতের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q6",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'কাকভূশণ্ডি' বাগধারাটির অর্থ কী?",
-    options: ["কাকের ডাক", "দীর্ঘজীবী ব্যক্তি", "কুৎসিত মানুষ", "অপদার্থ"],
-    correctIndex: 1,
-    explanationBn: "কাকভূশণ্ডি বলতে বহুদর্শী বা দীর্ঘজীবী ব্যক্তিকে বোঝায়।",
-    difficulty: "easy",
-    tags: ["কাকভূশণ্ডি", "দীর্ঘজীবী"]
+    "id": "vol2_ch10_q6",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'দ্বিপ' ও 'মাতঙ্গ' কোন প্রাণীর সমার্থক শব্দ?",
+    "options": [
+      "হাতি",
+      "বাঘ",
+      "ঘোড়া",
+      "সিংহ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "দ্বিপ (দুইবার পান করে), মাতঙ্গ, করি, কুঞ্জর হলো হাতির প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q7",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'বিড়াল তপস্বী' বাগধারাটির অর্থ কী?",
-    options: ["ধার্মিক বিড়াল", "ভণ্ড সাধু বা কপট ধার্মিক", "ধ্যানমগ্ন ব্যক্তি", "শান্ত ব্যক্তি"],
-    correctIndex: 1,
-    explanationBn: "বিড়াল তপস্বী বলতে কপট সাধু বা ভণ্ড ব্যক্তিকে বোঝায়।",
-    difficulty: "easy",
-    tags: ["বিড়াল তপস্বী", "ভণ্ড সাধু"]
+    "id": "vol2_ch10_q7",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'অহি' ও 'আশীবিষ' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সাপ",
+      "বিচ্ছু",
+      "সিংহ",
+      "শকুন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অহি, আশীবিষ, পন্নগ, ভুজঙ্গ হলো সর্প বা সাপের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q8",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'সাক্ষী গোপাল' বাগধারাটির অর্থ কী?",
-    options: ["গোপালের মূর্তি", "নিষ্ক্রিয় বা নির্বাক দর্শক", "প্রধান সাক্ষী", "সৎ ব্যক্তি"],
-    correctIndex: 1,
-    explanationBn: "সাক্ষী গোপাল বলতে যার কোনো ক্ষমতা নেই, কেবল নিষ্ক্রিয় দর্শকের মতো বসে থাকে তাকে বোঝায়।",
-    difficulty: "easy",
-    tags: ["সাক্ষী গোপাল", "নিষ্ক্রিয় দর্শক"]
+    "id": "vol2_ch10_q8",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "নিচের কোনটি 'বায়ু' শব্দের প্রতিশব্দ?",
+    "options": [
+      "অনিল",
+      "অনল",
+      "অম্বু",
+      "অচল"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অনিল' হলো বাতাস/বায়ু ('অনল' হলো আগুন)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q9",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'উত্তম-মধ্যম' বাগধারাটির অর্থ কী?",
-    options: ["ভালো ও মাঝারি", "প্রহার বা মারধর", "মধ্যম পন্থা", "উচ্চ গুণসম্পন্ন"],
-    correctIndex: 1,
-    explanationBn: "উত্তম-মধ্যম দেওয়া বলতে বেদম প্রহার করা বোঝায়।",
-    difficulty: "easy",
-    tags: ["উত্তম-মধ্যম", "প্রহার"]
+    "id": "vol2_ch10_q9",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অদ্রি' ও 'ক্ষিতীধর' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "পর্বত",
+      "সমুদ্র",
+      "নদী",
+      "গাছ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অদ্রি, শৈল, গিরি, ভূধর হলো পর্বতের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q10",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'ডুমুরের ফুল' বাগধারাটির অর্থ কী?",
-    options: ["সুন্দর ফুল", "অদৃশ্য বা দুর্লভ বস্তু", "বুনো ফুল", "মূল্যহীন বস্তু"],
-    correctIndex: 1,
-    explanationBn: "ডুমুরের ফুল সচরাচর দেখা যায় না, তাই এর অর্থ দুর্লভ বা অদৃশ্য বস্তু।",
-    difficulty: "easy",
-    tags: ["ডুমুরের ফুল", "দুর্লভ বস্তু"]
+    "id": "vol2_ch10_q10",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অর্ণব' ও 'রত্নাকর' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সমুদ্র",
+      "নদী",
+      "পুকুর",
+      "মেঘ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অর্ণব, রত্নাকর, বারিধি, সিন্ধু হলো সমুদ্র বা সাগরের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q11",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub2",
-    questionBn: "'অতি সন্ন্যাসীতে গাজন নষ্ট' — প্রবাদটির অর্থ কী?",
-    options: ["অনেক সন্ন্যাসীর সম্মেলন", "অধিক ব্যক্তির কর্তৃত্বে কাজ পণ্ড হওয়া", "গাজনের উৎসব নষ্ট হওয়া", "সন্ন্যাসীদের বিবাদ"],
-    correctIndex: 1,
-    explanationBn: "অনেক লোকের অনাবশ্যক হস্তক্ষেপে কোনো কাজ নষ্ট হয়ে যাওয়া বোঝায়।",
-    difficulty: "easy",
-    tags: ["অতি সন্ন্যাসীতে গাজন নষ্ট", "প্রবাদ"]
+    "id": "vol2_ch10_q11",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "নিচের কোনটি 'সূর্য' শব্দের সমার্থক নয়?",
+    "options": [
+      "সুধাংশু",
+      "মার্তণ্ড",
+      "সবিতা",
+      "মিহির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'সুধাংশু' হলো চাঁদের প্রতিশব্দ; মার্তণ্ড, সবিতা ও মিহির হলো সূর্যের প্রতিশব্দ।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q12",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub2",
-    questionBn: "'গাছে কাঁঠাল গোঁফে তেল' — প্রবাদটির অন্তর্নিহিত অর্থ কী?",
-    options: ["কাঁঠাল খাওয়া", "প্রাপ্তির পূর্বেই ভোগ করার আয়োজন", "অসম্ভব কাজ", "গাছে ওঠা"],
-    correctIndex: 1,
-    explanationBn: "বস্তু হস্তগত হওয়ার পূর্বেই তা ভোগের আগাম প্রস্তুতি নেওয়া।",
-    difficulty: "easy",
-    tags: ["গাছে কাঁঠাল গোঁফে তেল", "প্রবাদ"]
+    "id": "vol2_ch10_q12",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'পরভৃত' শব্দের অর্থ কী?",
+    "options": [
+      "কোকিল",
+      "কাক",
+      "ময়ূর",
+      "টিয়া"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'পরভৃত' হলো কোকিল; আর 'পরভৃৎ' হলো কাক।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q13",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub2",
-    questionBn: "'মেঘ না চাইতেই জল' — প্রবাদটির অর্থ কী?",
-    options: ["বৃষ্টি হওয়া", "প্রত্যাশার অতিরিক্ত বা অপ্রত্যাশিত প্রাপ্তি", "বিনা মেঘে বজ্রপাত", "খুব তৃষ্ণার্ত হওয়া"],
-    correctIndex: 1,
-    explanationBn: "না চাইতেই আকস্মিকভাবে কোনো সুফল বা কাঙ্ক্ষিত বস্তু লাভ।",
-    difficulty: "easy",
-    tags: ["মেঘ না চাইতেই জল", "প্রবাদ"]
+    "id": "vol2_ch10_q13",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'দ্বিরেফ' ও 'ষটপদ' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "ভ্রমর",
+      "হাতি",
+      "সিংহ",
+      "সাপ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ভ্রমরের ছয়টি পা এবং দুটি 'র' ধ্বনি (ভ্রমর) থাকায় একে ষটপদ ও দ্বিরেফ বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q14",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে নারী কখনো সূর্য দেখেনি — এককথায় কী হবে?",
-    options: ["সূর্যমুখী", "অসূর্যম্পশ্যা", "অদৃষ্টপূর্বা", "অন্ধকারবাসিনী"],
-    correctIndex: 1,
-    explanationBn: "যে নারী অন্তপুরবাসিনী হওয়ায় কখনো সূর্যকে দেখেনি তাকে 'অসূর্যম্পশ্যা' বলে।",
-    difficulty: "easy",
-    tags: ["অসূর্যম্পশ্যা", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q14",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "নিচের কোনটি 'পদ্ম' শব্দের সমার্থক শব্দ?",
+    "options": [
+      "অরবিন্দ",
+      "অনিল",
+      "অদ্রি",
+      "অহি"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অরবিন্দ, রাজীব, উৎপল, নলিন হলো পদ্মের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q15",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে নারীর স্বামী বিদেশে থাকে — এককথায় কী বলে?",
-    options: ["প্রোষিতভর্তৃকা", "প্রবাসী", "বিধবা", "স্বয়ংবরা"],
-    correctIndex: 0,
-    explanationBn: "যে নারীর স্বামী দূর প্রবাসে অবস্থান করে তাকে প্রোষিতভর্তৃকা বলে।",
-    difficulty: "easy",
-    tags: ["প্রোষিতভর্তৃকা", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q15",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'সৌদামিনী' ও 'শম্পা' কোন শব্দের প্রতিশব্দ?",
+    "options": [
+      "বিদ্যুৎ",
+      "মেঘ",
+      "সূর্য",
+      "আকাশ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সৌদামিনী, চপলা, ক্ষণপ্রভা, দামিনী ও শম্পা হলো বিদ্যুতের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q16",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে নারী নিজে পতি বরণ করে — তাকে কী বলে?",
-    options: ["প্রোষিতভর্তৃকা", "স্বয়ংবরা", "সহধর্মিণী", "বধূ"],
-    correctIndex: 1,
-    explanationBn: "যে নারী নিজে বর নির্বাচন করে তাকে স্বয়ংবরা বলে।",
-    difficulty: "easy",
-    tags: ["স্বয়ংবরা", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q16",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'দ্বিপ' ও 'মাতঙ্গ' কোন প্রাণীর সমার্থক শব্দ?",
+    "options": [
+      "হাতি",
+      "বাঘ",
+      "ঘোড়া",
+      "সিংহ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "দ্বিপ (দুইবার পান করে), মাতঙ্গ, করি, কুঞ্জর হলো হাতির প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q17",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "হরিণের চর্ম — এককথায় কী হবে?",
-    options: ["চামড়া", "অজিন", "মৃগছাল", "বল্কল"],
-    correctIndex: 1,
-    explanationBn: "হরিণের চামড়াকে এককথায় 'অজিন' বলা হয়।",
-    difficulty: "easy",
-    tags: ["অজিন", "হরিণের চর্ম"]
+    "id": "vol2_ch10_q17",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'অহি' ও 'আশীবিষ' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সাপ",
+      "বিচ্ছু",
+      "সিংহ",
+      "শকুন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অহি, আশীবিষ, পন্নগ, ভুজঙ্গ হলো সর্প বা সাপের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q18",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "গাছের ছাল বা বাকল — এককথায় কী বলে?",
-    options: ["অজিন", "বল্কল", "পত্র", "পর্ণ"],
-    correctIndex: 1,
-    explanationBn: "গাছের বাকল বা ছালকে 'বল্কল' বলা হয়।",
-    difficulty: "easy",
-    tags: ["বল্কল", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q18",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "নিচের কোনটি 'বায়ু' শব্দের প্রতিশব্দ?",
+    "options": [
+      "অনিল",
+      "অনল",
+      "অম্বু",
+      "অচল"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অনিল' হলো বাতাস/বায়ু ('অনল' হলো আগুন)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q19",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যা পূর্বে কখনো দেখা যায়নি — এককথায় প্রকাশ কী?",
-    options: ["অদৃষ্টপূর্ব", "অশ্রুতপূর্ব", "অভূতপূর্ব", "অপূর্ব"],
-    correctIndex: 0,
-    explanationBn: "যা পূর্বে দেখা যায়নি = অদৃষ্টপূর্ব।",
-    difficulty: "easy",
-    tags: ["অদৃষ্টপূর্ব", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q19",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অদ্রি' ও 'ক্ষিতীধর' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "পর্বত",
+      "সমুদ্র",
+      "নদী",
+      "গাছ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অদ্রি, শৈল, গিরি, ভূধর হলো পর্বতের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q20",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যা পূর্বে কখনো ঘটেনি — এককথায় কী হবে?",
-    options: ["অদৃষ্টপূর্ব", "অভূতপূর্ব", "অশ্রুতপূর্ব", "অপ্রত্যাশিত"],
-    correctIndex: 1,
-    explanationBn: "যা পূর্বে কখনো ঘটেনি তা হলো 'অভূতপূর্ব'।",
-    difficulty: "easy",
-    tags: ["অভূতপূর্ব", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q20",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অর্ণব' ও 'রত্নাকর' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সমুদ্র",
+      "নদী",
+      "পুকুর",
+      "মেঘ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অর্ণব, রত্নাকর, বারিধি, সিন্ধু হলো সমুদ্র বা সাগরের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q21",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "উপকারের অপকার করে যে — তাকে কী বলে?",
-    options: ["কৃতজ্ঞ", "কৃতঘ্ন", "অকৃতজ্ঞ", "পাপী"],
-    correctIndex: 1,
-    explanationBn: "যে উপকারীর অপকার করে তাকে কৃতঘ্ন বলে।",
-    difficulty: "easy",
-    tags: ["কৃতঘ্ন", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q21",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "নিচের কোনটি 'সূর্য' শব্দের সমার্থক নয়?",
+    "options": [
+      "সুধাংশু",
+      "মার্তণ্ড",
+      "সবিতা",
+      "মিহির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'সুধাংশু' হলো চাঁদের প্রতিশব্দ; মার্তণ্ড, সবিতা ও মিহির হলো সূর্যের প্রতিশব্দ।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q22",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে উপকারের উপকার স্বীকার করে — তাকে কী বলে?",
-    options: ["কৃতজ্ঞ", "কৃতঘ্ন", "অকৃতজ্ঞ", "সাধু"],
-    correctIndex: 0,
-    explanationBn: "যে উপকারীর উপকার স্বীকার বা মনে রাখে তাকে কৃতজ্ঞ বলে।",
-    difficulty: "easy",
-    tags: ["কৃতজ্ঞ", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q22",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'পরভৃত' শব্দের অর্থ কী?",
+    "options": [
+      "কোকিল",
+      "কাক",
+      "ময়ূর",
+      "টিয়া"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'পরভৃত' হলো কোকিল; আর 'পরভৃৎ' হলো কাক।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q23",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "অক্ষির সমীপে — এককথায় কী হবে?",
-    options: ["পরোক্ষ", "সমক্ষ", "প্রত্যক্ষ", "চক্ষুষ্মান"],
-    correctIndex: 1,
-    explanationBn: "চোখের সামনে বা নিকটে = সমক্ষ।",
-    difficulty: "easy",
-    tags: ["সমক্ষ", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q23",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'দ্বিরেফ' ও 'ষটপদ' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "ভ্রমর",
+      "হাতি",
+      "সিংহ",
+      "সাপ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ভ্রমরের ছয়টি পা এবং দুটি 'র' ধ্বনি (ভ্রমর) থাকায় একে ষটপদ ও দ্বিরেফ বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q24",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "অক্ষির অগোচরে — এককথায় কী বলে?",
-    options: ["সমক্ষ", "পরোক্ষ", "প্রত্যক্ষ", "অদৃশ্য"],
-    correctIndex: 1,
-    explanationBn: "চোখের আড়ালে বা অগোচরে = পরোক্ষ।",
-    difficulty: "easy",
-    tags: ["পরোক্ষ", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q24",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "নিচের কোনটি 'পদ্ম' শব্দের সমার্থক শব্দ?",
+    "options": [
+      "অরবিন্দ",
+      "অনিল",
+      "অদ্রি",
+      "অহি"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অরবিন্দ, রাজীব, উৎপল, নলিন হলো পদ্মের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q25",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'চিনে জোঁক' বাগধারাটির অর্থ কী?",
-    options: ["চীনা দেশের জোঁক", "নাছোড়বান্দা ব্যক্তি", "অলস ব্যক্তি", "ভয়ঙ্কর প্রাণী"],
-    correctIndex: 1,
-    explanationBn: "চিনে জোঁক বলতে নাছোড়বান্দা বা অবিরাম লেগে থাকে এমন লোককে বোঝায়।",
-    difficulty: "easy",
-    tags: ["চিনে জোঁক", "নাছোড়বান্দা"]
+    "id": "vol2_ch10_q25",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'সৌদামিনী' ও 'শম্পা' কোন শব্দের প্রতিশব্দ?",
+    "options": [
+      "বিদ্যুৎ",
+      "মেঘ",
+      "সূর্য",
+      "আকাশ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সৌদামিনী, চপলা, ক্ষণপ্রভা, দামিনী ও শম্পা হলো বিদ্যুতের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q26",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'ঘটিরাম' বাগধারাটির অর্থ কী?",
-    options: ["ঘটি প্রস্তুতকারক", "অপদার্থ বা অযোগ্য ব্যক্তি", "পণ্ডিত ব্যক্তি", "চতুর লোক"],
-    correctIndex: 1,
-    explanationBn: "ঘটিরাম অর্থ অপদার্থ বা অযোগ্য ব্যক্তি।",
-    difficulty: "easy",
-    tags: ["ঘটিরাম", "অপদার্থ"]
+    "id": "vol2_ch10_q26",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'দ্বিপ' ও 'মাতঙ্গ' কোন প্রাণীর সমার্থক শব্দ?",
+    "options": [
+      "হাতি",
+      "বাঘ",
+      "ঘোড়া",
+      "সিংহ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "দ্বিপ (দুইবার পান করে), মাতঙ্গ, করি, কুঞ্জর হলো হাতির প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q27",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'ডান হাতের ব্যাপার' বলতে কী বোঝায়?",
-    options: ["লেখালেখি", "ভোজন বা আহার করা", "ঘুষ দেওয়া", "মারপিট"],
-    correctIndex: 1,
-    explanationBn: "ডান হাতের ব্যাপার বলতে আহার বা ভোজন করা বোঝায়।",
-    difficulty: "easy",
-    tags: ["ডান হাতের ব্যাপার", "ভোজন"]
+    "id": "vol2_ch10_q27",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'অহি' ও 'আশীবিষ' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সাপ",
+      "বিচ্ছু",
+      "সিংহ",
+      "শকুন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অহি, আশীবিষ, পন্নগ, ভুজঙ্গ হলো সর্প বা সাপের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q28",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'ভূতের ব্যাগার' বাগধারাটির অর্থ কী?",
-    options: ["ভূতের সেবা", "বৃথা পরিশ্রম বা নিষ্ফল শ্রম", "অদৃশ্য কাজ", "ভয়ের কাজ"],
-    correctIndex: 1,
-    explanationBn: "ভূতের ব্যাগার খাটা মানে অনর্থক বা বৃথা পরিশ্রম করা।",
-    difficulty: "easy",
-    tags: ["ভূতের ব্যাগার", "বৃথা পরিশ্রম"]
+    "id": "vol2_ch10_q28",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "নিচের কোনটি 'বায়ু' শব্দের প্রতিশব্দ?",
+    "options": [
+      "অনিল",
+      "অনল",
+      "অম্বু",
+      "অচল"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অনিল' হলো বাতাস/বায়ু ('অনল' হলো আগুন)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q29",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'তালপাতার সেপাই' বাগধারাটির অর্থ কী?",
-    options: ["বীর যোদ্ধা", "অতিশয় রোগা ও দুর্বল ব্যক্তি", "খেলনা সৈনিক", "কাগজের সেনা"],
-    correctIndex: 1,
-    explanationBn: "তালপাতার সেপাই বলতে দুর্বল ও কৃশকায় ব্যক্তিকে বোঝায়।",
-    difficulty: "easy",
-    tags: ["তালপাতার সেপাই", "রোগা ও দুর্বল"]
+    "id": "vol2_ch10_q29",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অদ্রি' ও 'ক্ষিতীধর' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "পর্বত",
+      "সমুদ্র",
+      "নদী",
+      "গাছ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অদ্রি, শৈল, গিরি, ভূধর হলো পর্বতের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q30",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'গড্ডলিকা প্রবাহ' বলতে কী বোঝায়?",
-    options: ["নদীর তীব্র স্রোত", "অন্ধ অনুকরণ বা অন্ধ অনুসরণ", "পশুর দল", "জলের ধারা"],
-    correctIndex: 1,
-    explanationBn: "কোনো বিচার-বিবেচনা না করে অন্ধের মতো দলের পিছু চলাকে গড্ডলিকা প্রবাহ বলে।",
-    difficulty: "easy",
-    tags: ["গড্ডলিকা প্রবাহ", "অন্ধ অনুকরণ"]
+    "id": "vol2_ch10_q30",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অর্ণব' ও 'রত্নাকর' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সমুদ্র",
+      "নদী",
+      "পুকুর",
+      "মেঘ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অর্ণব, রত্নাকর, বারিধি, সিন্ধু হলো সমুদ্র বা সাগরের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q31",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যার অন্য কোনো উপায় নেই — এককথায় কী বলে?",
-    options: ["নিরুপায়", "অনন্যোপায়", "উপায়হীন", "অসহায়"],
-    correctIndex: 1,
-    explanationBn: "যার অন্য কোনো উপায় নেই = অনন্যোপায়।",
-    difficulty: "easy",
-    tags: ["অনন্যোপায়", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q31",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "নিচের কোনটি 'সূর্য' শব্দের সমার্থক নয়?",
+    "options": [
+      "সুধাংশু",
+      "মার্তণ্ড",
+      "সবিতা",
+      "মিহির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'সুধাংশু' হলো চাঁদের প্রতিশব্দ; মার্তণ্ড, সবিতা ও মিহির হলো সূর্যের প্রতিশব্দ।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q32",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে নারীর কোনো সন্তান হয় না — এককথায় কী বলে?",
-    options: ["বন্ধ্যা", "মৃতবৎসা", "কাকবন্ধ্যা", "অনপত্য"],
-    correctIndex: 0,
-    explanationBn: "সন্তানহীন নারীকে বন্ধ্যা বলা হয়।",
-    difficulty: "easy",
-    tags: ["বন্ধ্যা", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q32",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'পরভৃত' শব্দের অর্থ কী?",
+    "options": [
+      "কোকিল",
+      "কাক",
+      "ময়ূর",
+      "টিয়া"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'পরভৃত' হলো কোকিল; আর 'পরভৃৎ' হলো কাক।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q33",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে নারীর একটিমাত্র সন্তান হয়েছে — তাকে কী বলে?",
-    options: ["বন্ধ্যা", "কাকবন্ধ্যা", "একপুত্রা", "মৃতবৎসা"],
-    correctIndex: 1,
-    explanationBn: "যে নারীর একটিমাত্র সন্তান হওয়ার পর আর সন্তান হয় না তাকে কাকবন্ধ্যা বলে।",
-    difficulty: "easy",
-    tags: ["কাকবন্ধ্যা", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q33",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'দ্বিরেফ' ও 'ষটপদ' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "ভ্রমর",
+      "হাতি",
+      "সিংহ",
+      "সাপ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ভ্রমরের ছয়টি পা এবং দুটি 'র' ধ্বনি (ভ্রমর) থাকায় একে ষটপদ ও দ্বিরেফ বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q34",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে নারীর সন্তান জন্মে মারা যায় — তাকে কী বলে?",
-    options: ["মৃতবৎসা", "বন্ধ্যা", "শোকাতুরা", "কাকবন্ধ্যা"],
-    correctIndex: 0,
-    explanationBn: "যে নারীর গর্ভের সন্তান জন্মানোর পর মৃত্যুমুখে পতিত হয় তাকে মৃতবৎসা বলে।",
-    difficulty: "easy",
-    tags: ["মৃতবৎসা", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q34",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "নিচের কোনটি 'পদ্ম' শব্দের সমার্থক শব্দ?",
+    "options": [
+      "অরবিন্দ",
+      "অনিল",
+      "অদ্রি",
+      "অহি"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অরবিন্দ, রাজীব, উৎপল, নলিন হলো পদ্মের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q35",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যা সহজে দমন করা যায় না — এককথায় কী হবে?",
-    options: ["দুর্দমনীয়", "অদম্য", "দুর্বিনীত", "দুর্নিবার"],
-    correctIndex: 0,
-    explanationBn: "যা সহজে দমন করা যায় না = দুর্দমনীয়।",
-    difficulty: "easy",
-    tags: ["দুর্দমনীয়", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q35",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'সৌদামিনী' ও 'শম্পা' কোন শব্দের প্রতিশব্দ?",
+    "options": [
+      "বিদ্যুৎ",
+      "মেঘ",
+      "সূর্য",
+      "আকাশ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সৌদামিনী, চপলা, ক্ষণপ্রভা, দামিনী ও শম্পা হলো বিদ্যুতের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q36",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যা সহজে নিবারণ করা যায় না — তাকে কী বলে?",
-    options: ["দুর্নিবার", "দুর্দমনীয়", "অনিবার্য", "দুর্জেয়"],
-    correctIndex: 0,
-    explanationBn: "যা সহজে নিবারণ করা যায় না = দুর্নিবার।",
-    difficulty: "easy",
-    tags: ["দুর্নিবার", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q36",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'দ্বিপ' ও 'মাতঙ্গ' কোন প্রাণীর সমার্থক শব্দ?",
+    "options": [
+      "হাতি",
+      "বাঘ",
+      "ঘোড়া",
+      "সিংহ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "দ্বিপ (দুইবার পান করে), মাতঙ্গ, করি, কুঞ্জর হলো হাতির প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q37",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যা সহজে অতিক্রম করা যায় না — এককথায় কী হবে?",
-    options: ["দুরতিক্রম্য", "দুর্লঙ্ঘ্য", "দুর্গম", "দুর্ভেদ্য"],
-    correctIndex: 0,
-    explanationBn: "যা সহজে অতিক্রম করা যায় না = দুরতিক্রম্য।",
-    difficulty: "easy",
-    tags: ["দুরতিক্রম্য", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q37",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'অহি' ও 'আশীবিষ' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সাপ",
+      "বিচ্ছু",
+      "সিংহ",
+      "শকুন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অহি, আশীবিষ, পন্নগ, ভুজঙ্গ হলো সর্প বা সাপের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q38",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub2",
-    questionBn: "'নাচতে না জানলে উঠোন বাঁকা' — প্রবাদটির অর্থ কী?",
-    options: ["উঠোনের ত্রুটি", "নিজের অযোগ্যতা ঢাকতে অন্যের ওপর দোষ চাপানো", "নাচের পরীক্ষা", "ভালো নৃত্যশিল্পী"],
-    correctIndex: 1,
-    explanationBn: "নিজের অদক্ষতাকে পরিবেশ বা পরিস্থিতির ওপর চাপিয়ে দেওয়া।",
-    difficulty: "easy",
-    tags: ["নাচতে না জানলে", "প্রবাদ"]
+    "id": "vol2_ch10_q38",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "নিচের কোনটি 'বায়ু' শব্দের প্রতিশব্দ?",
+    "options": [
+      "অনিল",
+      "অনল",
+      "অম্বু",
+      "অচল"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অনিল' হলো বাতাস/বায়ু ('অনল' হলো আগুন)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q39",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub2",
-    questionBn: "'চোরে চোরে মাসতুতো ভাই' — প্রবাদটির অর্থ কী?",
-    options: ["চোরদের আত্মীয়তা", "অসৎ ব্যক্তিদের পারস্পরিক বোঝাপড়া ও ঐক্য", "চুরির শিক্ষা", "ভাইয়ে ভাইয়ে মিলন"],
-    correctIndex: 1,
-    explanationBn: "মন্দ লোকের সাথে মন্দ লোকের সহজে সখ্য গড়ে ওঠা।",
-    difficulty: "easy",
-    tags: ["চোরে চোরে মাসতুতো ভাই", "প্রবাদ"]
+    "id": "vol2_ch10_q39",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অদ্রি' ও 'ক্ষিতীধর' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "পর্বত",
+      "সমুদ্র",
+      "নদী",
+      "গাছ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অদ্রি, শৈল, গিরি, ভূধর হলো পর্বতের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q40",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub2",
-    questionBn: "'জ্বলে পুড়ে খাক' বা 'আদার ব্যাপারী' বাগধারাটিতে 'আদার ব্যাপারী'র অর্থ কী?",
-    options: ["আদা বিক্রেতা", "সামান্য বা ক্ষুদ্র ব্যবসায়ী যার বড় বিষয়ে নাক গলানো সাজে না", "ধনী বণিক", "চাষী"],
-    correctIndex: 1,
-    explanationBn: "আদার ব্যাপারীর জাহাজের খবরে কাজ কী — ক্ষুদ্র ব্যক্তির বড় ব্যাপারে অনধিকার চর্চা উচিত নয়।",
-    difficulty: "easy",
-    tags: ["আদার ব্যাপারী", "বাগধারা"]
+    "id": "vol2_ch10_q40",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অর্ণব' ও 'রত্নাকর' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সমুদ্র",
+      "নদী",
+      "পুকুর",
+      "মেঘ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অর্ণব, রত্নাকর, বারিধি, সিন্ধু হলো সমুদ্র বা সাগরের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q41",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'সাত-পাঁচ ভাবা' বাগধারাটির অর্থ কী?",
-    options: ["গণিত করা", "নানা রূপ দ্বিধাদ্বন্দ্ব বা চিন্তা করা", "ঝগড়া করা", "সময় কাটানো"],
-    correctIndex: 1,
-    explanationBn: "নানা রকমের দ্বিধা বা সাত-পাঁচ চিন্তা করা।",
-    difficulty: "easy",
-    tags: ["সাত-পাঁচ ভাবা", "বাগধারা"]
+    "id": "vol2_ch10_q41",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "নিচের কোনটি 'সূর্য' শব্দের সমার্থক নয়?",
+    "options": [
+      "সুধাংশু",
+      "মার্তণ্ড",
+      "সবিতা",
+      "মিহির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'সুধাংশু' হলো চাঁদের প্রতিশব্দ; মার্তণ্ড, সবিতা ও মিহির হলো সূর্যের প্রতিশব্দ।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q42",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "দিনের শেষ ভাগকে এককথায় কী বলা হয়?",
-    options: ["পূর্বাহ্ণ", "অপরাহ্ণ", "মধ্যাহ্ন", "সায়াহ্ন"],
-    correctIndex: 1,
-    explanationBn: "দিনের শেষ ভাগ = অপরাহ্ণ; দিনের প্রথম ভাগ = পূর্বাহ্ণ; দুপুর = মধ্যাহ্ন।",
-    difficulty: "easy",
-    tags: ["অপরাহ্ণ", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q42",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'পরভৃত' শব্দের অর্থ কী?",
+    "options": [
+      "কোকিল",
+      "কাক",
+      "ময়ূর",
+      "টিয়া"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'পরভৃত' হলো কোকিল; আর 'পরভৃৎ' হলো কাক।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q43",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "রাত্রির শেষ ভাগকে এককথায় কী বলে?",
-    options: ["প্রদোষ", "পররাত্র", "নিশীথ", "উষা"],
-    correctIndex: 1,
-    explanationBn: "রাত্রির শেষ ভাগ = পররাত্র; রাত্রির প্রথম ভাগ = পূর্বরাত্র বা প্রদোষ; গভীর রাত = নিশীথ।",
-    difficulty: "easy",
-    tags: ["পররাত্র", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q43",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub1",
+    "questionBn": "'দ্বিরেফ' ও 'ষটপদ' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "ভ্রমর",
+      "হাতি",
+      "সিংহ",
+      "সাপ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ভ্রমরের ছয়টি পা এবং দুটি 'র' ধ্বনি (ভ্রমর) থাকায় একে ষটপদ ও দ্বিরেফ বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q44",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যে বাস্তু বা গৃহ থেকে বিতাড়িত হয়েছে — এককথায় কী বলে?",
-    options: ["উদ্বাস্তু", "গৃহহীন", "ভবঘুরে", "প্রবাসী"],
-    correctIndex: 0,
-    explanationBn: "বাস্তুচ্যুত ব্যক্তিকে 'উদ্বাস্তু' বলা হয়।",
-    difficulty: "easy",
-    tags: ["উদ্বাস্তু", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q44",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "নিচের কোনটি 'পদ্ম' শব্দের সমার্থক শব্দ?",
+    "options": [
+      "অরবিন্দ",
+      "অনিল",
+      "অদ্রি",
+      "অহি"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অরবিন্দ, রাজীব, উৎপল, নলিন হলো পদ্মের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q45",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যার দুহাত সমান চলে — তাকে কী বলা হয়?",
-    options: ["সব্যসাচী", "দ্বিহস্ত", "দক্ষ", "নিপুণ"],
-    correctIndex: 0,
-    explanationBn: "যে ব্যক্তি উভয় হাতে সমান দক্ষতায় তীর ছুঁড়তে বা কাজ করতে পারে তাকে 'সব্যসাচী' (যেমন অর্জুন) বলে।",
-    difficulty: "easy",
-    tags: ["সব্যসাচী", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q45",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'সৌদামিনী' ও 'শম্পা' কোন শব্দের প্রতিশব্দ?",
+    "options": [
+      "বিদ্যুৎ",
+      "মেঘ",
+      "সূর্য",
+      "আকাশ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সৌদামিনী, চপলা, ক্ষণপ্রভা, দামিনী ও শম্পা হলো বিদ্যুতের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q46",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub3",
-    questionBn: "যে বিষয়ে কোনো বিতর্ক নেই — এককথায় কী হবে?",
-    options: ["অবিসংবাদী", "অবিসংবাদিত", "বিতর্কহীন", "সর্বসম্মত"],
-    correctIndex: 1,
-    explanationBn: "যে বিষয়ে কোনো বিতর্ক নেই = অবিসংবাদিত।",
-    difficulty: "easy",
-    tags: ["অবিসংবাদিত", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q46",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'দ্বিপ' ও 'মাতঙ্গ' কোন প্রাণীর সমার্থক শব্দ?",
+    "options": [
+      "হাতি",
+      "বাঘ",
+      "ঘোড়া",
+      "সিংহ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "দ্বিপ (দুইবার পান করে), মাতঙ্গ, করি, কুঞ্জর হলো হাতির প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q47",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যা বলা হয়নি — এককথায় কী হবে?",
-    options: ["অনুক্ত", "অকথিত", "নীরব", "অব্যক্ত"],
-    correctIndex: 0,
-    explanationBn: "যা বলা হয়নি = অনুক্ত।",
-    difficulty: "easy",
-    tags: ["অনুক্ত", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q47",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub2",
+    "questionBn": "'অহি' ও 'আশীবিষ' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সাপ",
+      "বিচ্ছু",
+      "সিংহ",
+      "শকুন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অহি, আশীবিষ, পন্নগ, ভুজঙ্গ হলো সর্প বা সাপের প্রতিশব্দ।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q48",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub4",
-    questionBn: "যা বলা হবে — এককথায় কী হবে?",
-    options: ["বক্তব্য", "বক্ষ্যমাণ", "কথ্য", "বাচ্য"],
-    correctIndex: 1,
-    explanationBn: "যা বলা হবে = বক্ষ্যমাণ; যা বলা উচিত = বক্তব্য।",
-    difficulty: "easy",
-    tags: ["বক্ষ্যমাণ", "এককথায় প্রকাশ"]
+    "id": "vol2_ch10_q48",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "নিচের কোনটি 'বায়ু' শব্দের প্রতিশব্দ?",
+    "options": [
+      "অনিল",
+      "অনল",
+      "অম্বু",
+      "অচল"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অনিল' হলো বাতাস/বায়ু ('অনল' হলো আগুন)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q49",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'অগস্ত্য যাত্রা' বাগধারাটির অর্থ কী?",
-    options: ["তীর্থযাত্রা", "চিরতরে প্রস্থান বা শেষ বিদায়", "অগস্ত্য মুনির যাত্রা", "ভোরবেলায় যাত্রা"],
-    correctIndex: 1,
-    explanationBn: "অগস্ত্য যাত্রা বলতে চিরতরে প্রস্থান বা শেষ বিদায় বোঝায়।",
-    difficulty: "easy",
-    tags: ["অগস্ত্য যাত্রা", "চিরতরে প্রস্থান"]
+    "id": "vol2_ch10_q49",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অদ্রি' ও 'ক্ষিতীধর' কোনটির সমার্থক শব্দ?",
+    "options": [
+      "পর্বত",
+      "সমুদ্র",
+      "নদী",
+      "গাছ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অদ্রি, শৈল, গিরি, ভূধর হলো পর্বতের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch10_q50",
-    subjectId: "bengali",
-    chapterId: "bengali_ch10",
-    subTopicId: "bengali_ch10_sub1",
-    questionBn: "'অরণ্যে রোদন' বাগধারাটির সঠিক অর্থ কোনটি?",
-    options: ["বনে বসে কান্না", "বৃথা আবেদন বা নিষ্ফল ক্রন্দন", "জঙ্গলে ভ্রমণ", "দুঃখ প্রকাশ"],
-    correctIndex: 1,
-    explanationBn: "অরণ্যে রোদন অর্থ নিষ্ফল আবেদন বা যার কোনো ফল হয় না।",
-    difficulty: "easy",
-    tags: ["অরণ্যে রোদন", "নিষ্ফল আবেদন"]
+    "id": "vol2_ch10_q50",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch10",
+    "subTopicId": "bengali_ch10_sub3",
+    "questionBn": "'অর্ণব' ও 'রত্নাকর' কোনটির প্রতিশব্দ?",
+    "options": [
+      "সমুদ্র",
+      "নদী",
+      "পুকুর",
+      "মেঘ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অর্ণব, রত্নাকর, বারিধি, সিন্ধু হলো সমুদ্র বা সাগরের প্রতিশব্দ।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Synonyms",
+      "Volume 2"
+    ]
   }
 ];

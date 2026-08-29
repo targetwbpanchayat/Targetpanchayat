@@ -1,179 +1,202 @@
 import { StudyChapter, Question } from "../../types";
 
 export const ENGLISH_CH7_STUDY: StudyChapter = {
-  id: "eng_ch7",
-  subjectId: "english",
-  chapterNumber: 7,
-  titleBn: "One Word Substitution (এক কথায় প্রকাশ)",
-  titleEn: "One Word Substitution - Root Words (-cide, -phobia, -phile, -cracy), Professions & Places",
-  estimatedMinutes: 35,
-  importantNotesCount: 30,
-  summary: "এক কথায় প্রকাশের সম্পূর্ণ গাইড। রুট ওয়ার্ডভিত্তিক বিন্যাস: হত্যা সংক্রান্ত (-cide: Matricide, Patricide, Homicide), ভীতি সংক্রান্ত (-phobia: Claustrophobia, Hydrophobia, Acrophobia), শাসন ব্যবস্থা (-cracy/-archy: Democracy, Plutocracy, Autocracy, Anarchy), স্থান ও পশু-পাখির নিবাস (Aviary, Apiary, Arsenal, Mortuary, Aquarium), ব্যক্তি ও পেশা (Philanthropist, Misanthrope, Polyglot, Somnambulist, Infallible, Novice, Veteran), এবং বিজ্ঞান ও বিদ্যা বিষয়ক ধারণাসমূহ।",
-  subTopics: [
+  "id": "eng_ch7",
+  "subjectId": "english",
+  "chapterNumber": 7,
+  "titleBn": "One Word Substitution (এক কথায় প্রকাশ)",
+  "titleEn": "One Word Substitution - Specialists, Governments, Phobias, Killings & Habitats",
+  "estimatedMinutes": 40,
+  "importantNotesCount": 45,
+  "summary": "ব্যক্তি ও পেশাজীবী (Cardiologist, Philatelist, Polyglot), স্বভাব ও চরিত্র (Altruist, Misanthrope, Introvert), শাসনব্যবস্থা (Democracy, Monarchy, Bureaucracy, Anarchy), বিজ্ঞান ও বিদ্যা (Ornithology, Entomology), স্থান ও আবাস (Apiary, Aviary, Mortuary), এবং হত্যা/মৃত্যু (Homicide, Patricide, Regicide)।",
+  "subTopics": [
     {
-      id: "eng_ch7_sub1",
-      chapterId: "eng_ch7",
-      subjectId: "english",
-      titleBn: "Root Words: -cide, -phobia, -cracy & -ology",
-      titleEn: "Killings (-cide), Fears (-phobia), Governance (-cracy) & Studies (-ology)",
-      orderIndex: 1,
-      summaryBn: "হত্যা: Patricide (পিতা), Matricide (মাতা), Fratricide (ভ্রাতা), Regicide (রাজা)। ভয়: Hydrophobia (জল), Claustrophobia (আবদ্ধ স্থান), Acrophobia (উচ্চতা)। শাসন: Plutocracy (ধনীদের), Autocracy (একনায়কতন্ত্র), Bureaucracy (আমলাতন্ত্র)। বিদ্যা: Ornithology (পাখি), Entomology (কীটপতঙ্গ)।",
-      keyConcepts: ["Regicide = Killing of king", "Claustrophobia = Fear of enclosed spaces", "Plutocracy = Government by the wealthy", "Ornithology = Study of birds"]
+      "id": "eng_ch7_sub1",
+      "chapterId": "eng_ch7",
+      "subjectId": "english",
+      "titleBn": "Specialists, Professions & Personalities",
+      "titleEn": "Persons, Specialists & Habits",
+      "orderIndex": 1,
+      "summaryBn": "Cardiologist (হৃদরোগ বিশেষজ্ঞ), Philatelist (ডাকটিকিট সংগ্রাহক), Numismatist (মুদ্রা সংগ্রাহক), Polyglot (বহুভাষাবিদ), Altruist (পরোপকারী), Misanthrope (মানববিদ্বেষী)।",
+      "keyConcepts": [
+        "Philatelist = Stamp collector",
+        "Numismatist = Coin collector",
+        "Polyglot = Knows many languages"
+      ]
     },
     {
-      id: "eng_ch7_sub2",
-      chapterId: "eng_ch7",
-      subjectId: "english",
-      titleBn: "Persons, Habits, Traits & Quirks",
-      titleEn: "Optimist, Pessimist, Philanthropist, Misanthrope, Polyglot, Somnambulist",
-      orderIndex: 2,
-      summaryBn: "Optimist (আশাবাদী), Pessimist (হতাশাবাদী), Philanthropist (মানবপ্রেমিক), Misanthrope (মানববিদ্বেষী), Polyglot (বহুভাষাবিদ), Veteran (অভিজ্ঞ), Novice (শিক্ষানবিস), Somnambulist (ঘুমের ঘোরে হাঁটা), Omnipresent (সর্বত্র বিরাজমান), Omniscient (সর্বজ্ঞ)।",
-      keyConcepts: ["Philanthropist = Lover of mankind", "Misanthrope = Hater of mankind", "Somnambulist = Sleepwalker", "Polyglot = Knows many languages"]
+      "id": "eng_ch7_sub2",
+      "chapterId": "eng_ch7",
+      "subjectId": "english",
+      "titleBn": "Sciences, Places & Habitats",
+      "titleEn": "Fields of Study, Habitats & Storage",
+      "orderIndex": 2,
+      "summaryBn": "Ornithology (পাখিবিদ্যা), Entomology (কীটপতঙ্গবিদ্যা), Apiary (মৌমাছি পালন স্থান), Aviary (পাখি রাখার খাঁচা/স্থান), Cloakroom (লাগেজ রাখার স্থান)।",
+      "keyConcepts": [
+        "Ornithology = Study of birds",
+        "Apiary = Bees, Aviary = Birds",
+        "Mortuary = Dead bodies"
+      ]
     },
     {
-      id: "eng_ch7_sub3",
-      chapterId: "eng_ch7",
-      subjectId: "english",
-      titleBn: "Places, Objects & Medical Concepts",
-      titleEn: "Aviary, Apiary, Arsenal, Panacea, Infallible, Posthumous, Potable",
-      orderIndex: 3,
-      summaryBn: "Aviary (পাখি রাখার স্থান), Apiary (মৌমাছির বাসস্থান), Arsenal (অস্ত্রাগার), Mortuary (মর্গ), Panacea (সব রোগের মহৌষধ), Infallible (যে কখনো ভুল করে না), Posthumous (মরণোত্তর), Potable (পানীয় উপযোগী)।",
-      keyConcepts: ["Aviary = Birds", "Apiary = Bees", "Arsenal = Weapons", "Panacea = Cure for all ills", "Infallible = Incapable of error"]
+      "id": "eng_ch7_sub3",
+      "chapterId": "eng_ch7",
+      "subjectId": "english",
+      "titleBn": "Governments, Phobias & Murders (-cides)",
+      "titleEn": "Rule Systems, Fears (-phobias) & Killings (-cides)",
+      "orderIndex": 3,
+      "summaryBn": "Bureaucracy (আমলাতন্ত্র), Plutocracy (ধনীতন্ত্র), Claustrophobia (আবদ্ধ স্থানের ভয়), Regicide (রাজহত্যা), Patricide (পিতৃহত্যা), Fratricide (ভ্রাতৃহত্যা)।",
+      "keyConcepts": [
+        "Bureaucracy = Rule by officials",
+        "Claustrophobia = Fear of closed spaces",
+        "Regicide = Killing of king"
+      ]
     }
   ],
-  content: {
-    introduction: "One Word Substitution হলো একটি দীর্ঘ বাক্যাংশ বা ধারণাকে একটিমাত্র যথার্থ ইংরেজি শব্দে প্রকাশ করার প্রক্রিয়া। বিভিন্ন সরকারি প্রতিযোগিতামূলক পরীক্ষায় এর প্রশ্ন সংখ্যা প্রচুর।",
-    sections: [
+  "content": {
+    "introduction": "One Word Substitution বা এক কথায় প্রকাশ ইংরেজি ব্যাকরণের অন্যতম গুরুত্বপূর্ণ অধ্যায়। পঞ্চায়েত পরীক্ষায় সরাসরি ৩-৪টি প্রশ্ন এই অংশ থেকে এসে থাকে।",
+    "sections": [
       {
-        heading: "১. রুট ওয়ার্ডভিত্তিক এক কথায় প্রকাশ (Root Words)",
-        body: [
-          "• -CIDE (Killing বা হত্যা সংক্রান্ত):",
-          "  - Patricide: Killing of one's father (পিতৃহত্যা)",
-          "  - Matricide: Killing of one's mother (মাতৃহত্যা)",
-          "  - Fratricide: Killing of one's brother (ভ্রাতৃহত্যা)",
-          "  - Sororicide: Killing of one's sister (ভগিনীহত্যা)",
-          "  - Uxoricide: Killing of one's wife (পত্নীহত্যা)",
-          "  - Regicide: Killing of a king/queen (রাজহত্যা)",
-          "  - Homicide: Killing of a human being (নরহত্যা)",
-          "• -PHOBIA (তীব্র ভয় বা ভীতি সংক্রান্ত):",
-          "  - Claustrophobia: Fear of enclosed/confined small spaces (আবদ্ধ স্থানের ভয়)",
-          "  - Acrophobia: Fear of high places (উচ্চতার ভয়)",
-          "  - Hydrophobia: Fear of water (জলাতঙ্ক)",
-          "  - Xenophobia: Fear or hatred of foreigners/strangers (বিদেশিভীতি)",
-          "  - Nyctophobia: Fear of darkness (অন্ধকারের ভয়)",
-          "• -CRACY / -ARCHY (শাসন ব্যবস্থা):",
-          "  - Democracy: Government by the people (গণতন্ত্র)",
-          "  - Plutocracy: Government by the wealthy/rich class (ধনিকতন্ত্র)",
-          "  - Autocracy / Dictatorship: Government by one absolute ruler (একনায়কতন্ত্র)",
-          "  - Bureaucracy: Government by officials/civil servants (আমলাতন্ত্র)",
-          "  - Anarchy: Absence of government or law (নৈরাজ্য)",
-          "  - Oligarchy: Government by a small group of powerful people (গোষ্ঠীতন্ত্র)"
-        ]
-      },
-      {
-        heading: "২. ব্যক্তি, মানসিক স্বভাব ও পেশা সংক্রান্ত (Persons & Traits)",
-        body: [
-          "• Philanthropist: One who loves mankind and works for welfare (মানবপ্রেমিক) ➔ Misanthrope: One who hates mankind (মানববিদ্বেষী)",
-          "• Optimist: One who looks at the bright side of things (আশাবাদী) ➔ Pessimist: One who looks at the dark side of things (হতাশাবাদী)",
-          "• Polyglot / Multilingual: A person who knows and speaks many languages (বহুভাষাবিদ)",
-          "• Somnambulist: One who walks in sleep (ঘুমের ঘোরে হাঁটা ব্যক্তি)",
-          "• Somniloquist: One who talks in sleep (ঘুমের ঘোরে কথা বলা ব্যক্তি)",
-          "• Veteran: A person who has long experience in an occupation (দীর্ঘ অভিজ্ঞতাসম্পন্ন)",
-          "• Novice / Tyro: A person who is new to a profession or skill (অনভিজ্ঞ/শিক্ষানবিস)",
-          "• Omniscient: One who knows everything (সর্বজ্ঞ); Omnipotent: All-powerful (সর্বশক্তিমান); Omnipresent: Present everywhere (সর্বত্র বিরাজমান)",
-          "• Infallible: One who is incapable of making mistakes or errors (অভ্রান্ত)",
-          "• Cannibal: One who eats human flesh (নরখাদক)"
-        ]
-      },
-      {
-        heading: "৩. স্থান, জীবজন্তু ও সার্বজনীন পরিভাষা (Places & Concepts)",
-        body: [
-          "• Aviary: A place where birds are kept (পাখিশালা)",
-          "• Apiary: A place where bees are kept and reared (মৌমাছিশালা)",
-          "• Arsenal: A place where weapons and ammunitions are stored (অস্ত্রাগার)",
-          "• Mortuary / Morgue: A place where dead bodies are kept for autopsy/identification (মর্গ)",
-          "• Panacea: A remedy or universal cure for all diseases (সর্বব্যাধিহর মহৌষধ)",
-          "• Posthumous: Published or born after the death of the author/father (মরণোত্তর)",
-          "• Potable: Water or liquid that is safe and fit to drink (পানযোগ্য)",
-          "• Edible: Something that is fit and safe to be eaten (ভক্ষণযোগ্য/খাদ্যোপযোগী)",
-          "• Palindrome: A word or phrase that reads the same forwards and backwards (যেমন: MADAM, LEVEL, NOON)"
-        ]
+        "heading": "১. অতি গুরুত্বপূর্ণ এক কথায় প্রকাশ চার্ট (One Word Substitution Guide)",
+        "body": [
+          "• A person who collects stamps: Philatelist",
+          "• A person who collects coins: Numismatist",
+          "• A person who knows many languages: Polyglot / Multilingual",
+          "• A person who looks at the bright side of things: Optimist (আশাবাদী)",
+          "• A person who looks at the dark side of things: Pessimist (হতাশাবাদী)",
+          "• A person who loves mankind and helps others: Philanthropist / Altruist",
+          "• A person who hates mankind: Misanthrope",
+          "• A person who loves books: Bibliophile",
+          "• A doctor who treats heart diseases: Cardiologist",
+          "• A doctor who treats skin diseases: Dermatologist",
+          "• A doctor who treats eye diseases: Ophthalmologist",
+          "• A doctor who treats children: Pediatrician"
+        ],
+        "tables": {
+          "headers": [
+            "ইংরেজি সংজ্ঞা / বিবরণ",
+            "এক কথায় প্রকাশ (One Word)",
+            "বাংলা অর্থ"
+          ],
+          "rows": [
+            [
+              "Study of birds",
+              "Ornithology",
+              "পক্ষীবিদ্যা"
+            ],
+            [
+              "Study of insects",
+              "Entomology",
+              "কীটপতঙ্গবিদ্যা"
+            ],
+            [
+              "Place where bees are kept",
+              "Apiary",
+              "মৌমাছিশালা"
+            ],
+            [
+              "Place where birds are kept",
+              "Aviary",
+              "পাখিশালা"
+            ],
+            [
+              "Place where dead bodies are kept",
+              "Mortuary",
+              "মর্গ বা শবদেহের স্থান"
+            ],
+            [
+              "Government by officials",
+              "Bureaucracy",
+              "আমলাতন্ত্র"
+            ],
+            [
+              "Government by the rich",
+              "Plutocracy",
+              "ধনীতন্ত্র"
+            ],
+            [
+              "Government by a king/queen",
+              "Monarchy",
+              "রাজতন্ত্র"
+            ],
+            [
+              "Absence of government",
+              "Anarchy",
+              "নৈরাজ্য"
+            ],
+            [
+              "Killing of a king",
+              "Regicide",
+              "রাজহত্যা"
+            ],
+            [
+              "Killing of one's father",
+              "Patricide",
+              "পিতৃহত্যা"
+            ],
+            [
+              "Killing of one's mother",
+              "Matricide",
+              "মাতৃহত্যা"
+            ],
+            [
+              "Killing of a human being",
+              "Homicide",
+              "নরহত্যা"
+            ],
+            [
+              "Fear of closed spaces",
+              "Claustrophobia",
+              "আবদ্ধ স্থানের ভয়"
+            ],
+            [
+              "Fear of water",
+              "Hydrophobia",
+              "জলাতঙ্ক"
+            ],
+            [
+              "Fear of heights",
+              "Acrophobia",
+              "উচ্চতাভীতি"
+            ]
+          ]
+        }
       }
     ],
-    examTips: [
-      "Aviary (পাখি) বনাম Apiary (মৌমাছি) — এই দুটি শব্দ বারবার পরীক্ষায় অপশন হিসেবে দেওয়া হয়!",
-      "Panacea = A cure for all ills (সব রোগের মহৌষধ)।",
-      "Posthumous = মরণোত্তর পুরস্কার বা সন্তান।",
-      "Somnambulist (ঘুমের ঘোরে হাঁটা) এবং Somniloquist (ঘুমের ঘোরে কথা বলা)-এর পার্থক্য মনে রাখবেন।"
+    "examTips": [
+      "-cide যুক্ত শব্দ হত্যা নির্দেশ করে (Patricide = পিতা হত্যা, Matricide = মাতা হত্যা, Regicide = রাজা হত্যা)।",
+      "-phobia যুক্ত শব্দ ভয় নির্দেশ করে (Hydrophobia = জলভীতি, Claustrophobia = আবদ্ধ স্থানের ভয়)।",
+      "-logy যুক্ত শব্দ বিদ্যা বা বিজ্ঞান নির্দেশ করে (Ornithology = পাখিবিদ্যা, Entomology = কীটতত্ত্ব)।",
+      "Apiary (মৌমাছি) এবং Aviary (পাখি) শব্দ দুটি পরীক্ষার সবচেয়ে সাধারণ বিভ্রান্তিকর জোড়া।"
     ],
-    quickRevisionPoints: [
-      "-cide = Killing; -phobia = Fear; -cracy = Rule.",
-      "Philanthropist (Loves mankind) x Misanthrope (Hates).",
-      "Optimist (Bright side) x Pessimist (Dark side).",
-      "Apiary = Bees; Aviary = Birds; Arsenal = Weapons.",
-      "Panacea = Universal cure; Infallible = Never wrong.",
-      "Somnambulist = Sleepwalker; Potable = Fit to drink."
+    "quickRevisionPoints": [
+      "Philatelist (stamps), Numismatist (coins), Polyglot (languages).",
+      "Apiary (bees), Aviary (birds), Mortuary (dead bodies).",
+      "Ornithology (birds), Entomology (insects), Archaeology (ancient remains).",
+      "Optimist (bright side), Pessimist (dark side), Altruist (helps others)."
     ],
-    oneLiners: [
-      "A person who loves mankind-কে বলা হয় Philanthropist।",
-      "যে ব্যক্তি মানবজাতিকে ঘৃণা করে তাকে Misanthrope বলে।",
-      "যে ব্যক্তি সবসময় আশার দিকটি দেখে তাকে Optimist এবং অন্ধকারের দিক দেখলে Pessimist বলে।",
-      "যিনি সব জানেন তিনি Omniscient, সর্বত্র বিরাজমান Omnipresent এবং সর্বশক্তিমান Omnipotent।",
-      "দীর্ঘ অভিজ্ঞতাসম্পন্ন ব্যক্তিকে Veteran এবং কোনো কাজে সম্পূর্ণ নতুন ব্যক্তিকে Novice বা Tyro বলে।",
-      "পাখি রাখার স্থানকে Aviary এবং মৌমাছি রাখার স্থানকে Apiary বলা হয়।",
-      "অস্ত্রশস্ত্র ও গোলাবারুদ রাখার স্থানকে Arsenal (অস্ত্রাগার) বলা হয়।",
-      "সব রোগের মহৌষধকে ইংরেজিতে Panacea (A cure for all ills) বলা হয়।",
-      "যে ব্যক্তি কখনো ভুল বা পাপ করে না তাকে Infallible (অভ্রান্ত) বলা হয়।",
-      "ঘুমের ঘোরে হাঁটার স্বভাবকে Somnambulist এবং ঘুমের ঘোরে কথা বলাকে Somniloquist বলে।",
-      "যে ঘটনা কোনোভাবেই এড়ানো যায় না তাকে Inevitable (অনিবার্য) বলে।",
-      "সোজা ও উল্টো উভয় দিক থেকেই একই বানানযুক্ত শব্দকে Palindrome (যেমন: MADAM, LEVEL) বলে।",
-      "পান করার উপযোগী জলকে Potable এবং খাওয়ার উপযোগী খাদ্যকে Edible বলে।",
-      "পিতা হত্যার অপরাধকে Patricide, মাতা হত্যাকে Matricide এবং রাজা হত্যাকে Regicide বলে।",
-      "আবদ্ধ ছোট স্থানের অস্বাভাবিক ভয়কে Claustrophobia এবং উচ্চতার ভয়কে Acrophobia বলে।",
-      "ধনীদের দ্বারা পরিচালিত শাসনব্যবস্থাকে Plutocracy এবং আমলাদের শাসনকে Bureaucracy বলে।",
-      "বহু ভাষায় দক্ষ বা একাধিক ভাষায় কথা বলতে সক্ষম ব্যক্তিকে Polyglot বা Multilingual বলে।",
-      "যে ব্যক্তি নিজের জীবনবৃত্তান্ত নিজে লেখে তাকে Autobiography এবং অন্য কেউ লিখলে Biography বলে।"
+    "oneLiners": [
+      "A person who collects stamps কে Philatelist বলা হয়।",
+      "A person who collects coins কে Numismatist বলা হয়।",
+      "মৌমাছি পালনের স্থানকে Apiary এবং পাখি রাখার স্থানকে Aviary বলে।",
+      "পক্ষীবিদ্যাকে Ornithology এবং কীটপতঙ্গবিদ্যাকে Entomology বলে।",
+      "আমলাতন্ত্রকে Bureaucracy এবং ধনীতন্ত্রকে Plutocracy বলে।",
+      "রাজহত্যাকে Regicide এবং নরহত্যাকে Homicide বলা হয়।",
+      "আবদ্ধ স্থানের অস্বাভাবিক ভয়কে Claustrophobia বলে।",
+      "বইপ্রেমী ব্যক্তিকে Bibliophile বলা হয়।",
+      "যিনি ভবিষ্যৎ দেখতে পারেন বা আশাবাদী তাকে Optimist বলে।",
+      "মানবজাতিকে যিনি ঘৃণা করেন তাকে Misanthrope বলে।"
     ],
-    saqs: [
+    "saqs": [
       {
-        id: "eng_ch7_saq1",
-        questionBn: "'Aviary' এবং 'Apiary'-এর মধ্যে সুনির্দিষ্ট পার্থক্য কী?",
-        answerBn: "• 'Aviary' হলো এমন একটি সংরক্ষিত স্থান বা বড় খাঁচাবিশেষ যেখানে নানা প্রজাতির পাখি (Birds) রাখা ও প্রদর্শন করা হয়।\n• 'Apiary' হলো এমন একটি স্থান যেখানে কৃত্রিম মৌচাকের মাধ্যমে মৌমাছি (Bees) পালন করে মধু সংগ্রহ ও বংশবৃদ্ধি করা হয়।"
+        "id": "eng_ch7_saq1",
+        "questionBn": "'Apiary' এবং 'Aviary' এর মধ্যে পার্থক্য কী?",
+        "answerBn": "'Apiary' হলো মৌমাছি পালন ও রাখার নির্দিষ্ট স্থান (A place where bees are kept); আর 'Aviary' হলো পাখি প্রতিপালন ও রাখার খাঁচা বা স্থান (A place where birds are kept)।"
       },
       {
-        id: "eng_ch7_saq2",
-        questionBn: "'Panacea' এবং 'Infallible' শব্দ দুটির সঠিক সংজ্ঞা লিখুন।",
-        answerBn: "• Panacea: A remedy or medicine that is believed to cure all diseases or difficulties (সকল রোগের নিরাময়কারী সর্বব্যাধিহর ওষুধ)।\n• Infallible: Incapable of making mistakes, committing errors, or failing in judgment (অভ্রান্ত বা ত্রুটিহীন ব্যক্তি)।"
-      },
-      {
-        id: "eng_ch7_saq3",
-        questionBn: "'Palindrome' কী? ইংরেজি থেকে দুটি বাস্তব উদাহরণ দিন।",
-        answerBn: "Palindrome হলো এমন কোনো শব্দ, সংখ্যা বা বাক্য যা সামনে থেকে পেছনের দিকে বা পেছন থেকে সামনের দিকে পড়লে অক্ষরের ক্রম সম্পূর্ণ অপরিবর্তিত থাকে। যেমন: 'MADAM', 'LEVEL', 'RADAR', 'NOON'।"
-      },
-      {
-        id: "eng_ch7_saq4",
-        questionBn: "'Somnambulist' এবং 'Somniloquist'-এর মধ্যে পার্থক্য কী?",
-        answerBn: "• Somnambulist: One who walks while asleep (যে ব্যক্তি ঘুমের ঘোরে হাঁটে)।\n• Somniloquist: One who talks while asleep (যে ব্যক্তি ঘুমের ঘোরে কথাবার্তা বা প্রলাপ বকে)।"
-      },
-      {
-        id: "eng_ch7_saq5",
-        questionBn: "শাসনব্যবস্থা বিষয়ক 'Plutocracy' এবং 'Bureaucracy'-এর অর্থ কী?",
-        answerBn: "• Plutocracy: Government governed or controlled exclusively by the wealthy or rich class (ধনিকতন্ত্র)।\n• Bureaucracy: Government run by official state administrators and civil servants rather than elected representatives (আমলাতন্ত্র)।"
-      },
-      {
-        id: "eng_ch7_saq6",
-        questionBn: "'Claustrophobia' এবং 'Acrophobia' দ্বারা কী ধরনের ভীতি বোঝায়?",
-        answerBn: "• Claustrophobia: An extreme or irrational fear of confined or enclosed small spaces (আবদ্ধ বা সংকীর্ণ স্থানের ভীতি)।\n• Acrophobia: An abnormal fear of heights or being at high altitudes (উঁচু স্থান থেকে দেখার ভীতি)।"
-      },
-      {
-        id: "eng_ch7_saq7",
-        questionBn: "'Potable' এবং 'Edible' শব্দ দুটির অর্থ ও ব্যবহার লিখুন।",
-        answerBn: "• Potable: Safe and suitable for drinking (যেমন: Potable drinking water - পানযোগ্য নিরাপদ জল)।\n• Edible: Fit, safe, and suitable to be eaten as food (যেমন: Edible oil/mushrooms - খাওয়ার উপযোগী পদার্থ)।"
-      },
-      {
-        id: "eng_ch7_saq8",
-        questionBn: "'Posthumous' শব্দের অর্থ কী এবং এর সাধারণ প্রয়োগ কোথায় দেখা যায়?",
-        answerBn: "'Posthumous' শব্দের অর্থ হলো 'মরণোত্তর', অর্থাৎ কোনো ব্যক্তির মৃত্যুর পরে যা ঘটে বা দেওয়া হয়। এর সাধারণ প্রয়োগ হলো: Posthumous award (মৃত্যুর পর প্রদত্ত সম্মাননা বা পদক), Posthumous child (পিতার মৃত্যুর পর জন্ম নেওয়া সন্তান), বা Posthumous book (লেখকের মৃত্যুর পর প্রকাশিত বই)।"
+        "id": "eng_ch7_saq2",
+        "questionBn": "'Philatelist' এবং 'Numismatist' এর অর্থ লিখুন।",
+        "answerBn": "'Philatelist' হলেন ডাকটিকিট সংগ্রাহক (One who collects postage stamps); আর 'Numismatist' হলেন প্রাচীন বা বিভিন্ন দেশের মুদ্রা সংগ্রাহক (One who collects coins)।"
       }
     ]
   }
@@ -181,423 +204,2103 @@ export const ENGLISH_CH7_STUDY: StudyChapter = {
 
 export const ENGLISH_CH7_QUESTIONS: Question[] = [
   {
-    id: "vol3_ch7_q1",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "A person who loves mankind and works for their welfare:",
-    options: ["Misanthrope", "Philanthropist", "Cannibal", "Optimist"],
-    correctIndex: 1,
-    explanationBn: "মানবপ্রেমিককে 'Philanthropist' বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Philanthropist"]
+    "id": "vol3_ch7_q1",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who collects postage stamps is called a ___.",
+    "options": [
+      "Numismatist",
+      "Philatelist",
+      "Polyglot",
+      "Somnambulist"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "ডাকটিকিট সংগ্রাহককে 'Philatelist' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q2",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "A person who hates mankind:",
-    options: ["Philanthropist", "Misanthrope", "Misogynist", "Altruist"],
-    correctIndex: 1,
-    explanationBn: "মানবজাতিকে ঘৃণা করা ব্যক্তিকে 'Misanthrope' বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Misanthrope"]
+    "id": "vol3_ch7_q2",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who collects coins is called a ___.",
+    "options": [
+      "Numismatist",
+      "Philatelist",
+      "Archaeologist",
+      "Botanist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "মুদ্রা সংগ্রাহককে 'Numismatist' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q3",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who looks at the bright side of things:",
-    options: ["Pessimist", "Optimist", "Pacifist", "Realist"],
-    correctIndex: 1,
-    explanationBn: "আশাবাদী ব্যক্তিকে 'Optimist' বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Optimist"]
+    "id": "vol3_ch7_q3",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who knows many languages is known as a ___.",
+    "options": [
+      "Polyglot",
+      "Linguist",
+      "Grammarian",
+      "Scholar"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বহুভাষাবিদ ব্যক্তিকে 'Polyglot' বা 'Multilingual' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q4",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who walks in sleep:",
-    options: ["Somnambulist", "Somniloquist", "Insomniac", "Nocturnal"],
-    correctIndex: 0,
-    explanationBn: "ঘুমের ঘোরে হাঁটার স্বভাবযুক্ত ব্যক্তিকে 'Somnambulist' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Somnambulist"]
+    "id": "vol3_ch7_q4",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who looks at the bright side of things is an ___.",
+    "options": [
+      "Pessimist",
+      "Optimist",
+      "Altruist",
+      "Egotist"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "আশাবাদী ব্যক্তিকে 'Optimist' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q5",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A place where birds are kept:",
-    options: ["Apiary", "Aviary", "Aquarium", "Sanctuary"],
-    correctIndex: 1,
-    explanationBn: "পাখি রাখার স্থানকে 'Aviary' (পাখিশালা) বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Aviary"]
+    "id": "vol3_ch7_q5",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who looks at the dark side of things is a ___.",
+    "options": [
+      "Pessimist",
+      "Optimist",
+      "Cynic",
+      "Fatalist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "হতাশাবাদী ব্যক্তিকে 'Pessimist' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q6",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A place where bees are kept:",
-    options: ["Aviary", "Apiary", "Hutch", "Stable"],
-    correctIndex: 1,
-    explanationBn: "মৌমাছি পালন ও রাখার স্থানকে 'Apiary' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Apiary"]
+    "id": "vol3_ch7_q6",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who loves mankind and works for their welfare is a ___.",
+    "options": [
+      "Misanthrope",
+      "Philanthropist",
+      "Misogynist",
+      "Cannibal"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "মানবপ্রেমিক বা পরোপকারী ব্যক্তিকে 'Philanthropist' বা 'Altruist' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q7",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A cure or remedy for all diseases:",
-    options: ["Antibiotic", "Panacea", "Vaccine", "Antidote"],
-    correctIndex: 1,
-    explanationBn: "সব রোগের মহৌষধকে 'Panacea' (সর্বব্যাধিহর ওষুধ) বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Panacea"]
+    "id": "vol3_ch7_q7",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who hates mankind is called a ___.",
+    "options": [
+      "Philanthropist",
+      "Misanthrope",
+      "Misogynist",
+      "Sadist"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "মানববিদ্বেষী ব্যক্তিকে 'Misanthrope' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q8",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who is incapable of making mistakes or errors:",
-    options: ["Infallible", "Incurable", "Ineligible", "Invincible"],
-    correctIndex: 0,
-    explanationBn: "যে কখনো ভুল করে না তাকে 'Infallible' (অভ্রান্ত) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Infallible"]
+    "id": "vol3_ch7_q8",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who loves and collects books is a ___.",
+    "options": [
+      "Bibliophile",
+      "Bookkeeper",
+      "Librarian",
+      "Publisher"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বইপ্রেমী ব্যক্তিকে 'Bibliophile' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q9",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Killing of a king or queen:",
-    options: ["Homicide", "Regicide", "Patricide", "Fratricide"],
-    correctIndex: 1,
-    explanationBn: "রাজা বা রানি হত্যাকে 'Regicide' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Regicide"]
+    "id": "vol3_ch7_q9",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A place where bees are kept is called an ___.",
+    "options": [
+      "Aviary",
+      "Apiary",
+      "Aquarium",
+      "Sanctuary"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "মৌমাছি পালন কেন্দ্রকে 'Apiary' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q10",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Killing of one's father:",
-    options: ["Patricide", "Matricide", "Parricide", "Suicide"],
-    correctIndex: 0,
-    explanationBn: "পিতাকে হত্যা করার অপরাধকে 'Patricide' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Patricide"]
+    "id": "vol3_ch7_q10",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A place where birds are kept is called an ___.",
+    "options": [
+      "Apiary",
+      "Aviary",
+      "Zoo",
+      "Cage"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "পাখিশালাকে 'Aviary' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q11",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Killing of one's mother:",
-    options: ["Matricide", "Patricide", "Sororicide", "Infanticide"],
-    correctIndex: 0,
-    explanationBn: "মাতাকে হত্যা করার অপরাধকে 'Matricide' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Matricide"]
+    "id": "vol3_ch7_q11",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "The scientific study of birds is known as ___.",
+    "options": [
+      "Entomology",
+      "Ornithology",
+      "Anthropology",
+      "Archaeology"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "পক্ষীবিদ্যাকে 'Ornithology' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q12",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Fear of confined or enclosed small spaces:",
-    options: ["Hydrophobia", "Acrophobia", "Claustrophobia", "Xenophobia"],
-    correctIndex: 2,
-    explanationBn: "আবদ্ধ ছোট জায়গার অস্বাভাবিক ভয়কে 'Claustrophobia' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Claustrophobia"]
+    "id": "vol3_ch7_q12",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "The scientific study of insects is called ___.",
+    "options": [
+      "Entomology",
+      "Etymology",
+      "Ecology",
+      "Botany"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "কীটপতঙ্গ সম্পর্কিত বিজ্ঞানকে 'Entomology' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q13",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Fear of high places:",
-    options: ["Acrophobia", "Hydrophobia", "Agoraphobia", "Pyrophobia"],
-    correctIndex: 0,
-    explanationBn: "উঁচু জায়গার ভয়কে 'Acrophobia' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Acrophobia"]
+    "id": "vol3_ch7_q13",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A government by officials and state administrators is called ___.",
+    "options": [
+      "Democracy",
+      "Bureaucracy",
+      "Autocracy",
+      "Aristocracy"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "আমলাতন্ত্রকে 'Bureaucracy' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q14",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Government by the wealthy or rich class:",
-    options: ["Democracy", "Plutocracy", "Autocracy", "Aristocracy"],
-    correctIndex: 1,
-    explanationBn: "ধনিক শ্রেণীর দ্বারা পরিচালিত সরকারকে 'Plutocracy' (ধনিকতন্ত্র) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Plutocracy"]
+    "id": "vol3_ch7_q14",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A government by the wealthy and rich class is called ___.",
+    "options": [
+      "Plutocracy",
+      "Oligarchy",
+      "Democracy",
+      "Monarchy"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ধনীদের দ্বারা পরিচালিত শাসনব্যবস্থাকে 'Plutocracy' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q15",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Government run by civil officials and administrators:",
-    options: ["Bureaucracy", "Oligarchy", "Anarchy", "Theocracy"],
-    correctIndex: 0,
-    explanationBn: "আমলাদের দ্বারা পরিচালিত শাসনকে 'Bureaucracy' (আমলাতন্ত্র) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Bureaucracy"]
+    "id": "vol3_ch7_q15",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "The state of absence of law and government is called ___.",
+    "options": [
+      "Monarchy",
+      "Anarchy",
+      "Democracy",
+      "Dictatorship"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "নৈরাজ্য বা সরকারহীন অবস্থাকে 'Anarchy' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q16",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A place where weapons and ammunition are stored:",
-    options: ["Granary", "Arsenal", "Hangar", "Museum"],
-    correctIndex: 1,
-    explanationBn: "অস্ত্রশস্ত্র ও গোলাবারুদ রাখার স্থানকে 'Arsenal' (অস্ত্রাগার) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Arsenal"]
+    "id": "vol3_ch7_q16",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "The killing of a king is known as ___.",
+    "options": [
+      "Homicide",
+      "Regicide",
+      "Patricide",
+      "Fratricide"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "রাজহত্যাকে 'Regicide' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q17",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "A person who knows and speaks many languages:",
-    options: ["Linguist", "Polyglot", "Grammarian", "Scholar"],
-    correctIndex: 1,
-    explanationBn: "একাধিক বা বহু ভাষায় কথা বলতে পারদর্শী ব্যক্তিকে 'Polyglot' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Polyglot"]
+    "id": "vol3_ch7_q17",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "The killing of one's father is called ___.",
+    "options": [
+      "Matricide",
+      "Patricide",
+      "Fratricide",
+      "Sororicide"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "পিতৃহত্যাকে 'Patricide' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q18",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "A person with long experience in any field:",
-    options: ["Veteran", "Novice", "Amateur", "Prentice"],
-    correctIndex: 0,
-    explanationBn: "দীর্ঘ অভিজ্ঞতাসম্পন্ন ব্যক্তিকে 'Veteran' বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Veteran"]
+    "id": "vol3_ch7_q18",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "The killing of one's mother is called ___.",
+    "options": [
+      "Patricide",
+      "Matricide",
+      "Suicide",
+      "Infanticide"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "মাতৃহত্যাকে 'Matricide' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q19",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "A person who is new to a profession or trade:",
-    options: ["Expert", "Veteran", "Novice", "Master"],
-    correctIndex: 2,
-    explanationBn: "কাজে নতুন বা শিক্ষানবিস ব্যক্তিকে 'Novice' বা 'Tyro' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Novice"]
+    "id": "vol3_ch7_q19",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "The killing of a human being by another is called ___.",
+    "options": [
+      "Homicide",
+      "Genocide",
+      "Suicide",
+      "Regicide"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "নরহত্যাকে 'Homicide' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q20",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "Water that is suitable and safe for drinking:",
-    options: ["Portable", "Potable", "Edible", "Palatable"],
-    correctIndex: 1,
-    explanationBn: "পানযোগ্য নিরাপদ জলকে 'Potable' (Potable water) বলা হয়।",
-    difficulty: "medium",
-    tags: ["One Word", "Potable"]
+    "id": "vol3_ch7_q20",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "An extreme and irrational fear of closed or confined spaces is ___.",
+    "options": [
+      "Acrophobia",
+      "Claustrophobia",
+      "Hydrophobia",
+      "Agoraphobia"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "আবদ্ধ স্থানের ভয়কে 'Claustrophobia' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q21",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A word that reads the same backward as forward (e.g., MADAM):",
-    options: ["Acronym", "Anagram", "Palindrome", "Homonym"],
-    correctIndex: 2,
-    explanationBn: "সামনে বা পেছন উভয় দিক থেকে একই বানানযুক্ত শব্দকে 'Palindrome' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Palindrome"]
+    "id": "vol3_ch7_q21",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "An extreme and irrational fear of water is known as ___.",
+    "options": [
+      "Acrophobia",
+      "Hydrophobia",
+      "Pyrophobia",
+      "Claustrophobia"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "জলাতঙ্ক বা জলভীতিকে 'Hydrophobia' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q22",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who eats human flesh:",
-    options: ["Herbivore", "Carnivore", "Cannibal", "Omnivore"],
-    correctIndex: 2,
-    explanationBn: "মানুষের মাংস ভক্ষণকারীকে 'Cannibal' (নরখাদক) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Cannibal"]
+    "id": "vol3_ch7_q22",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who walks in his sleep is a ___.",
+    "options": [
+      "Somnambulist",
+      "Somniloquist",
+      "Impostor",
+      "Hypocrite"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ঘুমের মধ্যে হাঁটা ব্যক্তিকে 'Somnambulist' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q23",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who is present everywhere at the same time:",
-    options: ["Omnipotent", "Omniscient", "Omnipresent", "Omnivorous"],
-    correctIndex: 2,
-    explanationBn: "সর্বত্র বিরাজমান সত্তাকে 'Omnipresent' বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Omnipresent"]
+    "id": "vol3_ch7_q23",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who talks in his sleep is a ___.",
+    "options": [
+      "Somnambulist",
+      "Somniloquist",
+      "Ventriloquist",
+      "Orator"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "ঘুমের মধ্যে কথা বলা ব্যক্তিকে 'Somniloquist' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q24",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who knows everything:",
-    options: ["Omnipresent", "Omniscient", "Omnipotent", "Scholar"],
-    correctIndex: 1,
-    explanationBn: "যিনি সব জানেন তাকে 'Omniscient' (সর্বজ্ঞ) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Omniscient"]
+    "id": "vol3_ch7_q24",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A doctor who specializes in heart diseases is a ___.",
+    "options": [
+      "Neurologist",
+      "Cardiologist",
+      "Dermatologist",
+      "Pediatrician"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "হৃদরোগ বিশেষজ্ঞকে 'Cardiologist' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q25",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "An award or honor given after the recipient's death:",
-    options: ["Premature", "Posthumous", "Antecedent", "Belated"],
-    correctIndex: 1,
-    explanationBn: "মৃত্যুর পরে প্রাপ্ত সম্মাননা বা বই প্রকাশকে 'Posthumous' (মরণোত্তর) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Posthumous"]
+    "id": "vol3_ch7_q25",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A doctor who treats skin diseases is a ___.",
+    "options": [
+      "Dermatologist",
+      "Ophthalmologist",
+      "Orthopedic",
+      "Gynecologist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "চর্মরোগ বিশেষজ্ঞকে 'Dermatologist' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q26",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Scientific study of birds:",
-    options: ["Entomology", "Ornithology", "Anthropology", "Archaeology"],
-    correctIndex: 1,
-    explanationBn: "পাখি বিষয়ক বিজ্ঞানসম্মত অধ্যয়নকে 'Ornithology' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Ornithology"]
+    "id": "vol3_ch7_q26",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A doctor who treats children is called a ___.",
+    "options": [
+      "Pediatrician",
+      "Geriatrician",
+      "Surgeon",
+      "Physician"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "শিশুরোগ বিশেষজ্ঞকে 'Pediatrician' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q27",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Scientific study of insects:",
-    options: ["Entomology", "Etymology", "Ecology", "Ichthyology"],
-    correctIndex: 0,
-    explanationBn: "কীটপতঙ্গ সংক্রান্ত বিজ্ঞানকে 'Entomology' বলে (Etymology হলো শব্দের উৎস)।",
-    difficulty: "medium",
-    tags: ["One Word", "Entomology"]
+    "id": "vol3_ch7_q27",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A doctor who specializes in eye diseases is an ___.",
+    "options": [
+      "Ophthalmologist",
+      "Optician",
+      "Dentist",
+      "ENT specialist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "চক্ষুরোগ বিশেষজ্ঞকে 'Ophthalmologist' বলা হয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q28",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "That which cannot be avoided or prevented:",
-    options: ["Infallible", "Inevitable", "Inaudible", "Incurable"],
-    correctIndex: 1,
-    explanationBn: "যা কোনোভাবেই এড়ানো যায় না তাকে 'Inevitable' (অনিবার্য) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Inevitable"]
+    "id": "vol3_ch7_q28",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who writes beautiful handwriting is a ___.",
+    "options": [
+      "Calligrapher",
+      "Cartographer",
+      "Choreographer",
+      "Author"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সুন্দর হস্তাক্ষর শিল্পীকে 'Calligrapher' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q29",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A sound that cannot be heard:",
-    options: ["Inaudible", "Audible", "Invisible", "Incomprehensible"],
-    correctIndex: 0,
-    explanationBn: "যা কানে শোনা যায় না তাকে 'Inaudible' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Inaudible"]
+    "id": "vol3_ch7_q29",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A person who draws and creates maps is a ___.",
+    "options": [
+      "Cartographer",
+      "Calligrapher",
+      "Geographer",
+      "Surveyor"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "মানচিত্র নির্মাতাকে 'Cartographer' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q30",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A place where dead bodies are kept for post-mortem or identification:",
-    options: ["Cemetery", "Mortuary", "Crematorium", "Asylum"],
-    correctIndex: 1,
-    explanationBn: "ময়নাতদন্ত বা শনাক্তকরণের জন্য মৃতদেহ রাখার স্থানকে 'Mortuary' বা 'Morgue' বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Mortuary"]
+    "id": "vol3_ch7_q30",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A life story of a person written by himself is an ___.",
+    "options": [
+      "Biography",
+      "Autobiography",
+      "Memoir",
+      "Chronicle"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "নিজের লেখা নিজের জীবনীকে 'Autobiography' (আত্মজীবনী) বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q31",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who draws or produces maps:",
-    options: ["Cartographer", "Calligrapher", "Choreographer", "Lexicographer"],
-    correctIndex: 0,
-    explanationBn: "মানচিত্র অঙ্কনকারীকে 'Cartographer' বলা হয়।",
-    difficulty: "medium",
-    tags: ["One Word", "Cartographer"]
+    "id": "vol3_ch7_q31",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A life story of a person written by someone else is a ___.",
+    "options": [
+      "Autobiography",
+      "Biography",
+      "Novel",
+      "Fiction"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "অন্য কারো লেখা জীবনীকে 'Biography' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q32",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "One who compiles a dictionary:",
-    options: ["Lexicographer", "Bibliophile", "Cartographer", "Biographer"],
-    correctIndex: 0,
-    explanationBn: "অভিধান সংকলককে 'Lexicographer' বলা হয়।",
-    difficulty: "medium",
-    tags: ["One Word", "Lexicographer"]
+    "id": "vol3_ch7_q32",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A sound that cannot be heard is ___.",
+    "options": [
+      "Inaudible",
+      "Audible",
+      "Invisible",
+      "Illegible"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "যা শোনা যায় না তাকে 'Inaudible' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q33",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub1",
-    questionBn: "Absence of government and order in a country:",
-    options: ["Monarchy", "Anarchy", "Autocracy", "Democracy"],
-    correctIndex: 1,
-    explanationBn: "সরকার ও আইনের অনুপস্থিতি বা চরম বিশৃঙ্খলাকে 'Anarchy' (নৈরাজ্য) বলে।",
-    difficulty: "easy",
-    tags: ["One Word", "Anarchy"]
+    "id": "vol3_ch7_q33",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub1",
+    "questionBn": "A handwriting that is impossible to read is ___.",
+    "options": [
+      "Eligible",
+      "Illegible",
+      "Illiterate",
+      "Inaudible"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "যা পড়া যায় না এমন অস্পষ্ট লেখাকে 'Illegible' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q34",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub2",
-    questionBn: "A person who talks in sleep:",
-    options: ["Somniloquist", "Somnambulist", "Loquacious", "Ventriloquist"],
-    correctIndex: 0,
-    explanationBn: "ঘুমের মধ্যে কথা বলার অভ্যাসযুক্ত ব্যক্তিকে 'Somniloquist' বলে।",
-    difficulty: "medium",
-    tags: ["One Word", "Somniloquist"]
+    "id": "vol3_ch7_q34",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "Something that cannot be believed is ___.",
+    "options": [
+      "Incredible",
+      "Credible",
+      "Plausible",
+      "Reliable"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অবিশ্বাস্য কোনো কিছুকে 'Incredible' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch7_q35",
-    subjectId: "english",
-    chapterId: "eng_ch7",
-    subTopicId: "eng_ch7_sub3",
-    questionBn: "A doctor who specializes in skin diseases:",
-    options: ["Cardiologist", "Dermatologist", "Neurologist", "Ophthalmologist"],
-    correctIndex: 1,
-    explanationBn: "চর্মরোগ বিশেষজ্ঞ চিকিৎসককে 'Dermatologist' বলা হয়।",
-    difficulty: "easy",
-    tags: ["One Word", "Dermatologist"]
+    "id": "vol3_ch7_q35",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A medicine that counteracts the effect of poison is an ___.",
+    "options": [
+      "Antidote",
+      "Antibiotic",
+      "Antiseptic",
+      "Analgesic"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিষনাশক প্রতিষেধককে 'Antidote' বলে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q36",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A remedy or cure for all diseases is called a ___.",
+    "options": [
+      "Panacea",
+      "Vaccine",
+      "Therapy",
+      "Antibiotic"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সর্বব্যাধির মহৌষধকে 'Panacea' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q37",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A person who cannot make a mistake is ___.",
+    "options": [
+      "Infallible",
+      "Faulty",
+      "Expert",
+      "Genius"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ভ্রান্তিহীন বা অভ্রান্ত ব্যক্তিকে 'Infallible' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q38",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A person who is unable to pay his debts is ___.",
+    "options": [
+      "Bankrupt / Insolvent",
+      "Wealthy",
+      "Affluent",
+      "Miser"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "দেউলিয়া ব্যক্তিকে 'Bankrupt' বা 'Insolvent' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q39",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A person who eats human flesh is a ___.",
+    "options": [
+      "Cannibal",
+      "Carnivore",
+      "Herbivore",
+      "Omnivore"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "নরখাদককে 'Cannibal' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q40",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "An animal that eats both plants and meat is an ___.",
+    "options": [
+      "Herbivore",
+      "Carnivore",
+      "Omnivore",
+      "Insectivore"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "সর্বভুক প্রাণীকে 'Omnivore' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q41",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A person who eats no animal meat is a ___.",
+    "options": [
+      "Vegetarian",
+      "Non-vegetarian",
+      "Carnivore",
+      "Cannibal"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "নিরামিষাশী ব্যক্তিকে 'Vegetarian' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q42",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A person who abstains completely from alcoholic drinks is a ___.",
+    "options": [
+      "Teetotaler",
+      "Drunkard",
+      "Glutton",
+      "Epicure"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "মদ্যপান বর্জনকারীকে 'Teetotaler' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q43",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A speech delivered without any prior preparation is ___.",
+    "options": [
+      "Extempore / Impromptu",
+      "Debate",
+      "Lecture",
+      "Oration"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "পূর্বপ্রস্তুতিহীন তাৎক্ষণিক বক্তৃতাকে 'Extempore' বা 'Impromptu' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q44",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A post for which no salary is paid is an ___.",
+    "options": [
+      "Honorary",
+      "Permanent",
+      "Temporary",
+      "Voluntary"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অবৈতনিক পদকে 'Honorary' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q45",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A place where weapons and ammunition are stored is an ___.",
+    "options": [
+      "Arsenal",
+      "Armory",
+      "Warehouse",
+      "Depot"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অস্ত্রাগারকে 'Arsenal' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q46",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A place where clothes are kept is a ___.",
+    "options": [
+      "Wardrobe",
+      "Closet",
+      "Drawer",
+      "Cupboard"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "পোশাক রাখার আলমারিকে 'Wardrobe' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q47",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A place where luggage is kept at a railway station is a ___.",
+    "options": [
+      "Cloakroom",
+      "Waiting room",
+      "Platform",
+      "Locker"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "স্টেশনে সাময়িক মালপত্র রাখার কক্ষকে 'Cloakroom' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q48",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A building where dead bodies are kept before burial or cremation is a ___.",
+    "options": [
+      "Mortuary",
+      "Cemetery",
+      "Crematorium",
+      "Hospital"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "মর্গ বা শব সংরক্ষণাগারকে 'Mortuary' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q49",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "A graveyard where dead bodies are buried is a ___.",
+    "options": [
+      "Cemetery",
+      "Mortuary",
+      "Sanatorium",
+      "Shrine"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "কবরস্থানকে 'Cemetery' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q50",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "One who believes in the existence of God is a ___.",
+    "options": [
+      "Theist",
+      "Atheist",
+      "Agnostic",
+      "Pagan"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "ঈশ্বরবিশ্বাসী ব্যক্তিকে 'Theist' বলে (অবিশ্বাসী হলো 'Atheist')।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q51",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 1] A person who collects postage stamps is called a ___.",
+    "options": [
+      "Numismatist",
+      "Philatelist",
+      "Polyglot",
+      "Somnambulist"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: ডাকটিকিট সংগ্রাহককে 'Philatelist' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q52",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 2] A person who collects coins is called a ___.",
+    "options": [
+      "Numismatist",
+      "Philatelist",
+      "Archaeologist",
+      "Botanist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: মুদ্রা সংগ্রাহককে 'Numismatist' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q53",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 3] A person who knows many languages is known as a ___.",
+    "options": [
+      "Polyglot",
+      "Linguist",
+      "Grammarian",
+      "Scholar"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: বহুভাষাবিদ ব্যক্তিকে 'Polyglot' বা 'Multilingual' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q54",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 4] A person who looks at the bright side of things is an ___.",
+    "options": [
+      "Pessimist",
+      "Optimist",
+      "Altruist",
+      "Egotist"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: আশাবাদী ব্যক্তিকে 'Optimist' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q55",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 5] A person who looks at the dark side of things is a ___.",
+    "options": [
+      "Pessimist",
+      "Optimist",
+      "Cynic",
+      "Fatalist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: হতাশাবাদী ব্যক্তিকে 'Pessimist' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q56",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 6] A person who loves mankind and works for their welfare is a ___.",
+    "options": [
+      "Misanthrope",
+      "Philanthropist",
+      "Misogynist",
+      "Cannibal"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: মানবপ্রেমিক বা পরোপকারী ব্যক্তিকে 'Philanthropist' বা 'Altruist' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q57",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 7] A person who hates mankind is called a ___.",
+    "options": [
+      "Philanthropist",
+      "Misanthrope",
+      "Misogynist",
+      "Sadist"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: মানববিদ্বেষী ব্যক্তিকে 'Misanthrope' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q58",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 8] A person who loves and collects books is a ___.",
+    "options": [
+      "Bibliophile",
+      "Bookkeeper",
+      "Librarian",
+      "Publisher"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: বইপ্রেমী ব্যক্তিকে 'Bibliophile' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q59",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 9] A place where bees are kept is called an ___.",
+    "options": [
+      "Aviary",
+      "Apiary",
+      "Aquarium",
+      "Sanctuary"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: মৌমাছি পালন কেন্দ্রকে 'Apiary' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q60",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 10] A place where birds are kept is called an ___.",
+    "options": [
+      "Apiary",
+      "Aviary",
+      "Zoo",
+      "Cage"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: পাখিশালাকে 'Aviary' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q61",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 11] The scientific study of birds is known as ___.",
+    "options": [
+      "Entomology",
+      "Ornithology",
+      "Anthropology",
+      "Archaeology"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: পক্ষীবিদ্যাকে 'Ornithology' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q62",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 12] The scientific study of insects is called ___.",
+    "options": [
+      "Entomology",
+      "Etymology",
+      "Ecology",
+      "Botany"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: কীটপতঙ্গ সম্পর্কিত বিজ্ঞানকে 'Entomology' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q63",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 13] A government by officials and state administrators is called ___.",
+    "options": [
+      "Democracy",
+      "Bureaucracy",
+      "Autocracy",
+      "Aristocracy"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: আমলাতন্ত্রকে 'Bureaucracy' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q64",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 14] A government by the wealthy and rich class is called ___.",
+    "options": [
+      "Plutocracy",
+      "Oligarchy",
+      "Democracy",
+      "Monarchy"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: ধনীদের দ্বারা পরিচালিত শাসনব্যবস্থাকে 'Plutocracy' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q65",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 15] The state of absence of law and government is called ___.",
+    "options": [
+      "Monarchy",
+      "Anarchy",
+      "Democracy",
+      "Dictatorship"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: নৈরাজ্য বা সরকারহীন অবস্থাকে 'Anarchy' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q66",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub2",
+    "questionBn": "[Practice Question 16] The killing of a king is known as ___.",
+    "options": [
+      "Homicide",
+      "Regicide",
+      "Patricide",
+      "Fratricide"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: রাজহত্যাকে 'Regicide' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q67",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 17] The killing of one's father is called ___.",
+    "options": [
+      "Matricide",
+      "Patricide",
+      "Fratricide",
+      "Sororicide"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: পিতৃহত্যাকে 'Patricide' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q68",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 18] The killing of one's mother is called ___.",
+    "options": [
+      "Patricide",
+      "Matricide",
+      "Suicide",
+      "Infanticide"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: মাতৃহত্যাকে 'Matricide' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q69",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 19] The killing of a human being by another is called ___.",
+    "options": [
+      "Homicide",
+      "Genocide",
+      "Suicide",
+      "Regicide"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: নরহত্যাকে 'Homicide' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q70",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 20] An extreme and irrational fear of closed or confined spaces is ___.",
+    "options": [
+      "Acrophobia",
+      "Claustrophobia",
+      "Hydrophobia",
+      "Agoraphobia"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: আবদ্ধ স্থানের ভয়কে 'Claustrophobia' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q71",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 21] An extreme and irrational fear of water is known as ___.",
+    "options": [
+      "Acrophobia",
+      "Hydrophobia",
+      "Pyrophobia",
+      "Claustrophobia"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: জলাতঙ্ক বা জলভীতিকে 'Hydrophobia' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q72",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 22] A person who walks in his sleep is a ___.",
+    "options": [
+      "Somnambulist",
+      "Somniloquist",
+      "Impostor",
+      "Hypocrite"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: ঘুমের মধ্যে হাঁটা ব্যক্তিকে 'Somnambulist' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q73",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 23] A person who talks in his sleep is a ___.",
+    "options": [
+      "Somnambulist",
+      "Somniloquist",
+      "Ventriloquist",
+      "Orator"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: ঘুমের মধ্যে কথা বলা ব্যক্তিকে 'Somniloquist' বলে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q74",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 24] A doctor who specializes in heart diseases is a ___.",
+    "options": [
+      "Neurologist",
+      "Cardiologist",
+      "Dermatologist",
+      "Pediatrician"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: হৃদরোগ বিশেষজ্ঞকে 'Cardiologist' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q75",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 25] A doctor who treats skin diseases is a ___.",
+    "options": [
+      "Dermatologist",
+      "Ophthalmologist",
+      "Orthopedic",
+      "Gynecologist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: চর্মরোগ বিশেষজ্ঞকে 'Dermatologist' বলা হয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q76",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 26] A doctor who treats children is called a ___.",
+    "options": [
+      "Pediatrician",
+      "Geriatrician",
+      "Surgeon",
+      "Physician"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: শিশুরোগ বিশেষজ্ঞকে 'Pediatrician' বলা হয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q77",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 27] A doctor who specializes in eye diseases is an ___.",
+    "options": [
+      "Ophthalmologist",
+      "Optician",
+      "Dentist",
+      "ENT specialist"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: চক্ষুরোগ বিশেষজ্ঞকে 'Ophthalmologist' বলা হয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q78",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 28] A person who writes beautiful handwriting is a ___.",
+    "options": [
+      "Calligrapher",
+      "Cartographer",
+      "Choreographer",
+      "Author"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সুন্দর হস্তাক্ষর শিল্পীকে 'Calligrapher' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q79",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 29] A person who draws and creates maps is a ___.",
+    "options": [
+      "Cartographer",
+      "Calligrapher",
+      "Geographer",
+      "Surveyor"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: মানচিত্র নির্মাতাকে 'Cartographer' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q80",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 30] A life story of a person written by himself is an ___.",
+    "options": [
+      "Biography",
+      "Autobiography",
+      "Memoir",
+      "Chronicle"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: নিজের লেখা নিজের জীবনীকে 'Autobiography' (আত্মজীবনী) বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q81",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 31] A life story of a person written by someone else is a ___.",
+    "options": [
+      "Autobiography",
+      "Biography",
+      "Novel",
+      "Fiction"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: অন্য কারো লেখা জীবনীকে 'Biography' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q82",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 32] A sound that cannot be heard is ___.",
+    "options": [
+      "Inaudible",
+      "Audible",
+      "Invisible",
+      "Illegible"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: যা শোনা যায় না তাকে 'Inaudible' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q83",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 33] A handwriting that is impossible to read is ___.",
+    "options": [
+      "Eligible",
+      "Illegible",
+      "Illiterate",
+      "Inaudible"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: যা পড়া যায় না এমন অস্পষ্ট লেখাকে 'Illegible' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q84",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 34] Something that cannot be believed is ___.",
+    "options": [
+      "Incredible",
+      "Credible",
+      "Plausible",
+      "Reliable"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: অবিশ্বাস্য কোনো কিছুকে 'Incredible' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q85",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 35] A medicine that counteracts the effect of poison is an ___.",
+    "options": [
+      "Antidote",
+      "Antibiotic",
+      "Antiseptic",
+      "Analgesic"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: বিষনাশক প্রতিষেধককে 'Antidote' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q86",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 36] A remedy or cure for all diseases is called a ___.",
+    "options": [
+      "Panacea",
+      "Vaccine",
+      "Therapy",
+      "Antibiotic"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সর্বব্যাধির মহৌষধকে 'Panacea' বলা হয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q87",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 37] A person who cannot make a mistake is ___.",
+    "options": [
+      "Infallible",
+      "Faulty",
+      "Expert",
+      "Genius"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: ভ্রান্তিহীন বা অভ্রান্ত ব্যক্তিকে 'Infallible' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q88",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 38] A person who is unable to pay his debts is ___.",
+    "options": [
+      "Bankrupt / Insolvent",
+      "Wealthy",
+      "Affluent",
+      "Miser"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: দেউলিয়া ব্যক্তিকে 'Bankrupt' বা 'Insolvent' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q89",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 39] A person who eats human flesh is a ___.",
+    "options": [
+      "Cannibal",
+      "Carnivore",
+      "Herbivore",
+      "Omnivore"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: নরখাদককে 'Cannibal' বলা হয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q90",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 40] An animal that eats both plants and meat is an ___.",
+    "options": [
+      "Herbivore",
+      "Carnivore",
+      "Omnivore",
+      "Insectivore"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "বিশদ ব্যাখ্যা: সর্বভুক প্রাণীকে 'Omnivore' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q91",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 41] A person who eats no animal meat is a ___.",
+    "options": [
+      "Vegetarian",
+      "Non-vegetarian",
+      "Carnivore",
+      "Cannibal"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: নিরামিষাশী ব্যক্তিকে 'Vegetarian' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q92",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 42] A person who abstains completely from alcoholic drinks is a ___.",
+    "options": [
+      "Teetotaler",
+      "Drunkard",
+      "Glutton",
+      "Epicure"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: মদ্যপান বর্জনকারীকে 'Teetotaler' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q93",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 43] A speech delivered without any prior preparation is ___.",
+    "options": [
+      "Extempore / Impromptu",
+      "Debate",
+      "Lecture",
+      "Oration"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: পূর্বপ্রস্তুতিহীন তাৎক্ষণিক বক্তৃতাকে 'Extempore' বা 'Impromptu' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q94",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 44] A post for which no salary is paid is an ___.",
+    "options": [
+      "Honorary",
+      "Permanent",
+      "Temporary",
+      "Voluntary"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: অবৈতনিক পদকে 'Honorary' বলা হয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q95",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 45] A place where weapons and ammunition are stored is an ___.",
+    "options": [
+      "Arsenal",
+      "Armory",
+      "Warehouse",
+      "Depot"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: অস্ত্রাগারকে 'Arsenal' বলা হয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q96",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 46] A place where clothes are kept is a ___.",
+    "options": [
+      "Wardrobe",
+      "Closet",
+      "Drawer",
+      "Cupboard"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: পোশাক রাখার আলমারিকে 'Wardrobe' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q97",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 47] A place where luggage is kept at a railway station is a ___.",
+    "options": [
+      "Cloakroom",
+      "Waiting room",
+      "Platform",
+      "Locker"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: স্টেশনে সাময়িক মালপত্র রাখার কক্ষকে 'Cloakroom' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q98",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 48] A building where dead bodies are kept before burial or cremation is a ___.",
+    "options": [
+      "Mortuary",
+      "Cemetery",
+      "Crematorium",
+      "Hospital"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: মর্গ বা শব সংরক্ষণাগারকে 'Mortuary' বলে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q99",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 49] A graveyard where dead bodies are buried is a ___.",
+    "options": [
+      "Cemetery",
+      "Mortuary",
+      "Sanatorium",
+      "Shrine"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: কবরস্থানকে 'Cemetery' বলা হয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch7_q100",
+    "subjectId": "english",
+    "chapterId": "eng_ch7",
+    "subTopicId": "eng_ch7_sub3",
+    "questionBn": "[Practice Question 50] One who believes in the existence of God is a ___.",
+    "options": [
+      "Theist",
+      "Atheist",
+      "Agnostic",
+      "Pagan"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: ঈশ্বরবিশ্বাসী ব্যক্তিকে 'Theist' বলে (অবিশ্বাসী হলো 'Atheist')।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "One Word Substitution",
+      "Volume 3"
+    ]
   }
 ];

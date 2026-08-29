@@ -1,139 +1,501 @@
 import { StudyChapter, Question } from "../../types";
 
 export const BENGALI_CH11_STUDY: StudyChapter = {
-  id: "bengali_ch11",
-  subjectId: "bengali",
-  chapterNumber: 11,
-  titleBn: "সমোচ্চারিত ভিন্নার্থক শব্দ ও প্রায়-সমোচ্চারিত শব্দযুগল",
-  titleEn: "Homonyms & Words of Similar Pronunciation with Different Meanings",
-  estimatedMinutes: 25,
-  importantNotesCount: 25,
-  summary: "বাংলা ভাষায় বহু শব্দ রয়েছে যাদের উচ্চারণ প্রায় একই কিন্তু বানান ও অর্থ সম্পূর্ণ ভিন্ন। যেমন—অংশ (ভাগ) বনাম অস (কাঁধ), অন্ন (ভাত) বনাম অন্য (অপর), কূল (তীর) বনাম কুল (বংশ/ফল)। বিভিন্ন প্রতিযোগিতামূলক পরীক্ষায় এই বিভ্রান্তিকর শব্দযুগল থেকে নিয়মিত প্রশ্ন আসে।",
-  subTopics: [
+  "id": "bengali_ch11",
+  "subjectId": "bengali",
+  "chapterNumber": 11,
+  "titleBn": "বিপরীতার্থক শব্দ (১০০টি গুরুত্বপূর্ণ উদাহরণ ও সম্পূর্ণ সংকলন)",
+  "titleEn": "Biporitarthak Shabda - 100 Reference Antonyms for Panchayat & Competitive Exams",
+  "estimatedMinutes": 45,
+  "importantNotesCount": 45,
+  "summary": "শব্দের বিপরীত বা উল্টো অর্থবোধক শব্দকে বিপরীতার্থক শব্দ বলে। যেমন—অর্বাচীন (প্রাচীন), অধিত্যকা (উপত্যকা), জঙ্গম (স্থাবর), উত্তমর্ণ (অধমর্ণ), আবির্ভাব (তিরোভাব) ইত্যাদি ১০০টি বাছাই করা প্রামাণ্য উদাহরণ।",
+  "subTopics": [
     {
-      id: "bengali_ch11_sub1",
-      chapterId: "bengali_ch11",
-      subjectId: "bengali",
-      titleBn: "স্বরবর্ণ ও ব্যঞ্জনবর্ণের পার্থক্যভিত্তিক সমোচ্চারিত শব্দ",
-      titleEn: "Vowel & Consonant Based Homonyms",
-      orderIndex: 1,
-      summaryBn: "অংশ/অংস, অনু/অণু, অশ্ব/অশ্ম, আধার/আধার, কপাল/কপোল ইত্যাদি অতি প্রয়োজনীয় শব্দযুগল।",
-      keyConcepts: ["অংশ (ভাগ) vs অংস (কাঁধ)", "অনু (পশ্চাৎ) vs অণু (ক্ষুদ্র অংশ)", "অশ্ব (ঘোড়া) vs অশ্ম (পাথর)"]
+      "id": "bengali_ch11_sub1",
+      "chapterId": "bengali_ch11",
+      "subjectId": "bengali",
+      "titleBn": "স্বরবর্ণভিত্তিক গুরুত্বপূর্ণ বিপরীতার্থক শব্দ",
+      "titleEn": "Vowel Initial Antonyms",
+      "orderIndex": 1,
+      "summaryBn": "অর্বাচীন (প্রাচীন), অধিত্যকা (উপত্যকা), আবির্ভাব (তিরোভাব), উত্তমর্ণ (অধমর্ণ), ঐহিক (পারত্রিক)।",
+      "keyConcepts": [
+        "অর্বাচীন -> প্রাচীন",
+        "অধিত্যকা -> উপত্যকা",
+        "আবির্ভাব -> তিরোভাব",
+        "ঐহিক -> পারত্রিক"
+      ]
     },
     {
-      id: "bengali_ch11_sub2",
-      chapterId: "bengali_ch11",
-      subjectId: "bengali",
-      titleBn: "ণ ও ন, শ/ষ/স জনিত ভিন্নার্থক শব্দ",
-      titleEn: "Homonyms with Nasals & Sibilants",
-      orderIndex: 2,
-      summaryBn: "বাণ/বান, পণ/পন, সুর/শুর, কোশ/কোষ, শপ/সপ ইত্যাদির সঠিক অর্থ ও প্রয়োগ।",
-      keyConcepts: ["বাণ (তির) vs বান (বন্যা)", "সুর (দেবতা/কণ্ঠস্বর) vs শুর (বীর)", "কোষ (ভাণ্ডার) vs কোশ (দূরত্বের মাপ/দুই ক্রোশ)"]
+      "id": "bengali_ch11_sub2",
+      "chapterId": "bengali_ch11",
+      "subjectId": "bengali",
+      "titleBn": "ব্যঞ্জনবর্ণভিত্তিক অতি কমন বিপরীত শব্দ",
+      "titleEn": "Consonant Initial Antonyms",
+      "orderIndex": 2,
+      "summaryBn": "জঙ্গম (স্থাবর), কৃতজ্ঞ (কৃতঘ্ন), প্রাচী (প্রতীচী), বাচাল (মিতভাষী), সৌম্য (উগ্র)।",
+      "keyConcepts": [
+        "জঙ্গম -> স্থাবর",
+        "কৃতজ্ঞ -> কৃতঘ্ন",
+        "প্রাচী -> প্রতীচী",
+        "বাচাল -> মিতভাষী"
+      ]
     },
     {
-      id: "bengali_ch11_sub3",
-      chapterId: "bengali_ch11",
-      subjectId: "bengali",
-      titleBn: "পরীক্ষামূলক অতি গুরুত্বপূর্ণ ৫০টি কনফিউজিং জোড়া",
-      titleEn: "High Frequency Confusing Pairs for Exams",
-      orderIndex: 3,
-      summaryBn: "দ্বিপ/দ্বীপ, দিন/দীন, নীরব/নীরদ, চির/চীর, কৃতি/কৃতী, তরণী/তরণি, সূত/সুত ইত্যাদির বিশদ বিশ্লেষণ।",
-      keyConcepts: ["দ্বিপ (হাতি) vs দ্বীপ (জলবেষ্টিত ভূখণ্ড)", "দিন (দিবস) vs দীন (দরিদ্র)", "কৃতি (কর্ম/সৃষ্টি) vs কৃতী (সফল/পণ্ডিত)"]
+      "id": "bengali_ch11_sub3",
+      "chapterId": "bengali_ch11",
+      "subjectId": "bengali",
+      "titleBn": "১০০টি বাছাই করা মাস্টার বিপরীত শব্দ চার্ট",
+      "titleEn": "100 Master Antonym Compendium",
+      "orderIndex": 3,
+      "summaryBn": "পরীক্ষায় বারবার আসা ১০০টি বিপরীত শব্দের সম্পূর্ণ তালিকা ও বিভ্রান্তিকর জোড়া সমাধান।",
+      "keyConcepts": [
+        "ঋজু -> বক্র",
+        "উন্মীলন -> নিমীলন",
+        "ব্যষ্টি -> সমষ্টি"
+      ]
     }
   ],
-  content: {
-    introduction: "বাংলা ভাষায় উচ্চারণের অভিন্নতা থাকলেও বানানের সামান্য তারতম্যে অর্থের আমূল পরিবর্তন ঘটে। এগুলিকে সমোচ্চারিত ভিন্নার্থক শব্দ বা প্রায়-সমোচ্চারিত শব্দযুগল বলা হয়।",
-    sections: [
+  "content": {
+    "introduction": "ভাষায় কোনো একটি শব্দের ঠিক উল্টো বা বিপরীত অর্থবোধক শব্দকে বিপরীতার্থক শব্দ (Antonyms) বলে। পরীক্ষায় বিভ্রান্তিকর ও অপ্রচলিত বিপরীত শব্দ থেকে প্রায়শই প্রশ্ন আসে।",
+    "sections": [
       {
-        heading: "১. অতি গুরুত্বপূর্ণ সমোচ্চারিত শব্দ তালিকা (তালিকা - ১)",
-        body: [
-          "• অংশ = ভাগ বা অংশবিশেষ | অংস = কাঁধ (স্কন্ধ)।",
-          "• অনু = পশ্চাৎ বা সদৃশ | অণু = পদার্থের ক্ষুদ্রতম কণা।",
-          "• অন্ন = ভাত বা খাদ্য | অন্য = অপর বা ভিন্ন ব্যক্তি।",
-          "• অপচয় = অপব্যয় বা ক্ষতি | অপচিতি = ধ্বংস বা হ্রাস।",
-          "• অশ্ম = পাথর বা শিলা | অশ্ব = ঘোড়া (ঘোটক)।",
-          "• আধার = পাত্র বা পাত্রস্বরূপ আশ্রয় | আঁধার = অন্ধকার বা তমিস্রা।",
-          "• আপণ = দোকান বা বিপণি | আপন = নিজের (স্বীয়)।",
-          "• কড়ি = মুদ্রা বা অর্থ | কড়ি = ছাদের কাঠ/কড়িবরগা।"
+        "heading": "১. ১০০টি বাছাই করা অতি গুরুত্বপূর্ণ বিপরীতার্থক শব্দের তালিকা",
+        "body": [
+          "• অর্বাচীন (নতুন) এর বিপরীত হলো 'প্রাচীন'।",
+          "• অধিত্যকা (পাহাড়ের ওপরের সমতল ভূমি) এর বিপরীত হলো 'উপত্যকা' (পাহাড়ের নিচের ভূমি)।",
+          "• জঙ্গম (গতিশীল/যা নড়ে) এর বিপরীত হলো 'স্থাবর' (স্থির)।",
+          "• উত্তমর্ণ (যে ঋণ দেয় / মহাজন) এর বিপরীত হলো 'অধমর্ণ' (যে ঋণ গ্রহণ করে / খাতক)।"
         ],
-        tables: {
-          headers: ["শব্দ (১)", "অর্থ", "শব্দ (২)", "অর্থ"],
-          rows: [
-            ["অংশ", "ভাগ", "অংস", "কাঁধ"],
-            ["দিন", "দিবস", "দীন", "দরিদ্র/কাতর"],
-            ["কুল", "বংশ / ফলবিশেষ", "কূল", "তীর বা নদীর পাড়"],
-            ["দ্বিপ", "হাতি (গজ)", "দ্বীপ", "জলবেষ্টিত ভূভাগ"],
-            ["চির", "চিরকাল / সর্বদা", "চীর", "ছেঁড়া কাপড় / গাছের বাকল"],
-            ["তরণী", "নৌকা", "তরণি", "সূর্য"],
-            ["সূত", "সারথি / চালক", "সুত", "পুত্র বা সন্তান"]
+        "tables": {
+          "headers": [
+            "মূল শব্দ",
+            "সঠিক বিপরীতার্থক শব্দ"
+          ],
+          "rows": [
+            [
+              "অনুরক্ত",
+              "বিরক্ত"
+            ],
+            [
+              "অনুরাগ",
+              "বিরাগ"
+            ],
+            [
+              "অন্তরঙ্গ",
+              "বহিরঙ্গ"
+            ],
+            [
+              "অনুকূল",
+              "প্রতিকূল"
+            ],
+            [
+              "অনুরোধ",
+              "আদেশ"
+            ],
+            [
+              "অর্বাচীন",
+              "প্রাচীন"
+            ],
+            [
+              "অর্পণ",
+              "গ্রহণ"
+            ],
+            [
+              "অমৃত",
+              "গরল / বিষ"
+            ],
+            [
+              "অগ্র",
+              "পশ্চাৎ"
+            ],
+            [
+              "অগ্রজ",
+              "অনুজ"
+            ],
+            [
+              "অসীম",
+              "সসীম"
+            ],
+            [
+              "অস্ত",
+              "উদয়"
+            ],
+            [
+              "অধিত্যকা",
+              "উপত্যকা"
+            ],
+            [
+              "অনুগ্রাহ",
+              "নিগ্রহ"
+            ],
+            [
+              "অবরোহ",
+              "আরোহ"
+            ],
+            [
+              "অপমান",
+              "সম্মান"
+            ],
+            [
+              "আকাঙ্ক্ষা",
+              "অনিচ্ছা"
+            ],
+            [
+              "আগম",
+              "নির্গম"
+            ],
+            [
+              "আদান",
+              "প্রদান"
+            ],
+            [
+              "আদি",
+              "অন্ত / অনাদি"
+            ],
+            [
+              "আর্দ্র",
+              "শুষ্ক"
+            ],
+            [
+              "আবির্ভাব",
+              "তিরোভাব"
+            ],
+            [
+              "আবশ্যিক",
+              "ঐচ্ছিক"
+            ],
+            [
+              "আস্থা",
+              "অনাস্থা"
+            ],
+            [
+              "আস্তিক",
+              "নাস্তিক"
+            ],
+            [
+              "আহ্বান",
+              "বিসর্জন"
+            ],
+            [
+              "উত্তমর্ণ",
+              "অধমর্ণ"
+            ],
+            [
+              "উত্তল",
+              "অবতল"
+            ],
+            [
+              "উদয়",
+              "অস্ত"
+            ],
+            [
+              "উদার",
+              "সংকীর্ণ"
+            ],
+            [
+              "উন্নতি",
+              "অবনতি"
+            ],
+            [
+              "উপচয়",
+              "অপচয়"
+            ],
+            [
+              "উপকারী",
+              "অপকারী"
+            ],
+            [
+              "উর্বর",
+              "অনুর্বর / ঊষর"
+            ],
+            [
+              "উষ্ণ",
+              "শীতল"
+            ],
+            [
+              "উচ্চ",
+              "নীচ"
+            ],
+            [
+              "উদ্ধত",
+              "নম্র / বিনীত"
+            ],
+            [
+              "উন্মীলন",
+              "নিমীলন"
+            ],
+            [
+              "ঊর্ধ্ব",
+              "অধঃ"
+            ],
+            [
+              "ঋজু",
+              "বক্র"
+            ],
+            [
+              "একতা",
+              "বিভেদ"
+            ],
+            [
+              "ঐহিক",
+              "পারত্রিক"
+            ],
+            [
+              "ঐক্য",
+              "অনৈক্য"
+            ],
+            [
+              "ঐশ্বর্য",
+              "দারিদ্র্য"
+            ],
+            [
+              "কৃপণ",
+              "উদার / মুক্তহস্ত"
+            ],
+            [
+              "কৃতজ্ঞ",
+              "কৃতঘ্ন"
+            ],
+            [
+              "কৃশ",
+              "স্থূল"
+            ],
+            [
+              "কোমল",
+              "কঠোর"
+            ],
+            [
+              "ক্ষীয়মাণ",
+              "বর্ধমান"
+            ],
+            [
+              "ক্ষুদ্র",
+              "বৃহৎ"
+            ],
+            [
+              "গরিষ্ঠ",
+              "লঘিষ্ঠ"
+            ],
+            [
+              "গুণ",
+              "দোষ"
+            ],
+            [
+              "গুরু",
+              "লঘু / শিষ্য"
+            ],
+            [
+              "গৃহী",
+              "সন্ন্যাসী"
+            ],
+            [
+              "গোপন",
+              "প্রকাশ"
+            ],
+            [
+              "ঘাত",
+              "প্রতিঘাত"
+            ],
+            [
+              "চঞ্চল",
+              "স্থির / শান্ত"
+            ],
+            [
+              "চিরন্তন",
+              "ক্ষণস্থায়ী"
+            ],
+            [
+              "জঙ্গম",
+              "স্থাবর"
+            ],
+            [
+              "জয়",
+              "পরাজয়"
+            ],
+            [
+              "জাগ্ৰত",
+              "সুপ্ত"
+            ],
+            [
+              "জ্যেষ্ঠ",
+              "কনিষ্ঠ"
+            ],
+            [
+              "তিমির",
+              "আলোক"
+            ],
+            [
+              "তীক্ষ্ণ",
+              "ভোঁতা"
+            ],
+            [
+              "তৃষ্ণা",
+              "তৃপ্তি"
+            ],
+            [
+              "তেজী",
+              "নিস্তেজ"
+            ],
+            [
+              "দাতা",
+              "গ্রহীতা"
+            ],
+            [
+              "দুর্দান্ত",
+              "নিরীহ"
+            ],
+            [
+              "দুষ্প্রাপ্য",
+              "সুলভ"
+            ],
+            [
+              "দৈর্ঘ্য",
+              "প্রস্থ"
+            ],
+            [
+              "ধ্বংস",
+              "সৃষ্টি"
+            ],
+            [
+              "নন্দিত",
+              "নিন্দিত"
+            ],
+            [
+              "নবীন",
+              "প্রবীণ"
+            ],
+            [
+              "নশ্বর",
+              "অনশ্বর / অবিনশ্বর"
+            ],
+            [
+              "নির্মল",
+              "পঙ্কিল / মলিন"
+            ],
+            [
+              "নীরব",
+              "মুখর"
+            ],
+            [
+              "পণ্ডিত",
+              "মূর্খ"
+            ],
+            [
+              "পরার্থ",
+              "স্বার্থ"
+            ],
+            [
+              "পঙ্কিল",
+              "স্বচ্ছ / নির্মল"
+            ],
+            [
+              "প্রত্যক্ষ",
+              "পরোক্ষ"
+            ],
+            [
+              "প্রবৃত্তি",
+              "নিবৃত্তি"
+            ],
+            [
+              "প্রাচী",
+              "প্রতীচী"
+            ],
+            [
+              "প্রসন্ন",
+              "বিষণ্ণ"
+            ],
+            [
+              "বন্ধ্যা",
+              "উর্বরা"
+            ],
+            [
+              "বন্ধন",
+              "মুক্তি"
+            ],
+            [
+              "বাচাল",
+              "মিতভাষী / স্বল্পভাষী"
+            ],
+            [
+              "বিধি",
+              "নিষেধ"
+            ],
+            [
+              "বিচ্ছেদ",
+              "মিলন"
+            ],
+            [
+              "ব্যষ্টি",
+              "সমষ্টি"
+            ],
+            [
+              "ভণ্ড",
+              "সাধু"
+            ],
+            [
+              "মুখ্য",
+              "গৌণ"
+            ],
+            [
+              "স্থাবর",
+              "জঙ্গম"
+            ],
+            [
+              "সংকীর্ণ",
+              "প্রশস্ত"
+            ],
+            [
+              "সংশয়",
+              "নিশ্চয়"
+            ],
+            [
+              "সদাচার",
+              "কদাচার"
+            ],
+            [
+              "সৌম্য",
+              "উগ্র"
+            ],
+            [
+              "হর্ষ",
+              "বিষাদ"
+            ],
+            [
+              "হ্রাস",
+              "বৃদ্ধি"
+            ],
+            [
+              "ক্ষমা",
+              "প্রতিশোধ"
+            ],
+            [
+              "স্মরণ",
+              "বিস্মরণ"
+            ]
           ]
         }
-      },
-      {
-        heading: "২. বর্ণভেদ ও অর্থভেদ (তালিকা - ২)",
-        body: [
-          "• নিধন = বিনাশ বা বধ | নির্ধন = দরিদ্র বা বিত্তহীন।",
-          "• নীর = জল বা বারি | নীড় = পাখির বাসা।",
-          "• পণ = প্রতিজ্ঞা বা বাজি | পন = আশি গণ্ডা (সংখ্যা)।",
-          "• পরিচ্ছদ = পোশাক বা পরিধেয় | পরিচ্ছেদ = অধ্যায় বা বিভাগ।",
-          "• প্রসাদ = অনুগ্রহ বা দেবতার ভোগ | প্রাসাদ = রাজবাড়ি বা অট্টালিকা।",
-          "• বারণ = নিষেধ বা বর্জন | বারণ = হাতি বা গজ।",
-          "• শঙ্কর = শিব বা মহাদেব | সংকর = মিশ্রিত বা বর্ণসঙ্কর।"
-        ],
-        keyPoints: [
-          "লক্ষ্য রাখবেন: 'নীর' মানে জল, কিন্তু 'নীড়' মানে পাখির বাসা।",
-          "লক্ষ্য রাখবেন: 'দ্বীপ' মানে চারদিকে জলবেষ্টিত ভূমি, কিন্তু 'দ্বিপ' (হ্রস্ব ই) মানে হাতি।",
-          "লক্ষ্য রাখবেন: 'প্রসাদ' মানে দেবতার ভোগ/অনুগ্রহ, কিন্তু 'প্রাসাদ' মানে রাজবাড়ি।"
-        ]
       }
     ],
-    examTips: [
-      "'দ্বিপ' শব্দের সঠিক অর্থ কী? উত্তর: হাতি (গজ)।",
-      "'কূল' ও 'কুল' শব্দের পার্থক্য কী? উত্তর: কূল = তীর/নদীর পাড়; কুল = বংশ বা কুল ফল।",
-      "'কৃতী' শব্দের অর্থ কী? উত্তর: সফল ব্যক্তি বা পণ্ডিত (আর 'কৃতি' মানে রচনা বা কর্ম)।"
+    "examTips": [
+      "'অর্বাচীন' এর বিপরীত হলো 'প্রাচীন'।",
+      "'অধিত্যকা' এর বিপরীত হলো 'উপত্যকা'।",
+      "'জঙ্গম' এর বিপরীত হলো 'স্থাবর'।"
     ],
-    quickRevisionPoints: [
-      "অংস = কাঁধ, অংশ = ভাগ।",
-      "আপণ = দোকান, আপন = নিজ।",
-      "শম্বর = হরিণ, সম্বর = সংযম।",
-      "পদ্ম = পদ্মফুল, পদ্য = কবিতা।"
+    "quickRevisionPoints": [
+      "উত্তমর্ণ = অধমর্ণ।",
+      "আবির্ভাব = তিরোভাব।",
+      "প্রাচী = প্রতীচী।"
     ],
-    oneLiners: [
-      "অংশ শব্দের অর্থ ভাগ কিন্তু অংস শব্দের অর্থ কাঁধ।",
-      "অণু হলো পদার্থের ক্ষুদ্রতম কণা এবং অনু উপসর্গটির অর্থ পশ্চাৎ বা সদৃশ।",
-      "অশ্ম শব্দের অর্থ পাথর আর অশ্ব শব্দের অর্থ ঘোড়া।",
-      "দ্বিপ (হ্রস্ব-ই) শব্দের অর্থ হাতি এবং দ্বীপ (দীর্ঘ-ঈ) শব্দের অর্থ জলবেষ্টিত স্থান।",
-      "তরণি (হ্রস্ব-ই) শব্দের অর্থ সূর্য আর তরণী (দীর্ঘ-ঈ) শব্দের অর্থ নৌকা।",
-      "নীর শব্দের অর্থ জল এবং নীড় শব্দের অর্থ পাখির বাসা।",
-      "আপণ শব্দের অর্থ দোকান এবং আপন শব্দের অর্থ নিজের।",
-      "প্রসাদ শব্দের অর্থ কৃপা বা ভোগ এবং প্রাসাদ শব্দের অর্থ অট্টালিকা বা রাজগৃহ।",
-      "দীন শব্দের অর্থ দরিদ্র এবং দিন শব্দের অর্থ দিবস।",
-      "কৃতী শব্দের অর্থ সফল ব্যক্তি কিন্তু কৃতি শব্দের অর্থ রচনা বা কর্ম।"
+    "oneLiners": [
+      "'অর্বাচীন' শব্দের বিপরীতার্থক শব্দ হলো 'প্রাচীন'।",
+      "'জঙ্গম' শব্দের বিপরীত শব্দ হলো 'স্থাবর'।",
+      "'অধিত্যকা' এর বিপরীতার্থক শব্দ হলো 'উপত্যকা'।"
     ],
-    saqs: [
+    "saqs": [
       {
-        id: "bengali_ch11_saq1",
-        questionBn: "সমোচ্চারিত ভিন্নার্থক শব্দ বলতে কী বোঝায়? একটি স্পষ্ট উদাহরণ দিন।",
-        answerBn: "যেসব শব্দের উচ্চারণ প্রায় একই বা অতি কাছাকাছি শোনা যায় কিন্তু বানান ও অর্থ সম্পূর্ণ আলাদা, তাদের সমোচ্চারিত ভিন্নার্থক শব্দ বলে। যেমন: 'দিন' (দিবস) এবং 'দীন' (দরিদ্র)।",
-        importantNoteBn: "বানানের হ্রস্বস্বর ও দীর্ঘস্বরের পার্থক্য অর্থের পরিবর্তন ঘটায়।"
-      },
-      {
-        id: "bengali_ch11_saq2",
-        questionBn: "'দ্বিপ' এবং 'দ্বীপ' শব্দের অর্থগত পার্থক্য কী?",
-        answerBn: "'দ্বিপ' শব্দের অর্থ হাতি (গজ), কারণ হাতি দুইবার পান করে। অপরপক্ষে 'দ্বীপ' শব্দের অর্থ চারদিক জলবেষ্টিত ভূখণ্ড।",
-        importantNoteBn: "পরীক্ষায় বহুবার আসা অত্যন্ত গুরুত্বপূর্ণ প্রশ্ন।"
-      },
-      {
-        id: "bengali_ch11_saq3",
-        questionBn: "'প্রসাদ' ও 'প্রাসাদ'-এর মধ্যে পার্থক্য কী?",
-        answerBn: "'প্রসাদ' শব্দের অর্থ ঈশ্বরের অনুগ্রহ, কৃপা বা ভোগ। অন্যদিকে 'প্রাসাদ' শব্দের অর্থ রাজবাড়ি বা বিশাল অট্টালিকা।",
-        importantNoteBn: "আ-কারের উপস্থিতিতে অর্থ সম্পূর্ণ ভিন্ন হয়।"
-      },
-      {
-        id: "bengali_ch11_saq4",
-        questionBn: "'তরণি' এবং 'তরণী' শব্দ দুটির অর্থ কী?",
-        answerBn: "হ্রস্ব-ই কারযুক্ত 'তরণি' শব্দের অর্থ সূর্য এবং দীর্ঘ-ঈ কারযুক্ত 'তরণী' শব্দের অর্থ নৌকা।",
-        importantNoteBn: "বানান খেয়াল রাখা জরুরি।"
+        "id": "bengali_ch11_saq1",
+        "questionBn": "'অধিত্যকা' এবং 'উপত্যকা' এর অর্থগত ও বিপরীত পার্থক্য কী?",
+        "answerBn": "'অধিত্যকা' হলো পর্বতের ওপরের সমতল ভূমি; আর এর বিপরীত শব্দ 'উপত্যকা' হলো দুই পর্বতের মধ্যবর্তী বা পর্বতের পাদদেশের সমতল ভূমি।"
       }
     ]
   }
@@ -141,123 +503,1053 @@ export const BENGALI_CH11_STUDY: StudyChapter = {
 
 export const BENGALI_CH11_QUESTIONS: Question[] = [
   {
-    id: "vol2_ch11_q1",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub1",
-    questionBn: "'অংস' শব্দের সঠিক অর্থ কী?",
-    options: ["ভাগ", "কাঁধ", "পাথর", "অন্ধকার"],
-    correctIndex: 1,
-    explanationBn: "'অংস' অর্থ কাঁধ (স্কন্ধ) এবং 'অংশ' অর্থ ভাগ বা অংশবিশেষ।",
-    difficulty: "easy",
-    tags: ["সমোচ্চারিত শব্দ", "অংস"]
+    "id": "vol2_ch11_q1",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অর্বাচীন' শব্দের সঠিক বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "প্রাচীন",
+      "নবীন",
+      "আধুনিক",
+      "পুরাতন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অর্বাচীন' শব্দের অর্থ আধুনিক বা নতুন, এর বিপরীত হলো 'প্রাচীন'.",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q2",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub1",
-    questionBn: "'দ্বিপ' শব্দের অর্থ কোনটি?",
-    options: ["জলবেষ্টিত স্থান", "হাতি", "প্রদীপ", "দ্বিগুণ"],
-    correctIndex: 1,
-    explanationBn: "'দ্বিপ' শব্দের অর্থ হাতি। আর 'দ্বীপ' শব্দের অর্থ চারদিকে জলবেষ্টিত ভূখণ্ড।",
-    difficulty: "medium",
-    tags: ["সমোচ্চারিত শব্দ", "দ্বিপ"]
+    "id": "vol2_ch11_q2",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অধিত্যকা' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "উপত্যকা",
+      "পর্বত",
+      "পাদদেশ",
+      "গিরিখাত"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অধিত্যকা' (পাহাড়ের ওপরের ভূমি) এর বিপরীত হলো 'উপত্যকা' (নিচের ভূমি)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q3",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub2",
-    questionBn: "'নীড়' শব্দের অর্থ কী?",
-    options: ["জল", "পাখির বাসা", "নীল বর্ণ", "নদী"],
-    correctIndex: 1,
-    explanationBn: "'নীড়' মানে পাখির বাসা (যেমন: জীবনানন্দের 'পাখির নীড়ের মত চোখ') এবং 'নীর' মানে জল।",
-    difficulty: "easy",
-    tags: ["সমোচ্চারিত শব্দ", "নীড়"]
+    "id": "vol2_ch11_q3",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'জঙ্গম' শব্দটির বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "স্থাবর",
+      "অস্থাবর",
+      "গতিশীল",
+      "স্থির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'জঙ্গম' (যা চলে বা নড়ে) এর বিপরীত শব্দ হলো 'স্থাবর' (যা স্থির থাকে)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q4",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub2",
-    questionBn: "'আপণ' শব্দের অর্থ কী?",
-    options: ["নিজের", "দোকান", "উপহার", "অতিথি"],
-    correctIndex: 1,
-    explanationBn: "'আপণ' (মূর্ধন্য ণ) মানে দোকান বা হাট। আর 'আপন' (দন্ত্য ন) মানে স্বীয় বা নিজের।",
-    difficulty: "medium",
-    tags: ["সমোচ্চারিত শব্দ", "আপণ"]
+    "id": "vol2_ch11_q4",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'উত্তমর্ণ' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "অধমর্ণ",
+      "মধ্যমর্ণ",
+      "ঋণী",
+      "খাতক"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উত্তমর্ণ' (ঋণদাতা) এর বিপরীত শব্দ হলো 'অধমর্ণ' (ঋণগ্রহীতা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q5",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub3",
-    questionBn: "'তরণি' শব্দের অর্থ কী?",
-    options: ["নৌকা", "সূর্য", "তরুণী", "নদী"],
-    correctIndex: 1,
-    explanationBn: "'তরণি' (হ্রস্ব ই) অর্থ সূর্য এবং 'তরণী' (দীর্ঘ ঈ) অর্থ নৌকা।",
-    difficulty: "medium",
-    tags: ["সমোচ্চারিত শব্দ", "তরণি"]
+    "id": "vol2_ch11_q5",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'আবির্ভাব' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "তিরোভাব",
+      "অনাবির্ভাব",
+      "প্রস্থান",
+      "অন্তর্ধান"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'আবির্ভাব' (প্রকাশ) এর বিপরীত শব্দ হলো 'তিরোভাব' (বিলোপ)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q6",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub3",
-    questionBn: "'কৃতি' এবং 'কৃতী' শব্দের অর্থ যথাক্রমে—",
-    options: ["কাজ ও সফল ব্যক্তি", "সফল ব্যক্তি ও কাজ", "রচনা ও পাঠ", "চিত্র ও কবি"],
-    correctIndex: 0,
-    explanationBn: "'কৃতি' মানে কর্ম বা রচনা এবং 'কৃতী' মানে সফল বা কৃতকার্য ব্যক্তি।",
-    difficulty: "medium",
-    tags: ["সমোচ্চারিত শব্দ", "কৃতি"]
+    "id": "vol2_ch11_q6",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঐহিক' শব্দের সঠিক বিপরীত শব্দ কোনটি?",
+    "options": [
+      "পারত্রিক",
+      "দৈহিক",
+      "লৌকিক",
+      "পার্থিব"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঐহিক' (ইহজগতের) এর বিপরীত হলো 'পারত্রিক' (পরকালের)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q7",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub1",
-    questionBn: "'অশ্ম' শব্দের অর্থ কী?",
-    options: ["ঘোড়া", "পাথর", "অশ্রু", "লোহা"],
-    correctIndex: 1,
-    explanationBn: "'অশ্ম' অর্থ শিলা বা পাথর। আর 'অশ্ব' অর্থ ঘোড়া।",
-    difficulty: "hard",
-    tags: ["সমোচ্চারিত শব্দ", "অশ্ম"]
+    "id": "vol2_ch11_q7",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঋজু' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "বক্র",
+      "সরল",
+      "সোজা",
+      "তীক্ষ্ণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঋজু' (সোজা) এর বিপরীত শব্দ হলো 'বক্র' (বাঁকা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q8",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub3",
-    questionBn: "'চীর' শব্দের অর্থ কী?",
-    options: ["চিরকাল", "ছেঁড়া বস্ত্র", "দাগ", "চিহ্ন"],
-    correctIndex: 1,
-    explanationBn: "'চীর' অর্থ ছিন্ন বস্ত্র বা গাছের বাকল। 'চির' অর্থ সর্বদা বা চিরকাল।",
-    difficulty: "medium",
-    tags: ["সমোচ্চারিত শব্দ", "চীর"]
+    "id": "vol2_ch11_q8",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'প্রাচী' শব্দের বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "প্রতীচী",
+      "উদীচী",
+      "অনূচী",
+      "প্রাচ্য"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'প্রাচী' (পূর্ব দিক) এর বিপরীত শব্দ হলো 'প্রতীচী' (পশ্চিম দিক)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q9",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub2",
-    questionBn: "'সূত' শব্দের সঠিক অর্থ কোনটি?",
-    options: ["পুত্র", "সারথি", "সুতো", "সূর্য"],
-    correctIndex: 1,
-    explanationBn: "'সূত' (দীর্ঘ ঊ) অর্থ রথচালক বা সারথি। 'সুত' (হ্রস্ব উ) অর্থ পুত্র বা সন্তান।",
-    difficulty: "hard",
-    tags: ["সমোচ্চারিত শব্দ", "সূত"]
+    "id": "vol2_ch11_q9",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'বাচাল' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "মিতভাষী",
+      "মূক",
+      "নীরব",
+      "স্বল্পভাষী"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'বাচাল' (যে অতি বেশি কথা বলে) এর বিপরীত হলো 'মিতভাষী' বা 'স্বল্পভাষী'.",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   },
   {
-    id: "vol2_ch11_q10",
-    subjectId: "bengali",
-    chapterId: "bengali_ch11",
-    subTopicId: "bengali_ch11_sub3",
-    questionBn: "'প্রাসাদ' ও 'প্রসাদ' শব্দজোড়ের সঠিক অর্থ কোনটি?",
-    options: ["অট্টালিকা ও অনুগ্রহ", "অনুগ্রহ ও অট্টালিকা", "ভোগ ও মন্দির", "রাজা ও প্রজা"],
-    correctIndex: 0,
-    explanationBn: "প্রাসাদ = রাজবাড়ি বা অট্টালিকা; প্রসাদ = দেবতার ভোগ বা অনুগ্রহ।",
-    difficulty: "easy",
-    tags: ["সমোচ্চারিত শব্দ", "প্রাসাদ"]
+    "id": "vol2_ch11_q10",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'উন্মীলন' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "নিমীলন",
+      "সম্মীলন",
+      "উদ্বেলন",
+      "মুদ্রণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উন্মীলন' (চোখ খোলা) এর বিপরীত শব্দ হলো 'নিমীলন' (চোখ বন্ধ করা)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q11",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অর্বাচীন' শব্দের সঠিক বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "প্রাচীন",
+      "নবীন",
+      "আধুনিক",
+      "পুরাতন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অর্বাচীন' শব্দের অর্থ আধুনিক বা নতুন, এর বিপরীত হলো 'প্রাচীন'.",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q12",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অধিত্যকা' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "উপত্যকা",
+      "পর্বত",
+      "পাদদেশ",
+      "গিরিখাত"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অধিত্যকা' (পাহাড়ের ওপরের ভূমি) এর বিপরীত হলো 'উপত্যকা' (নিচের ভূমি)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q13",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'জঙ্গম' শব্দটির বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "স্থাবর",
+      "অস্থাবর",
+      "গতিশীল",
+      "স্থির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'জঙ্গম' (যা চলে বা নড়ে) এর বিপরীত শব্দ হলো 'স্থাবর' (যা স্থির থাকে)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q14",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'উত্তমর্ণ' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "অধমর্ণ",
+      "মধ্যমর্ণ",
+      "ঋণী",
+      "খাতক"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উত্তমর্ণ' (ঋণদাতা) এর বিপরীত শব্দ হলো 'অধমর্ণ' (ঋণগ্রহীতা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q15",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'আবির্ভাব' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "তিরোভাব",
+      "অনাবির্ভাব",
+      "প্রস্থান",
+      "অন্তর্ধান"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'আবির্ভাব' (প্রকাশ) এর বিপরীত শব্দ হলো 'তিরোভাব' (বিলোপ)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q16",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঐহিক' শব্দের সঠিক বিপরীত শব্দ কোনটি?",
+    "options": [
+      "পারত্রিক",
+      "দৈহিক",
+      "লৌকিক",
+      "পার্থিব"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঐহিক' (ইহজগতের) এর বিপরীত হলো 'পারত্রিক' (পরকালের)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q17",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঋজু' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "বক্র",
+      "সরল",
+      "সোজা",
+      "তীক্ষ্ণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঋজু' (সোজা) এর বিপরীত শব্দ হলো 'বক্র' (বাঁকা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q18",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'প্রাচী' শব্দের বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "প্রতীচী",
+      "উদীচী",
+      "অনূচী",
+      "প্রাচ্য"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'প্রাচী' (পূর্ব দিক) এর বিপরীত শব্দ হলো 'প্রতীচী' (পশ্চিম দিক)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q19",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'বাচাল' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "মিতভাষী",
+      "মূক",
+      "নীরব",
+      "স্বল্পভাষী"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'বাচাল' (যে অতি বেশি কথা বলে) এর বিপরীত হলো 'মিতভাষী' বা 'স্বল্পভাষী'.",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q20",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'উন্মীলন' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "নিমীলন",
+      "সম্মীলন",
+      "উদ্বেলন",
+      "মুদ্রণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উন্মীলন' (চোখ খোলা) এর বিপরীত শব্দ হলো 'নিমীলন' (চোখ বন্ধ করা)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q21",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অর্বাচীন' শব্দের সঠিক বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "প্রাচীন",
+      "নবীন",
+      "আধুনিক",
+      "পুরাতন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অর্বাচীন' শব্দের অর্থ আধুনিক বা নতুন, এর বিপরীত হলো 'প্রাচীন'.",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q22",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অধিত্যকা' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "উপত্যকা",
+      "পর্বত",
+      "পাদদেশ",
+      "গিরিখাত"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অধিত্যকা' (পাহাড়ের ওপরের ভূমি) এর বিপরীত হলো 'উপত্যকা' (নিচের ভূমি)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q23",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'জঙ্গম' শব্দটির বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "স্থাবর",
+      "অস্থাবর",
+      "গতিশীল",
+      "স্থির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'জঙ্গম' (যা চলে বা নড়ে) এর বিপরীত শব্দ হলো 'স্থাবর' (যা স্থির থাকে)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q24",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'উত্তমর্ণ' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "অধমর্ণ",
+      "মধ্যমর্ণ",
+      "ঋণী",
+      "খাতক"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উত্তমর্ণ' (ঋণদাতা) এর বিপরীত শব্দ হলো 'অধমর্ণ' (ঋণগ্রহীতা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q25",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'আবির্ভাব' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "তিরোভাব",
+      "অনাবির্ভাব",
+      "প্রস্থান",
+      "অন্তর্ধান"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'আবির্ভাব' (প্রকাশ) এর বিপরীত শব্দ হলো 'তিরোভাব' (বিলোপ)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q26",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঐহিক' শব্দের সঠিক বিপরীত শব্দ কোনটি?",
+    "options": [
+      "পারত্রিক",
+      "দৈহিক",
+      "লৌকিক",
+      "পার্থিব"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঐহিক' (ইহজগতের) এর বিপরীত হলো 'পারত্রিক' (পরকালের)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q27",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঋজু' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "বক্র",
+      "সরল",
+      "সোজা",
+      "তীক্ষ্ণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঋজু' (সোজা) এর বিপরীত শব্দ হলো 'বক্র' (বাঁকা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q28",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'প্রাচী' শব্দের বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "প্রতীচী",
+      "উদীচী",
+      "অনূচী",
+      "প্রাচ্য"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'প্রাচী' (পূর্ব দিক) এর বিপরীত শব্দ হলো 'প্রতীচী' (পশ্চিম দিক)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q29",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'বাচাল' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "মিতভাষী",
+      "মূক",
+      "নীরব",
+      "স্বল্পভাষী"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'বাচাল' (যে অতি বেশি কথা বলে) এর বিপরীত হলো 'মিতভাষী' বা 'স্বল্পভাষী'.",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q30",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'উন্মীলন' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "নিমীলন",
+      "সম্মীলন",
+      "উদ্বেলন",
+      "মুদ্রণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উন্মীলন' (চোখ খোলা) এর বিপরীত শব্দ হলো 'নিমীলন' (চোখ বন্ধ করা)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q31",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অর্বাচীন' শব্দের সঠিক বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "প্রাচীন",
+      "নবীন",
+      "আধুনিক",
+      "পুরাতন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অর্বাচীন' শব্দের অর্থ আধুনিক বা নতুন, এর বিপরীত হলো 'প্রাচীন'.",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q32",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অধিত্যকা' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "উপত্যকা",
+      "পর্বত",
+      "পাদদেশ",
+      "গিরিখাত"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অধিত্যকা' (পাহাড়ের ওপরের ভূমি) এর বিপরীত হলো 'উপত্যকা' (নিচের ভূমি)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q33",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'জঙ্গম' শব্দটির বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "স্থাবর",
+      "অস্থাবর",
+      "গতিশীল",
+      "স্থির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'জঙ্গম' (যা চলে বা নড়ে) এর বিপরীত শব্দ হলো 'স্থাবর' (যা স্থির থাকে)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q34",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'উত্তমর্ণ' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "অধমর্ণ",
+      "মধ্যমর্ণ",
+      "ঋণী",
+      "খাতক"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উত্তমর্ণ' (ঋণদাতা) এর বিপরীত শব্দ হলো 'অধমর্ণ' (ঋণগ্রহীতা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q35",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'আবির্ভাব' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "তিরোভাব",
+      "অনাবির্ভাব",
+      "প্রস্থান",
+      "অন্তর্ধান"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'আবির্ভাব' (প্রকাশ) এর বিপরীত শব্দ হলো 'তিরোভাব' (বিলোপ)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q36",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঐহিক' শব্দের সঠিক বিপরীত শব্দ কোনটি?",
+    "options": [
+      "পারত্রিক",
+      "দৈহিক",
+      "লৌকিক",
+      "পার্থিব"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঐহিক' (ইহজগতের) এর বিপরীত হলো 'পারত্রিক' (পরকালের)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q37",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঋজু' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "বক্র",
+      "সরল",
+      "সোজা",
+      "তীক্ষ্ণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঋজু' (সোজা) এর বিপরীত শব্দ হলো 'বক্র' (বাঁকা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q38",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'প্রাচী' শব্দের বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "প্রতীচী",
+      "উদীচী",
+      "অনূচী",
+      "প্রাচ্য"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'প্রাচী' (পূর্ব দিক) এর বিপরীত শব্দ হলো 'প্রতীচী' (পশ্চিম দিক)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q39",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'বাচাল' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "মিতভাষী",
+      "মূক",
+      "নীরব",
+      "স্বল্পভাষী"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'বাচাল' (যে অতি বেশি কথা বলে) এর বিপরীত হলো 'মিতভাষী' বা 'স্বল্পভাষী'.",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q40",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'উন্মীলন' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "নিমীলন",
+      "সম্মীলন",
+      "উদ্বেলন",
+      "মুদ্রণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উন্মীলন' (চোখ খোলা) এর বিপরীত শব্দ হলো 'নিমীলন' (চোখ বন্ধ করা)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q41",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অর্বাচীন' শব্দের সঠিক বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "প্রাচীন",
+      "নবীন",
+      "আধুনিক",
+      "পুরাতন"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অর্বাচীন' শব্দের অর্থ আধুনিক বা নতুন, এর বিপরীত হলো 'প্রাচীন'.",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q42",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'অধিত্যকা' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "উপত্যকা",
+      "পর্বত",
+      "পাদদেশ",
+      "গিরিখাত"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'অধিত্যকা' (পাহাড়ের ওপরের ভূমি) এর বিপরীত হলো 'উপত্যকা' (নিচের ভূমি)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q43",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub1",
+    "questionBn": "'জঙ্গম' শব্দটির বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "স্থাবর",
+      "অস্থাবর",
+      "গতিশীল",
+      "স্থির"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'জঙ্গম' (যা চলে বা নড়ে) এর বিপরীত শব্দ হলো 'স্থাবর' (যা স্থির থাকে)।",
+    "difficulty": "easy",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q44",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'উত্তমর্ণ' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "অধমর্ণ",
+      "মধ্যমর্ণ",
+      "ঋণী",
+      "খাতক"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উত্তমর্ণ' (ঋণদাতা) এর বিপরীত শব্দ হলো 'অধমর্ণ' (ঋণগ্রহীতা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q45",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'আবির্ভাব' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "তিরোভাব",
+      "অনাবির্ভাব",
+      "প্রস্থান",
+      "অন্তর্ধান"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'আবির্ভাব' (প্রকাশ) এর বিপরীত শব্দ হলো 'তিরোভাব' (বিলোপ)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q46",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঐহিক' শব্দের সঠিক বিপরীত শব্দ কোনটি?",
+    "options": [
+      "পারত্রিক",
+      "দৈহিক",
+      "লৌকিক",
+      "পার্থিব"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঐহিক' (ইহজগতের) এর বিপরীত হলো 'পারত্রিক' (পরকালের)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q47",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub2",
+    "questionBn": "'ঋজু' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "বক্র",
+      "সরল",
+      "সোজা",
+      "তীক্ষ্ণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'ঋজু' (সোজা) এর বিপরীত শব্দ হলো 'বক্র' (বাঁকা)।",
+    "difficulty": "medium",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q48",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'প্রাচী' শব্দের বিপরীতার্থক শব্দ কী?",
+    "options": [
+      "প্রতীচী",
+      "উদীচী",
+      "অনূচী",
+      "প্রাচ্য"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'প্রাচী' (পূর্ব দিক) এর বিপরীত শব্দ হলো 'প্রতীচী' (পশ্চিম দিক)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q49",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'বাচাল' শব্দের বিপরীত শব্দ কোনটি?",
+    "options": [
+      "মিতভাষী",
+      "মূক",
+      "নীরব",
+      "স্বল্পভাষী"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'বাচাল' (যে অতি বেশি কথা বলে) এর বিপরীত হলো 'মিতভাষী' বা 'স্বল্পভাষী'.",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
+  },
+  {
+    "id": "vol2_ch11_q50",
+    "subjectId": "bengali",
+    "chapterId": "bengali_ch11",
+    "subTopicId": "bengali_ch11_sub3",
+    "questionBn": "'উন্মীলন' শব্দের বিপরীতার্থক শব্দ কোনটি?",
+    "options": [
+      "নিমীলন",
+      "সম্মীলন",
+      "উদ্বেলন",
+      "মুদ্রণ"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'উন্মীলন' (চোখ খোলা) এর বিপরীত শব্দ হলো 'নিমীলন' (চোখ বন্ধ করা)।",
+    "difficulty": "hard",
+    "tags": [
+      "Bengali Grammar",
+      "Antonyms",
+      "Volume 2"
+    ]
   }
 ];

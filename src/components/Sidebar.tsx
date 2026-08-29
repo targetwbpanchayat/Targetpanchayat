@@ -6,6 +6,7 @@ import {
   CheckSquare,
   Award,
   Zap,
+  Clock,
   Newspaper,
   FileText,
   BarChart3,
@@ -34,12 +35,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const navItems = [
     { id: "dashboard", label: "ড্যাশবোর্ড", icon: LayoutDashboard, badge: null },
     { id: "study", label: "পড়াশোনা (Study)", icon: BookOpen, badge: `${completedChaptersCount}/${totalChaptersCount}` },
-    { id: "study_plan", label: "পড়ার প্ল্যান (Plan)", icon: CalendarCheck, badge: "নতুন" },
-    { id: "practice", label: "প্র্যাকটিস (Practice)", icon: CheckSquare, badge: null },
-    { id: "mock_test", label: "মক টেস্ট (Mock Test)", icon: Award, badge: "লাইভ" },
-    { id: "quiz", label: "স্পিড কুইজ (Quiz)", icon: Zap, badge: null },
-    { id: "current_affairs", label: "কারেন্ট অ্যাফেয়ার্স", icon: Newspaper, badge: "আপডেট" },
-    { id: "pyq", label: "বিগত বছরের প্রশ্ন (PYQ)", icon: FileText, badge: null },
+    { id: "practice", label: "প্র্যাকটিস সেট (MCQ)", icon: CheckSquare, badge: "অধ্যায়ভিত্তিক" },
+    { id: "tests", label: "মক টেস্ট ও কুইজ (Tests)", icon: Award, badge: "ফুল ও শর্ট মক" },
+    { id: "pyq", label: "বিগত বছরের প্রশ্ন (PYQ)", icon: FileText, badge: "২০১৮" },
+    { id: "study_plan", label: "পড়ার প্ল্যান (Plan)", icon: CalendarCheck, badge: null },
+    { id: "current_affairs", label: "কারেন্ট অ্যাফেয়ার্স", icon: Newspaper, badge: null },
     { id: "report", label: "রিপোর্ট ও বিশ্লেষণ", icon: BarChart3, badge: null },
     { id: "settings", label: "সেটিংস ও ব্যাকআপ", icon: Settings, badge: null },
   ];
@@ -47,7 +47,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   return (
     <aside className="w-64 bg-white border-r border-slate-200 p-4 flex flex-col justify-between hidden lg:flex shrink-0 min-h-[calc(100vh-4rem)] shadow-xs rounded-2xl my-2">
       <div className="space-y-1.5">
-        <div className="px-3 py-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+        <div className="px-3 py-2 text-[11px] font-bold text-slate-400 uppercase tracking-wider font-bengali">
           মূল মেনু (Main Menu)
         </div>
         {navItems.map((item) => {
@@ -72,7 +72,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   className={`text-[10px] px-2 py-0.5 rounded-full font-mono-num font-semibold ${
                     isActive
                       ? "bg-white/20 text-white"
-                      : item.badge === "লাইভ" || item.badge === "নতুন"
+                      : item.badge.includes("৮৫") || item.badge.includes("২")
                       ? "bg-emerald-100 text-emerald-800 border border-emerald-300"
                       : "bg-slate-100 text-slate-600 border border-slate-200"
                   }`}
@@ -89,10 +89,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <div className="bg-gradient-to-br from-emerald-50 to-teal-50/50 border border-emerald-200/80 rounded-2xl p-4 mt-6 shadow-xs">
         <div className="flex items-center gap-2 text-emerald-800 text-xs font-bold mb-1">
           <HelpCircle className="w-3.5 h-3.5 text-emerald-600" />
-          <span>পরীক্ষার গাইডলাইন</span>
+          <span className="font-bengali">পরীক্ষার গাইডলাইন</span>
         </div>
         <p className="text-xs text-slate-600 font-bengali leading-relaxed">
-          প্রতিদিন মক টেস্ট দিন এবং আপনার দুর্বল বিষয়গুলি রিপোর্ট সেকশনে বিশ্লেষণ করুন।
+          নিয়মিত ফুল মক টেস্ট, শর্ট মক টেস্ট এবং স্পিড কুইজ দিন ও রিপোর্ট সেকশনে পারফরম্যান্স যাচাই করুন।
         </p>
       </div>
     </aside>

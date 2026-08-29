@@ -1,160 +1,181 @@
 import { StudyChapter, Question } from "../../types";
 
 export const ENGLISH_CH9_STUDY: StudyChapter = {
-  id: "eng_ch9",
-  subjectId: "english",
-  chapterNumber: 9,
-  titleBn: "Correct Spelling (সঠিক বানান পরীক্ষা - Spelling Rules & Tricky Words)",
-  titleEn: "Correct Spelling - Spelling Rules ('i before e except after c'), Double Consonants & Tricky Exam Words",
-  estimatedMinutes: 35,
-  importantNotesCount: 30,
-  summary: "পরীক্ষায় আসা ১০০টি সবচেয়ে বেশি বিভ্রান্তিকর ইংরেজি বানান ও বানান গঠনের বৈজ্ঞানিক নিয়ম। 'I before E except after C' নিয়ম (Receive, Deceive বনাম Believe, Relieve), দ্বৈত ব্যঞ্জনবর্ণ (Double Consonants: Accommodation, Committee, Millennium, Embarrass, Harass, Occurrence, Questionnaire), উহ্য ও যুক্ত স্বরবর্ণ (Separate, Vacuum, Privilege, Lieutenant, Bureaucracy, Maintenance, Pronunciation) এবং সাইলেন্ট লেটারসের প্রয়োগ।",
-  subTopics: [
+  "id": "eng_ch9",
+  "subjectId": "english",
+  "chapterNumber": 9,
+  "titleBn": "Correct Spelling (সঠিক বানান নির্ণয় ও স্পেলিং টেস্ট)",
+  "titleEn": "Correct Spelling - Double Consonants, Silent Letters, Prefixes & Suffixes",
+  "estimatedMinutes": 40,
+  "importantNotesCount": 45,
+  "summary": "পরীক্ষায় বারবার আসা বিভ্রান্তিকর বানান: Committee, Lieutenant, Bureaucracy, Accommodation, Millennium, Questionnaire, Embarrass, Privilege, Occurred, Separate, Vacuum, Maintenance, Possession, Diarrhoea ইত্যাদি ১০০+ শব্দের নিখুঁত বানান বিশ্লেষণ ও রুলস।",
+  "subTopics": [
     {
-      id: "eng_ch9_sub1",
-      chapterId: "eng_ch9",
-      subjectId: "english",
-      titleBn: "The 'IE' vs 'EI' Rule & Silent Letters",
-      titleEn: "I before E except after C (Receive/Believe) & Silent Letters",
-      orderIndex: 1,
-      summaryBn: "'C'-এর পর সর্বদা 'ei' (Receive, Ceiling, Deceive, Conceive) এবং অন্যান্য ক্ষেত্রে 'ie' (Believe, Achieve, Chief, Grief)। ব্যতিক্রম: Height, Weigh, Weird, Seize।",
-      keyConcepts: ["Receive (c + ei)", "Believe (l + ie)", "Ceiling (c + ei)", "Achieve (h + ie)", "Exceptions: Seize, Weird, Height"]
+      "id": "eng_ch9_sub1",
+      "chapterId": "eng_ch9",
+      "subjectId": "english",
+      "titleBn": "Double Consonants & Silent Letters",
+      "titleEn": "Words with Double Letters & Silent Alphabets",
+      "orderIndex": 1,
+      "summaryBn": "Committee (mm, tt, ee), Accommodation (cc, mm), Embarrass (rr, ss), Lieutenant, Queue, Hierarchy।",
+      "keyConcepts": [
+        "C-O-M-M-I-T-T-E-E",
+        "A-C-C-O-M-M-O-D-A-T-I-O-N",
+        "L-I-E-U-T-E-N-A-N-T"
+      ]
     },
     {
-      id: "eng_ch9_sub2",
-      chapterId: "eng_ch9",
-      subjectId: "english",
-      titleBn: "Double Consonants Confusion",
-      titleEn: "Double Letters (Accommodation, Committee, Embarrass, Millennium)",
-      orderIndex: 2,
-      summaryBn: "Accommodation (cc, mm), Committee (mm, tt, ee), Embarrass (rr, ss), Harass (এক r, ss), Millennium (ll, nn), Questionnaire (nn), Occurrence (cc, rr)।",
-      keyConcepts: ["Accommodation (2 c, 2 m)", "Committee (2 m, 2 t, 2 e)", "Embarrass (2 r, 2 s)", "Harass (1 r, 2 s)"]
+      "id": "eng_ch9_sub2",
+      "chapterId": "eng_ch9",
+      "subjectId": "english",
+      "titleBn": "Tricky Vowel Combinations & Suffix Rules",
+      "titleEn": "‘ie’ vs ‘ei’, -able/-ible, -ance/-ence",
+      "orderIndex": 2,
+      "summaryBn": "'i' before 'e' except after 'c' (Receive, Deceive বনাম Believe, Achieve)। Privilege, Separate, Millennium (ll, nn)।",
+      "keyConcepts": [
+        "Receive vs Believe",
+        "P-R-I-V-I-L-E-G-E",
+        "S-E-P-A-R-A-T-E"
+      ]
     },
     {
-      id: "eng_ch9_sub3",
-      chapterId: "eng_ch9",
-      subjectId: "english",
-      titleBn: "Tricky Vowels & Exam Favorites",
-      titleEn: "Separate, Vacuum, Privilege, Lieutenant, Bureaucracy & Maintenance",
-      orderIndex: 3,
-      summaryBn: "Separate (par, not per), Vacuum (এক c, দুই u), Privilege (no d), Lieutenant (L-I-E-U-T-E-N-A-N-T), Bureaucracy (B-U-R-E-A-U-C-R-A-C-Y), Pronunciation (nun, not noun)।",
-      keyConcepts: ["Separate (S-E-P-A-R-A-T-E)", "Vacuum (V-A-C-U-U-M)", "Privilege (P-R-I-V-I-L-E-G-E)", "Lieutenant (L-i-e-u-t-e-n-a-n-t)"]
+      "id": "eng_ch9_sub3",
+      "chapterId": "eng_ch9",
+      "subjectId": "english",
+      "titleBn": "High Frequency Exam Spellings",
+      "titleEn": "Administrative & Professional Terms",
+      "orderIndex": 3,
+      "summaryBn": "Bureaucracy, Questionnaire, Miscellaneous, Perseverance, Conscientious, Maintenance, Surveillance।",
+      "keyConcepts": [
+        "B-U-R-E-A-U-C-R-A-C-Y",
+        "Q-U-E-S-T-I-O-N-N-A-I-R-E"
+      ]
     }
   ],
-  content: {
-    introduction: "সঠিক বানান নির্ণয় (Spelling Test) প্রায় প্রতিটি প্রতিযোগিতামূলক পরীক্ষায় নিশ্চিত নম্বর তোলার একটি গুরুত্বপূর্ণ ক্ষেত্র। উচ্চারণ ও অক্ষরের সামান্য পরিবর্তনের কারণে পরীক্ষার্থীরা যাতে বিভ্রান্ত না হয়, সেজন্য নির্দিষ্ট বৈজ্ঞানিক নিয়ম ও বহুল পরীক্ষিত শব্দের তালিকা আয়ত্ত করা আবশ্যক।",
-    sections: [
+  "content": {
+    "introduction": "সঠিক বানান নির্ণয় (Spelling Test) পশ্চিমবঙ্গ সরকারি চাকরির পরীক্ষায় অত্যন্ত সাধারণ ও গুরুত্বপূর্ণ অংশ। প্রায় প্রতিটি পরীক্ষায় ২-৪টি প্রশ্ন স্পেলিং থেকে আসে যেখানে সামান্য অক্ষরের হেরফেরে ভুল হওয়ার সম্ভাবনা থাকে।",
+    "sections": [
       {
-        heading: "১. 'i before e except after c' নিয়ম ও ব্যতিক্রম",
-        body: [
-          "• মূল নিয়ম: যখন শব্দের উচ্চারণ দীর্ঘ 'ঈ' (ee sound) হয়, তখন 'c' বর্ণের পর সর্বদা 'ei' বসে; কিন্তু অন্য যেকোনো বর্ণের পর 'ie' বসে।",
-          "  - 'c'-এর পরে 'ei': Receive, Deceive, Conceive, Perceive, Ceiling, Receipt.",
-          "  - অন্যান্য বর্ণের পরে 'ie': Believe, Relieve, Achieve, Chief, Brief, Yield, Field, Grief.",
-          "• প্রধান ব্যতিক্রমসমূহ: Seize, Weird, Height, Weigh, Neighbor, Foreign, Sovereign, Leisure."
-        ]
-      },
-      {
-        heading: "২. ডাবল লেটারস (Double Consonants) সম্পর্কিত বিভ্রান্তি",
-        body: [
-          "• Accommodation: A-C-C-O-M-M-O-D-A-T-I-O-N (এতে দুটি 'c' এবং দুটি 'm' রয়েছে)।",
-          "• Committee: C-O-M-M-I-T-T-E-E (এতে দুটি 'm', দুটি 't' এবং দুটি 'e' রয়েছে)।",
-          "• Millennium: M-I-L-L-E-N-N-I-U-M (এতে দুটি 'l' এবং দুটি 'n' রয়েছে)।",
-          "• Embarrass: E-M-B-A-R-R-A-S-S (এতে দুটি 'r' এবং দুটি 's' রয়েছে)।",
-          "• Harass: H-A-R-A-S-S (লক্ষ্য করুন: এতে একটি 'r' এবং দুটি 's' থাকে)।",
-          "• Questionnaire: Q-U-E-S-T-I-O-N-N-A-I-R-E (এতে ডাবল 'n' রয়েছে)।",
-          "• Occurrence: O-C-C-U-R-R-E-N-C-E (এতে দুটি 'c' এবং দুটি 'r' রয়েছে)।",
-          "• Possess: P-O-S-S-E-S-S (এতে দুই জোড়া 's' রয়েছে)।"
-        ]
-      },
-      {
-        heading: "৩. স্বরবর্ণের পরিবর্তন ও শীর্ষ বিতর্কিত শব্দসমূহ",
-        body: [
-          "• Separate: S-E-P-A-R-A-T-E ('par' থাকবে, 'per' কখনোই নয়)।",
-          "• Vacuum: V-A-C-U-U-M (এতে একটি 'c' এবং দুটি 'u' থাকে, 'vaccum' ভুল)।",
-          "• Privilege: P-R-I-V-I-L-E-G-E (এতে কোনো 'd' নেই; 'priviledge' ভুল)।",
-          "• Lieutenant: L-I-E-U-T-E-N-A-N-T (উচ্চারণ লেফটেনেন্ট হলেও বানান 'Lie-u-ten-ant')।",
-          "• Bureaucracy: B-U-R-E-A-U-C-R-A-C-Y (Bureau + cracy)।",
-          "• Pronunciation: P-R-O-N-U-N-C-I-A-T-I-O-N (Pronounce-এ 'noun' থাকলেও Noun রূপে 'nun' হয়)।",
-          "• Maintenance: M-A-I-N-T-E-N-A-N-C-E (Maintain থেকে হলেও 'tain' বদলে 'ten' হয়)।",
-          "• Truly: T-R-U-L-Y (True-এর 'e' লোপ পায়; 'truely' ভুল)।",
-          "• Forty: F-O-R-T-Y (Four-এ 'u' থাকলেও Forty-তে 'u' থাকে না)।"
-        ]
+        "heading": "১. সর্বাধিক জিজ্ঞাসিত বিভ্রান্তিকর ইংরেজি বানানের তালিকা",
+        "body": [
+          "• Committee: C-O-M-M-I-T-T-E-E (ডবল m, ডবল t, ডবল e)।",
+          "• Accommodation: A-C-C-O-M-M-O-D-A-T-I-O-N (ডবল c, ডবল m)।",
+          "• Lieutenant: L-I-E-U-T-E-N-A-N-T (উচ্চারণ লেফটেনেন্ট হলেও বানান লাই-ইউ-টেন-অ্যান্ট)।",
+          "• Bureaucracy: B-U-R-E-A-U-C-R-A-C-Y (বিউরোক্রেসি)।",
+          "• Millennium: M-I-L-L-E-N-N-I-U-M (ডবল l, ডবল n)।",
+          "• Questionnaire: Q-U-E-S-T-I-O-N-N-A-I-R-E (ডবল n)।",
+          "• Embarrass: E-M-B-A-R-R-A-S-S (ডবল r, ডবল s)।",
+          "• Privilege: P-R-I-V-I-L-E-G-E (কোনো d নেই)।",
+          "• Separate: S-E-P-A-R-A-T-E (মাঝখানে 'a', 'e' নয়)।",
+          "• Vacuum: V-A-C-U-U-M (একটি c, দুটি u)।",
+          "• Maintenance: M-A-I-N-T-E-N-A-N-C-E (Maintain থেকে হলেও Maintenance)।",
+          "• Possession: P-O-S-S-E-S-S-I-O-N (ডবল s, ডবল s)।"
+        ],
+        "tables": {
+          "headers": [
+            "সঠিক বানান (Correct)",
+            "ভুল রূপ (Common Error)",
+            "বাংলা অর্থ"
+          ],
+          "rows": [
+            [
+              "Committee",
+              "Commitee / Comittee",
+              "কমিটি / সমিতি"
+            ],
+            [
+              "Accommodation",
+              "Acommodation / Accomodation",
+              "বাসস্থান / আবাসন"
+            ],
+            [
+              "Lieutenant",
+              "Leftenant / Lieutanant",
+              "সামরিক পদমর্যাদা (লেফটেন্যান্ট)"
+            ],
+            [
+              "Bureaucracy",
+              "Beurocracy / Bureaucrazy",
+              "আমলাতন্ত্র"
+            ],
+            [
+              "Embarrass",
+              "Embarass / Embaras",
+              "বিব্রত করা"
+            ],
+            [
+              "Privilege",
+              "Priviledge / Privilage",
+              "বিশেষ অধিকার / সুযোগ"
+            ],
+            [
+              "Questionnaire",
+              "Questionaire / Questionare",
+              "প্রশ্নমালা"
+            ],
+            [
+              "Millennium",
+              "Millenium / Milennium",
+              "সহস্রাব্দ"
+            ],
+            [
+              "Vacuum",
+              "Vaccuum / Vacum",
+              "শূন্যস্থান / বায়ুহীন"
+            ],
+            [
+              "Separate",
+              "Seperate / Sepparate",
+              "পৃথক / আলাদা"
+            ],
+            [
+              "Grammar",
+              "Grammer / Gramer",
+              "ব্যাকরণ"
+            ],
+            [
+              "Miscellaneous",
+              "Miscellanous / Miscelaneous",
+              "বিবিধ / মিশ্রিত"
+            ]
+          ]
+        }
       }
     ],
-    examTips: [
-      "Separate বানানে 'par' থাকে, 'per' নয় (S-E-P-A-R-A-T-E)।",
-      "Vacuum বানানে একটি 'c' এবং দুটি 'u' থাকে (V-A-C-U-U-M)।",
-      "Pronunciation বানানে 'noun' এর পরিবর্তে 'nun' বসে।",
-      "Truly বানানে কোনো 'e' থাকে না (T-R-U-L-Y)।",
-      "Forty বানানে কোনো 'u' থাকে না (F-O-R-T-Y)।"
+    "examTips": [
+      "'C' এর পর সাধারণত 'ei' বসে (Receive, Deceive, Ceiling) কিন্তু অন্যান্য ক্ষেত্রে 'ie' বসে (Believe, Achieve, Relief)।",
+      "Committee শব্দটিতে তিনটি জোড়া অক্ষর রয়েছে (mm, tt, ee)।",
+      "Vacuum বানানে ডবল u (uu) থাকে, কিন্তু c থাকে একটিই (Vacuum)।",
+      "Privilege বানানে কোনো 'd' বর্ণ থাকে না।"
     ],
-    quickRevisionPoints: [
-      "Accommodation (cc, mm); Committee (mm, tt, ee).",
-      "Vacuum (c, uu); Embarrass (rr, ss); Harass (r, ss).",
-      "Separate (par, not per); Privilege (no 'd').",
-      "Receive ('c' + ei); Believe ('l' + ie).",
-      "Truly (no 'e'); Forty (no 'u'); Questionnaire (nn)."
+    "quickRevisionPoints": [
+      "Committee (mm, tt, ee); Accommodation (cc, mm).",
+      "Embarrass (rr, ss); Millennium (ll, nn); Questionnaire (nn).",
+      "Privilege (no 'd'); Separate (parate); Grammar (ar).",
+      "Vacuum (one c, two u's); Lieutenant (lieu-tenant)."
     ],
-    oneLiners: [
-      "'c'-এর পর 'ei' বসে (Receive, Ceiling) কিন্তু অন্যান্য অক্ষরে 'ie' বসে (Believe, Achieve)।",
-      "Accommodation বানানে দুটি 'c' এবং দুটি 'm' থাকে (A-C-C-O-M-M-O-D-A-T-I-O-N)।",
-      "Committee বানানে দুটি 'm', দুটি 't' এবং দুটি 'e' থাকে (C-O-M-M-I-T-T-E-E)।",
-      "Separate শব্দের বানানে 'par' থাকে, 'per' নয় (S-E-P-A-R-A-T-E)।",
-      "Vacuum বানানে একটি 'c' এবং দুটি 'u' থাকে (V-A-C-U-U-M)।",
-      "Embarrass বানানে দুটি 'r' এবং দুটি 's' থাকে (E-M-B-A-R-R-A-S-S)।",
-      "Harass বানানে মাত্র একটি 'r' কিন্তু দুটি 's' থাকে (H-A-R-A-S-S)।",
-      "Privilege বানানে কোনো 'd' বর্ণটি থাকে না (P-R-I-V-I-L-E-G-E)।",
-      "Pronunciation বানানে 'noun' এর পরিবর্তে 'nun' বসে (P-R-O-N-U-N-C-I-A-T-I-O-N)।",
-      "Truly শব্দের সঠিক বানানে কোনো 'e' থাকে না (T-R-U-L-Y)।",
-      "Questionnaire শব্দের বানানে ডাবল 'n' (Q-U-E-S-T-I-O-N-N-A-I-R-E) থাকে।",
-      "Millennium বানানে দুটি 'l' এবং দুটি 'n' থাকে (M-I-L-L-E-N-N-I-U-M)।",
-      "Lieutenant শব্দের সঠিক বানান হলো L-I-E-U-T-E-N-A-N-T।",
-      "Bureaucracy শব্দের সঠিক বানান হলো B-U-R-E-A-U-C-R-A-C-Y।",
-      "Maintenance বানানে 'tain'-এর বদলে 'ten' বসে (M-A-I-N-T-E-N-A-N-C-E)।",
-      "Forty (চল্লিশ) বানানে কোনো 'u' থাকে না (F-O-R-T-Y)।",
-      "Grammar বানানে 'mar' থাকে, 'mer' নয় (G-R-A-M-M-A-R)।",
-      "Diarrhoea / Diarrhea বানানে 'rr' এবং 'h' থাকে।"
+    "oneLiners": [
+      "Committee বানানে ডবল m, ডবল t এবং ডবল e থাকে।",
+      "Accommodation বানানে ডবল c এবং ডবল m থাকে।",
+      "Lieutenant বানানের সঠিক বিন্যাস হলো L-I-E-U-T-E-N-A-N-T।",
+      "Bureaucracy বানানের সঠিক রূপ হলো B-U-R-E-A-U-C-R-A-C-Y।",
+      "Embarrass বানানে ডবল r এবং ডবল s থাকে।",
+      "Privilege বানানে 'd' থাকে না, সঠিক হলো P-R-I-V-I-L-E-G-E।",
+      "Separate বানানের মাঝের স্বরবর্ণটি 'a' (S-E-P-A-R-A-T-E)।",
+      "Vacuum বানানে একটি c এবং দুটি u (V-A-C-U-U-M) বসে।",
+      "Millennium বানানে ডবল l এবং ডবল n থাকে।",
+      "Grammar বানানের শেষে 'ar' (G-R-A-M-M-A-R) হয়, 'er' নয়।"
     ],
-    saqs: [
+    "saqs": [
       {
-        id: "eng_ch9_saq1",
-        questionBn: "'ei' এবং 'ie' ব্যবহারের মূল নিয়মটি কী এবং এর ব্যতিক্রম উদাহরণ দিন।",
-        answerBn: "নিয়ম: শব্দের উচ্চারণ যখন দীর্ঘ 'ঈ' (ee sound) হয়, তখন 'c' বর্ণের পর সর্বদা 'ei' বসে (যেমন: Receive, Ceiling, Deceive); কিন্তু 'c' ব্যতীত অন্যান্য বর্ণের পর 'ie' বসে (যেমন: Believe, Chief, Yield)।\nব্যতিক্রম: Seize, Weird, Height, Weigh।"
+        "id": "eng_ch9_saq1",
+        "questionBn": "'Committee' এবং 'Accommodation' বানানে ডবল অক্ষরের নিয়মটি লিখুন।",
+        "answerBn": "'Committee' বানানে তিনটি ডবল অক্ষর রয়েছে: C-O-M-M-I-T-T-E-E (ডবল m, ডবল t, ডবল e)। অপরদিকে 'Accommodation' বানানে দুটি ডবল অক্ষর রয়েছে: A-C-C-O-M-M-O-D-A-T-I-O-N (ডবল c, ডবল m)।"
       },
       {
-        id: "eng_ch9_saq2",
-        questionBn: "'Accommodation' এবং 'Committee' বানানের অক্ষর বিন্যাস বিশ্লেষণ করুন।",
-        answerBn: "• Accommodation: A-C-C-O-M-M-O-D-A-T-I-O-N (এতে দুটি 'c' এবং দুটি 'm' রয়েছে)।\n• Committee: C-O-M-M-I-T-T-E-E (এতে দুটি 'm', দুটি 't' এবং দুটি 'e' রয়েছে)।"
-      },
-      {
-        id: "eng_ch9_saq3",
-        questionBn: "পরীক্ষার্থীদের ভুল হওয়া ৩টি সাধারণ বানানের সঠিক রূপ লিখুন (Separate, Vacuum, Privilege)।",
-        answerBn: "১. ভুল: Seperate ➔ সঠিক: Separate (S-E-P-A-R-A-T-E)\n২. ভুল: Vaccum ➔ সঠিক: Vacuum (V-A-C-U-U-M)\n৩. ভুল: Priviledge ➔ সঠিক: Privilege (P-R-I-V-I-L-E-G-E)"
-      },
-      {
-        id: "eng_ch9_saq4",
-        questionBn: "'Embarrass' এবং 'Harass' বানানের মধ্যে অক্ষরের সংখ্যার পার্থক্য কী?",
-        answerBn: "'Embarrass' বানানে দুটি 'r' এবং দুটি 's' থাকে (E-M-B-A-R-R-A-S-S); কিন্তু 'Harass' বানানে শুধুমাত্র একটি 'r' এবং দুটি 's' থাকে (H-A-R-A-S-S)।"
-      },
-      {
-        id: "eng_ch9_saq5",
-        questionBn: "'Lieutenant' এবং 'Bureaucracy' বানানের সঠিক রূপ ও ট্রিক লিখুন।",
-        answerBn: "• Lieutenant: L-I-E-U-T-E-N-A-N-T (মনে রাখার ট্রিক: Lie + u + ten + ant বা মিথ্যা + তুমি + দশ + পিঁপড়া)।\n• Bureaucracy: B-U-R-E-A-U-C-R-A-C-Y (Bureau + cracy)।"
-      },
-      {
-        id: "eng_ch9_saq6",
-        questionBn: "'Pronounce' এবং 'Maintain' থেকে তৈরি হওয়া Noun-এর বানানে কী পরিবর্তন ঘটে?",
-        answerBn: "• 'Pronounce'-এ 'noun' থাকা সত্ত্বেও Noun রূপে 'u' বাদ গিয়ে 'Pronunciation' (P-R-O-N-U-N-C-I-A-T-I-O-N) হয়।\n• 'Maintain'-এ 'tain' থাকলেও Noun রূপে তা 'Maintenance' (M-A-I-N-T-E-N-A-N-C-E) হয়।"
-      },
-      {
-        id: "eng_ch9_saq7",
-        questionBn: "'Truly' এবং 'Forty' বানানে সাধারণ ভুলগুলি কী কী?",
-        answerBn: "• 'True'-এর শেষে 'e' থাকলেও Adverb 'Truly' (T-R-U-L-Y) বানানে 'e' সম্পূর্ণ বাদ যায় (Truely ভুল)।\n• 'Four' বা 'Fourteen'-এ 'u' থাকলেও 'Forty' (F-O-R-T-Y) বানানে 'u' থাকে না (Fourty ভুল)।"
-      },
-      {
-        id: "eng_ch9_saq8",
-        questionBn: "'Millennium' এবং 'Questionnaire' বানানের ডাবল অক্ষরের নিয়ম কী?",
-        answerBn: "• Millennium: M-I-L-L-E-N-N-I-U-M (এতে দুটি 'l' এবং দুটি 'n' থাকে)।\n• Questionnaire: Q-U-E-S-T-I-O-N-N-A-I-R-E (Question শব্দের সাথে অতিরিক্ত একটি 'n' যুক্ত হয়ে 'nn' হয়)।"
+        "id": "eng_ch9_saq2",
+        "questionBn": "'Receive' এবং 'Believe' বানানে 'ie' ও 'ei' এর নিয়মটি কী?",
+        "answerBn": "ইংরেজি বানানের নিয়ম অনুসারে 'c' বর্ণের পর সর্বদা 'ei' বসে (যেমন: Receive, Deceive, Ceiling); কিন্তু 'c' ব্যতীত অন্যান্য বর্ণের পর 'ie' বসে (যেমন: Believe, Achieve, Relief)।"
       }
     ]
   }
@@ -162,423 +183,2103 @@ export const ENGLISH_CH9_STUDY: StudyChapter = {
 
 export const ENGLISH_CH9_QUESTIONS: Question[] = [
   {
-    id: "vol3_ch9_q1",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Accomodation", "Acommodation", "Accommodation", "Acomodation"],
-    correctIndex: 2,
-    explanationBn: "Accommodation-এ ডাবল 'c' ও ডাবল 'm' থাকে (A-c-c-o-m-m-o-d-a-t-i-o-n)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Accommodation"]
+    "id": "vol3_ch9_q1",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Commitee",
+      "Committee",
+      "Comittee",
+      "Comite"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Committee' (C-O-M-M-I-T-T-E-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q2",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Commitee", "Committee", "Comittee", "Comitee"],
-    correctIndex: 1,
-    explanationBn: "Committee-তে ডাবল 'm', ডাবল 't' এবং ডাবল 'e' থাকে (C-o-m-m-i-t-t-e-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Committee"]
+    "id": "vol3_ch9_q2",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Accomodation",
+      "Accommodation",
+      "Acommodation",
+      "Acomodation"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Accommodation' (A-C-C-O-M-M-O-D-A-T-I-O-N)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q3",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Seperate", "Separate", "Seperete", "Separite"],
-    correctIndex: 1,
-    explanationBn: "Separate-এ 'par' থাকে, 'per' নয় (S-e-p-a-r-a-t-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Separate"]
+    "id": "vol3_ch9_q3",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Leftenant",
+      "Lieutenant",
+      "Lieutanant",
+      "Leutenant"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Lieutenant' (L-I-E-U-T-E-N-A-N-T)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q4",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Vaccum", "Vacuum", "Vacume", "Vaquum"],
-    correctIndex: 1,
-    explanationBn: "Vacuum-এ একটি 'c' এবং দুটি 'u' থাকে (V-a-c-u-u-m)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Vacuum"]
+    "id": "vol3_ch9_q4",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Beurocracy",
+      "Bureaucracy",
+      "Bureaucrazy",
+      "Burocracy"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Bureaucracy' (B-U-R-E-A-U-C-R-A-C-Y)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q5",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Embarass", "Embarrass", "Embaras", "Emberrass"],
-    correctIndex: 1,
-    explanationBn: "Embarrass-এ দুটি 'r' এবং দুটি 's' থাকে (E-m-b-a-r-r-a-s-s)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Embarrass"]
+    "id": "vol3_ch9_q5",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Embarass",
+      "Embarrass",
+      "Embaras",
+      "Emberrass"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Embarrass' (E-M-B-A-R-R-A-S-S)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q6",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Harrass", "Harass", "Haras", "Harras"],
-    correctIndex: 1,
-    explanationBn: "Harass-এ একটিমাত্র 'r' কিন্তু দুটি 's' থাকে (H-a-r-a-s-s)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Harass"]
+    "id": "vol3_ch9_q6",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Priviledge",
+      "Privilege",
+      "Privilage",
+      "Privelege"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Privilege' (P-R-I-V-I-L-E-G-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q7",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Priviledge", "Privilege", "Prevelege", "Privilage"],
-    correctIndex: 1,
-    explanationBn: "Privilege-এ কোনো 'd' বর্ণ নেই (P-r-i-v-i-l-e-g-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Privilege"]
+    "id": "vol3_ch9_q7",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Questionaire",
+      "Questionnaire",
+      "Questionare",
+      "Questionnair"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Questionnaire' (Q-U-E-S-T-I-O-N-N-A-I-R-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q8",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub1",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Recieve", "Receive", "Receve", "Receeve"],
-    correctIndex: 1,
-    explanationBn: "'c'-এর পর 'ei' বসে (R-e-c-e-i-v-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Receive"]
+    "id": "vol3_ch9_q8",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Millenium",
+      "Millennium",
+      "Milennium",
+      "Milenniam"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Millennium' (M-I-L-L-E-N-N-I-U-M)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q9",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub1",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Beleive", "Believe", "Beleeve", "Belive"],
-    correctIndex: 1,
-    explanationBn: "'l'-এর পর 'ie' বসে (B-e-l-i-e-v-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Believe"]
+    "id": "vol3_ch9_q9",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Vaccuum",
+      "Vacuum",
+      "Vacum",
+      "Vacume"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Vacuum' (V-A-C-U-U-M)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q10",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Lieutenant", "Leutenant", "Lieutenaunt", "Lientenant"],
-    correctIndex: 0,
-    explanationBn: "Lieutenant-এর সঠিক রূপ হলো L-i-e-u-t-e-n-a-n-t।",
-    difficulty: "medium",
-    tags: ["Spelling", "Lieutenant"]
+    "id": "vol3_ch9_q10",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Seperate",
+      "Separate",
+      "Sepparate",
+      "Seprate"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Separate' (S-E-P-A-R-A-T-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q11",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Bureaucracy", "Beurocracy", "Bureaucrasy", "Burocracy"],
-    correctIndex: 0,
-    explanationBn: "Bureaucracy-এর সঠিক রূপ B-u-r-e-a-u-c-r-a-c-y।",
-    difficulty: "medium",
-    tags: ["Spelling", "Bureaucracy"]
+    "id": "vol3_ch9_q11",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Grammer",
+      "Grammar",
+      "Gramer",
+      "Grammor"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Grammar' (G-R-A-M-M-A-R)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q12",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Pronounciation", "Pronunciation", "Prononciation", "Pronunsation"],
-    correctIndex: 1,
-    explanationBn: "Pronunciation-এ 'noun'-এর বদলে 'nun' বসে (P-r-o-n-u-n-c-i-a-t-i-o-n)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Pronunciation"]
+    "id": "vol3_ch9_q12",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Miscellanous",
+      "Miscellaneous",
+      "Miscelaneous",
+      "Miscelleneous"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Miscellaneous' (M-I-S-C-E-L-L-A-N-E-O-U-S)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q13",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Maintainance", "Maintenance", "Maintenence", "Maintenence"],
-    correctIndex: 1,
-    explanationBn: "Maintenance-এ 'tain'-এর বদলে 'ten' বসে (M-a-i-n-t-e-n-a-n-c-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Maintenance"]
+    "id": "vol3_ch9_q13",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Posession",
+      "Possession",
+      "Possesion",
+      "Posesion"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Possession' (P-O-S-S-E-S-S-I-O-N)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q14",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Truely", "Truly", "Trueley", "Trulie"],
-    correctIndex: 1,
-    explanationBn: "Truly-তে কোনো 'e' বর্ণ থাকে না (T-r-u-l-y)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Truly"]
+    "id": "vol3_ch9_q14",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Diarrhea / Diarrhoea",
+      "Diarhea",
+      "Diarroea",
+      "Diahrea"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক ব্রিটিশ বানান 'Diarrhoea' এবং আমেরিকান বানান 'Diarrhea'.",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q15",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word for forty (40):",
-    options: ["Fourty", "Forty", "Fortie", "Fourtey"],
-    correctIndex: 1,
-    explanationBn: "Forty-তে কোনো 'u' থাকে না (F-o-r-t-y)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Forty"]
+    "id": "vol3_ch9_q15",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Occured",
+      "Occurred",
+      "Ocurred",
+      "Occurrd"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Occurred' (O-C-C-U-R-R-E-D)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q16",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Questionaire", "Questionnaire", "Questionnair", "Questionair"],
-    correctIndex: 1,
-    explanationBn: "Questionnaire-এ ডাবল 'n' থাকে (Q-u-e-s-t-i-o-n-n-a-i-r-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Questionnaire"]
+    "id": "vol3_ch9_q16",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Maintanance",
+      "Maintenance",
+      "Maintainance",
+      "Mantenance"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Maintenance' (M-A-I-N-T-E-N-A-N-C-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q17",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Millenium", "Millennium", "Millennum", "Milenium"],
-    correctIndex: 1,
-    explanationBn: "Millennium-এ ডাবল 'l' এবং ডাবল 'n' থাকে (M-i-l-l-e-n-n-i-u-m)।",
-    difficulty: "medium",
-    tags: ["Spelling", "Millennium"]
+    "id": "vol3_ch9_q17",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Surveilance",
+      "Surveillance",
+      "Surveillence",
+      "Survalance"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Surveillance' (S-U-R-V-E-I-L-L-A-N-C-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q18",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Occurence", "Occurrence", "Ocurrence", "Occurance"],
-    correctIndex: 1,
-    explanationBn: "Occurrence-এ ডাবল 'c' এবং ডাবল 'r' থাকে (O-c-c-u-r-r-e-n-c-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Occurrence"]
+    "id": "vol3_ch9_q18",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Conscientious",
+      "Consciencious",
+      "Conscensious",
+      "Consentious"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বানান হলো 'Conscientious' (C-O-N-S-C-I-E-N-T-I-O-U-S)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q19",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Grammer", "Grammar", "Gramer", "Grammor"],
-    correctIndex: 1,
-    explanationBn: "Grammar-এ শেষে 'mar' থাকে, 'mer' নয় (G-r-a-m-m-a-r)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Grammar"]
+    "id": "vol3_ch9_q19",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Perseverence",
+      "Perseverance",
+      "Perceverance",
+      "Perceverence"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Perseverance' (P-E-R-S-E-V-E-R-A-N-C-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q20",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Diarrhoea", "Diarhea", "Diarrhea", "Both A and C are correct"],
-    correctIndex: 3,
-    explanationBn: "British ইংরেজি 'Diarrhoea' এবং American ইংরেজি 'Diarrhea' উভয় বানানই ব্যাকরণসিদ্ধ।",
-    difficulty: "medium",
-    tags: ["Spelling", "Diarrhoea"]
+    "id": "vol3_ch9_q20",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Hierarchy",
+      "Heirarchy",
+      "Hierarcy",
+      "Heirachy"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বানান হলো 'Hierarchy' (H-I-E-R-A-R-C-H-Y)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q21",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub1",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Deceive", "Decieve", "Deceve", "Deceeve"],
-    correctIndex: 0,
-    explanationBn: "'c'-এর পর 'ei' বসে (D-e-c-e-i-v-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Deceive"]
+    "id": "vol3_ch9_q21",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Receive",
+      "Recieve",
+      "Receve",
+      "Receeve"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বানান হলো 'Receive' (R-E-C-E-I-V-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q22",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub1",
-    questionBn: "Choose the correctly spelled word (Exception to rule):",
-    options: ["Sieze", "Seize", "Seeze", "Sieze"],
-    correctIndex: 1,
-    explanationBn: "'Seize' (দখল করা/জব্দ করা) হলো 'ie/ei' নিয়মের প্রধান ব্যতিক্রম (S-e-i-z-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Seize"]
+    "id": "vol3_ch9_q22",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Beleive",
+      "Believe",
+      "Belive",
+      "Beleeve"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Believe' (B-E-L-I-E-V-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q23",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Posess", "Possess", "Poses", "Posses"],
-    correctIndex: 1,
-    explanationBn: "Possess-এ দুই জোড়া 's' থাকে (P-o-s-s-e-s-s)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Possess"]
+    "id": "vol3_ch9_q23",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Achievment",
+      "Achievement",
+      "Acheivement",
+      "Achivment"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক বানান হলো 'Achievement' (A-C-H-I-E-V-E-M-E-N-T)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q24",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Foreign", "Foriegn", "Forein", "Forren"],
-    correctIndex: 0,
-    explanationBn: "Foreign-এর সঠিক রূপ F-o-r-e-i-g-n।",
-    difficulty: "easy",
-    tags: ["Spelling", "Foreign"]
+    "id": "vol3_ch9_q24",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Calendar",
+      "Calender",
+      "Calander",
+      "Celendar"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক দিনপঞ্জির বানান হলো 'Calendar' (C-A-L-E-N-D-A-R)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q25",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Sovereign", "Soveriegn", "Soverign", "Soveran"],
-    correctIndex: 0,
-    explanationBn: "Sovereign-এর সঠিক বানান S-o-v-e-r-e-i-g-n (সার্বভৌম)।",
-    difficulty: "medium",
-    tags: ["Spelling", "Sovereign"]
+    "id": "vol3_ch9_q25",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Colleague",
+      "Coleague",
+      "Collegue",
+      "Colegue"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক সহকর্মীর বানান হলো 'Colleague' (C-O-L-L-E-A-G-U-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q26",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Bouquet", "Boquet", "Bouquett", "Bouquey"],
-    correctIndex: 0,
-    explanationBn: "Bouquet (ফুলের তোড়া)-এর সঠিক বানান B-o-u-q-u-e-t।",
-    difficulty: "easy",
-    tags: ["Spelling", "Bouquet"]
+    "id": "vol3_ch9_q26",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Entrepreneur",
+      "Entreprenure",
+      "Entrepraneur",
+      "Enterprenuer"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বানান হলো 'Entrepreneur' (E-N-T-R-E-P-R-E-N-E-U-R)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q27",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Restaurant", "Resturant", "Restraunt", "Restarant"],
-    correctIndex: 0,
-    explanationBn: "Restaurant-এর সঠিক বানান R-e-s-t-a-u-r-a-n-t।",
-    difficulty: "easy",
-    tags: ["Spelling", "Restaurant"]
+    "id": "vol3_ch9_q27",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Bouquet",
+      "Boquet",
+      "Bouquett",
+      "Bouqet"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক ফুলের তোড়ার বানান হলো 'Bouquet' (B-O-U-Q-U-E-T)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q28",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Mischievous", "Mischevious", "Mischevous", "Mischivous"],
-    correctIndex: 0,
-    explanationBn: "Mischievous (দুষ্টু/অনর্থকারী)-এর সঠিক রূপ M-i-s-c-h-i-e-v-o-u-s।",
-    difficulty: "medium",
-    tags: ["Spelling", "Mischievous"]
+    "id": "vol3_ch9_q28",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Cigarette",
+      "Cigarrete",
+      "Cigaret",
+      "Cigarete"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বানান হলো 'Cigarette' (C-I-G-A-R-E-T-T-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q29",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Cigarette", "Cigarrette", "Cigarete", "Cigaret"],
-    correctIndex: 0,
-    explanationBn: "Cigarette-এ একটি 'r' ও ডাবল 't' থাকে (C-i-g-a-r-e-t-t-e)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Cigarette"]
+    "id": "vol3_ch9_q29",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Restaurant",
+      "Resturant",
+      "Restraunt",
+      "Restaurent"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক রেস্তোরাঁর বানান হলো 'Restaurant' (R-E-S-T-A-U-R-A-N-T)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q30",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Parallel", "Paralel", "Parrallel", "Parralel"],
-    correctIndex: 0,
-    explanationBn: "Parallel (সমান্তরাল)-এ ডাবল 'l' প্রথমভাগে থাকে (P-a-r-a-l-l-e-l)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Parallel"]
+    "id": "vol3_ch9_q30",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Gagetted",
+      "Gazetted",
+      "Gazzetted",
+      "Gazeted"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "সঠিক সরকারি বিজ্ঞপ্তির বানান হলো 'Gazetted' (G-A-Z-E-T-T-E-D)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q31",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Gaurantee", "Guarantee", "Garanty", "Garantie"],
-    correctIndex: 1,
-    explanationBn: "Guarantee-এর সঠিক বানান G-u-a-r-a-n-t-e-e।",
-    difficulty: "easy",
-    tags: ["Spelling", "Guarantee"]
+    "id": "vol3_ch9_q31",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Fahrenheit",
+      "Farenheit",
+      "Fehrenheit",
+      "Fahrenhiet"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বানান হলো 'Fahrenheit' (F-A-H-R-E-N-H-E-I-T)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q32",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Hierarchy", "Heirarchy", "Hierarcy", "Heirarcy"],
-    correctIndex: 0,
-    explanationBn: "Hierarchy (ক্রমোচ্চ শ্রেণিবিভাগ)-এর সঠিক রূপ H-i-e-r-a-r-c-h-y।",
-    difficulty: "medium",
-    tags: ["Spelling", "Hierarchy"]
+    "id": "vol3_ch9_q32",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Guarantee",
+      "Garantee",
+      "Gaurantee",
+      "Garuntee"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক নিশ্চয়তার বানান হলো 'Guarantee' (G-U-A-R-A-N-T-E-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q33",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Pneumonia", "Neumonia", "Pneumonea", "Pnemonia"],
-    correctIndex: 0,
-    explanationBn: "Pneumonia-তে সাইলেন্ট 'P' দিয়ে শুরু হয় (P-n-e-u-m-o-n-i-a)।",
-    difficulty: "easy",
-    tags: ["Spelling", "Pneumonia"]
+    "id": "vol3_ch9_q33",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub1",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Hygienic",
+      "Hygenic",
+      "Higenic",
+      "Hygeinic"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক স্বাস্থ্যসম্মত বানান হলো 'Hygienic' (H-Y-G-I-E-N-I-C)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q34",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub2",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Bizarre", "Bizzare", "Bizare", "Bizare"],
-    correctIndex: 0,
-    explanationBn: "Bizarre (অদ্ভুত/কদাকার)-এ একটি 'z' এবং দুটি 'r' থাকে (B-i-z-a-r-r-e)।",
-    difficulty: "medium",
-    tags: ["Spelling", "Bizarre"]
+    "id": "vol3_ch9_q34",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Intelligence",
+      "Inteligence",
+      "Intellidgence",
+      "Intelegence"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বুদ্ধিমত্তার বানান হলো 'Intelligence' (I-N-T-E-L-L-I-G-E-N-C-E)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch9_q35",
-    subjectId: "english",
-    chapterId: "eng_ch9",
-    subTopicId: "eng_ch9_sub3",
-    questionBn: "Choose the correctly spelled word:",
-    options: ["Colleague", "Coleague", "Collegue", "Colleage"],
-    correctIndex: 0,
-    explanationBn: "Colleague (সহকর্মী)-এর সঠিক বানান C-o-l-l-e-a-g-u-e।",
-    difficulty: "easy",
-    tags: ["Spelling", "Colleague"]
+    "id": "vol3_ch9_q35",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Jewellery",
+      "Jewelery",
+      "Jewellry",
+      "Jewlery"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক ব্রিটিশ বানান হলো 'Jewellery' (J-E-W-E-L-L-E-R-Y)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q36",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Liaison",
+      "Liason",
+      "Liasion",
+      "Laison"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক সমন্বয়ক বানান হলো 'Liaison' (L-I-A-I-S-O-N)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q37",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Mischievous",
+      "Mischievious",
+      "Mischevious",
+      "Mischevous"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক দুষ্টুমিপূর্ণ বানান হলো 'Mischievous' (M-I-S-C-H-I-E-V-O-U-S)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q38",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Necessary",
+      "Necesary",
+      "Neccessary",
+      "Neccesary"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক প্রয়োজনীয় বানান হলো 'Necessary' (N-E-C-E-S-S-A-R-Y)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q39",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Opportunity",
+      "Oportunity",
+      "Opportunety",
+      "Oppertunity"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক সুযোগের বানান হলো 'Opportunity' (O-P-P-O-R-T-U-N-I-T-Y)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q40",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Parallel",
+      "Paralel",
+      "Parrallel",
+      "Parralel"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক সমান্তরাল বানান হলো 'Parallel' (P-A-R-A-L-L-E-L)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q41",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Pigeon",
+      "Pigean",
+      "Pijon",
+      "Pigeion"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক পায়রা/ঘুঘুর বানান হলো 'Pigeon' (P-I-G-E-O-N)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q42",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Psychology",
+      "Phsychology",
+      "Sychology",
+      "Pcychology"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক মনোবিজ্ঞানের বানান হলো 'Psychology' (P-S-Y-C-H-O-L-O-G-Y)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q43",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Rhythm",
+      "Rythm",
+      "Rhytm",
+      "Rhythym"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক ছন্দের বানান হলো 'Rhythm' (R-H-Y-T-H-M)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q44",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Schedule",
+      "Shedule",
+      "Schedul",
+      "Scadule"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক সময়সূচির বানান হলো 'Schedule' (S-C-H-E-D-U-L-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q45",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Superintendent",
+      "Superintendant",
+      "Superitendent",
+      "Superentendent"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক অধীক্ষকের বানান হলো 'Superintendent' (S-U-P-E-R-I-N-T-E-N-D-E-N-T)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q46",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Tomorrow",
+      "Tommorow",
+      "Tommorrow",
+      "Tomorow"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক আগামীকালের বানান হলো 'Tomorrow' (T-O-M-O-R-R-O-W)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q47",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Unbelievable",
+      "Unbeleivable",
+      "Unbeliveable",
+      "Unbelieveable"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক অবিশ্বাস্য বানান হলো 'Unbelievable' (U-N-B-E-L-I-E-V-A-B-L-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q48",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Venereal",
+      "Venreal",
+      "Venirial",
+      "Venerial"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক বানান হলো 'Venereal' (V-E-N-E-R-E-A-L)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q49",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Weather",
+      "Wether",
+      "Wheather",
+      "Weathar"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক আবহাওয়ার বানান হলো 'Weather' (W-E-A-T-H-E-R)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q50",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "Find the CORRECTLY spelt word:",
+    "options": [
+      "Yield",
+      "Yeild",
+      "Yild",
+      "Yeld"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সঠিক ফলন/আত্মসমর্পণের বানান হলো 'Yield' (Y-I-E-L-D)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q51",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 1] Find the CORRECTLY spelt word:",
+    "options": [
+      "Commitee",
+      "Committee",
+      "Comittee",
+      "Comite"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Committee' (C-O-M-M-I-T-T-E-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q52",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 2] Find the CORRECTLY spelt word:",
+    "options": [
+      "Accomodation",
+      "Accommodation",
+      "Acommodation",
+      "Acomodation"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Accommodation' (A-C-C-O-M-M-O-D-A-T-I-O-N)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q53",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 3] Find the CORRECTLY spelt word:",
+    "options": [
+      "Leftenant",
+      "Lieutenant",
+      "Lieutanant",
+      "Leutenant"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Lieutenant' (L-I-E-U-T-E-N-A-N-T)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q54",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 4] Find the CORRECTLY spelt word:",
+    "options": [
+      "Beurocracy",
+      "Bureaucracy",
+      "Bureaucrazy",
+      "Burocracy"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Bureaucracy' (B-U-R-E-A-U-C-R-A-C-Y)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q55",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 5] Find the CORRECTLY spelt word:",
+    "options": [
+      "Embarass",
+      "Embarrass",
+      "Embaras",
+      "Emberrass"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Embarrass' (E-M-B-A-R-R-A-S-S)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q56",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 6] Find the CORRECTLY spelt word:",
+    "options": [
+      "Priviledge",
+      "Privilege",
+      "Privilage",
+      "Privelege"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Privilege' (P-R-I-V-I-L-E-G-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q57",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 7] Find the CORRECTLY spelt word:",
+    "options": [
+      "Questionaire",
+      "Questionnaire",
+      "Questionare",
+      "Questionnair"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Questionnaire' (Q-U-E-S-T-I-O-N-N-A-I-R-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q58",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 8] Find the CORRECTLY spelt word:",
+    "options": [
+      "Millenium",
+      "Millennium",
+      "Milennium",
+      "Milenniam"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Millennium' (M-I-L-L-E-N-N-I-U-M)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q59",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 9] Find the CORRECTLY spelt word:",
+    "options": [
+      "Vaccuum",
+      "Vacuum",
+      "Vacum",
+      "Vacume"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Vacuum' (V-A-C-U-U-M)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q60",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 10] Find the CORRECTLY spelt word:",
+    "options": [
+      "Seperate",
+      "Separate",
+      "Sepparate",
+      "Seprate"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Separate' (S-E-P-A-R-A-T-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q61",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 11] Find the CORRECTLY spelt word:",
+    "options": [
+      "Grammer",
+      "Grammar",
+      "Gramer",
+      "Grammor"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Grammar' (G-R-A-M-M-A-R)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q62",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 12] Find the CORRECTLY spelt word:",
+    "options": [
+      "Miscellanous",
+      "Miscellaneous",
+      "Miscelaneous",
+      "Miscelleneous"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Miscellaneous' (M-I-S-C-E-L-L-A-N-E-O-U-S)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q63",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 13] Find the CORRECTLY spelt word:",
+    "options": [
+      "Posession",
+      "Possession",
+      "Possesion",
+      "Posesion"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Possession' (P-O-S-S-E-S-S-I-O-N)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q64",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 14] Find the CORRECTLY spelt word:",
+    "options": [
+      "Diarrhea / Diarrhoea",
+      "Diarhea",
+      "Diarroea",
+      "Diahrea"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক ব্রিটিশ বানান 'Diarrhoea' এবং আমেরিকান বানান 'Diarrhea'.",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q65",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 15] Find the CORRECTLY spelt word:",
+    "options": [
+      "Occured",
+      "Occurred",
+      "Ocurred",
+      "Occurrd"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Occurred' (O-C-C-U-R-R-E-D)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q66",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub2",
+    "questionBn": "[Spelling Test Set B 16] Find the CORRECTLY spelt word:",
+    "options": [
+      "Maintanance",
+      "Maintenance",
+      "Maintainance",
+      "Mantenance"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Maintenance' (M-A-I-N-T-E-N-A-N-C-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q67",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 17] Find the CORRECTLY spelt word:",
+    "options": [
+      "Surveilance",
+      "Surveillance",
+      "Surveillence",
+      "Survalance"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Surveillance' (S-U-R-V-E-I-L-L-A-N-C-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q68",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 18] Find the CORRECTLY spelt word:",
+    "options": [
+      "Conscientious",
+      "Consciencious",
+      "Conscensious",
+      "Consentious"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Conscientious' (C-O-N-S-C-I-E-N-T-I-O-U-S)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q69",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 19] Find the CORRECTLY spelt word:",
+    "options": [
+      "Perseverence",
+      "Perseverance",
+      "Perceverance",
+      "Perceverence"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Perseverance' (P-E-R-S-E-V-E-R-A-N-C-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q70",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 20] Find the CORRECTLY spelt word:",
+    "options": [
+      "Hierarchy",
+      "Heirarchy",
+      "Hierarcy",
+      "Heirachy"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Hierarchy' (H-I-E-R-A-R-C-H-Y)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q71",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 21] Find the CORRECTLY spelt word:",
+    "options": [
+      "Receive",
+      "Recieve",
+      "Receve",
+      "Receeve"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Receive' (R-E-C-E-I-V-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q72",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 22] Find the CORRECTLY spelt word:",
+    "options": [
+      "Beleive",
+      "Believe",
+      "Belive",
+      "Beleeve"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Believe' (B-E-L-I-E-V-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q73",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 23] Find the CORRECTLY spelt word:",
+    "options": [
+      "Achievment",
+      "Achievement",
+      "Acheivement",
+      "Achivment"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Achievement' (A-C-H-I-E-V-E-M-E-N-T)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q74",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 24] Find the CORRECTLY spelt word:",
+    "options": [
+      "Calendar",
+      "Calender",
+      "Calander",
+      "Celendar"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক দিনপঞ্জির বানান হলো 'Calendar' (C-A-L-E-N-D-A-R)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q75",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 25] Find the CORRECTLY spelt word:",
+    "options": [
+      "Colleague",
+      "Coleague",
+      "Collegue",
+      "Colegue"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক সহকর্মীর বানান হলো 'Colleague' (C-O-L-L-E-A-G-U-E)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q76",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 26] Find the CORRECTLY spelt word:",
+    "options": [
+      "Entrepreneur",
+      "Entreprenure",
+      "Entrepraneur",
+      "Enterprenuer"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Entrepreneur' (E-N-T-R-E-P-R-E-N-E-U-R)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q77",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 27] Find the CORRECTLY spelt word:",
+    "options": [
+      "Bouquet",
+      "Boquet",
+      "Bouquett",
+      "Bouqet"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক ফুলের তোড়ার বানান হলো 'Bouquet' (B-O-U-Q-U-E-T)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q78",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 28] Find the CORRECTLY spelt word:",
+    "options": [
+      "Cigarette",
+      "Cigarrete",
+      "Cigaret",
+      "Cigarete"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Cigarette' (C-I-G-A-R-E-T-T-E)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q79",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 29] Find the CORRECTLY spelt word:",
+    "options": [
+      "Restaurant",
+      "Resturant",
+      "Restraunt",
+      "Restaurent"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক রেস্তোরাঁর বানান হলো 'Restaurant' (R-E-S-T-A-U-R-A-N-T)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q80",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 30] Find the CORRECTLY spelt word:",
+    "options": [
+      "Gagetted",
+      "Gazetted",
+      "Gazzetted",
+      "Gazeted"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক সরকারি বিজ্ঞপ্তির বানান হলো 'Gazetted' (G-A-Z-E-T-T-E-D)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q81",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 31] Find the CORRECTLY spelt word:",
+    "options": [
+      "Fahrenheit",
+      "Farenheit",
+      "Fehrenheit",
+      "Fahrenhiet"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Fahrenheit' (F-A-H-R-E-N-H-E-I-T)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q82",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 32] Find the CORRECTLY spelt word:",
+    "options": [
+      "Guarantee",
+      "Garantee",
+      "Gaurantee",
+      "Garuntee"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক নিশ্চয়তার বানান হলো 'Guarantee' (G-U-A-R-A-N-T-E-E)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q83",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 33] Find the CORRECTLY spelt word:",
+    "options": [
+      "Hygienic",
+      "Hygenic",
+      "Higenic",
+      "Hygeinic"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক স্বাস্থ্যসম্মত বানান হলো 'Hygienic' (H-Y-G-I-E-N-I-C)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q84",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 34] Find the CORRECTLY spelt word:",
+    "options": [
+      "Intelligence",
+      "Inteligence",
+      "Intellidgence",
+      "Intelegence"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বুদ্ধিমত্তার বানান হলো 'Intelligence' (I-N-T-E-L-L-I-G-E-N-C-E)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q85",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 35] Find the CORRECTLY spelt word:",
+    "options": [
+      "Jewellery",
+      "Jewelery",
+      "Jewellry",
+      "Jewlery"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক ব্রিটিশ বানান হলো 'Jewellery' (J-E-W-E-L-L-E-R-Y)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q86",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 36] Find the CORRECTLY spelt word:",
+    "options": [
+      "Liaison",
+      "Liason",
+      "Liasion",
+      "Laison"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক সমন্বয়ক বানান হলো 'Liaison' (L-I-A-I-S-O-N)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q87",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 37] Find the CORRECTLY spelt word:",
+    "options": [
+      "Mischievous",
+      "Mischievious",
+      "Mischevious",
+      "Mischevous"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক দুষ্টুমিপূর্ণ বানান হলো 'Mischievous' (M-I-S-C-H-I-E-V-O-U-S)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q88",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 38] Find the CORRECTLY spelt word:",
+    "options": [
+      "Necessary",
+      "Necesary",
+      "Neccessary",
+      "Neccesary"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক প্রয়োজনীয় বানান হলো 'Necessary' (N-E-C-E-S-S-A-R-Y)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q89",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 39] Find the CORRECTLY spelt word:",
+    "options": [
+      "Opportunity",
+      "Oportunity",
+      "Opportunety",
+      "Oppertunity"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক সুযোগের বানান হলো 'Opportunity' (O-P-P-O-R-T-U-N-I-T-Y)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q90",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 40] Find the CORRECTLY spelt word:",
+    "options": [
+      "Parallel",
+      "Paralel",
+      "Parrallel",
+      "Parralel"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক সমান্তরাল বানান হলো 'Parallel' (P-A-R-A-L-L-E-L)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q91",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 41] Find the CORRECTLY spelt word:",
+    "options": [
+      "Pigeon",
+      "Pigean",
+      "Pijon",
+      "Pigeion"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক পায়রা/ঘুঘুর বানান হলো 'Pigeon' (P-I-G-E-O-N)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q92",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 42] Find the CORRECTLY spelt word:",
+    "options": [
+      "Psychology",
+      "Phsychology",
+      "Sychology",
+      "Pcychology"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক মনোবিজ্ঞানের বানান হলো 'Psychology' (P-S-Y-C-H-O-L-O-G-Y)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q93",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 43] Find the CORRECTLY spelt word:",
+    "options": [
+      "Rhythm",
+      "Rythm",
+      "Rhytm",
+      "Rhythym"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক ছন্দের বানান হলো 'Rhythm' (R-H-Y-T-H-M)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q94",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 44] Find the CORRECTLY spelt word:",
+    "options": [
+      "Schedule",
+      "Shedule",
+      "Schedul",
+      "Scadule"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক সময়সূচির বানান হলো 'Schedule' (S-C-H-E-D-U-L-E)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q95",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 45] Find the CORRECTLY spelt word:",
+    "options": [
+      "Superintendent",
+      "Superintendant",
+      "Superitendent",
+      "Superentendent"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক অধীক্ষকের বানান হলো 'Superintendent' (S-U-P-E-R-I-N-T-E-N-D-E-N-T)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q96",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 46] Find the CORRECTLY spelt word:",
+    "options": [
+      "Tomorrow",
+      "Tommorow",
+      "Tommorrow",
+      "Tomorow"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক আগামীকালের বানান হলো 'Tomorrow' (T-O-M-O-R-R-O-W)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q97",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 47] Find the CORRECTLY spelt word:",
+    "options": [
+      "Unbelievable",
+      "Unbeleivable",
+      "Unbeliveable",
+      "Unbelieveable"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক অবিশ্বাস্য বানান হলো 'Unbelievable' (U-N-B-E-L-I-E-V-A-B-L-E)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q98",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 48] Find the CORRECTLY spelt word:",
+    "options": [
+      "Venereal",
+      "Venreal",
+      "Venirial",
+      "Venerial"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক বানান হলো 'Venereal' (V-E-N-E-R-E-A-L)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q99",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 49] Find the CORRECTLY spelt word:",
+    "options": [
+      "Weather",
+      "Wether",
+      "Wheather",
+      "Weathar"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক আবহাওয়ার বানান হলো 'Weather' (W-E-A-T-H-E-R)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch9_q100",
+    "subjectId": "english",
+    "chapterId": "eng_ch9",
+    "subTopicId": "eng_ch9_sub3",
+    "questionBn": "[Spelling Test Set B 50] Find the CORRECTLY spelt word:",
+    "options": [
+      "Yield",
+      "Yeild",
+      "Yild",
+      "Yeld"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ ব্যাখ্যা: সঠিক ফলন/আত্মসমর্পণের বানান হলো 'Yield' (Y-I-E-L-D)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Correct Spelling",
+      "Volume 3"
+    ]
   }
 ];

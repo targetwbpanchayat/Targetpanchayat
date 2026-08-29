@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BookOpen,
   Award,
@@ -12,11 +12,15 @@ import {
   Zap,
   Target,
   Sparkles,
+  History,
+  Eye,
+  FileCheck,
 } from "lucide-react";
-import { UserProfile, UserProgress, SubjectId } from "../types";
+import { UserProfile, UserProgress, SubjectId, MockTestAttempt } from "../types";
 import { SUBJECTS } from "../data/subjects";
 import { STUDY_CHAPTERS } from "../data/studyData";
 import { MOCK_TESTS } from "../data/mockTests";
+import { AnswerSheetModal } from "./AnswerSheetModal";
 
 interface DashboardViewProps {
   user: UserProfile;
@@ -33,6 +37,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   onSelectChapter,
   onSelectMockTest,
 }) => {
+  const [selectedAttemptForReview, setSelectedAttemptForReview] = useState<MockTestAttempt | null>(null);
+
   const totalChapters = STUDY_CHAPTERS.length;
   const completedChaptersCount = progress?.completedChapters?.length || 0;
   const chaptersPercent = Math.round((completedChaptersCount / totalChapters) * 100);
@@ -131,7 +137,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <span className="text-xs text-slate-500 font-bengali">টি টেস্ট</span>
           </div>
           <div className="text-[11px] text-slate-500 font-bengali font-medium">
-            {testsTakenCount === 0 ? "এখনো মক টেস্ট দেননি" : "ধারাবাহিক প্র্যাকটিস বজায় রাখুন"}
+            {testsTakenCount === 0 ? "এখনো মক টেস্ট দেননি" : "সংরক্ষিত উত্তরপত্র দেখুন নিচে"}
           </div>
         </div>
 
@@ -230,47 +236,57 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </button>
           </div>
 
-          {/* Quick Action Pills */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+          {/* Quick Action Pills for Tests & Practice */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <button
-              onClick={() => setActiveTab("practice")}
-              className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/40 text-left transition-all flex items-center gap-3 group cursor-pointer"
+              onClick={() => setActiveTab("tests")}
+              className="p-3.5 rounded-2xl bg-emerald-50/70 border border-emerald-200 hover:border-emerald-400 hover:bg-emerald-100/50 text-left transition-all flex items-center gap-3 group cursor-pointer"
             >
-              <div className="w-9 h-9 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center group-hover:scale-105 transition-transform">
-                <CheckSquare className="w-4 h-4" />
-              </div>
-              <div>
-                <div className="text-xs font-bold text-slate-900 font-bengali">MCQ প্র্যাকটিস</div>
-                <div className="text-[10px] text-slate-500 font-bengali">বিষয়ভিত্তিক প্রশ্ন সেট</div>
-              </div>
-            </button>
-
-            <button
-              onClick={() => {
-                onSelectMockTest(MOCK_TESTS[0].id);
-                setActiveTab("mock_test");
-              }}
-              className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/40 text-left transition-all flex items-center gap-3 group cursor-pointer"
-            >
-              <div className="w-9 h-9 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center group-hover:scale-105 transition-transform">
+              <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
                 <Award className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-xs font-bold text-slate-900 font-bengali">মক টেস্ট ১ দিন</div>
-                <div className="text-[10px] text-slate-500 font-bengali">পূর্ণাঙ্গ সিলেবাস টেস্ট</div>
+                <div className="text-xs font-bold text-slate-900 font-bengali">ফুল মক টেস্ট</div>
+                <div className="text-[10px] text-emerald-700 font-bengali">৮৫ নম্বর • ৯০ মিনিট</div>
               </div>
             </button>
 
             <button
-              onClick={() => setActiveTab("quiz")}
-              className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/40 text-left transition-all flex items-center gap-3 group cursor-pointer"
+              onClick={() => setActiveTab("tests")}
+              className="p-3.5 rounded-2xl bg-blue-50/70 border border-blue-200 hover:border-blue-400 hover:bg-blue-100/50 text-left transition-all flex items-center gap-3 group cursor-pointer"
             >
-              <div className="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center group-hover:scale-105 transition-transform">
-                <Zap className="w-4 h-4" />
+              <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
+                <Clock className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-xs font-bold text-slate-900 font-bengali">স্পিড কুইজ</div>
-                <div className="text-[10px] text-slate-500 font-bengali">১০ প্রশ্নের দ্রুত কুইজ</div>
+                <div className="text-xs font-bold text-slate-900 font-bengali">শর্ট মক টেস্ট</div>
+                <div className="text-[10px] text-blue-700 font-bengali">৪০ নম্বর • ৪০ মিনিট</div>
+              </div>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("practice")}
+              className="p-3.5 rounded-2xl bg-teal-50/70 border border-teal-200 hover:border-teal-400 hover:bg-teal-100/50 text-left transition-all flex items-center gap-3 group cursor-pointer"
+            >
+              <div className="w-9 h-9 rounded-xl bg-teal-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
+                <BookOpen className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-slate-900 font-bengali">প্র্যাকটিস সেট</div>
+                <div className="text-[10px] text-teal-700 font-bengali">অধ্যায়ভিত্তিক MCQ</div>
+              </div>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("pyq")}
+              className="p-3.5 rounded-2xl bg-purple-50/70 border border-purple-200 hover:border-purple-400 hover:bg-purple-100/50 text-left transition-all flex items-center gap-3 group cursor-pointer"
+            >
+              <div className="w-9 h-9 rounded-xl bg-purple-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform shadow-xs">
+                <CheckSquare className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-slate-900 font-bengali">বিগত বছরের প্রশ্ন</div>
+                <div className="text-[10px] text-purple-700 font-bengali">২০১৮ আসল প্রশ্নপত্র</div>
               </div>
             </button>
           </div>
@@ -324,6 +340,97 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
       </div>
 
+      {/* Mock Tests & Saved Answer Sheets Section on Home */}
+      <div className="bg-white border border-slate-200 rounded-3xl p-6 space-y-4 shadow-xs">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <Award className="w-5 h-5 text-emerald-700" />
+              <h2 className="text-base sm:text-lg font-bold text-slate-900 font-bengali">
+                মক টেস্ট কেন্দ্র ও সংরক্ষিত উত্তরপত্র (Saved Tests & Answer Sheets)
+              </h2>
+            </div>
+            <p className="text-xs text-slate-500 font-bengali mt-0.5">
+              আপনার সম্পন্ন করা ফুল মক টেস্ট, শর্ট মক ও কুইজের প্রশ্ন ও উত্তরপত্র এখানে সংরক্ষিত রয়েছে।
+            </p>
+          </div>
+
+          <button
+            onClick={() => setActiveTab("tests")}
+            className="text-xs font-bold text-emerald-700 hover:underline font-bengali flex items-center gap-1 self-start sm:self-auto cursor-pointer"
+          >
+            <span>সব টেস্ট দেখুন</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        {mockAttempts.length === 0 ? (
+          <div className="text-center py-10 bg-slate-50 rounded-2xl border border-dashed border-slate-200 space-y-3">
+            <History className="w-8 h-8 text-slate-400 mx-auto" />
+            <p className="text-xs text-slate-600 font-bengali">
+              এখনো কোনো মক টেস্ট জমা দেননি। নতুন মক টেস্ট শুরু করে নিজেকে যাচাই করুন।
+            </p>
+            <button
+              onClick={() => setActiveTab("tests")}
+              className="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold font-bengali cursor-pointer shadow-xs"
+            >
+              মক টেস্ট শুরু করুন
+            </button>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+            {[...mockAttempts].slice(-6).reverse().map((att) => {
+              const dateStr = att.date
+                ? new Date(att.date).toLocaleDateString("bn-BD", {
+                    day: "numeric",
+                    month: "short",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })
+                : "";
+
+              return (
+                <div
+                  key={att.id}
+                  className="p-4 rounded-2xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-emerald-300 transition-all flex flex-col justify-between space-y-3"
+                >
+                  <div className="space-y-1.5">
+                    <div className="flex items-center justify-between text-[11px]">
+                      <span className="font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-bengali">
+                        {att.totalQuestions === 85 ? "ফুল মক (৮৫)" : att.totalQuestions === 40 ? "শর্ট মক (৪০)" : "কুইজ"}
+                      </span>
+                      <span className="text-slate-400 font-mono-num">{dateStr}</span>
+                    </div>
+
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900 font-bengali line-clamp-1">
+                      {att.testTitle}
+                    </h4>
+
+                    <div className="flex items-center gap-3 text-xs pt-1">
+                      <span className="font-bold text-emerald-700 font-mono-num">
+                        স্কোর: {att.score}/{att.totalMarks}
+                      </span>
+                      <span className="text-slate-500 font-mono-num">({att.percentage}%)</span>
+                      <span className="text-slate-500 font-mono-num">
+                        ⏱ {Math.floor(att.timeSpentSeconds / 60)}মি
+                      </span>
+                    </div>
+                  </div>
+
+                  <button
+                    onClick={() => setSelectedAttemptForReview(att)}
+                    className="w-full py-1.5 rounded-lg bg-white border border-slate-300 hover:bg-slate-900 hover:text-white hover:border-slate-900 text-slate-700 text-xs font-bold font-bengali flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+                  >
+                    <Eye className="w-3.5 h-3.5" />
+                    <span>উত্তরপত্র দেখুন</span>
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
       {/* Subject-wise Progress Overview */}
       <div className="bg-white border border-slate-200 rounded-3xl p-6 space-y-4 shadow-xs">
         <h2 className="text-base sm:text-lg font-bold text-slate-900 font-bengali">
@@ -361,6 +468,14 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           })}
         </div>
       </div>
+
+      {/* Answer Sheet Review Modal */}
+      {selectedAttemptForReview && (
+        <AnswerSheetModal
+          attempt={selectedAttemptForReview}
+          onClose={() => setSelectedAttemptForReview(null)}
+        />
+      )}
     </div>
   );
 };

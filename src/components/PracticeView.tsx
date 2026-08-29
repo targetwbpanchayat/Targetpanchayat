@@ -13,11 +13,13 @@ import {
   ChevronLeft,
   ChevronRight,
   BookOpen,
+  Layers,
 } from "lucide-react";
 import { SubjectId, Question, UserProgress } from "../types";
 import { SUBJECTS } from "../data/subjects";
 import { QUESTION_SETS } from "../data/questionSets";
 import { saveUserProgress } from "../utils/storage";
+import { cleanQuestionText } from "../utils/testGenerator";
 
 interface PracticeViewProps {
   progress: UserProgress;
@@ -31,10 +33,13 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
   initialSubject = "all",
 }) => {
   const [selectedSubject, setSelectedSubject] = useState<SubjectId | "all">(initialSubject);
+  const [gkCategoryFilter, setGkCategoryFilter] = useState<string>("all");
+  const [mathChapterFilter, setMathChapterFilter] = useState<string>("all");
   const [filterMode, setFilterMode] = useState<"all" | "unattempted" | "incorrect" | "bookmarked">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
+  const [jumpPageInput, setJumpPageInput] = useState("");
+  const pageSize = 15;
 
   // Selected answer map for current session
   const [sessionAnswers, setSessionAnswers] = useState<Record<string, number>>({});
@@ -88,6 +93,20 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
     // Subject filter
     if (selectedSubject !== "all" && q.subjectId !== selectedSubject) return false;
 
+    // GK Category Sub-filter
+    if (selectedSubject === "gk" && gkCategoryFilter !== "all") {
+      if (gkCategoryFilter === "history" && !q.id.includes("hist") && !q.chapterId?.includes("hist")) return false;
+      if (gkCategoryFilter === "geography" && !q.id.includes("geo") && !q.chapterId?.includes("geo")) return false;
+      if (gkCategoryFilter === "polity" && !q.id.includes("pol") && !q.chapterId?.includes("pol")) return false;
+      if (gkCategoryFilter === "science" && !q.id.includes("sci") && !q.chapterId?.includes("sci")) return false;
+      if (gkCategoryFilter === "static" && !q.id.includes("stat") && !q.chapterId?.includes("stat")) return false;
+    }
+
+    // Math 14 Chapters Sub-filter
+    if (selectedSubject === "math" && mathChapterFilter !== "all") {
+      if (q.chapterId !== mathChapterFilter) return false;
+    }
+
     // Search filter
     if (searchQuery.trim()) {
       const matchText =
@@ -113,16 +132,25 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
     currentPage * pageSize
   );
 
+  const handleJumpPage = (e: React.FormEvent) => {
+    e.preventDefault();
+    const pageNum = parseInt(jumpPageInput, 10);
+    if (!isNaN(pageNum) && pageNum >= 1 && pageNum <= totalPages) {
+      setCurrentPage(pageNum);
+      setJumpPageInput("");
+    }
+  };
+
   return (
     <div className="space-y-6 pb-12 animate-in fade-in duration-200">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-xl sm:text-2xl font-bold text-slate-900 font-bengali">
-            MCQ প্র্যাকটিস (Subject Practice Sets)
+            MCQ প্র্যাকটিস (Subject Practice Sets & 5,000 GK Bank)
           </h1>
           <p className="text-xs text-slate-500 font-bengali">
-            সরাসরি উত্তর যাচাই, ৪টি অপশন এবং নির্ভুল বাংলা ব্যাখ্যা সহ অনুশীলন করুন
+            সরাসরি উত্তর যাচাই, ৪টি সুসংগত অপশন এবং বিস্তারিত বাংলা ব্যাখ্যা সহ অনুশীলন করুন
           </p>
         </div>
 
@@ -155,7 +183,7 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
               : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
           }`}
         >
-          সব বিষয় ({QUESTION_SETS.length})
+          সব বিষয় ({QUESTION_SETS.length.toLocaleString()})
         </button>
         {SUBJECTS.map((sub) => {
           const count = QUESTION_SETS.filter((q) => q.subjectId === sub.id).length;
@@ -173,39 +201,138 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
                   : "bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-xs"
               }`}
             >
-              {sub.nameBn} ({count})
+              {sub.nameBn} ({count.toLocaleString()})
             </button>
           );
         })}
       </div>
 
+      {/* GK 5,000 Sub-Categories Filter */}
+      {selectedSubject === "gk" && (
+        <div className="bg-emerald-50/80 border border-emerald-200/80 rounded-2xl p-3 flex items-center gap-2 overflow-x-auto scrollbar-none">
+          <span className="text-xs font-bold text-emerald-900 font-bengali flex items-center gap-1.5 shrink-0 px-1">
+            <Layers className="w-3.5 h-3.5 text-emerald-600" />
+            <span>ভলিউম ৫ জিকে বিষয়:</span>
+          </span>
+          {[
+            { id: "all", label: "সব জিকে MCQ (৫,০৮০)" },
+            { id: "history", label: "ইতিহাস ও জাতীয় আন্দোলন (১,০১৫)" },
+            { id: "geography", label: "ভূগোল ও পশ্চিমবঙ্গ (১,০১৫)" },
+            { id: "polity", label: "ভারতীয় সংবিধান ও পঞ্চায়েত (১,০১৫)" },
+            { id: "science", label: "সাধারণ বিজ্ঞান (১,০১৫)" },
+            { id: "static", label: "স্ট্যাটিক জিকে (১,০২০)" },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                setGkCategoryFilter(item.id);
+                setCurrentPage(1);
+              }}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold font-bengali whitespace-nowrap transition-colors cursor-pointer ${
+                gkCategoryFilter === item.id
+                  ? "bg-emerald-700 text-white shadow-xs"
+                  : "bg-white text-emerald-900 border border-emerald-200 hover:bg-emerald-100/60"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Math 14 Chapters Sub-Filter */}
+      {selectedSubject === "math" && (
+        <div className="bg-blue-50/80 border border-blue-200/80 rounded-2xl p-3 flex items-center gap-2 overflow-x-auto scrollbar-none">
+          <span className="text-xs font-bold text-blue-950 font-bengali flex items-center gap-1.5 shrink-0 px-1">
+            <Layers className="w-3.5 h-3.5 text-blue-600" />
+            <span>ভলিউম ৪ গণিত অধ্যায় (১৪টি):</span>
+          </span>
+          {[
+            { id: "all", label: "সব ১৪টি অধ্যায় (১,০৫০টি MCQ)" },
+            { id: "math_ch1", label: "অধ্যায় ১: সংখ্যা পদ্ধতি (৭৫)" },
+            { id: "math_ch2", label: "অধ্যায় ২: ঐকিক নিয়ম (৭৫)" },
+            { id: "math_ch3", label: "অধ্যায় ৩: গড় ও বয়স (৭৫)" },
+            { id: "math_ch4", label: "অধ্যায় ৪: শতকরা (৭৫)" },
+            { id: "math_ch5", label: "অধ্যায় ৫: অনুপাত-সমানুপাত (৭৫)" },
+            { id: "math_ch6", label: "অধ্যায় ৬: লাভ ও ক্ষতি (৭৫)" },
+            { id: "math_ch7", label: "অধ্যায় ৭: সরল সুদ (৭৫)" },
+            { id: "math_ch8", label: "অধ্যায় ৮: চক্রবৃদ্ধি সুদ (৭৫)" },
+            { id: "math_ch9", label: "অধ্যায় ৯: সময় ও কার্য (৭৫)" },
+            { id: "math_ch10", label: "অধ্যায় ১০: নল ও চৌবাচ্চা (৭৫)" },
+            { id: "math_ch11", label: "অধ্যায় ১১: গতিবেগ ও ট্রেন (৭৫)" },
+            { id: "math_ch12", label: "অধ্যায় ১২: পরিমিতি (৭৫)" },
+            { id: "math_ch13", label: "অধ্যায় ১৩: মিশ্রণ ও সংমিশ্রণ (৭৫)" },
+            { id: "math_ch14", label: "অধ্যায় ১৪: সরলীকরণ ও বীজগণিত (৭৫)" },
+          ].map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                setMathChapterFilter(item.id);
+                setCurrentPage(1);
+              }}
+              className={`px-3 py-1.5 rounded-xl text-xs font-bold font-bengali whitespace-nowrap transition-colors cursor-pointer ${
+                mathChapterFilter === item.id
+                  ? "bg-blue-700 text-white shadow-xs"
+                  : "bg-white text-blue-950 border border-blue-200 hover:bg-blue-100/60"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+
       {/* Status Filter Chips */}
-      <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-xs text-slate-500 font-bengali flex items-center gap-1 font-medium">
-          <Filter className="w-3 h-3 text-slate-400" />
-          <span>ফিল্টার:</span>
-        </span>
-        {[
-          { id: "all", label: "সব প্রশ্ন" },
-          { id: "unattempted", label: "অপঠিত / নতুন প্রশ্ন" },
-          { id: "incorrect", label: "ভুল হওয়া প্রশ্ন" },
-          { id: "bookmarked", label: `বুকমার্ক করা (${progress.bookmarkedQuestionIds.length})` },
-        ].map((f) => (
-          <button
-            key={f.id}
-            onClick={() => {
-              setFilterMode(f.id as any);
-              setCurrentPage(1);
-            }}
-            className={`px-3 py-1 rounded-lg text-xs font-bold font-bengali transition-colors cursor-pointer ${
-              filterMode === f.id
-                ? "bg-emerald-100 text-emerald-800 border border-emerald-300"
-                : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
-            }`}
-          >
-            {f.label}
-          </button>
-        ))}
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-xs text-slate-500 font-bengali flex items-center gap-1 font-medium">
+            <Filter className="w-3 h-3 text-slate-400" />
+            <span>ফিল্টার:</span>
+          </span>
+          {[
+            { id: "all", label: "সব প্রশ্ন" },
+            { id: "unattempted", label: "অপঠিত / নতুন প্রশ্ন" },
+            { id: "incorrect", label: "ভুল হওয়া প্রশ্ন" },
+            { id: "bookmarked", label: `বুকমার্ক করা (${progress.bookmarkedQuestionIds.length})` },
+          ].map((f) => (
+            <button
+              key={f.id}
+              onClick={() => {
+                setFilterMode(f.id as any);
+                setCurrentPage(1);
+              }}
+              className={`px-3 py-1 rounded-lg text-xs font-bold font-bengali transition-colors cursor-pointer ${
+                filterMode === f.id
+                  ? "bg-emerald-100 text-emerald-800 border border-emerald-300"
+                  : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
+              }`}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Quick Page Jump */}
+        {totalPages > 1 && (
+          <form onSubmit={handleJumpPage} className="flex items-center gap-2 text-xs font-bengali">
+            <span className="text-slate-500">পৃষ্ঠায় যান:</span>
+            <input
+              type="number"
+              min={1}
+              max={totalPages}
+              value={jumpPageInput}
+              onChange={(e) => setJumpPageInput(e.target.value)}
+              placeholder={`১ - ${totalPages}`}
+              className="w-20 px-2.5 py-1 bg-white border border-slate-200 rounded-lg text-xs font-mono-num text-slate-800 focus:outline-none focus:border-emerald-600"
+            />
+            <button
+              type="submit"
+              className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg font-bold cursor-pointer"
+            >
+              যান
+            </button>
+          </form>
+        )}
       </div>
 
       {/* Questions List */}
@@ -237,11 +364,11 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
                       {q.subjectId === "bengali" && "বাংলা ব্যাকরণ"}
                       {q.subjectId === "english" && "English"}
                       {q.subjectId === "math" && "পাটিগণিত"}
-                      {q.subjectId === "gk" && "সাধারণ জ্ঞান"}
+                      {q.subjectId === "gk" && "সাধারণ জ্ঞান (ভলিউম ৫)"}
                     </span>
                     {q.examYear && (
                       <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded border border-slate-200 font-mono-num font-semibold">
-                        WB GP {q.examYear}
+                        {q.examYear}
                       </span>
                     )}
                   </div>
@@ -261,7 +388,7 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
 
                 {/* Question Text */}
                 <h3 className="text-base sm:text-lg font-bold text-slate-900 font-bengali leading-relaxed">
-                  {q.questionBn}
+                  {cleanQuestionText(q.questionBn)}
                 </h3>
                 {q.questionEn && (
                   <p className="text-xs text-slate-500 font-display italic">
@@ -335,24 +462,24 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex items-center justify-between p-4 bg-white border border-slate-200 rounded-2xl shadow-xs">
+        <div className="flex flex-col sm:flex-row items-center justify-between p-4 bg-white border border-slate-200 rounded-2xl shadow-xs gap-3">
           <button
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed font-bengali cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed font-bengali cursor-pointer"
           >
             <ChevronLeft className="w-4 h-4" />
             <span>পূর্ববর্তী পৃষ্ঠা</span>
           </button>
 
           <span className="text-xs font-mono-num font-semibold text-slate-600">
-            পৃষ্ঠা {currentPage} / {totalPages} (মোট {filteredQuestions.length}টি প্রশ্ন)
+            পৃষ্ঠা {currentPage} / {totalPages} (মোট {filteredQuestions.length.toLocaleString()}টি প্রশ্ন)
           </span>
 
           <button
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed font-bengali cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 text-xs font-bold text-slate-700 hover:bg-slate-200 disabled:opacity-40 disabled:cursor-not-allowed font-bengali cursor-pointer"
           >
             <span>পরবর্তী পৃষ্ঠা</span>
             <ChevronRight className="w-4 h-4" />
@@ -362,3 +489,4 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
     </div>
   );
 };
+

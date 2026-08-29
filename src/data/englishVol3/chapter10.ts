@@ -1,158 +1,150 @@
 import { StudyChapter, Question } from "../../types";
 
 export const ENGLISH_CH10_STUDY: StudyChapter = {
-  id: "eng_ch10",
-  subjectId: "english",
-  chapterNumber: 10,
-  titleBn: "Common Errors & Spotting the Error (ভুল সংশোধন ও এরর স্পটিং)",
-  titleEn: "Common Errors & Spotting the Error - Redundancy, Misused Prepositions, Correlative Conjunctions & Modifiers",
-  estimatedMinutes: 35,
-  importantNotesCount: 30,
-  summary: "পরীক্ষায় বারবার আসা বাক্য সংশোধন ও ভুল চিহ্নিতকরণের ৫০টি সুনির্দিষ্ট নিয়ম। শব্দের অতিরিক্ত বা অপপ্রয়োগ (Redundancy: Return back, Repeat again, Discuss about, Cousin brother, Pass out), অপ্রয়োজনীয় বা ভুল Preposition (Comprise of, Despite of, Cope up with, Order for, Resemble to), Conjunction জোড়ার ভুল (No sooner...than, Hardly...when, Not only...but also, Lest...should, Between...and), এবং মিসপ্লেসড মডিফায়ার ও তুলনামূলক ত্রুটি।",
-  subTopics: [
+  "id": "eng_ch10",
+  "subjectId": "english",
+  "chapterNumber": 10,
+  "titleBn": "Common Errors & Spotting the Error (ভুল সংশোধন ও এরর স্পটিং)",
+  "titleEn": "Error Detection - Subject-Verb, Modifiers, Degrees, Conjunctions & Prepositions",
+  "estimatedMinutes": 40,
+  "importantNotesCount": 45,
+  "summary": "বাক্যের বিভিন্ন অংশে ব্যাকরণগত ভুল চিহ্নিতকরণ: 'One of the boys are' (ভুল) -> 'is', 'He is senior than me' (ভুল) -> 'to me', 'Scarcely had...than' (ভুল) -> 'when', 'Unless you do not' (Superfluous), 'Both...as well as' (ভুল) -> 'Both...and', 'He resembles with his father' (ভুল) -> 'resembles his father' ইত্যাদি গুরুত্বপূর্ণ ১০০+ এরর স্পটিং মডেল প্রশ্ন।",
+  "subTopics": [
     {
-      id: "eng_ch10_sub1",
-      chapterId: "eng_ch10",
-      subjectId: "english",
-      titleBn: "Superfluous Words & Redundancy",
-      titleEn: "Return back, Repeat again, Discuss about, Cousin brother & Enter into",
-      orderIndex: 1,
-      summaryBn: "Return-এর সাথে back বসে না; Repeat-এর সাথে again বসে না; Discuss-এর সাথে about বসে না; Cousin-এর পর brother/sister বসে না; Enter-এর পর into বসে না (প্রবেশ করার অর্থে)।",
-      keyConcepts: ["Return (not return back)", "Repeat (not repeat again)", "Discuss the matter (not discuss about)", "He is my cousin (not cousin brother)"]
+      "id": "eng_ch10_sub1",
+      "chapterId": "eng_ch10",
+      "subjectId": "english",
+      "titleBn": "Noun, Pronoun & Subject-Verb Agreement Errors",
+      "titleEn": "Plurality, Indefinite Pronouns & Verb Matching",
+      "orderIndex": 1,
+      "summaryBn": "One of + Plural Noun + Singular Verb। Each, Every, Neither of এর সাথে Singular Verb। Scenery, Furniture, Information এর Plural হয় না।",
+      "keyConcepts": [
+        "One of my friends is",
+        "Each of the girls was present",
+        "Furnitures (ভুল) -> Furniture"
+      ]
     },
     {
-      id: "eng_ch10_sub2",
-      chapterId: "eng_ch10",
-      subjectId: "english",
-      titleBn: "Prepositional & Conjunction Errors",
-      titleEn: "Comprise (no of), Despite (no of), Cope with, No sooner than, Lest should",
-      orderIndex: 2,
-      summaryBn: "Comprise-এর পর of হয় না; Despite-এর পর of হয় না; Cope with হয় (Cope up with ভুল); No sooner-এর সাথে than বসে; Hardly-র সাথে when বসে; Lest-এর পর should বসে।",
-      keyConcepts: ["The book comprises five chapters", "Despite his poverty (not despite of)", "Cope with the pressure", "No sooner had... than...", "Walk carefully lest you should fall"]
+      "id": "eng_ch10_sub2",
+      "chapterId": "eng_ch10",
+      "subjectId": "english",
+      "titleBn": "Adjective, Degree & Modifier Errors",
+      "titleEn": "Latin Adjectives, Comparative Doublets & Superlatives",
+      "orderIndex": 2,
+      "summaryBn": "Senior, Junior, Superior, Inferior, Preferable এর সাথে 'than' না বসে 'to' বসে। More better (Double Comparative) ভুল।",
+      "keyConcepts": [
+        "Senior to me (not than)",
+        "Prefer tea to coffee",
+        "Unique (No 'more unique')"
+      ]
     },
     {
-      id: "eng_ch10_sub3",
-      chapterId: "eng_ch10",
-      subjectId: "english",
-      titleBn: "Pronoun, Comparison & Miscellaneous Errors",
-      titleEn: "Senior to (not than), One of the boys is, What is the time by your watch",
-      orderIndex: 3,
-      summaryBn: "Senior/Junior/Preferable-এর পর to বসে; One of the + Plural Noun + Singular Verb; ঘড়ির সময় বোঝাতে 'by your watch'; কালিতে লেখা 'in ink'।",
-      keyConcepts: ["Senior to me (not than me)", "Prefer tea to coffee", "One of the students is absent", "Time by your watch", "Write in ink"]
+      "id": "eng_ch10_sub3",
+      "chapterId": "eng_ch10",
+      "subjectId": "english",
+      "titleBn": "Correlative Conjunction & Superfluous Expressions",
+      "titleEn": "Hardly...when, No sooner...than & Redundant Words",
+      "orderIndex": 3,
+      "summaryBn": "Hardly / Scarcely had...when, No sooner did/had...than, Although...yet, Unless / Until এর ক্লজে 'not' বসে না।",
+      "keyConcepts": [
+        "Hardly had he arrived when (not than)",
+        "No sooner had...than",
+        "Unless you work (not don't work)"
+      ]
     }
   ],
-  content: {
-    introduction: "Spotting the Error এবং Sentence Correction প্রতিযোগিতামূলক পরীক্ষার সবচেয়ে সংবেদনশীল অধ্যায়। ব্যাকরণের একাধিক নিয়ম (Noun, Pronoun, Verb, Adjective, Preposition, Conjunction) একীভূত হয়ে পরীক্ষার্থীদের সূক্ষ্ম ভুল পরীক্ষা করা হয়।",
-    sections: [
+  "content": {
+    "introduction": "Spotting the Error বা ভুল চিহ্নিতকরণ যে কোনো চাকরি পরীক্ষার ব্যাকরণ জ্ঞানের গভীরতা যাচাইয়ের শ্রেষ্ঠ মাধ্যম। একটি বাক্যকে (A), (B), (C), (D - No Error) খণ্ডে বিভক্ত করে ব্যাকরণগত ত্রুটি খুঁজে বের করতে হয়।",
+    "sections": [
       {
-        heading: "১. বাহুল্য দোষ (Superfluous Expressions / Redundancy)",
-        body: [
-          "• Return back ➔ ভুল। 'Return' শব্দের অর্থই হলো পুনরায় ফিরে আসা। তাই শুধুই 'return' বসবে (e.g., 'Please return my book')।",
-          "• Repeat again ➔ ভুল। 'Repeat' মানেই পুনরায় বলা। তাই শুধুই 'repeat' বসবে।",
-          "• Discuss about ➔ ভুল। 'Discuss' মানে কোনো বিষয়ে আলোচনা করা। তাই 'about' বসে না (e.g., 'We discussed the problem')।",
-          "• Cousin brother / Cousin sister ➔ ভুল। ইংরেজিতে 'brother' বা 'sister' যোগ করা অশুদ্ধ; শুধু 'cousin' বলতে হয় (e.g., 'She is my cousin')।",
-          "• Enter into ➔ ভুল। কোনো স্থানে শারীরিকভাবে প্রবেশ করার অর্থে 'Enter'-এর পর কোনো Preposition বসে না (e.g., 'He entered the room')। [নোট: চুক্তি বা ব্যবসায় প্রবেশের অর্থে 'enter into an agreement' সঠিক]।",
-          "• Supposing if ➔ ভুল। দুটির যেকোনো একটি বসবে: হয় 'Supposing' অথবা 'If'।"
-        ]
-      },
-      {
-        heading: "২. ভুল Preposition ও Conjunction জোড়া সংক্রান্ত নিয়ম",
-        body: [
-          "• Comprise of ➔ ভুল। 'Comprise' মানেই অন্তর্ভুক্ত থাকা। তাই 'comprise' বসে (e.g., 'The book comprises ten chapters')। তবে 'Consist of' সঠিক।",
-          "• Despite of ➔ ভুল। 'Despite' এর পর কখনো 'of' বসে না (e.g., 'Despite his illness')। তবে 'In spite of' সঠিক।",
-          "• Cope up with ➔ ভুল। সঠিক বাগধারাটি হলো 'Cope with' (মানিয়ে নেওয়া/সামলানো)।",
-          "• Resemble to / with ➔ ভুল। 'Resemble' ক্রিয়ার পর কোনো Preposition বসে না (e.g., 'She resembles her mother')।",
-          "• No sooner... THAN: 'No sooner had I reached the station than the train left' (when বা then ভুল)।",
-          "• Hardly / Scarcely... WHEN: 'Hardly had he arrived when the guests came' (than ভুল)।",
-          "• Lest... SHOULD: 'Walk fast lest you should miss the train' (will/may ভুল; lest-যুক্ত ক্লজে not বসে না)।",
-          "• Unless / Until: এরা নিজেই নেতিবাচক, তাই এদের ক্লজে কখনো 'not' বা 'no' বসে না।"
-        ]
-      },
-      {
-        heading: "৩. তুলনা, ঘড়ির সময় ও বিবিধ কমন ভুল",
-        body: [
-          "• Senior, Junior, Superior, Inferior, Prior, Preferable-এর পর সর্বদা 'to' বসে, 'than' কখনোই নয় (e.g., 'He is senior to me')।",
-          "• ঘড়ির সময় জিজ্ঞেস করা: 'What is the time BY your watch?' ('in your watch' ভুল)।",
-          "• কলম ও কালির ব্যবহার: কলম দিয়ে লিখলে 'with a pen', কিন্তু কালি দিয়ে লিখলে 'in ink' বা 'in pencil' হয়।",
-          "• One of the + Plural Noun + Singular Verb: 'One of my friends is a doctor' (friends are নয়)।",
-          "• Each of / Either of / Neither of-এর পর Plural Noun কিন্তু Singular Verb বসে (e.g., 'Neither of the boys was present')।"
-        ]
+        "heading": "১. অতি পরিচিত ১০টি ক্লাসিক ভুল ও সঠিক ব্যাকরণগত সমাধান",
+        "body": [
+          "১. One of + Plural Noun + Singular Verb: 'One of my friends are coming' (ভুল) -> 'One of my friends is coming' (সঠিক)।",
+          "২. Latin Adjectives: 'He is senior than me' (ভুল) -> 'He is senior to me' (সঠিক)। (Senior, Junior, Prior, Superior, Inferior, Preferable-এর সাথে 'to' বসে)।",
+          "৩. Conjunction Pairs: 'Hardly had I reached than it began to rain' (ভুল) -> 'Hardly had I reached when it began to rain' (সঠিক)।",
+          "৪. No sooner...than: 'No sooner did he see the police when he ran' (ভুল) -> 'No sooner did he see the police than he ran' (সঠিক)।",
+          "৫. Superfluous Negative: 'Unless you do not work hard, you will fail' (ভুল) -> 'Unless you work hard, you will fail' (সঠিক)।",
+          "৬. Order of Pronouns: সাধারণ বাক্যে 231 নিয়ম (You, he and I) এবং দোষ স্বীকারে 123 নিয়ম (I, you and he) বসে।",
+          "৭. Resemble / Order / Discuss: 'He resembles with his father' (ভুল) -> 'He resembles his father' (সঠিক, কোনো Preposition বসে না)।",
+          "৮. Uncountable Nouns: 'The sceneries of Darjeeling' (ভুল) -> 'The scenery of Darjeeling' (সঠিক)।",
+          "৯. As well as / With: 'The captain along with his players were present' (ভুল) -> 'The captain along with his players was present' (সঠিক)।",
+          "১০. Double Comparatives: 'He is more taller than me' (ভুল) -> 'He is taller than me' (সঠিক)।"
+        ],
+        "tables": {
+          "headers": [
+            "ভুল প্রয়োগ (Incorrect)",
+            "সঠিক রূপ (Correct)",
+            "ব্যাকরণগত নিয়ম / কারণ"
+          ],
+          "rows": [
+            [
+              "One of the student is absent",
+              "One of the students is absent",
+              "One of-এর পর Noun সর্বদা Plural হয়"
+            ],
+            [
+              "He prefers tea than coffee",
+              "He prefers tea to coffee",
+              "Prefer-এর পর 'to' বসে"
+            ],
+            [
+              "Scarcely had he left than...",
+              "Scarcely had he left when...",
+              "Scarcely-এর সাথে 'when' বসে"
+            ],
+            [
+              "Although he is poor but he is honest",
+              "Although he is poor, yet he is honest",
+              "Although-এর সাথে 'but' বসে না, 'yet' বসে"
+            ],
+            [
+              "I, you and he are friends",
+              "You, he and I are friends",
+              "স্বাভাবিক বাক্যে 2-3-1 প্রণালী অনুসরণীয়"
+            ],
+            [
+              "He gave me many advices",
+              "He gave me much advice / pieces of advice",
+              "Advice একটি Uncountable Noun"
+            ]
+          ]
+        }
       }
     ],
-    examTips: [
-      "Comprise-এর পর 'of' বসে না, কিন্তু Consist-এর পর 'of' বসে।",
-      "Despite-এর পর 'of' বসে না, কিন্তু In spite-এর পর 'of' বসে।",
-      "No sooner-এর সাথে সর্বদা 'than' এবং Hardly/Scarcely-র সাথে সর্বদা 'when' বসে।",
-      "Senior to me, Prefer tea to coffee — এদের পর কখনো than বসে না।"
+    "examTips": [
+      "'One of' দেখলেই পরবর্তী Noun-টি Plural এবং Verb-টি Singular আছে কিনা লক্ষ্য করুন।",
+      "Senior, Junior, Prefer এর পরে 'than' থাকলে সঙ্গে সঙ্গে ওই অংশটিকে ভুল (Error) হিসেবে চিহ্নিত করুন।",
+      "Hardly/Scarcely-র সাথে 'than' দেওয়া থাকলে তা ভুল, 'when' হবে।",
+      "Unless / Until যুক্ত বাক্যাংশে 'not' থাকা মানেই তা ব্যাকরণগতভাবে ভুল (Superfluous)।"
     ],
-    quickRevisionPoints: [
-      "Return (not return back); Repeat (not repeat again).",
-      "No sooner... than; Hardly... when; Lest... should.",
-      "Comprises ten chapters (no of); Despite illness (no of).",
-      "Cope with; Resembles her mother.",
-      "What is the time by your watch?; Write in ink.",
-      "Senior to me; One of my friends is."
+    "quickRevisionPoints": [
+      "One of the boys is (not are); Each of them was (not were).",
+      "Senior to (not than); Junior to (not than); Prefer to (not than).",
+      "Hardly...when; Scarcely...when; No sooner...than.",
+      "The scenery is (not sceneries are); Much advice (not many advices)."
     ],
-    oneLiners: [
-      "Return শব্দের সাথে 'back' এবং Repeat শব্দের সাথে 'again' ব্যবহার করা ব্যাকরণগত ভুল (Redundancy)।",
-      "Discuss-এর পর 'about' এবং Enter-এর পর স্থান প্রবেশের ক্ষেত্রে 'into' বসে না।",
-      "Cousin-এর পর brother বা sister যোগ করা ভুল; শুধুমাত্র 'cousin' লিখতে হয়।",
-      "No sooner-এর সাথে সর্বদা 'than' এবং Hardly/Scarcely-র সাথে সর্বদা 'when' বসে।",
-      "Unless বা Until যুক্ত বাক্যাংশে কখনোই 'not' বসে না।",
-      "Comprise-এর সাথে 'of' বসে না (The book comprises ten chapters)।",
-      "Despite-এর সাথে 'of' বসে না (Despite his poverty)।",
-      "'Cope with' সঠিক রূপ, 'Cope up with' সম্পূর্ণরূপে ভুল।",
-      "ঘড়ির সময় জিজ্ঞেস করতে 'What is the time by your watch?' বলতে হয়।",
-      "কালি দিয়ে লেখার ক্ষেত্রে 'in ink' এবং কলম দিয়ে লেখার ক্ষেত্রে 'with a pen' হয়।",
-      "Senior, Junior, Superior, Inferior, Prior-এর পর 'than'-এর বদলে 'to' বসে।",
-      "Preferable এবং Prefer-এর পর 'to' বসে (I prefer milk to tea)।",
-      "Lest-এর পর Subject-এর সাথে সর্বদা 'should' বসে (lest you should fall)।",
-      "'One of the'-এর পর Noun Plural হলেও Verb সর্বদা Singular হয় (One of the boys is absent)।",
-      "Resemble-এর পর কোনো Preposition (to/with) বসে না (She resembles her mother)।",
-      "Order-এর পর খাবারের ক্ষেত্রে 'for' বসে না (He ordered a cup of tea)।",
-      "Pass out মানে অজ্ঞান হওয়া; কলেজ থেকে উত্তীর্ণ হওয়া বোঝাতে 'graduated from' বসে।",
-      "Each of the girls was rewarded (were নয়)।"
+    "oneLiners": [
+      "One of the এর পর Noun Plural কিন্তু Verb Singular হয়।",
+      "Senior, Junior, Superior এর পর than না বসে to বসে।",
+      "Prefer ক্রিয়াপদের পর than এর স্থলে to ব্যবহৃত হয়।",
+      "Hardly had এবং Scarcely had এর সাথে Conjunction হিসেবে when বসে।",
+      "No sooner had এর সাথে Conjunction হিসেবে than বসে।",
+      "Unless এবং Until ক্লজে not ব্যবহার করা সম্পূর্ণ ভুল।",
+      "Scenery, Furniture, Advice, Information ইত্যাদির Plural রূপ হয় না।",
+      "Along with, as well as দিয়ে যুক্ত হলে প্রথম Subject অনুযায়ী Verb বসে।",
+      "Neither...nor দিয়ে যুক্ত হলে দ্বিতীয় (নিকটবর্তী) Subject অনুযায়ী Verb বসে।",
+      "স্বাভাবিক পরিস্থিতিতে Pronoun-এর ক্রম হলো 2nd person, 3rd person, 1st person (231)।"
     ],
-    saqs: [
+    "saqs": [
       {
-        id: "eng_ch10_saq1",
-        questionBn: "'Please return back my book' এবং 'We discussed about the matter' বাক্য দুটি ভুল কেন? এদের সঠিক রূপ কী?",
-        answerBn: "• 'Return' শব্দের অর্থই হলো পুনরায় ফিরিয়ে দেওয়া, তাই 'back' শব্দটি ব্যবহার করা অতিরিক্ত ও বাহুল্য (Redundancy)। সঠিক রূপ: 'Please return my book'।\n• 'Discuss' ক্রিয়ার মধ্যেই কোনো বিষয়বস্তু সম্পর্কে আলোচনা অন্তর্ভুক্ত থাকে, তাই 'about' বসে না। সঠিক রূপ: 'We discussed the matter'।"
+        "id": "eng_ch10_saq1",
+        "questionBn": "'One of my friend are going to Kolkata' — বাক্যটিতে কী কী ভুল রয়েছে এবং সঠিক বাক্যটি কী?",
+        "answerBn": "বাক্যটিতে দুটি ভুল রয়েছে: ১) 'One of'-এর পর Noun Plural হতে হবে (friends), ২) মূল Subject 'One' হওয়ায় Verb Singular হতে হবে (is)। সঠিক বাক্য: 'One of my friends is going to Kolkata'।"
       },
       {
-        id: "eng_ch10_saq2",
-        questionBn: "'Comprise' এবং 'Despite'-এর ব্যবহারে সবচেয়ে সাধারণ ভুল কী এবং সঠিক নিয়ম কী?",
-        answerBn: "• ভুল: Comprises of / Despite of।\n• নিয়ম: Comprise এবং Despite-এর পর কোনো 'of' Preposition বসে না। সঠিক প্রয়োগ: 'The team comprises eleven players' এবং 'Despite his poverty, he is honest'। (উল্লেখ্য: 'Consists of' এবং 'In spite of' সম্পূর্ণ সঠিক)।"
-      },
-      {
-        id: "eng_ch10_saq3",
-        questionBn: "'No sooner' এবং 'Hardly'-যুক্ত বাক্যের সঠিক Conjunction জোড়া কী কী?",
-        answerBn: "• 'No sooner'-এর সাথে সর্বদা 'THAN' বসে (যেমন: No sooner had he arrived than the bell rang)।\n• 'Hardly' বা 'Scarcely'-এর সাথে সর্বদা 'WHEN' বসে (যেমন: Hardly had I reached the station when the train left)।"
-      },
-      {
-        id: "eng_ch10_saq4",
-        questionBn: "'He is senior than me' এবং 'I prefer tea than coffee' — বাক্য দুটির ভুল সংশোধন করে ব্যাখ্যা দিন।",
-        answerBn: "ল্যাটিন তুলনামূলক Adjective (Senior, Junior, Superior, Inferior, Prior) এবং 'Prefer / Preferable'-এর পর তুলনামূলক 'than'-এর পরিবর্তে সর্বদা Preposition 'to' বসে। তাই সঠিক রূপ: 'He is senior to me' এবং 'I prefer tea to coffee'।"
-      },
-      {
-        id: "eng_ch10_saq5",
-        questionBn: "'Lest' যুক্ত বাক্যের গঠন এবং ব্যাকরণগত সতর্কতা কী?",
-        answerBn: "'Lest' অর্থ হলো 'পাছে কোনো ক্ষতি হয়' বা 'যাতে না ঘটে'। এর নিয়ম হলো: Lest-এর পরবর্তী ক্লজে Subject + should + V1 বসে। সতর্কতা: Lest নিজেই নেতিবাচক হওয়ায় এই ক্লজে কখনো 'not' বসে না। যেমন: 'Walk carefully lest you should stumble'।"
-      },
-      {
-        id: "eng_ch10_saq6",
-        questionBn: "'What is the time in your watch?' বাক্যটিতে কী ভুল রয়েছে এবং কেন?",
-        answerBn: "ঘড়ি দেখে সময় জানার ক্ষেত্রে ইংরেজিতে 'in' বা 'on' Preposition বসে না, নির্দিষ্ট রীতি অনুযায়ী 'by' Preposition ব্যবহৃত হয়। সঠিক বাক্য: 'What is the time by your watch?'"
-      },
-      {
-        id: "eng_ch10_saq7",
-        questionBn: "'Cope up with' এবং 'Pass out from college'-এর সঠিক বিকল্প কী?",
-        answerBn: "• 'Cope up with' ভুল; সঠিক রূপ হলো 'Cope with' (সামলানো/মানিয়ে চলা)।\n• 'Pass out' অর্থ অচেতন বা অজ্ঞান হওয়া (Faint); কলেজ থেকে ডিগ্রি নিয়ে পাস করা বোঝাতে 'Graduated from college' ব্যবহৃত হয়।"
-      },
-      {
-        id: "eng_ch10_saq8",
-        questionBn: "'One of my friend are a doctor' — বাক্যটিতে কী কী ভুল রয়েছে এবং সঠিক রূপ কী?",
-        answerBn: "নিয়ম অনুযায়ী 'One of the/my'-এর পরে Noun-টি Plural ('friends') হতে হবে কারণ অনেক বন্ধুর মধ্যে একজনকে বোঝানো হচ্ছে, কিন্তু যেহেতু মূল Subject হলো 'One', তাই Verb-টি Singular ('is') হবে। সঠিক বাক্য: 'One of my friends is a doctor'।"
+        "id": "eng_ch10_saq2",
+        "questionBn": "'He is senior than me in service' — বাক্যটির ভুল অংশটি চিহ্নিত করে কারণ লিখুন।",
+        "answerBn": "'than me' অংশটি ভুল। কারণ Senior, Junior, Superior, Inferior ইত্যাদি ল্যাটিন তুলনামূলক Adjective-এর পর 'than' না বসে নির্দিষ্ট Preposition 'to' বসে (He is senior to me)।"
       }
     ]
   }
@@ -160,443 +152,2103 @@ export const ENGLISH_CH10_STUDY: StudyChapter = {
 
 export const ENGLISH_CH10_QUESTIONS: Question[] = [
   {
-    id: "vol3_ch10_q1",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Choose the grammatically correct sentence:",
-    options: ["He is senior than me.", "He is senior to me.", "He is more senior to me.", "He is senior from me."],
-    correctIndex: 1,
-    explanationBn: "Senior, Junior, Superior ইত্যাদির পর 'to' বসে (He is senior to me)।",
-    difficulty: "easy",
-    tags: ["Sentence Correction", "Senior to"]
-  },
-  {
-    id: "vol3_ch10_q2",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Choose the grammatically correct sentence:",
-    options: ["I prefer milk than tea.", "I prefer milk to tea.", "I prefer milk more than tea.", "I prefer milk over tea."],
-    correctIndex: 1,
-    explanationBn: "'Prefer'-এর পর সর্বদা 'to' বসে (I prefer milk to tea)।",
-    difficulty: "easy",
-    tags: ["Sentence Correction", "Prefer to"]
-  },
-  {
-    id: "vol3_ch10_q3",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub1",
-    questionBn: "Spot the error: She is / my cousin sister / who lives in Delhi / No error.",
-    options: ["She is", "my cousin sister", "who lives in Delhi", "No error"],
-    correctIndex: 1,
-    explanationBn: "'Cousin'-এর পর 'sister' বা 'brother' যোগ করা বাহুল্য ও অশুদ্ধ; শুধুই 'cousin' হবে।",
-    difficulty: "easy",
-    tags: ["Spotting Error", "Cousin"]
-  },
-  {
-    id: "vol3_ch10_q4",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub1",
-    questionBn: "Spot the error: Please / return back / the book tomorrow / No error.",
-    options: ["Please", "return back", "the book tomorrow", "No error"],
-    correctIndex: 1,
-    explanationBn: "'Return' মানেই পুনরায় ফেরত দেওয়া, তাই 'back' অপ্রয়োজনীয় ও অশুদ্ধ।",
-    difficulty: "easy",
-    tags: ["Spotting Error", "Return back"]
-  },
-  {
-    id: "vol3_ch10_q5",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub1",
-    questionBn: "Spot the error: We discussed / about the serious problem / yesterday / No error.",
-    options: ["We discussed", "about the serious problem", "yesterday", "No error"],
-    correctIndex: 1,
-    explanationBn: "'Discuss'-এর পর 'about' বসে না (We discussed the serious problem)।",
-    difficulty: "easy",
-    tags: ["Spotting Error", "Discuss about"]
-  },
-  {
-    id: "vol3_ch10_q6",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Spot the error: The committee / comprises of / ten members / No error.",
-    options: ["The committee", "comprises of", "ten members", "No error"],
-    correctIndex: 1,
-    explanationBn: "'Comprise'-এর পর 'of' বসে না (The committee comprises ten members)।",
-    difficulty: "easy",
-    tags: ["Spotting Error", "Comprise of"]
-  },
-  {
-    id: "vol3_ch10_q7",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Spot the error: Despite of / his hard work / he failed in the exam / No error.",
-    options: ["Despite of", "his hard work", "he failed in the exam", "No error"],
-    correctIndex: 0,
-    explanationBn: "'Despite'-এর পর 'of' বসে না (Despite his hard work)।",
-    difficulty: "easy",
-    tags: ["Spotting Error", "Despite of"]
-  },
-  {
-    id: "vol3_ch10_q8",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Choose the correct sentence:",
-    options: [
-      "He cannot cope up with the heavy workload.",
-      "He cannot cope with the heavy workload.",
-      "He cannot cope over the heavy workload.",
-      "He cannot cope down with the workload."
+    "id": "vol3_ch10_q1",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) One of the boy / (B) in our class / (C) has won the first prize. / (D) No error",
+    "options": [
+      "(A) One of the boy",
+      "(B) in our class",
+      "(C) has won the first prize",
+      "(D) No error"
     ],
-    correctIndex: 1,
-    explanationBn: "'Cope with' হলো সঠিক বাগধারা ('Cope up with' ভুল)।",
-    difficulty: "easy",
-    tags: ["Sentence Correction", "Cope with"]
+    "correctIndex": 0,
+    "explanationBn": "'One of'-এর পর Noun সর্বদা Plural হয়, তাই 'One of the boys' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch10_q9",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "No sooner had he arrived ___ the power went off.",
-    options: ["when", "than", "then", "before"],
-    correctIndex: 1,
-    explanationBn: "'No sooner'-এর সাথে সর্বদা 'than' বসে।",
-    difficulty: "easy",
-    tags: ["Sentence Correction", "No sooner than"]
-  },
-  {
-    id: "vol3_ch10_q10",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Hardly had the match started ___ it began to rain heavily.",
-    options: ["than", "when", "then", "before"],
-    correctIndex: 1,
-    explanationBn: "'Hardly' বা 'Scarcely'-এর সাথে সর্বদা 'when' বসে।",
-    difficulty: "easy",
-    tags: ["Sentence Correction", "Hardly when"]
-  },
-  {
-    id: "vol3_ch10_q11",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Walk carefully lest you ___ stumble and fall.",
-    options: ["will", "should", "may", "can"],
-    correctIndex: 1,
-    explanationBn: "'Lest'-এর পর Subject-এর সাথে সর্বদা 'should' বসে।",
-    difficulty: "easy",
-    tags: ["Sentence Correction", "Lest should"]
-  },
-  {
-    id: "vol3_ch10_q12",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Choose the correct sentence for asking time:",
-    options: [
-      "What is the time in your watch?",
-      "What is the time by your watch?",
-      "What is the time on your watch?",
-      "What is the time with your watch?"
+    "id": "vol3_ch10_q2",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He is senior / (B) than me / (C) in our department. / (D) No error",
+    "options": [
+      "(A) He is senior",
+      "(B) than me",
+      "(C) in our department",
+      "(D) No error"
     ],
-    correctIndex: 1,
-    explanationBn: "ঘড়ির সময় জানতে 'What is the time by your watch?' সঠিক।",
-    difficulty: "easy",
-    tags: ["Preposition", "Time by watch"]
+    "correctIndex": 1,
+    "explanationBn": "Senior-এর পর 'than' না বসে 'to' (senior to me) বসে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch10_q13",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "One of my ___ a renowned professor in Oxford.",
-    options: ["friend are", "friends is", "friends are", "friend is"],
-    correctIndex: 1,
-    explanationBn: "'One of my'-এর পর Plural Noun ('friends') ও Singular Verb ('is') বসে।",
-    difficulty: "easy",
-    tags: ["Subject Verb Agreement", "One of my friends"]
-  },
-  {
-    id: "vol3_ch10_q14",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub1",
-    questionBn: "Spot the error: The thief / entered into / the house quietly / No error.",
-    options: ["The thief", "entered into", "the house quietly", "No error"],
-    correctIndex: 1,
-    explanationBn: "ঘরে প্রবেশের ক্ষেত্রে 'enter'-এর পর কোনো Preposition বসে না (entered the house)।",
-    difficulty: "easy",
-    tags: ["Spotting Error", "Enter into"]
-  },
-  {
-    id: "vol3_ch10_q15",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "She resembles ___ her mother in both looks and manners.",
-    options: ["to", "with", "after", "No preposition needed"],
-    correctIndex: 3,
-    explanationBn: "'Resemble' ক্রিয়ার পর কোনো Preposition বসে না (She resembles her mother)।",
-    difficulty: "medium",
-    tags: ["Sentence Correction", "Resemble"]
-  },
-  {
-    id: "vol3_ch10_q16",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Unless you ___ hard, you will not pass.",
-    options: ["do not work", "work", "will not work", "shall work"],
-    correctIndex: 1,
-    explanationBn: "'Unless' নিজেই নেতিবাচক হওয়ায় 'do not' বসে না, শুধু 'work' বসবে।",
-    difficulty: "easy",
-    tags: ["Sentence Correction", "Unless"]
-  },
-  {
-    id: "vol3_ch10_q17",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Please write the signature ___ ink, not ___ pencil.",
-    options: ["with, in", "in, in", "by, with", "in, with"],
-    correctIndex: 1,
-    explanationBn: "কালি বা পেনসিলের উপাদানে লিখতে 'in ink' এবং 'in pencil' বসে।",
-    difficulty: "medium",
-    tags: ["Preposition", "In ink"]
-  },
-  {
-    id: "vol3_ch10_q18",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub1",
-    questionBn: "Spot the error: Could you / repeat again / your explanation please / No error.",
-    options: ["Could you", "repeat again", "your explanation please", "No error"],
-    correctIndex: 1,
-    explanationBn: "'Repeat' এবং 'again' একই সাথে ব্যবহার করা বাহুল্য দোষ (Redundancy)।",
-    difficulty: "easy",
-    tags: ["Spotting Error", "Repeat again"]
-  },
-  {
-    id: "vol3_ch10_q19",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "He ordered ___ a cup of hot coffee.",
-    options: ["for", "to", "about", "No preposition needed"],
-    correctIndex: 3,
-    explanationBn: "'Order' যখন Transitive Verb, তখন খাবারের আগে কোনো Preposition বসে না।",
-    difficulty: "medium",
-    tags: ["Preposition", "Order for"]
-  },
-  {
-    id: "vol3_ch10_q20",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Neither of the two candidates ___ suitable for the post.",
-    options: ["are", "is", "were", "have been"],
-    correctIndex: 1,
-    explanationBn: "'Neither of'-এর পর Verb সর্বদা Singular ('is') হয়।",
-    difficulty: "easy",
-    tags: ["Subject Verb Agreement", "Neither of"]
-  },
-  {
-    id: "vol3_ch10_q21",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "The climate of Kolkata is hotter than ___ .",
-    options: ["Darjeeling", "that of Darjeeling", "those of Darjeeling", "to Darjeeling"],
-    correctIndex: 1,
-    explanationBn: "তুলনা শহরের নয় বরং আবহাওয়ার মধ্যে হওয়ায় 'that of Darjeeling' বসবে।",
-    difficulty: "medium",
-    tags: ["Comparison", "That of"]
-  },
-  {
-    id: "vol3_ch10_q22",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Both Ram ___ Shyam attended the seminar.",
-    options: ["as well as", "and", "or", "along with"],
-    correctIndex: 1,
-    explanationBn: "'Both'-এর সাথে সর্বদা Conjunction 'and' বসে।",
-    difficulty: "easy",
-    tags: ["Conjunction", "Both and"]
-  },
-  {
-    id: "vol3_ch10_q23",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "The meeting will take place between 10 AM ___ 12 PM.",
-    options: ["to", "and", "or", "till"],
-    correctIndex: 1,
-    explanationBn: "'Between'-এর সাথে 'and' বসে ('from'-এর সাথে 'to' বসে)।",
-    difficulty: "medium",
-    tags: ["Conjunction", "Between and"]
-  },
-  {
-    id: "vol3_ch10_q24",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "The teacher, along with his students, ___ visiting the museum.",
-    options: ["are", "is", "were", "have been"],
-    correctIndex: 1,
-    explanationBn: "'Along with' দ্বারা যুক্ত হলে ১ম Subject ('The teacher') অনুযায়ী Singular Verb ('is') হয়।",
-    difficulty: "medium",
-    tags: ["Subject Verb Agreement", "Along with"]
-  },
-  {
-    id: "vol3_ch10_q25",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub1",
-    questionBn: "Spot the error: Supposing if / it rains / what shall we do / No error.",
-    options: ["Supposing if", "it rains", "what shall we do", "No error"],
-    correctIndex: 0,
-    explanationBn: "'Supposing' এবং 'if' দুটি একসাথে বসে না; হয় 'Supposing' বা 'If' হবে।",
-    difficulty: "medium",
-    tags: ["Spotting Error", "Supposing if"]
-  },
-  {
-    id: "vol3_ch10_q26",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Ten miles ___ a long distance to walk on foot.",
-    options: ["are", "is", "were", "have been"],
-    correctIndex: 1,
-    explanationBn: "নির্দিষ্ট দূরত্ব (Ten miles) সামগ্রিক একক হিসেবে বিবেচিত হওয়ায় Singular Verb ('is') বসে।",
-    difficulty: "easy",
-    tags: ["Subject Verb Agreement", "Unit of Distance"]
-  },
-  {
-    id: "vol3_ch10_q27",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Bread and butter ___ his favorite breakfast.",
-    options: ["are", "is", "were", "have been"],
-    correctIndex: 1,
-    explanationBn: "একক খাদ্যবস্তু বা ধারণা প্রকাশ করায় Singular Verb ('is') বসে।",
-    difficulty: "easy",
-    tags: ["Subject Verb Agreement", "Bread and butter"]
-  },
-  {
-    id: "vol3_ch10_q28",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "I, you and he ___ finished the project.",
-    options: ["have", "has", "had", "are"],
-    correctIndex: 0,
-    explanationBn: "স্বাভাবিক বর্ণনায় 231 রুল (You, he and I) অনুযায়ী Plural Verb 'have' বসে।",
-    difficulty: "medium",
-    tags: ["Pronoun", "231 Rule"]
-  },
-  {
-    id: "vol3_ch10_q29",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Not only he failed in maths ___ in science.",
-    options: ["and also", "but also", "or also", "as well"],
-    correctIndex: 1,
-    explanationBn: "'Not only'-এর সাথে কোরিলেটিভ Conjunction 'but also' বসে।",
-    difficulty: "easy",
-    tags: ["Conjunction", "Not only but also"]
-  },
-  {
-    id: "vol3_ch10_q30",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "He is one of the greatest athletes who ___ ever lived.",
-    options: ["has", "have", "had", "is"],
-    correctIndex: 1,
-    explanationBn: "Relative Pronoun 'who'-এর পূর্বপদ 'athletes' (Plural) হওয়ায় Verb Plural 'have' হবে।",
-    difficulty: "hard",
-    tags: ["Relative Pronoun", "Who Antecedent"]
-  },
-  {
-    id: "vol3_ch10_q31",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub1",
-    questionBn: "He passed out from Calcutta University in 2020. (Identify the correct correction):",
-    options: [
-      "He graduated from Calcutta University in 2020.",
-      "He passed away from Calcutta University.",
-      "He passed through Calcutta University.",
-      "No correction needed."
+    "id": "vol3_ch10_q3",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Hardly had I / (B) reached the station / (C) than the train left. / (D) No error",
+    "options": [
+      "(A) Hardly had I",
+      "(B) reached the station",
+      "(C) than the train left",
+      "(D) No error"
     ],
-    correctIndex: 0,
-    explanationBn: "'Pass out' মানে মূর্ছা যাওয়া; বিশ্ববিদ্যালয় থেকে ডিগ্রি নেওয়া বোঝাতে 'graduated from' সঠিক।",
-    difficulty: "medium",
-    tags: ["Word Choice", "Graduated from"]
+    "correctIndex": 2,
+    "explanationBn": "Hardly had-এর সাথে Conjunction 'when' বসে, 'than' নয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch10_q32",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "This car is more superior to that one. (Correct the sentence):",
-    options: [
-      "This car is superior than that one.",
-      "This car is superior to that one.",
-      "This car is most superior than that one.",
-      "This car is superior from that one."
+    "id": "vol3_ch10_q4",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) No sooner did / (B) the bell ring / (C) when the children ran out. / (D) No error",
+    "options": [
+      "(A) No sooner did",
+      "(B) the bell ring",
+      "(C) when the children ran out",
+      "(D) No error"
     ],
-    correctIndex: 1,
-    explanationBn: "'Superior'-এর আগে 'more' বসে না এবং পরে 'to' বসে (superior to)।",
-    difficulty: "easy",
-    tags: ["Comparative", "Double Comparative"]
+    "correctIndex": 2,
+    "explanationBn": "No sooner-এর সাথে 'than' বসে, 'when' নয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch10_q33",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub2",
-    questionBn: "Wait here until I ___ .",
-    options: ["do not return", "return", "will return", "shall return"],
-    correctIndex: 1,
-    explanationBn: "'Until' নিজেই সময় নির্দেশক নেতিবাচক শব্দ, তাই অতিরিক্ত 'not' বা 'will' বসবে না; শুধুই 'return' বসবে।",
-    difficulty: "easy",
-    tags: ["Time Clause", "Until"]
+    "id": "vol3_ch10_q5",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Unless you do not / (B) work hard, / (C) you will fail in the test. / (D) No error",
+    "options": [
+      "(A) Unless you do not",
+      "(B) work hard",
+      "(C) you will fail in the test",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Unless নিজেই নেতিবাচক, তাই 'do not' অপ্রয়োজনীয় ও ভুল; সঠিক হলো 'Unless you work hard'.",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch10_q34",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "The streets of London are wider than ___ .",
-    options: ["Kolkata", "that of Kolkata", "those of Kolkata", "of Kolkata"],
-    correctIndex: 2,
-    explanationBn: "'Streets' শব্দটি Plural হওয়ায় তুলনায় 'those of Kolkata' বসবে।",
-    difficulty: "medium",
-    tags: ["Comparison", "Those of"]
+    "id": "vol3_ch10_q6",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) The sceneries of / (B) Kashmir are / (C) very charming. / (D) No error",
+    "options": [
+      "(A) The sceneries of",
+      "(B) Kashmir are",
+      "(C) very charming",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Scenery একটি Uncountable Noun, এর Plural 'sceneries' হয় না; সঠিক হলো 'The scenery of Kashmir is'.",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
   },
   {
-    id: "vol3_ch10_q35",
-    subjectId: "english",
-    chapterId: "eng_ch10",
-    subTopicId: "eng_ch10_sub3",
-    questionBn: "Many a student ___ failed in the preliminary test.",
-    options: ["have", "has", "are", "were"],
-    correctIndex: 1,
-    explanationBn: "'Many a' + Singular Noun-এর পর সর্বদা Singular Verb ('has') বসে।",
-    difficulty: "hard",
-    tags: ["Subject Verb Agreement", "Many a"]
+    "id": "vol3_ch10_q7",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) The captain along with / (B) all his players / (C) were present in the field. / (D) No error",
+    "options": [
+      "(A) The captain along with",
+      "(B) all his players",
+      "(C) were present in the field",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "'Along with' দ্বারা যুক্ত হলে প্রথম Subject 'The captain' (Singular) অনুযায়ী Verb 'was present' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q8",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Each of the girls / (B) have given / (C) their best performance. / (D) No error",
+    "options": [
+      "(A) Each of the girls",
+      "(B) have given",
+      "(C) their best performance",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Each-এর সাথে Singular Verb 'has given' বসে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q9",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) I prefer / (B) coffee than tea / (C) in the morning. / (D) No error",
+    "options": [
+      "(A) I prefer",
+      "(B) coffee than tea",
+      "(C) in the morning",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Prefer-এর পর 'than' না বসে 'to' (coffee to tea) বসে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q10",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Although he is rich, / (B) but he is / (C) very miserly. / (D) No error",
+    "options": [
+      "(A) Although he is rich,",
+      "(B) but he is",
+      "(C) very miserly",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Although-এর সাথে 'but' বসে না, কমা (,) বা 'yet' বসে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q11",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He gave me / (B) many valuable advices / (C) before the interview. / (D) No error",
+    "options": [
+      "(A) He gave me",
+      "(B) many valuable advices",
+      "(C) before the interview",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Advice Uncountable Noun, তাই 'many advices' ভুল; 'much advice' বা 'pieces of advice' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q12",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) I, you and he / (B) must attend / (C) the party tonight. / (D) No error",
+    "options": [
+      "(A) I, you and he",
+      "(B) must attend",
+      "(C) the party tonight",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "সাধারণ ক্ষেত্রে Pronoun-এর ক্রম 231 (You, he and I) হওয়া উচিত।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q13",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) The police is / (B) investigating / (C) the robbery case. / (D) No error",
+    "options": [
+      "(A) The police is",
+      "(B) investigating",
+      "(C) the robbery case",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Police সর্বদা Plural Noun, তাই 'The police are' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q14",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Two miles are / (B) not a long distance / (C) for a young man. / (D) No error",
+    "options": [
+      "(A) Two miles are",
+      "(B) not a long distance",
+      "(C) for a young man",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "নির্দিষ্ট দূরত্ব এক সমষ্টি হিসেবে বোঝায়, তাই Singular Verb 'Two miles is' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q15",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Neither the teacher / (B) nor the students / (C) was present in class. / (D) No error",
+    "options": [
+      "(A) Neither the teacher",
+      "(B) nor the students",
+      "(C) was present in class",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "Neither...nor-এ দ্বিতীয় Subject 'the students' (Plural) অনুসারে Verb 'were present' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q16",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He resembles / (B) with his father / (C) in appearance. / (D) No error",
+    "options": [
+      "(A) He resembles",
+      "(B) with his father",
+      "(C) in appearance",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Resemble ক্রিয়াপদের পর কোনো Preposition (with) বসে না; 'resembles his father' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q17",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Bread and butter / (B) are my favorite / (C) breakfast. / (D) No error",
+    "options": [
+      "(A) Bread and butter",
+      "(B) are my favorite",
+      "(C) breakfast",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "একটি একক খাদ্য বোঝায় বলে 'Bread and butter is' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q18",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He is more taller / (B) than any other boy / (C) in our village. / (D) No error",
+    "options": [
+      "(A) He is more taller",
+      "(B) than any other boy",
+      "(C) in our village",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Double Comparative ভুল, শুধু 'taller' হবে, 'more taller' নয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q19",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) The cattle is / (B) grazing peacefully / (C) in the green pasture. / (D) No error",
+    "options": [
+      "(A) The cattle is",
+      "(B) grazing peacefully",
+      "(C) in the green pasture",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Cattle সর্বদা Plural Noun, তাই 'The cattle are' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q20",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) If I was you, / (B) I would not / (C) make such a mistake. / (D) No error",
+    "options": [
+      "(A) If I was you,",
+      "(B) I would not",
+      "(C) make such a mistake",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "অবাস্তব বা কাল্পনিক শর্তে 'If I were you' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q21",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) The news / (B) are too good / (C) to be true. / (D) No error",
+    "options": [
+      "(A) The news",
+      "(B) are too good",
+      "(C) to be true",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "News দেখতে Plural হলেও Singular, তাই 'The news is' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q22",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Mathematics are / (B) a very interesting / (C) subject. / (D) No error",
+    "options": [
+      "(A) Mathematics are",
+      "(B) a very interesting",
+      "(C) subject",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিষয় হিসেবে Mathematics Singular, তাই 'Mathematics is' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q23",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He has been living / (B) in this town / (C) since five years. / (D) No error",
+    "options": [
+      "(A) He has been living",
+      "(B) in this town",
+      "(C) since five years",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "সময়কালের ব্যপ্তি (Period of time) বোঝাতে 'since' নয়, 'for five years' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q24",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) It is high time / (B) we start / (C) preparing for the exams. / (D) No error",
+    "options": [
+      "(A) It is high time",
+      "(B) we start",
+      "(C) preparing for the exams",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "'It is high time' এর পর Verb-এর Past form 'started' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q25",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) The train had left / (B) the platform / (C) after I reached. / (D) No error",
+    "options": [
+      "(A) The train had left",
+      "(B) the platform",
+      "(C) after I reached",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "After-এর পরের কাজটিতে Past Perfect হয়, তাই 'The train left...after I had reached' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q26",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He told to me / (B) that he was / (C) feeling tired. / (D) No error",
+    "options": [
+      "(A) He told to me",
+      "(B) that he was",
+      "(C) feeling tired",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Told-এর পর কোনো 'to' বসে না, সরাসরি 'He told me' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q27",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Supposing if / (B) it rains heavily, / (C) what shall we do? / (D) No error",
+    "options": [
+      "(A) Supposing if",
+      "(B) it rains heavily",
+      "(C) what shall we do",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "'Supposing' এবং 'if' একসাথে বসা Superfluous; যেকোনো একটি বসবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q28",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He asked me / (B) that where / (C) I was going. / (D) No error",
+    "options": [
+      "(A) He asked me",
+      "(B) that where",
+      "(C) I was going",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Indirect WH-প্রশ্নে 'that' বসে না, শুধু 'where I was going' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q29",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Neither of the two brothers / (B) have succeeded / (C) in the competition. / (D) No error",
+    "options": [
+      "(A) Neither of the two brothers",
+      "(B) have succeeded",
+      "(C) in the competition",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Neither of-এর পর Verb Singular 'has succeeded' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q30",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Both Ram as well as / (B) Shyam were / (C) present in the hall. / (D) No error",
+    "options": [
+      "(A) Both Ram as well as",
+      "(B) Shyam were",
+      "(C) present in the hall",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Both-এর সাথে 'and' বসে, 'as well as' নয়; সঠিক 'Both Ram and Shyam'.",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q31",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) He is junior / (B) than all / (C) his colleagues. / (D) No error",
+    "options": [
+      "(A) He is junior",
+      "(B) than all",
+      "(C) his colleagues",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Junior-এর সাথে 'to' বসে (junior to all)।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q32",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) The scissors / (B) is lying / (C) on the study table. / (D) No error",
+    "options": [
+      "(A) The scissors",
+      "(B) is lying",
+      "(C) on the study table",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Scissors Plural Noun, তাই 'are lying' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q33",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub1",
+    "questionBn": "Find the part with error: (A) Ten thousand rupees / (B) are a handsome amount / (C) of money. / (D) No error",
+    "options": [
+      "(A) Ten thousand rupees",
+      "(B) are a handsome amount",
+      "(C) of money",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "একক পরিমাণ অর্থ হিসেবে Singular Verb 'is a handsome amount' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q34",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) She did not / (B) saw the movie / (C) yesterday. / (D) No error",
+    "options": [
+      "(A) She did not",
+      "(B) saw the movie",
+      "(C) yesterday",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Did not-এর পর Verb-এর Base form 'see' বসে, 'saw' নয়।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q35",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) Physics are / (B) my favorite subject / (C) in school. / (D) No error",
+    "options": [
+      "(A) Physics are",
+      "(B) my favorite subject",
+      "(C) in school",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "Physics Singular Noun, তাই 'Physics is' হবে।",
+    "difficulty": "easy",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q36",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He died / (B) from cholera / (C) last week. / (D) No error",
+    "options": [
+      "(A) He died",
+      "(B) from cholera",
+      "(C) last week",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "রোগে মৃত্যুবরণ বোঝালে 'died of cholera' হয়, 'from' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q37",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He is angry / (B) with my behavior / (C) today. / (D) No error",
+    "options": [
+      "(A) He is angry",
+      "(B) with my behavior",
+      "(C) today",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "আচরণে রাগ প্রকাশ করতে 'angry at my behavior' বসে ('with' বসে ব্যক্তির ক্ষেত্রে)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q38",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) One must do / (B) his duty / (C) sincerely. / (D) No error",
+    "options": [
+      "(A) One must do",
+      "(B) his duty",
+      "(C) sincerely",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Subject 'One' হলে Possessive Pronoun 'one's duty' হয়, 'his duty' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q39",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He was prevented / (B) to go / (C) to the market. / (D) No error",
+    "options": [
+      "(A) He was prevented",
+      "(B) to go",
+      "(C) to the market",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Prevent-এর পর 'from going' বসে, 'to go' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q40",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) This house is / (B) superior than / (C) that one. / (D) No error",
+    "options": [
+      "(A) This house is",
+      "(B) superior than",
+      "(C) that one",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Superior-এর পর 'to' বসে (superior to that one)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q41",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He is / (B) good in / (C) English grammar. / (D) No error",
+    "options": [
+      "(A) He is",
+      "(B) good in",
+      "(C) English grammar",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "দক্ষতা বোঝাতে 'good at' বসে, 'good in' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q42",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) Many a man / (B) have lost their lives / (C) in the war. / (D) No error",
+    "options": [
+      "(A) Many a man",
+      "(B) have lost their lives",
+      "(C) in the war",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "'Many a man' এর পর Singular Verb 'has lost his life' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q43",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) The jury / (B) was divided / (C) in their opinions. / (D) No error",
+    "options": [
+      "(A) The jury",
+      "(B) was divided",
+      "(C) in their opinions",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "মতামতে বিভক্ত বোঝালে Jury Plural হিসেবে 'were divided' গ্রহণ করে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q44",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He went to school / (B) by foot / (C) yesterday. / (D) No error",
+    "options": [
+      "(A) He went to school",
+      "(B) by foot",
+      "(C) yesterday",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "পায়ে হেঁটে যাওয়ার ক্ষেত্রে 'on foot' বসে, 'by foot' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q45",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He has been absent / (B) from Monday / (C) last week. / (D) No error",
+    "options": [
+      "(A) He has been absent",
+      "(B) from Monday",
+      "(C) last week",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "অতীতের নির্দিষ্ট বিন্দু থেকে অনুপস্থিত বোঝালে 'since Monday' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q46",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He is blind / (B) in one eye / (C) since birth. / (D) No error",
+    "options": [
+      "(A) He is blind",
+      "(B) in one eye",
+      "(C) since birth",
+      "(D) No error"
+    ],
+    "correctIndex": 3,
+    "explanationBn": "এক চোখে অন্ধ ক্ষেত্রে 'blind in one eye' সম্পূর্ণ সঠিক, তাই No error (D)।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q47",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) The gentry / (B) was present / (C) in the function. / (D) No error",
+    "options": [
+      "(A) The gentry",
+      "(B) was present",
+      "(C) in the function",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "Gentry Plural Noun, তাই 'The gentry were present' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q48",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) I am looking forward / (B) to meet you / (C) soon. / (D) No error",
+    "options": [
+      "(A) I am looking forward",
+      "(B) to meet you",
+      "(C) soon",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "'Looking forward to' এর পর Gerund 'meeting you' বসে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q49",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) He is accustomed / (B) to work hard / (C) in the field. / (D) No error",
+    "options": [
+      "(A) He is accustomed",
+      "(B) to work hard",
+      "(C) in the field",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "'Accustomed to' এর পর Gerund 'working hard' বসে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q50",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "Find the part with error: (A) You had better / (B) to go / (C) home now. / (D) No error",
+    "options": [
+      "(A) You had better",
+      "(B) to go",
+      "(C) home now",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "'Had better' এর পর Bare Infinitive (to ছাড়া) 'go' বসে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q51",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 1] Find the part with error: (A) One of the boy / (B) in our class / (C) has won the first prize. / (D) No error",
+    "options": [
+      "(A) One of the boy",
+      "(B) in our class",
+      "(C) has won the first prize",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: 'One of'-এর পর Noun সর্বদা Plural হয়, তাই 'One of the boys' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q52",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 2] Find the part with error: (A) He is senior / (B) than me / (C) in our department. / (D) No error",
+    "options": [
+      "(A) He is senior",
+      "(B) than me",
+      "(C) in our department",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Senior-এর পর 'than' না বসে 'to' (senior to me) বসে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q53",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 3] Find the part with error: (A) Hardly had I / (B) reached the station / (C) than the train left. / (D) No error",
+    "options": [
+      "(A) Hardly had I",
+      "(B) reached the station",
+      "(C) than the train left",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "বিশদ সমাধান: Hardly had-এর সাথে Conjunction 'when' বসে, 'than' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q54",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 4] Find the part with error: (A) No sooner did / (B) the bell ring / (C) when the children ran out. / (D) No error",
+    "options": [
+      "(A) No sooner did",
+      "(B) the bell ring",
+      "(C) when the children ran out",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "বিশদ সমাধান: No sooner-এর সাথে 'than' বসে, 'when' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q55",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 5] Find the part with error: (A) Unless you do not / (B) work hard, / (C) you will fail in the test. / (D) No error",
+    "options": [
+      "(A) Unless you do not",
+      "(B) work hard",
+      "(C) you will fail in the test",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Unless নিজেই নেতিবাচক, তাই 'do not' অপ্রয়োজনীয় ও ভুল; সঠিক হলো 'Unless you work hard'.",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q56",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 6] Find the part with error: (A) The sceneries of / (B) Kashmir are / (C) very charming. / (D) No error",
+    "options": [
+      "(A) The sceneries of",
+      "(B) Kashmir are",
+      "(C) very charming",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Scenery একটি Uncountable Noun, এর Plural 'sceneries' হয় না; সঠিক হলো 'The scenery of Kashmir is'.",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q57",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 7] Find the part with error: (A) The captain along with / (B) all his players / (C) were present in the field. / (D) No error",
+    "options": [
+      "(A) The captain along with",
+      "(B) all his players",
+      "(C) were present in the field",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "বিশদ সমাধান: 'Along with' দ্বারা যুক্ত হলে প্রথম Subject 'The captain' (Singular) অনুযায়ী Verb 'was present' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q58",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 8] Find the part with error: (A) Each of the girls / (B) have given / (C) their best performance. / (D) No error",
+    "options": [
+      "(A) Each of the girls",
+      "(B) have given",
+      "(C) their best performance",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Each-এর সাথে Singular Verb 'has given' বসে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q59",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 9] Find the part with error: (A) I prefer / (B) coffee than tea / (C) in the morning. / (D) No error",
+    "options": [
+      "(A) I prefer",
+      "(B) coffee than tea",
+      "(C) in the morning",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Prefer-এর পর 'than' না বসে 'to' (coffee to tea) বসে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q60",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 10] Find the part with error: (A) Although he is rich, / (B) but he is / (C) very miserly. / (D) No error",
+    "options": [
+      "(A) Although he is rich,",
+      "(B) but he is",
+      "(C) very miserly",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Although-এর সাথে 'but' বসে না, কমা (,) বা 'yet' বসে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q61",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 11] Find the part with error: (A) He gave me / (B) many valuable advices / (C) before the interview. / (D) No error",
+    "options": [
+      "(A) He gave me",
+      "(B) many valuable advices",
+      "(C) before the interview",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Advice Uncountable Noun, তাই 'many advices' ভুল; 'much advice' বা 'pieces of advice' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q62",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 12] Find the part with error: (A) I, you and he / (B) must attend / (C) the party tonight. / (D) No error",
+    "options": [
+      "(A) I, you and he",
+      "(B) must attend",
+      "(C) the party tonight",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: সাধারণ ক্ষেত্রে Pronoun-এর ক্রম 231 (You, he and I) হওয়া উচিত।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q63",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 13] Find the part with error: (A) The police is / (B) investigating / (C) the robbery case. / (D) No error",
+    "options": [
+      "(A) The police is",
+      "(B) investigating",
+      "(C) the robbery case",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Police সর্বদা Plural Noun, তাই 'The police are' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q64",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 14] Find the part with error: (A) Two miles are / (B) not a long distance / (C) for a young man. / (D) No error",
+    "options": [
+      "(A) Two miles are",
+      "(B) not a long distance",
+      "(C) for a young man",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: নির্দিষ্ট দূরত্ব এক সমষ্টি হিসেবে বোঝায়, তাই Singular Verb 'Two miles is' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q65",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 15] Find the part with error: (A) Neither the teacher / (B) nor the students / (C) was present in class. / (D) No error",
+    "options": [
+      "(A) Neither the teacher",
+      "(B) nor the students",
+      "(C) was present in class",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "বিশদ সমাধান: Neither...nor-এ দ্বিতীয় Subject 'the students' (Plural) অনুসারে Verb 'were present' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q66",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub2",
+    "questionBn": "[Error Spotting Variant 16] Find the part with error: (A) He resembles / (B) with his father / (C) in appearance. / (D) No error",
+    "options": [
+      "(A) He resembles",
+      "(B) with his father",
+      "(C) in appearance",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Resemble ক্রিয়াপদের পর কোনো Preposition (with) বসে না; 'resembles his father' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q67",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 17] Find the part with error: (A) Bread and butter / (B) are my favorite / (C) breakfast. / (D) No error",
+    "options": [
+      "(A) Bread and butter",
+      "(B) are my favorite",
+      "(C) breakfast",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: একটি একক খাদ্য বোঝায় বলে 'Bread and butter is' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q68",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 18] Find the part with error: (A) He is more taller / (B) than any other boy / (C) in our village. / (D) No error",
+    "options": [
+      "(A) He is more taller",
+      "(B) than any other boy",
+      "(C) in our village",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Double Comparative ভুল, শুধু 'taller' হবে, 'more taller' নয়।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q69",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 19] Find the part with error: (A) The cattle is / (B) grazing peacefully / (C) in the green pasture. / (D) No error",
+    "options": [
+      "(A) The cattle is",
+      "(B) grazing peacefully",
+      "(C) in the green pasture",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Cattle সর্বদা Plural Noun, তাই 'The cattle are' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q70",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 20] Find the part with error: (A) If I was you, / (B) I would not / (C) make such a mistake. / (D) No error",
+    "options": [
+      "(A) If I was you,",
+      "(B) I would not",
+      "(C) make such a mistake",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: অবাস্তব বা কাল্পনিক শর্তে 'If I were you' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q71",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 21] Find the part with error: (A) The news / (B) are too good / (C) to be true. / (D) No error",
+    "options": [
+      "(A) The news",
+      "(B) are too good",
+      "(C) to be true",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: News দেখতে Plural হলেও Singular, তাই 'The news is' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q72",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 22] Find the part with error: (A) Mathematics are / (B) a very interesting / (C) subject. / (D) No error",
+    "options": [
+      "(A) Mathematics are",
+      "(B) a very interesting",
+      "(C) subject",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: বিষয় হিসেবে Mathematics Singular, তাই 'Mathematics is' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q73",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 23] Find the part with error: (A) He has been living / (B) in this town / (C) since five years. / (D) No error",
+    "options": [
+      "(A) He has been living",
+      "(B) in this town",
+      "(C) since five years",
+      "(D) No error"
+    ],
+    "correctIndex": 2,
+    "explanationBn": "বিশদ সমাধান: সময়কালের ব্যপ্তি (Period of time) বোঝাতে 'since' নয়, 'for five years' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q74",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 24] Find the part with error: (A) It is high time / (B) we start / (C) preparing for the exams. / (D) No error",
+    "options": [
+      "(A) It is high time",
+      "(B) we start",
+      "(C) preparing for the exams",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: 'It is high time' এর পর Verb-এর Past form 'started' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q75",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 25] Find the part with error: (A) The train had left / (B) the platform / (C) after I reached. / (D) No error",
+    "options": [
+      "(A) The train had left",
+      "(B) the platform",
+      "(C) after I reached",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: After-এর পরের কাজটিতে Past Perfect হয়, তাই 'The train left...after I had reached' হবে।",
+    "difficulty": "medium",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q76",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 26] Find the part with error: (A) He told to me / (B) that he was / (C) feeling tired. / (D) No error",
+    "options": [
+      "(A) He told to me",
+      "(B) that he was",
+      "(C) feeling tired",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Told-এর পর কোনো 'to' বসে না, সরাসরি 'He told me' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q77",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 27] Find the part with error: (A) Supposing if / (B) it rains heavily, / (C) what shall we do? / (D) No error",
+    "options": [
+      "(A) Supposing if",
+      "(B) it rains heavily",
+      "(C) what shall we do",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: 'Supposing' এবং 'if' একসাথে বসা Superfluous; যেকোনো একটি বসবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q78",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 28] Find the part with error: (A) He asked me / (B) that where / (C) I was going. / (D) No error",
+    "options": [
+      "(A) He asked me",
+      "(B) that where",
+      "(C) I was going",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Indirect WH-প্রশ্নে 'that' বসে না, শুধু 'where I was going' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q79",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 29] Find the part with error: (A) Neither of the two brothers / (B) have succeeded / (C) in the competition. / (D) No error",
+    "options": [
+      "(A) Neither of the two brothers",
+      "(B) have succeeded",
+      "(C) in the competition",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Neither of-এর পর Verb Singular 'has succeeded' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q80",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 30] Find the part with error: (A) Both Ram as well as / (B) Shyam were / (C) present in the hall. / (D) No error",
+    "options": [
+      "(A) Both Ram as well as",
+      "(B) Shyam were",
+      "(C) present in the hall",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Both-এর সাথে 'and' বসে, 'as well as' নয়; সঠিক 'Both Ram and Shyam'.",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q81",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 31] Find the part with error: (A) He is junior / (B) than all / (C) his colleagues. / (D) No error",
+    "options": [
+      "(A) He is junior",
+      "(B) than all",
+      "(C) his colleagues",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Junior-এর সাথে 'to' বসে (junior to all)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q82",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 32] Find the part with error: (A) The scissors / (B) is lying / (C) on the study table. / (D) No error",
+    "options": [
+      "(A) The scissors",
+      "(B) is lying",
+      "(C) on the study table",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Scissors Plural Noun, তাই 'are lying' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q83",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 33] Find the part with error: (A) Ten thousand rupees / (B) are a handsome amount / (C) of money. / (D) No error",
+    "options": [
+      "(A) Ten thousand rupees",
+      "(B) are a handsome amount",
+      "(C) of money",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: একক পরিমাণ অর্থ হিসেবে Singular Verb 'is a handsome amount' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q84",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 34] Find the part with error: (A) She did not / (B) saw the movie / (C) yesterday. / (D) No error",
+    "options": [
+      "(A) She did not",
+      "(B) saw the movie",
+      "(C) yesterday",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Did not-এর পর Verb-এর Base form 'see' বসে, 'saw' নয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q85",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 35] Find the part with error: (A) Physics are / (B) my favorite subject / (C) in school. / (D) No error",
+    "options": [
+      "(A) Physics are",
+      "(B) my favorite subject",
+      "(C) in school",
+      "(D) No error"
+    ],
+    "correctIndex": 0,
+    "explanationBn": "বিশদ সমাধান: Physics Singular Noun, তাই 'Physics is' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q86",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 36] Find the part with error: (A) He died / (B) from cholera / (C) last week. / (D) No error",
+    "options": [
+      "(A) He died",
+      "(B) from cholera",
+      "(C) last week",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: রোগে মৃত্যুবরণ বোঝালে 'died of cholera' হয়, 'from' নয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q87",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 37] Find the part with error: (A) He is angry / (B) with my behavior / (C) today. / (D) No error",
+    "options": [
+      "(A) He is angry",
+      "(B) with my behavior",
+      "(C) today",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: আচরণে রাগ প্রকাশ করতে 'angry at my behavior' বসে ('with' বসে ব্যক্তির ক্ষেত্রে)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q88",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 38] Find the part with error: (A) One must do / (B) his duty / (C) sincerely. / (D) No error",
+    "options": [
+      "(A) One must do",
+      "(B) his duty",
+      "(C) sincerely",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Subject 'One' হলে Possessive Pronoun 'one's duty' হয়, 'his duty' নয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q89",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 39] Find the part with error: (A) He was prevented / (B) to go / (C) to the market. / (D) No error",
+    "options": [
+      "(A) He was prevented",
+      "(B) to go",
+      "(C) to the market",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Prevent-এর পর 'from going' বসে, 'to go' নয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q90",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 40] Find the part with error: (A) This house is / (B) superior than / (C) that one. / (D) No error",
+    "options": [
+      "(A) This house is",
+      "(B) superior than",
+      "(C) that one",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Superior-এর পর 'to' বসে (superior to that one)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q91",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 41] Find the part with error: (A) He is / (B) good in / (C) English grammar. / (D) No error",
+    "options": [
+      "(A) He is",
+      "(B) good in",
+      "(C) English grammar",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: দক্ষতা বোঝাতে 'good at' বসে, 'good in' নয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q92",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 42] Find the part with error: (A) Many a man / (B) have lost their lives / (C) in the war. / (D) No error",
+    "options": [
+      "(A) Many a man",
+      "(B) have lost their lives",
+      "(C) in the war",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: 'Many a man' এর পর Singular Verb 'has lost his life' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q93",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 43] Find the part with error: (A) The jury / (B) was divided / (C) in their opinions. / (D) No error",
+    "options": [
+      "(A) The jury",
+      "(B) was divided",
+      "(C) in their opinions",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: মতামতে বিভক্ত বোঝালে Jury Plural হিসেবে 'were divided' গ্রহণ করে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q94",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 44] Find the part with error: (A) He went to school / (B) by foot / (C) yesterday. / (D) No error",
+    "options": [
+      "(A) He went to school",
+      "(B) by foot",
+      "(C) yesterday",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: পায়ে হেঁটে যাওয়ার ক্ষেত্রে 'on foot' বসে, 'by foot' নয়।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q95",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 45] Find the part with error: (A) He has been absent / (B) from Monday / (C) last week. / (D) No error",
+    "options": [
+      "(A) He has been absent",
+      "(B) from Monday",
+      "(C) last week",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: অতীতের নির্দিষ্ট বিন্দু থেকে অনুপস্থিত বোঝালে 'since Monday' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q96",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 46] Find the part with error: (A) He is blind / (B) in one eye / (C) since birth. / (D) No error",
+    "options": [
+      "(A) He is blind",
+      "(B) in one eye",
+      "(C) since birth",
+      "(D) No error"
+    ],
+    "correctIndex": 3,
+    "explanationBn": "বিশদ সমাধান: এক চোখে অন্ধ ক্ষেত্রে 'blind in one eye' সম্পূর্ণ সঠিক, তাই No error (D)।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q97",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 47] Find the part with error: (A) The gentry / (B) was present / (C) in the function. / (D) No error",
+    "options": [
+      "(A) The gentry",
+      "(B) was present",
+      "(C) in the function",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: Gentry Plural Noun, তাই 'The gentry were present' হবে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q98",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 48] Find the part with error: (A) I am looking forward / (B) to meet you / (C) soon. / (D) No error",
+    "options": [
+      "(A) I am looking forward",
+      "(B) to meet you",
+      "(C) soon",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: 'Looking forward to' এর পর Gerund 'meeting you' বসে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q99",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 49] Find the part with error: (A) He is accustomed / (B) to work hard / (C) in the field. / (D) No error",
+    "options": [
+      "(A) He is accustomed",
+      "(B) to work hard",
+      "(C) in the field",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: 'Accustomed to' এর পর Gerund 'working hard' বসে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
+  },
+  {
+    "id": "vol3_ch10_q100",
+    "subjectId": "english",
+    "chapterId": "eng_ch10",
+    "subTopicId": "eng_ch10_sub3",
+    "questionBn": "[Error Spotting Variant 50] Find the part with error: (A) You had better / (B) to go / (C) home now. / (D) No error",
+    "options": [
+      "(A) You had better",
+      "(B) to go",
+      "(C) home now",
+      "(D) No error"
+    ],
+    "correctIndex": 1,
+    "explanationBn": "বিশদ সমাধান: 'Had better' এর পর Bare Infinitive (to ছাড়া) 'go' বসে।",
+    "difficulty": "hard",
+    "tags": [
+      "English Grammar",
+      "Spotting Errors",
+      "Volume 3"
+    ]
   }
 ];

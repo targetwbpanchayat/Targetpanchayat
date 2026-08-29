@@ -25,7 +25,10 @@ import {
 import { SubjectId, StudyChapter, UserProgress, ChapterSAQ } from "../types";
 import { SUBJECTS } from "../data/subjects";
 import { STUDY_CHAPTERS } from "../data/studyData";
+import { GK_CATEGORIES } from "../data/gkVol5";
 import { saveUserProgress } from "../utils/storage";
+import { cleanQuestionText } from "../utils/testGenerator";
+import { Gk5000SaqExplorer } from "./Gk5000SaqExplorer";
 
 interface StudyViewProps {
   progress: UserProgress;
@@ -43,6 +46,8 @@ export const StudyView: React.FC<StudyViewProps> = ({
   onLaunchPractice,
 }) => {
   const [activeSubject, setActiveSubject] = useState<SubjectId | "all">("all");
+  const [activeGkCat, setActiveGkCat] = useState<string>("all");
+  const [show5000Explorer, setShow5000Explorer] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [personalNote, setPersonalNote] = useState("");
   const [noteSaved, setNoteSaved] = useState(false);
@@ -114,11 +119,19 @@ export const StudyView: React.FC<StudyViewProps> = ({
   // Filtered chapters
   const filteredChapters = STUDY_CHAPTERS.filter((ch) => {
     const matchSubject = activeSubject === "all" || ch.subjectId === activeSubject;
+    let matchGkCat = true;
+    if (activeSubject === "gk" || (activeSubject === "all" && activeGkCat !== "all")) {
+      if (activeGkCat === "history") matchGkCat = ch.id.startsWith("gk_hist");
+      else if (activeGkCat === "geography") matchGkCat = ch.id.startsWith("gk_geo");
+      else if (activeGkCat === "polity") matchGkCat = ch.id.startsWith("gk_pol");
+      else if (activeGkCat === "science") matchGkCat = ch.id.startsWith("gk_sci");
+      else if (activeGkCat === "static") matchGkCat = ch.id.startsWith("gk_stat");
+    }
     const matchSearch =
       ch.titleBn.toLowerCase().includes(searchQuery.toLowerCase()) ||
       ch.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
       ch.titleEn.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchSubject && matchSearch;
+    return matchSubject && matchGkCat && matchSearch;
   });
 
   // If a chapter is selected, show the full formatted reading view
@@ -408,7 +421,7 @@ export const StudyView: React.FC<StudyViewProps> = ({
                             Q{idx + 1}
                           </span>
                           <h4 className="text-xs sm:text-sm font-bold text-slate-900 font-bengali leading-snug">
-                            {saq.questionBn}
+                            {cleanQuestionText(saq.questionBn)}
                           </h4>
                         </div>
                         {isOpen ? (
@@ -539,6 +552,25 @@ export const StudyView: React.FC<StudyViewProps> = ({
     );
   }
 
+  // If 5000 SAQ Explorer is open, render it directly
+  if (show5000Explorer) {
+    return (
+      <div className="space-y-4 pb-12">
+        <button
+          onClick={() => setShow5000Explorer(false)}
+          className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bengali font-bold text-xs flex items-center gap-2 cursor-pointer transition-all"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>অধ্যায় ভিত্তিক স্টাডি ভিউতে ফিরে যান</span>
+        </button>
+        <Gk5000SaqExplorer
+          initialCategory={activeGkCat !== "all" ? (activeGkCat as any) : "history"}
+          onClose={() => setShow5000Explorer(false)}
+        />
+      </div>
+    );
+  }
+
   // Chapter List View
   return (
     <div className="space-y-6 pb-12 animate-in fade-in duration-200">
@@ -566,10 +598,41 @@ export const StudyView: React.FC<StudyViewProps> = ({
         </div>
       </div>
 
+      {/* Featured 5,000 SAQs Mega Banner */}
+      <div className="bg-gradient-to-r from-amber-500 via-rose-600 to-indigo-700 text-white rounded-3xl p-5 sm:p-6 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="bg-white/20 text-white text-[11px] font-extrabold px-2.5 py-0.5 rounded-full font-bengali uppercase">
+              ভলিউম ৫ স্পেশাল
+            </span>
+            <span className="text-xs font-bold font-bengali text-amber-100">
+              ৫টি বিষয়ে প্রতিটিতে ১,০০০ করে মোট ৫,০০০ SAQ
+            </span>
+          </div>
+          <h2 className="text-base sm:text-xl font-extrabold font-bengali">
+            সাধারণ জ্ঞান মেগা বুস্টার: ৫,০০০ SAQ ও ১-লাইনার লাইব্রেরি
+          </h2>
+          <p className="text-xs text-white/90 font-bengali max-w-2xl">
+            ইতিহাস (১০০০), ভূগোল (১০০০), রাষ্ট্রনীতি ও পঞ্চায়েত আইন (১০০০), সাধারণ বিজ্ঞান (১০০০) এবং স্ট্যাটিক জিকে (১০০০) - সম্পূর্ণ সার্চ ও রিভিশন মোড।
+          </p>
+        </div>
+
+        <button
+          onClick={() => setShow5000Explorer(true)}
+          className="px-5 py-3 rounded-2xl bg-white text-rose-700 hover:bg-rose-50 font-bengali font-extrabold text-xs sm:text-sm shadow-md flex items-center gap-2 shrink-0 transition-transform active:scale-95 cursor-pointer"
+        >
+          <Zap className="w-4 h-4 fill-rose-600" />
+          <span>৫,০০০ SAQ লাইব্রেরি খুলুন</span>
+        </button>
+      </div>
+
       {/* Subject Filter Pills */}
       <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
         <button
-          onClick={() => setActiveSubject("all")}
+          onClick={() => {
+            setActiveSubject("all");
+            setActiveGkCat("all");
+          }}
           className={`px-4 py-2 rounded-xl text-xs font-bold font-bengali whitespace-nowrap transition-all cursor-pointer ${
             activeSubject === "all"
               ? "bg-emerald-600 text-white shadow-xs"
@@ -584,7 +647,10 @@ export const StudyView: React.FC<StudyViewProps> = ({
           return (
             <button
               key={sub.id}
-              onClick={() => setActiveSubject(sub.id)}
+              onClick={() => {
+                setActiveSubject(sub.id);
+                if (sub.id !== "gk") setActiveGkCat("all");
+              }}
               className={`px-4 py-2 rounded-xl text-xs font-bold font-bengali whitespace-nowrap transition-all cursor-pointer ${
                 isActive
                   ? "bg-emerald-600 text-white shadow-xs"
@@ -596,6 +662,59 @@ export const StudyView: React.FC<StudyViewProps> = ({
           );
         })}
       </div>
+
+      {/* GK Vol 5 Sub-Categories Tabs (Visible when GK or All is selected) */}
+      {(activeSubject === "gk" || activeSubject === "all") && (
+        <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-3 sm:p-4 space-y-2">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-xs font-bold text-slate-700 font-bengali">
+              <Layers className="w-3.5 h-3.5 text-rose-600" />
+              <span>সাধারণ জ্ঞান (ভলিউম ৫) - ৫টি বিশেষ বিভাগ:</span>
+            </div>
+            <span className="text-[11px] text-slate-500 font-bengali">
+              মোট ১০৯টি উপ-অধ্যায়
+            </span>
+          </div>
+
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none flex-wrap sm:flex-nowrap">
+            <button
+              onClick={() => {
+                if (activeSubject !== "gk") setActiveSubject("gk");
+                setActiveGkCat("all");
+              }}
+              className={`px-3 py-1.5 rounded-lg text-xs font-bold font-bengali whitespace-nowrap transition-all cursor-pointer ${
+                activeGkCat === "all" && activeSubject === "gk"
+                  ? "bg-slate-800 text-white shadow-xs"
+                  : "bg-white text-slate-700 border border-slate-200 hover:bg-slate-100"
+              }`}
+            >
+              সব জিকে (১০৯টি)
+            </button>
+            {GK_CATEGORIES.map((cat) => {
+              const isCatActive = activeGkCat === cat.id && activeSubject === "gk";
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => {
+                    setActiveSubject("gk");
+                    setActiveGkCat(cat.id);
+                  }}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold font-bengali whitespace-nowrap transition-all cursor-pointer flex items-center gap-1.5 ${
+                    isCatActive
+                      ? "bg-rose-600 text-white shadow-xs"
+                      : "bg-white text-slate-700 border border-slate-200 hover:bg-rose-50 hover:text-rose-700"
+                  }`}
+                >
+                  <span>{cat.nameBn}</span>
+                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-sans ${isCatActive ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600"}`}>
+                    {cat.subsectionsCount}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Chapters Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

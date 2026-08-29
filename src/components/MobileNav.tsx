@@ -9,6 +9,7 @@ import {
   Menu,
   X,
   Zap,
+  Clock,
   Newspaper,
   FileText,
   Settings,
@@ -26,21 +27,20 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab })
     { id: "dashboard", label: "হোম", icon: LayoutDashboard },
     { id: "study", label: "পড়াশোনা", icon: BookOpen },
     { id: "practice", label: "প্র্যাকটিস", icon: CheckSquare },
-    { id: "mock_test", label: "মক টেস্ট", icon: Award },
-    { id: "report", label: "রিপোর্ট", icon: BarChart3 },
+    { id: "tests", label: "মক টেস্ট", icon: Award },
+    { id: "pyq", label: "PYQ", icon: FileText },
   ];
 
   const allMenuItems = [
-    { id: "dashboard", label: "ড্যাশবোর্ড", icon: LayoutDashboard },
-    { id: "study", label: "পড়াশোনা (Study)", icon: BookOpen },
+    { id: "dashboard", label: "ড্যাশবোর্ড (Home)", icon: LayoutDashboard },
+    { id: "study", label: "পড়াশোনা (Study Material)", icon: BookOpen },
+    { id: "practice", label: "প্র্যাকটিস সেট (Chapter MCQ)", icon: CheckSquare },
+    { id: "tests", label: "মক টেস্ট ও কুইজ (Full/Short/Quiz)", icon: Award },
+    { id: "pyq", label: "বিগত বছরের প্রশ্ন (PYQ 2018)", icon: FileText },
     { id: "study_plan", label: "পড়ার প্ল্যান (Study Plan)", icon: CalendarCheck },
-    { id: "practice", label: "প্র্যাকটিস (MCQ Practice)", icon: CheckSquare },
-    { id: "mock_test", label: "মক টেস্ট (Mock Test)", icon: Award },
-    { id: "quiz", label: "স্পিড কুইজ (Speed Quiz)", icon: Zap },
-    { id: "current_affairs", label: "কারেন্ট অ্যাফেয়ার্স", icon: Newspaper },
-    { id: "pyq", label: "বিগত বছরের প্রশ্ন (PYQ)", icon: FileText },
-    { id: "report", label: "রিপোর্ট ও পারফরম্যান্স", icon: BarChart3 },
-    { id: "settings", label: "সেটিংস ও ডাউনলোড", icon: Settings },
+    { id: "current_affairs", label: "কারেন্ট অ্যাফেয়ার্স (Current Affairs)", icon: Newspaper },
+    { id: "report", label: "রিপোর্ট ও পারফরম্যান্স (Analytics)", icon: BarChart3 },
+    { id: "settings", label: "সেটিংস ও ব্যাকআপ (Settings)", icon: Settings },
   ];
 
   const handleSelect = (id: string) => {
@@ -59,22 +59,21 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab })
             <button
               key={tab.id}
               onClick={() => handleSelect(tab.id)}
-              className={`flex flex-col items-center justify-center py-1 px-2.5 rounded-xl transition-all cursor-pointer ${
+              className={`flex flex-col items-center justify-center py-1 px-2 rounded-xl transition-all cursor-pointer ${
                 isActive ? "text-emerald-700 font-bold scale-105" : "text-slate-500 hover:text-slate-800"
               }`}
             >
               <Icon className={`w-5 h-5 ${isActive ? "text-emerald-600" : ""}`} />
-              <span className="text-[11px] font-bengali mt-0.5">{tab.label}</span>
+              <span className="text-[10px] font-bengali mt-0.5 whitespace-nowrap">{tab.label}</span>
             </button>
           );
         })}
-        {/* All menu open button */}
         <button
           onClick={() => setDrawerOpen(true)}
-          className="flex flex-col items-center justify-center py-1 px-2.5 rounded-xl text-slate-500 hover:text-slate-800 cursor-pointer"
+          className="flex flex-col items-center justify-center py-1 px-2 rounded-xl text-slate-500 hover:text-slate-800 cursor-pointer"
         >
           <Menu className="w-5 h-5" />
-          <span className="text-[11px] font-bengali mt-0.5">সব মেনু</span>
+          <span className="text-[10px] font-bengali mt-0.5 whitespace-nowrap">সব মেনু</span>
         </button>
       </nav>
 
@@ -101,13 +100,13 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab })
                     <button
                       key={item.id}
                       onClick={() => handleSelect(item.id)}
-                      className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-medium text-left transition-colors cursor-pointer ${
+                      className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all text-left cursor-pointer ${
                         isActive
-                          ? "bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold"
+                          ? "bg-emerald-600 text-white font-bold"
                           : "text-slate-700 hover:bg-slate-50"
                       }`}
                     >
-                      <Icon className={`w-4 h-4 ${isActive ? "text-emerald-600" : "text-slate-400"}`} />
+                      <Icon className="w-4 h-4" />
                       <span className="font-bengali">{item.label}</span>
                     </button>
                   );
@@ -115,8 +114,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab })
               </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-100 text-center text-xs text-slate-500 font-bengali">
-              পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষা প্রস্তুতি
+            <div className="text-[11px] text-slate-400 font-bengali pt-3 border-t border-slate-100 text-center">
+              পশ্চিমবঙ্গ পঞ্চায়েত রিক্রুটমেন্ট ২০২৬
             </div>
           </div>
         </div>
