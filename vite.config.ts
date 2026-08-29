@@ -5,7 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: './',
+    // GitHub Pages-এ সাইট targetwbpanchayat.github.io/Targetpanchayat/ পাথে হোস্ট হয়,
+    // তাই base path সেট করা জরুরি — নাহলে JS/CSS ফাইল লোড হবে না আর পেজ সাদা থাকবে।
+    base: '/Targetpanchayat/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
@@ -13,11 +15,12 @@ export default defineConfig(() => {
       },
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
+    },
+    build: {
+      outDir: 'dist',
+      emptyOutDir: true,
     },
   };
 });
