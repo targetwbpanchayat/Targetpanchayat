@@ -1,5 +1,11 @@
 import { UserProfile } from "../types";
 
+// Backend API URL — Render বা অন্য ক্লাউড প্ল্যাটফর্মে ডেপ্লয় করা সার্ভারের URL
+// এখানে আপনার Render URL বসান, যেমন: "https://targetpanchayat-api.onrender.com"
+// লোকাল ডেভেলপমেন্টের সময় "/api/auth/..." relative path কাজ করবে
+const API_BASE_URL =
+  (import.meta.env?.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, "") || "";
+
 export interface StoredUser {
   email: string;
   name: string;
@@ -91,7 +97,7 @@ function generateClientFallbackOtp(email: string): string {
 // Send OTP via Backend API (connected to Gmail SMTP or development fallback)
 export async function sendRegistrationOtp(email: string, name: string): Promise<SendOtpResult> {
   try {
-    const response = await fetch("/api/auth/send-otp", {
+    const response = await fetch(`${API_BASE_URL}/api/auth/send-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, name }),
@@ -130,7 +136,7 @@ export async function sendRegistrationOtp(email: string, name: string): Promise<
 
 export async function sendResetPasswordOtp(email: string): Promise<SendOtpResult> {
   try {
-    const response = await fetch("/api/auth/reset-password-otp", {
+    const response = await fetch(`${API_BASE_URL}/api/auth/reset-password-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -168,7 +174,7 @@ export async function sendResetPasswordOtp(email: string): Promise<SendOtpResult
 
 export async function verifyOtp(email: string, otp: string): Promise<VerifyOtpResult> {
   try {
-    const response = await fetch("/api/auth/verify-otp", {
+    const response = await fetch(`${API_BASE_URL}/api/auth/verify-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, otp }),
@@ -194,7 +200,7 @@ export async function verifyOtp(email: string, otp: string): Promise<VerifyOtpRe
 
 export async function checkSmtpStatus(): Promise<{ configured: boolean; user: string | null }> {
   try {
-    const res = await fetch("/api/auth/smtp-status");
+    const res = await fetch(`${API_BASE_URL}/api/auth/smtp-status`);
     if (res.ok) {
       return await res.json();
     }
