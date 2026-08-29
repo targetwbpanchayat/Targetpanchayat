@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Fix corrupted data files
+        run: node fix-data.cjs
+
       - name: Build frontend (Vite only)
         run: npx vite build
 
