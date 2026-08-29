@@ -13,14 +13,17 @@ import {
   Newspaper,
   FileText,
   Settings,
+  Lock,
 } from "lucide-react";
+import { isTabLocked } from "../utils/demoAccess";
 
 interface MobileNavProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  userEmail?: string;
 }
 
-export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab }) => {
+export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab, userEmail }) => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
 
   const mainTabs = [
@@ -44,6 +47,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab })
   ];
 
   const handleSelect = (id: string) => {
+    if (isTabLocked(id, userEmail)) return;
     setActiveTab(id);
     setDrawerOpen(false);
   };
@@ -96,17 +100,20 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab })
                 {allMenuItems.map((item) => {
                   const Icon = item.icon;
                   const isActive = activeTab === item.id;
+                  const locked = isTabLocked(item.id, userEmail);
                   return (
                     <button
                       key={item.id}
                       onClick={() => handleSelect(item.id)}
                       className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-medium transition-all text-left cursor-pointer ${
-                        isActive
+                        locked
+                          ? "text-slate-300 cursor-not-allowed"
+                          : isActive
                           ? "bg-emerald-600 text-white font-bold"
                           : "text-slate-700 hover:bg-slate-50"
                       }`}
                     >
-                      <Icon className="w-4 h-4" />
+                      {locked ? <Lock className="w-4 h-4 text-slate-300" /> : <Icon className="w-4 h-4" />}
                       <span className="font-bengali">{item.label}</span>
                     </button>
                   );
