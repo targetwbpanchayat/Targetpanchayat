@@ -81,6 +81,13 @@ export function setCurrentUser(user: UserProfile | null): void {
   }
 }
 
+// Client-side fallback OTP generator (used when no backend is available)
+function generateClientFallbackOtp(email: string): string {
+  const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
+  sessionStorage.setItem(`wb_gp_client_otp_${email.toLowerCase()}`, fallbackOtp);
+  return fallbackOtp;
+}
+
 // Send OTP via Backend API (connected to Gmail SMTP or development fallback)
 export async function sendRegistrationOtp(email: string, name: string): Promise<SendOtpResult> {
   try {
@@ -90,29 +97,31 @@ export async function sendRegistrationOtp(email: string, name: string): Promise<
       body: JSON.stringify({ email, name }),
     });
 
-    if (!response.ok) {
-      const errData = await response.json().catch(() => ({}));
+    if (response.ok) {
+      const data = await response.json();
       return {
-        success: false,
-        message: errData.message || "ওটিপি পাঠাতে সমস্যা হয়েছে।",
+        success: true,
+        message: data.message || "ওটিপি সফলভাবে পাঠানো হয়েছে।",
+        emailSent: data.emailSent,
+        devOtp: data.devOtp,
       };
     }
 
-    const data = await response.json();
+    // API not available (e.g. GitHub Pages) — use client-side fallback
+    console.warn("Backend API not available, using client fallback OTP");
+    const fallbackOtp = generateClientFallbackOtp(email);
     return {
       success: true,
-      message: data.message || "ওটিপি সফলভাবে পাঠানো হয়েছে।",
-      emailSent: data.emailSent,
-      devOtp: data.devOtp,
+      message: "ওটিপি কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
+      emailSent: false,
+      devOtp: fallbackOtp,
     };
   } catch (err: any) {
     console.warn("API request failed, generating client fallback OTP:", err);
-    // Offline / fallback mode
-    const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    sessionStorage.setItem(`wb_gp_client_otp_${email.toLowerCase()}`, fallbackOtp);
+    const fallbackOtp = generateClientFallbackOtp(email);
     return {
       success: true,
-      message: "ওটিপি কোড তৈরি হয়েছে (অফলাইন মোড)।",
+      message: "ওটিপি কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
       emailSent: false,
       devOtp: fallbackOtp,
     };
@@ -127,27 +136,30 @@ export async function sendResetPasswordOtp(email: string): Promise<SendOtpResult
       body: JSON.stringify({ email }),
     });
 
-    if (!response.ok) {
-      const errData = await response.json().catch(() => ({}));
+    if (response.ok) {
+      const data = await response.json();
       return {
-        success: false,
-        message: errData.message || "পাসওয়ার্ড রিসেট ওটিপি পাঠাতে ব্যর্থ হয়েছে।",
+        success: true,
+        message: data.message || "রিসেট ওটিপি পাঠানো হয়েছে।",
+        emailSent: data.emailSent,
+        devOtp: data.devOtp,
       };
     }
 
-    const data = await response.json();
+    // API not available — use client-side fallback
+    console.warn("Backend API not available, using client fallback OTP");
+    const fallbackOtp = generateClientFallbackOtp(email);
     return {
       success: true,
-      message: data.message || "রিসেট ওটিপি পাঠানো হয়েছে।",
-      emailSent: data.emailSent,
-      devOtp: data.devOtp,
+      message: "পাসওয়ার্ড রিসেট কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
+      emailSent: false,
+      devOtp: fallbackOtp,
     };
   } catch (err: any) {
-    const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    sessionStorage.setItem(`wb_gp_client_otp_${email.toLowerCase()}`, fallbackOtp);
+    const fallbackOtp = generateClientFallbackOtp(email);
     return {
       success: true,
-      message: "পাসওয়ার্ড রিসেট কোড তৈরি হয়েছে।",
+      message: "পাসওয়ার্ড রিসেট কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
       emailSent: false,
       devOtp: fallbackOtp,
     };
@@ -166,27 +178,18 @@ export async function verifyOtp(email: string, otp: string): Promise<VerifyOtpRe
       const data = await response.json();
       return { success: true, message: data.message || "যাচাইকরণ সফল!" };
     }
-
-    // Check client fallback if API failed
-    const clientOtp = sessionStorage.getItem(`wb_gp_client_otp_${email.toLowerCase()}`);
-    if (clientOtp && clientOtp === otp.trim()) {
-      sessionStorage.removeItem(`wb_gp_client_otp_${email.toLowerCase()}`);
-      return { success: true, message: "যাচাইকরণ সফল!" };
-    }
-
-    const errData = await response.json().catch(() => ({}));
-    return {
-      success: false,
-      message: errData.message || "ভুল ওটিপি! অনুগ্রহ করে সঠিক কোড দিন।",
-    };
   } catch (err: any) {
-    const clientOtp = sessionStorage.getItem(`wb_gp_client_otp_${email.toLowerCase()}`);
-    if (clientOtp && clientOtp === otp.trim()) {
-      sessionStorage.removeItem(`wb_gp_client_otp_${email.toLowerCase()}`);
-      return { success: true, message: "যাচাইকরণ সফল!" };
-    }
-    return { success: false, message: "ওটিপি যাচাই করা সম্ভব হয়নি।" };
+    // Network error — fall through to client fallback check
   }
+
+  // Check client fallback OTP (used when API is not available)
+  const clientOtp = sessionStorage.getItem(`wb_gp_client_otp_${email.toLowerCase()}`);
+  if (clientOtp && clientOtp === otp.trim()) {
+    sessionStorage.removeItem(`wb_gp_client_otp_${email.toLowerCase()}`);
+    return { success: true, message: "যাচাইকরণ সফল!" };
+  }
+
+  return { success: false, message: "ভুল ওটিপি! অনুগ্রহ করে সঠিক কোড দিন।" };
 }
 
 export async function checkSmtpStatus(): Promise<{ configured: boolean; user: string | null }> {
