@@ -25,18 +25,27 @@ import {
   HelpCircle,
   Award,
   Flame,
-  X
+  X,
+  Lock,
+  UserPlus
 } from "lucide-react";
+import { UserProfile } from "../types";
+import { isDemoUser, DEMO_MAX_SAQ_PREVIEW } from "../utils/demoHelper";
 
 interface Gk5000SaqExplorerProps {
   initialCategory?: "history" | "geography" | "polity" | "science" | "static";
   onClose?: () => void;
+  user?: UserProfile | null;
+  onOpenAuth?: (mode?: "login" | "register") => void;
 }
 
 export const Gk5000SaqExplorer: React.FC<Gk5000SaqExplorerProps> = ({
   initialCategory = "history",
-  onClose
+  onClose,
+  user,
+  onOpenAuth
 }) => {
+  const isDemo = isDemoUser(user);
   const [activeCategory, setActiveCategory] = useState<
     "history" | "geography" | "polity" | "science" | "static"
   >(initialCategory);
@@ -98,11 +107,14 @@ export const Gk5000SaqExplorer: React.FC<Gk5000SaqExplorerProps> = ({
     });
   }, [currentCategoryData, selectedSubtopic, searchQuery, onlySaved, savedIds]);
 
-  const totalPages = Math.ceil(filteredList.length / pageSize) || 1;
+  const totalPages = isDemo ? 1 : (Math.ceil(filteredList.length / pageSize) || 1);
   const paginatedList = useMemo(() => {
+    if (isDemo) {
+      return filteredList.slice(0, DEMO_MAX_SAQ_PREVIEW);
+    }
     const start = (page - 1) * pageSize;
     return filteredList.slice(start, start + pageSize);
-  }, [filteredList, page, pageSize]);
+  }, [filteredList, page, pageSize, isDemo]);
 
   const toggleSave = (id: number) => {
     setSavedIds((prev) => {
@@ -500,6 +512,31 @@ export const Gk5000SaqExplorer: React.FC<Gk5000SaqExplorerProps> = ({
             </div>
           );
         })}
+
+        {isDemo && filteredList.length > DEMO_MAX_SAQ_PREVIEW && (
+          <div className="bg-white border-2 border-dashed border-amber-300 rounded-3xl p-6 sm:p-8 text-center space-y-4 shadow-sm">
+            <div className="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-200 text-amber-700 flex items-center justify-center mx-auto">
+              <Lock className="w-6 h-6" />
+            </div>
+            <div className="space-y-1.5">
+              <h4 className="text-base sm:text-lg font-extrabold text-slate-900 font-bengali">
+                বাকি {filteredList.length - DEMO_MAX_SAQ_PREVIEW}টি প্রশ্ন ও উত্তর ডেমো মোডে লক করা
+              </h4>
+              <p className="text-xs text-slate-600 font-bengali max-w-lg mx-auto leading-relaxed">
+                ডেমো অ্যাকাউন্টে প্রতিটি বিভাগের প্রথম ১৫টি প্রশ্ন উন্মুক্ত রাখা হয়েছে। সম্পূর্ণ ৫,০০০+ SAQ ও ১-লাইনার লাইব্রেরি আনলক করতে ফ্রি অ্যাকাউন্ট তৈরি করুন।
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                if (onOpenAuth) onOpenAuth("register");
+              }}
+              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm font-bengali inline-flex items-center gap-2 shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+            >
+              <UserPlus className="w-4 h-4" />
+              <span>সম্পূর্ণ লাইব্রেরি আনলক করুন (ফ্রি)</span>
+            </button>
+          </div>
+        )}
 
         {filteredList.length === 0 && (
           <div className="bg-white border border-slate-200 rounded-3xl p-12 text-center space-y-3">

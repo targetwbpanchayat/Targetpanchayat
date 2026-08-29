@@ -20,29 +20,52 @@ import {
   Search,
   ArrowRight,
   TrendingUp,
+  Lock,
+  ShieldAlert,
 } from "lucide-react";
 import confetti from "canvas-confetti";
-import { MockTest, MockTestAttempt, SubjectId, UserProgress } from "../types";
+import { MockTest, MockTestAttempt, SubjectId, UserProgress, UserProfile } from "../types";
 import { generateFullMockTest, cleanQuestion, cleanQuestionText } from "../utils/testGenerator";
 import { VOLUME6_MOCK_TESTS } from "../data/volume6";
 import { MOCK_TESTS } from "../data/mockTests";
 import { saveUserProgress } from "../utils/storage";
+import { isDemoUser, isMockTestAccessibleInDemo } from "../utils/demoHelper";
+import { LockedFeatureModal } from "./LockedFeatureModal";
 
 interface FullMockTestViewProps {
   progress: UserProgress;
   setProgress: React.Dispatch<React.SetStateAction<UserProgress>>;
   initialTestId?: string | null;
+  user?: UserProfile | null;
+  onOpenAuth?: (mode?: "login" | "register") => void;
 }
 
 export const FullMockTestView: React.FC<FullMockTestViewProps> = ({
   progress,
   setProgress,
   initialTestId,
+  user,
+  onOpenAuth,
 }) => {
   // Test states: 'list' | 'instructions' | 'exam' | 'result'
   const [activeScreen, setActiveScreen] = useState<"list" | "instructions" | "exam" | "result">("list");
   const [currentTest, setCurrentTest] = useState<MockTest>(() => generateFullMockTest());
   const [testSourceTab, setTestSourceTab] = useState<"vol6" | "curated" | "all">("vol6");
+
+  // Demo lock modal
+  const [lockedModalOpen, setLockedModalOpen] = useState(false);
+  const [lockedModalTitle, setLockedModalTitle] = useState("মক টেস্টটি ডেমো মোডে লক করা আছে");
+  const [lockedModalDesc, setLockedModalDesc] = useState("ডেমো মোডে শুধুমাত্র ১ম ফুল মক টেস্টটি (সেট ১) উন্মুক্ত। সম্পূর্ণ ৩০টি ফুল মক টেস্ট ও মেগা গ্র্যান্ড টেস্ট দিতে আপনার ফ্রি একাউন্ট তৈরি করুন।");
+  const [lockedFeatureName, setLockedFeatureName] = useState<string | undefined>(undefined);
+
+  const isDemo = isDemoUser(user);
+
+  const handleOpenLocked = (testTitle?: string) => {
+    setLockedModalTitle("মক টেস্টটি ডেমো মোডে লক করা আছে");
+    setLockedModalDesc("ডেমো মোডে শুধুমাত্র ১ম ফুল মক টেস্টটি (সেট ১) সম্পূর্ণ উন্মুক্ত। সম্পূর্ণ ৩০টি ফুল মক টেস্ট ও মেগা গ্র্যান্ড টেস্ট দিতে আপনার ফ্রি একাউন্ট তৈরি করুন বা লগইন করুন।");
+    setLockedFeatureName(testTitle);
+    setLockedModalOpen(true);
+  };
 
   // Exam engine state
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -93,6 +116,10 @@ export const FullMockTestView: React.FC<FullMockTestViewProps> = ({
 
   // Generate fresh dynamic full mock test and start
   const handleStartNewDynamicTest = () => {
+    if (isDemo) {
+      handleOpenLocked("নতুন সাফল করা ডায়নামিক টেস্ট");
+      return;
+    }
     const freshTest = generateFullMockTest();
     setCurrentTest(freshTest);
     setActiveScreen("instructions");
@@ -100,6 +127,10 @@ export const FullMockTestView: React.FC<FullMockTestViewProps> = ({
 
   // Start exam
   const handleStartExam = (test: MockTest) => {
+    if (isDemo && !isMockTestAccessibleInDemo(test.id, user)) {
+      handleOpenLocked(test.titleBn);
+      return;
+    }
     const sanitizedTest: MockTest = {
       ...test,
       questions: test.questions.map(cleanQuestion),
@@ -360,6 +391,7 @@ export const FullMockTestView: React.FC<FullMockTestViewProps> = ({
         {/* Grid of Sets */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {displayTests.map((test) => {
+            const isAccessible = isMockTestAccessibleInDemo(test.id, user);
             const previousAttempts = progress.mockTestAttempts?.filter((a) => a.testId === test.id) || [];
             const bestScore = previousAttempts.length > 0
               ? Math.max(...previousAttempts.map((a) => a.percentage))
@@ -368,18 +400,27 @@ export const FullMockTestView: React.FC<FullMockTestViewProps> = ({
             return (
               <div
                 key={test.id}
-                className="bg-white border border-slate-200 rounded-2xl p-5 hover:border-emerald-400 hover:shadow-md transition-all flex flex-col justify-between space-y-4"
+                className={`bg-white border rounded-2xl p-5 transition-all flex flex-col justify-between space-y-4 ${
+                  !isAccessible
+                    ? "border-slate-200 bg-slate-50/50 opacity-90"
+                    : "border-slate-200 hover:border-emerald-400 hover:shadow-md"
+                }`}
               >
                 <div className="space-y-2">
                   <div className="flex items-center justify-between">
                     <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-bengali">
                       {test.totalQuestions} প্রশ্ন • {test.durationMinutes} মিনিট
                     </span>
-                    {bestScore !== null && (
+                    {!isAccessible ? (
+                      <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-bengali flex items-center gap-1 border border-amber-200">
+                        <Lock className="w-3 h-3" />
+                        <span>লক করা</span>
+                      </span>
+                    ) : bestScore !== null ? (
                       <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-mono-num">
                         সর্বোচ্চ: {bestScore}%
                       </span>
-                    )}
+                    ) : null}
                   </div>
 
                   <h3 className="text-sm sm:text-base font-bold text-slate-900 font-bengali line-clamp-2 leading-snug">
@@ -395,30 +436,88 @@ export const FullMockTestView: React.FC<FullMockTestViewProps> = ({
                   <div className="text-[11px] text-slate-500 font-bengali">
                     {test.sections?.map(s => s.subjectName.split(" ")[0]).join(" • ") || "সম্পূর্ণ সিলেবাস"}
                   </div>
-                  <button
-                    onClick={() => {
-                      setCurrentTest({
-                        ...test,
-                        questions: test.questions.map(cleanQuestion),
-                      });
-                      setActiveScreen("instructions");
-                    }}
-                    className="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-emerald-700 text-white text-xs font-bold font-bengali transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
-                  >
-                    <span>শুরু করুন</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  {isAccessible ? (
+                    <button
+                      onClick={() => {
+                        setCurrentTest({
+                          ...test,
+                          questions: test.questions.map(cleanQuestion),
+                        });
+                        setActiveScreen("instructions");
+                      }}
+                      className="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-emerald-700 text-white text-xs font-bold font-bengali transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
+                    >
+                      <span>শুরু করুন</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => handleOpenLocked(test.titleBn)}
+                      className="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold font-bengali transition-colors cursor-pointer flex items-center gap-1.5 shadow-xs"
+                    >
+                      <Lock className="w-3.5 h-3.5" />
+                      <span>আনলক করুন</span>
+                    </button>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
+
+        <LockedFeatureModal
+          isOpen={lockedModalOpen}
+          onClose={() => setLockedModalOpen(false)}
+          title={lockedModalTitle}
+          description={lockedModalDesc}
+          featureName={lockedFeatureName}
+          onRegister={() => {
+            setLockedModalOpen(false);
+            if (onOpenAuth) onOpenAuth("register");
+          }}
+        />
       </div>
     );
   }
 
   // 2. SCREEN: INSTRUCTIONS
   if (activeScreen === "instructions") {
+    const isCurrentAccessible = isMockTestAccessibleInDemo(currentTest.id, user);
+
+    if (!isCurrentAccessible) {
+      return (
+        <div className="max-w-2xl mx-auto bg-white border-2 border-amber-300 rounded-3xl p-8 space-y-6 shadow-sm text-center animate-in fade-in">
+          <div className="w-14 h-14 rounded-2xl bg-amber-100 border border-amber-200 text-amber-700 flex items-center justify-center mx-auto">
+            <Lock className="w-7 h-7" />
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-xl font-bold text-slate-900 font-bengali">
+              {currentTest.titleBn} ডেমো অ্যাকাউন্টে লক করা আছে
+            </h3>
+            <p className="text-sm text-slate-600 font-bengali leading-relaxed">
+              ডেমো মোডে শুধুমাত্র ১ম ফুল মক টেস্টটি (সেট ১) সম্পূর্ণ অ্যাক্সেসযোগ্য। এই টেস্ট এবং বাকি ২৯টি ফুল প্র্যাকটিস সেট দিতে অনুগ্রহ করে ফ্রি অ্যাকাউন্ট তৈরি করুন।
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+            <button
+              onClick={() => setActiveScreen("list")}
+              className="px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bengali font-bold text-xs cursor-pointer"
+            >
+              ← মক টেস্ট তালিকায় ফিরে যান
+            </button>
+            <button
+              onClick={() => {
+                if (onOpenAuth) onOpenAuth("register");
+              }}
+              className="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bengali font-bold text-xs sm:text-sm shadow-md shadow-emerald-600/20 cursor-pointer flex items-center gap-2"
+            >
+              <span>ফ্রি অ্যাকাউন্ট তৈরি করুন</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      );
+    }
     return (
       <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 space-y-6 shadow-xs animate-in fade-in">
         <button

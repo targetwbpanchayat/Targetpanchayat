@@ -515,53 +515,11 @@ export const SCIENCE_SUBSECTIONS: GKSubSectionData[] = [
   }
 ];
 
-export const GK_SCIENCE_CHAPTERS: StudyChapter[] = SCIENCE_SUBSECTIONS.map((sub) => ({
-  id: sub.id,
-  subjectId: "gk",
-  chapterNumber: sub.subNumber,
-  titleBn: sub.titleBn,
-  titleEn: sub.titleEn,
-  estimatedMinutes: 20,
-  importantNotesCount: sub.oneLiners.length,
-  summary: sub.summaryBn,
-  subTopics: [
-    {
-      id: `${sub.id}_t1`,
-      chapterId: sub.id,
-      subjectId: "gk",
-      titleBn: sub.titleBn,
-      titleEn: sub.titleEn,
-      orderIndex: 1,
-      summaryBn: sub.summaryBn,
-      keyConcepts: sub.keyPoints,
-    }
-  ],
-  content: {
-    introduction: `${sub.titleBn}: ভৌতবিজ্ঞান, রসায়ন ও জীববিদ্যার সম্পূর্ণ পরীক্ষার উপযোগী ওয়ান-লাইনার্স ও নোটস।`,
-    sections: [
-      {
-        heading: "বৈজ্ঞানিক তত্ত্ব ও গুরুত্বপূর্ণ পয়েন্টস",
-        subheading: "Science Key Concepts",
-        body: sub.keyPoints,
-        keyPoints: sub.oneLiners.slice(0, 5),
-      }
-    ],
-    bulletSummary: sub.keyPoints,
-    examTips: sub.oneLiners.slice(0, 4),
-    quickRevisionPoints: sub.oneLiners.slice(0, 8),
-    oneLiners: sub.oneLiners,
-    saqs: sub.oneLiners.map((line, idx) => {
-      const parts = line.split(" - ");
-      const q = parts.length > 1 ? parts[0] : `প্রশ্ন ${idx + 1}`;
-      const a = parts.length > 1 ? parts[1] : line;
-      return {
-        id: `${sub.id}_saq_${idx + 1}`,
-        questionBn: q,
-        answerBn: a,
-      };
-    })
-  }
-}));
+import { buildEnhancedGkChapter } from "./buildGkChapter";
+
+export const GK_SCIENCE_CHAPTERS: StudyChapter[] = SCIENCE_SUBSECTIONS.map((sub) =>
+  buildEnhancedGkChapter(sub, "science")
+);
 
 export const GK_SCIENCE_QUESTIONS: Question[] = SCIENCE_SUBSECTIONS.flatMap((sub) =>
   sub.mcqs.map((mcq, qIdx) => ({

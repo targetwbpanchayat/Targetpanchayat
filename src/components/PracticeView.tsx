@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import {
   CheckSquare,
   Search,
@@ -14,25 +14,39 @@ import {
   ChevronRight,
   BookOpen,
   Layers,
+  X,
+  Lock,
+  UserPlus,
 } from "lucide-react";
-import { SubjectId, Question, UserProgress } from "../types";
+import { SubjectId, Question, UserProgress, UserProfile } from "../types";
 import { SUBJECTS } from "../data/subjects";
 import { QUESTION_SETS } from "../data/questionSets";
+import { STUDY_CHAPTERS } from "../data/studyData";
 import { saveUserProgress } from "../utils/storage";
 import { cleanQuestionText } from "../utils/testGenerator";
+import { isDemoUser, DEMO_MAX_MCQ_PER_VOLUME } from "../utils/demoHelper";
+import { LockedFeatureModal } from "./LockedFeatureModal";
 
 interface PracticeViewProps {
   progress: UserProgress;
   setProgress: React.Dispatch<React.SetStateAction<UserProgress>>;
   initialSubject?: SubjectId | "all";
+  initialChapterId?: string | null;
+  user?: UserProfile | null;
+  onOpenAuth?: (mode?: "login" | "register") => void;
 }
 
 export const PracticeView: React.FC<PracticeViewProps> = ({
   progress,
   setProgress,
   initialSubject = "all",
+  initialChapterId = null,
+  user,
+  onOpenAuth,
 }) => {
+  const isDemo = isDemoUser(user);
   const [selectedSubject, setSelectedSubject] = useState<SubjectId | "all">(initialSubject);
+  const [selectedChapterFilter, setSelectedChapterFilter] = useState<string>(initialChapterId || "all");
   const [gkCategoryFilter, setGkCategoryFilter] = useState<string>("all");
   const [mathChapterFilter, setMathChapterFilter] = useState<string>("all");
   const [filterMode, setFilterMode] = useState<"all" | "unattempted" | "incorrect" | "bookmarked">("all");
@@ -41,12 +55,61 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
   const [jumpPageInput, setJumpPageInput] = useState("");
   const pageSize = 15;
 
+  // Demo Lock Modal
+  const [lockedModalOpen, setLockedModalOpen] = useState(false);
+  const [lockedModalTitle, setLockedModalTitle] = useState("প্রশ্নটি ডেমো মোডে লক করা আছে");
+  const [lockedModalDesc, setLockedModalDesc] = useState("ডেমো মোডে প্রতিটি ভলিউমের প্রথম ২০টি MCQ সম্পূর্ণ উন্মুক্ত। সম্পূর্ণ প্রশ্ন ব্যাংক ও আনলিমিটেড প্র্যাকটিস করতে ফ্রি রেজিস্টার করুন।");
+  const [lockedFeatureName, setLockedFeatureName] = useState<string | undefined>(undefined);
+
+  const handleOpenLocked = (qTitle?: string) => {
+    setLockedModalTitle("প্রশ্নটি ডেমো মোডে লক করা আছে");
+    setLockedModalDesc("ডেমো মোডে প্রতিটি ভলিউমের প্রথম ২০টি MCQ সম্পূর্ণ উন্মুক্ত। সম্পূর্ণ ভলিউমের শত শত প্রশ্ন, আনলিমিটেড প্র্যাকটিস ও বুকমার্কিং আনলক করতে আপনার ফ্রি অ্যাকাউন্ট তৈরি করুন।");
+    setLockedFeatureName(qTitle);
+    setLockedModalOpen(true);
+  };
+
+  // Map each question's index inside its subject/volume
+  const questionIndexInSubjectMap = useMemo(() => {
+    const map: Record<string, number> = {};
+    const countBySubject: Record<string, number> = {};
+    QUESTION_SETS.forEach((q) => {
+      const subj = q.subjectId;
+      const idx = countBySubject[subj] || 0;
+      map[q.id] = idx;
+      countBySubject[subj] = idx + 1;
+    });
+    return map;
+  }, []);
+
+  // React to initial prop updates
+  useEffect(() => {
+    if (initialSubject) {
+      setSelectedSubject(initialSubject);
+    }
+  }, [initialSubject]);
+
+  useEffect(() => {
+    if (initialChapterId) {
+      setSelectedChapterFilter(initialChapterId);
+      const matchedChap = STUDY_CHAPTERS.find((c) => c.id === initialChapterId);
+      if (matchedChap) {
+        setSelectedSubject(matchedChap.subjectId);
+      }
+      setCurrentPage(1);
+    }
+  }, [initialChapterId]);
+
   // Selected answer map for current session
   const [sessionAnswers, setSessionAnswers] = useState<Record<string, number>>({});
   const [showExplanationMap, setShowExplanationMap] = useState<Record<string, boolean>>({});
 
   // Toggle bookmark for question
   const toggleBookmark = (qId: string) => {
+    const qIndex = questionIndexInSubjectMap[qId] ?? 0;
+    if (isDemo && qIndex >= DEMO_MAX_MCQ_PER_VOLUME) {
+      handleOpenLocked("বুকমার্কিং ফিচার");
+      return;
+    }
     const isBookmarked = progress.bookmarkedQuestionIds.includes(qId);
     let updatedBookmarks: string[];
     if (isBookmarked) {
@@ -64,6 +127,11 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
 
   // Handle user selecting an option
   const handleSelectOption = (q: Question, optionIndex: number) => {
+    const qIndex = questionIndexInSubjectMap[q.id] ?? 0;
+    if (isDemo && qIndex >= DEMO_MAX_MCQ_PER_VOLUME) {
+      handleOpenLocked(q.questionBn);
+      return;
+    }
     const isCorrect = optionIndex === q.correctIndex;
     
     // Save in session state
@@ -88,13 +156,29 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
     saveUserProgress(updated);
   };
 
+  // Active subject chapters for filtering
+  const currentSubjectChapters = selectedSubject !== "all"
+    ? STUDY_CHAPTERS.filter((c) => c.subjectId === selectedSubject)
+    : [];
+
+  const activeChapterInfo = selectedChapterFilter !== "all"
+    ? STUDY_CHAPTERS.find((c) => c.id === selectedChapterFilter)
+    : null;
+
   // Filter questions
   const filteredQuestions = QUESTION_SETS.filter((q) => {
     // Subject filter
     if (selectedSubject !== "all" && q.subjectId !== selectedSubject) return false;
 
-    // GK Category Sub-filter
-    if (selectedSubject === "gk" && gkCategoryFilter !== "all") {
+    // Direct Chapter filter
+    if (selectedChapterFilter !== "all") {
+      const matchChapId = q.chapterId === selectedChapterFilter;
+      const matchInId = q.id.includes(selectedChapterFilter);
+      if (!matchChapId && !matchInId) return false;
+    }
+
+    // GK Category Sub-filter (when no specific single chapter is active)
+    if (selectedSubject === "gk" && gkCategoryFilter !== "all" && selectedChapterFilter === "all") {
       if (gkCategoryFilter === "history" && !q.id.includes("hist") && !q.chapterId?.includes("hist")) return false;
       if (gkCategoryFilter === "geography" && !q.id.includes("geo") && !q.chapterId?.includes("geo")) return false;
       if (gkCategoryFilter === "polity" && !q.id.includes("pol") && !q.chapterId?.includes("pol")) return false;
@@ -102,8 +186,8 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
       if (gkCategoryFilter === "static" && !q.id.includes("stat") && !q.chapterId?.includes("stat")) return false;
     }
 
-    // Math 14 Chapters Sub-filter
-    if (selectedSubject === "math" && mathChapterFilter !== "all") {
+    // Math 14 Chapters Sub-filter (legacy fallback)
+    if (selectedSubject === "math" && mathChapterFilter !== "all" && selectedChapterFilter === "all") {
       if (q.chapterId !== mathChapterFilter) return false;
     }
 
@@ -171,10 +255,11 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
       </div>
 
       {/* Subject Filter Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
         <button
           onClick={() => {
             setSelectedSubject("all");
+            setSelectedChapterFilter("all");
             setCurrentPage(1);
           }}
           className={`px-3.5 py-2 rounded-xl text-xs font-bold font-bengali whitespace-nowrap transition-all cursor-pointer ${
@@ -193,6 +278,7 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
               key={sub.id}
               onClick={() => {
                 setSelectedSubject(sub.id);
+                setSelectedChapterFilter("all");
                 setCurrentPage(1);
               }}
               className={`px-3.5 py-2 rounded-xl text-xs font-bold font-bengali whitespace-nowrap transition-all cursor-pointer ${
@@ -206,6 +292,70 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
           );
         })}
       </div>
+
+      {/* Chapter Dropdown / Selector Bar for Selected Subject */}
+      {selectedSubject !== "all" && currentSubjectChapters.length > 0 && (
+        <div className="bg-white border border-slate-200 rounded-2xl p-4 space-y-3 shadow-xs">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="flex items-center gap-2 text-slate-800 font-bold text-xs sm:text-sm font-bengali">
+              <Layers className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>নির্দিষ্ট অধ্যায় নির্বাচন করে প্র্যাকটিস করুন:</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <select
+                value={selectedChapterFilter}
+                onChange={(e) => {
+                  setSelectedChapterFilter(e.target.value);
+                  setCurrentPage(1);
+                }}
+                className="bg-slate-50 border border-slate-300 rounded-xl px-3 py-1.5 text-xs sm:text-sm text-slate-900 font-bengali focus:outline-none focus:border-emerald-600 max-w-full"
+              >
+                <option value="all">-- সম্পূর্ণ বিষয়ের সব অধ্যায় ({currentSubjectChapters.length}টি অধ্যায়) --</option>
+                {currentSubjectChapters.map((ch, idx) => (
+                  <option key={ch.id} value={ch.id}>
+                    {idx + 1}. {ch.titleBn}
+                  </option>
+                ))}
+              </select>
+
+              {selectedChapterFilter !== "all" && (
+                <button
+                  onClick={() => {
+                    setSelectedChapterFilter("all");
+                    setCurrentPage(1);
+                  }}
+                  className="px-2.5 py-1.5 text-xs text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 rounded-xl font-bengali flex items-center gap-1 shrink-0 cursor-pointer"
+                  title="ফিল্টার সরান"
+                >
+                  <X className="w-3.5 h-3.5" />
+                  <span>রিসেট</span>
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Active Chapter Badge */}
+          {activeChapterInfo && (
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center justify-between gap-3 text-xs sm:text-sm font-bengali">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="font-bold text-emerald-900">🎯 নির্বাচিত অধ্যায়:</span>
+                <span className="text-emerald-800 font-semibold">{activeChapterInfo.titleBn}</span>
+                <span className="text-slate-500 font-mono text-xs">({filteredQuestions.length} টি প্রশ্ন উপলব্ধ)</span>
+              </div>
+              <button
+                onClick={() => {
+                  setSelectedChapterFilter("all");
+                  setCurrentPage(1);
+                }}
+                className="text-xs font-bold text-emerald-700 hover:underline cursor-pointer shrink-0"
+              >
+                সব প্রশ্ন দেখুন
+              </button>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* GK 5,000 Sub-Categories Filter */}
       {selectedSubject === "gk" && (
@@ -339,6 +489,8 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
       <div className="space-y-4">
         {paginatedQuestions.length > 0 ? (
           paginatedQuestions.map((q, idx) => {
+            const qIndex = questionIndexInSubjectMap[q.id] ?? 0;
+            const isAccessible = !isDemo || qIndex < DEMO_MAX_MCQ_PER_VOLUME;
             const isBookmarked = progress.bookmarkedQuestionIds.includes(q.id);
             const globalIndex = (currentPage - 1) * pageSize + idx + 1;
             const currentSelected =
@@ -351,7 +503,9 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
             return (
               <div
                 key={q.id}
-                className="bg-white border border-slate-200 rounded-3xl p-5 sm:p-6 space-y-4 transition-all shadow-xs"
+                className={`bg-white border rounded-3xl p-5 sm:p-6 space-y-4 transition-all shadow-xs ${
+                  !isAccessible ? "border-slate-200 bg-slate-50/50" : "border-slate-200"
+                }`}
               >
                 {/* Question Header */}
                 <div className="flex items-start justify-between gap-4">
@@ -366,21 +520,28 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
                       {q.subjectId === "math" && "পাটিগণিত"}
                       {q.subjectId === "gk" && "সাধারণ জ্ঞান (ভলিউম ৫)"}
                     </span>
-                    {q.examYear && (
+                    {!isAccessible ? (
+                      <span className="text-[11px] font-bold bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded-full border border-amber-200 font-bengali flex items-center gap-1">
+                        <Lock className="w-3 h-3" />
+                        <span>ডেমো লক (২০টির পরবর্তী)</span>
+                      </span>
+                    ) : q.examYear ? (
                       <span className="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded border border-slate-200 font-mono-num font-semibold">
                         {q.examYear}
                       </span>
-                    )}
+                    ) : null}
                   </div>
 
                   <button
                     onClick={() => toggleBookmark(q.id)}
                     className={`p-2 rounded-xl border transition-colors cursor-pointer ${
-                      isBookmarked
+                      !isAccessible
+                        ? "bg-slate-100 border-slate-200 text-slate-400"
+                        : isBookmarked
                         ? "bg-amber-100 border-amber-300 text-amber-700"
                         : "bg-slate-50 border-slate-200 text-slate-400 hover:text-slate-700"
                     }`}
-                    title="প্রশ্ন বুকমার্ক করুন"
+                    title={!isAccessible ? "লক করা" : "প্রশ্ন বুকমার্ক করুন"}
                   >
                     <Bookmark className={`w-4 h-4 ${isBookmarked ? "fill-amber-600 text-amber-600" : ""}`} />
                   </button>
@@ -399,6 +560,24 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
                 {/* 4 Interactive Options */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                   {q.options.map((opt, optIdx) => {
+                    if (!isAccessible) {
+                      return (
+                        <button
+                          key={optIdx}
+                          onClick={() => handleOpenLocked(q.questionBn)}
+                          className="p-3.5 rounded-2xl border border-slate-200 bg-slate-100/80 text-left text-xs sm:text-sm font-bengali text-slate-500 hover:bg-amber-50/50 hover:border-amber-200 flex items-center justify-between gap-2 cursor-pointer transition-all"
+                        >
+                          <div className="flex items-center gap-2.5">
+                            <span className="w-6 h-6 rounded-lg bg-white border border-slate-200 text-slate-400 font-bold text-xs flex items-center justify-center shrink-0">
+                              {String.fromCharCode(65 + optIdx)}
+                            </span>
+                            <span className="font-medium text-slate-600">{opt}</span>
+                          </div>
+                          <Lock className="w-3.5 h-3.5 text-amber-600/70 shrink-0" />
+                        </button>
+                      );
+                    }
+
                     const isSelected = currentSelected === optIdx;
                     const isCorrect = optIdx === q.correctIndex;
 
@@ -434,8 +613,20 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
                   })}
                 </div>
 
+                {!isAccessible && (
+                  <div className="pt-2">
+                    <button
+                      onClick={() => handleOpenLocked(q.questionBn)}
+                      className="w-full py-2.5 px-4 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-200 text-amber-900 text-xs font-bold font-bengali flex items-center justify-center gap-2 cursor-pointer transition-colors"
+                    >
+                      <Lock className="w-3.5 h-3.5 text-amber-700" />
+                      <span>এই প্রশ্ন ও সমাধান ডেমো মোডে লক করা — আনলক করতে ফ্রি রেজিস্টার করুন</span>
+                    </button>
+                  </div>
+                )}
+
                 {/* Explanation Box */}
-                {showExplanation && (
+                {isAccessible && showExplanation && (
                   <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 text-xs sm:text-sm text-slate-800 font-bengali space-y-1.5 animate-in fade-in">
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-emerald-900 flex items-center gap-1.5">
@@ -486,6 +677,19 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
           </button>
         </div>
       )}
+
+      {/* Locked Feature Modal */}
+      <LockedFeatureModal
+        isOpen={lockedModalOpen}
+        onClose={() => setLockedModalOpen(false)}
+        title={lockedModalTitle}
+        description={lockedModalDesc}
+        featureName={lockedFeatureName}
+        onRegister={() => {
+          setLockedModalOpen(false);
+          if (onOpenAuth) onOpenAuth("register");
+        }}
+      />
     </div>
   );
 };

@@ -20,22 +20,28 @@ import {
   ChevronUp,
   Copy,
   Layers,
-  Filter
+  Filter,
+  Lock,
+  ShieldAlert,
 } from "lucide-react";
-import { SubjectId, StudyChapter, UserProgress, ChapterSAQ } from "../types";
+import { SubjectId, StudyChapter, UserProgress, ChapterSAQ, UserProfile } from "../types";
 import { SUBJECTS } from "../data/subjects";
 import { STUDY_CHAPTERS } from "../data/studyData";
 import { GK_CATEGORIES } from "../data/gkVol5";
 import { saveUserProgress } from "../utils/storage";
 import { cleanQuestionText } from "../utils/testGenerator";
 import { Gk5000SaqExplorer } from "./Gk5000SaqExplorer";
+import { isDemoUser, isChapterAccessibleInDemo } from "../utils/demoHelper";
+import { LockedFeatureModal } from "./LockedFeatureModal";
 
 interface StudyViewProps {
   progress: UserProgress;
   setProgress: React.Dispatch<React.SetStateAction<UserProgress>>;
   selectedChapterId: string | null;
   setSelectedChapterId: (id: string | null) => void;
-  onLaunchPractice: (subjectId: SubjectId) => void;
+  onLaunchPractice: (subjectId: SubjectId, chapterId?: string) => void;
+  user?: UserProfile | null;
+  onOpenAuth?: (mode?: "login" | "register") => void;
 }
 
 export const StudyView: React.FC<StudyViewProps> = ({
@@ -44,6 +50,8 @@ export const StudyView: React.FC<StudyViewProps> = ({
   selectedChapterId,
   setSelectedChapterId,
   onLaunchPractice,
+  user,
+  onOpenAuth,
 }) => {
   const [activeSubject, setActiveSubject] = useState<SubjectId | "all">("all");
   const [activeGkCat, setActiveGkCat] = useState<string>("all");
@@ -54,6 +62,21 @@ export const StudyView: React.FC<StudyViewProps> = ({
   const [activeTab, setActiveTab] = useState<"notes" | "oneliners" | "saq">("notes");
   const [expandedSaqs, setExpandedSaqs] = useState<Record<string, boolean>>({});
   const [copiedText, setCopiedText] = useState<string | null>(null);
+
+  // Demo locked modal state
+  const [lockedModalOpen, setLockedModalOpen] = useState(false);
+  const [lockedModalTitle, setLockedModalTitle] = useState("অধ্যায়টি ডেমো মোডে লক করা আছে");
+  const [lockedModalDesc, setLockedModalDesc] = useState("ডেমো মোডে প্রতিটি ভলিউম ও বিষয়ের শুধুমাত্র ১ম অধ্যায়টি উন্মুক্ত। সমস্ত অধ্যায় বিস্তারিত পড়তে আপনার ফ্রি অ্যাকাউন্ট খুলুন।");
+  const [lockedFeatureName, setLockedFeatureName] = useState<string | undefined>(undefined);
+
+  const isDemo = isDemoUser(user);
+
+  const handleOpenLocked = (chapterName?: string) => {
+    setLockedModalTitle("অধ্যায়টি ডেমো মোডে লক করা আছে");
+    setLockedModalDesc("ডেমো মোডে প্রতিটি বিষয়ের শুধুমাত্র ১ম অধ্যায়টি উন্মুক্ত। এই অধ্যায় সহ সম্পূর্ণ সিলেবাস ও স্টাডি মেটেরিয়াল পড়তে আপনার ফ্রি অ্যাকাউন্ট খুলুন বা লগইন করুন।");
+    setLockedFeatureName(chapterName);
+    setLockedModalOpen(true);
+  };
 
   // Active chapter being read
   const currentChapter = STUDY_CHAPTERS.find((c) => c.id === selectedChapterId);
@@ -134,8 +157,58 @@ export const StudyView: React.FC<StudyViewProps> = ({
     return matchSubject && matchGkCat && matchSearch;
   });
 
-  // If a chapter is selected, show the full formatted reading view
+  // If a chapter is selected, check accessibility for demo mode
   if (currentChapter) {
+    const isAccessible = isChapterAccessibleInDemo(currentChapter, user);
+
+    if (!isAccessible) {
+      return (
+        <div className="space-y-6 pb-16 animate-in fade-in duration-200">
+          <div className="flex items-center justify-between bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-200">
+            <button
+              onClick={() => setSelectedChapterId(null)}
+              className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-700 hover:text-emerald-700 font-bengali cursor-pointer"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              <span>সব অধ্যায়ে ফিরে যান</span>
+            </button>
+          </div>
+
+          <div className="bg-white border border-amber-200 rounded-3xl p-8 text-center max-w-xl mx-auto space-y-5 shadow-lg">
+            <div className="w-16 h-16 rounded-3xl bg-amber-100 border border-amber-200 text-amber-700 flex items-center justify-center mx-auto shadow-sm">
+              <Lock className="w-8 h-8" />
+            </div>
+            <div className="space-y-2">
+              <span className="text-xs font-bold text-amber-800 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 font-bengali">
+                ডেমো সীমাবদ্ধতা
+              </span>
+              <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 font-bengali">
+                {currentChapter.titleBn}
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 font-bengali max-w-md mx-auto leading-relaxed">
+                ডেমো মোডে প্রতিটি বিষয়ের শুধুমাত্র <strong>প্রথম অধ্যায়টি</strong> উন্মুক্ত রাখা হয়েছে। সম্পূর্ণ ভলিউম ও সিলেবাস পড়ার জন্য ফ্রি অ্যাকাউন্ট তৈরি করুন।
+              </p>
+            </div>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                onClick={() => onOpenAuth && onOpenAuth("register")}
+                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm font-bengali shadow-md shadow-emerald-600/20 transition-all cursor-pointer"
+              >
+                ফ্রি অ্যাকাউন্ট তৈরি করুন
+              </button>
+              <button
+                onClick={() => setSelectedChapterId(null)}
+                className="w-full sm:w-auto px-6 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold text-xs sm:text-sm font-bengali transition-colors cursor-pointer"
+              >
+                অন্যান্য অধ্যায় দেখুন
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     const isDone = progress.completedChapters.includes(currentChapter.id);
     const oneLiners = currentChapter.content.oneLiners || currentChapter.content.quickRevisionPoints || [];
     const saqs = currentChapter.content.saqs || [];
@@ -166,11 +239,12 @@ export const StudyView: React.FC<StudyViewProps> = ({
             </button>
 
             <button
-              onClick={() => onLaunchPractice(currentChapter.subjectId)}
-              className="px-4 py-2 rounded-xl text-xs font-bold bg-sky-600 hover:bg-sky-700 text-white font-bengali flex items-center gap-1.5 transition-colors cursor-pointer hidden sm:flex"
+              onClick={() => onLaunchPractice(currentChapter.subjectId, currentChapter.id)}
+              className="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white font-bengali flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
+              title="এই নির্দিষ্ট অধ্যায়ের MCQ প্র্যাকটিস করুন"
             >
               <CheckSquare className="w-3.5 h-3.5" />
-              <span>MCQ প্র্যাকটিস</span>
+              <span>এই অধ্যায়ের MCQ প্র্যাকটিস</span>
             </button>
           </div>
         </div>
@@ -260,23 +334,35 @@ export const StudyView: React.FC<StudyViewProps> = ({
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {currentChapter.subTopics.map((sub) => (
-                    <div key={sub.id} className="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 shadow-2xs space-y-1.5">
-                      <div className="flex items-center gap-2">
-                        <span className="w-5 h-5 rounded-full bg-emerald-600 text-white text-[11px] font-bold flex items-center justify-center shrink-0">
-                          {sub.orderIndex}
-                        </span>
-                        <h4 className="text-xs sm:text-sm font-bold text-slate-900 font-bengali">{sub.titleBn}</h4>
-                      </div>
-                      <p className="text-xs text-slate-600 font-bengali leading-relaxed pl-7">{sub.summaryBn}</p>
-                      {sub.keyConcepts && sub.keyConcepts.length > 0 && (
-                        <div className="flex flex-wrap gap-1 pl-7 pt-1">
-                          {sub.keyConcepts.map((kc, kIdx) => (
-                            <span key={kIdx} className="text-[10px] bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded-md font-bengali">
-                              {kc}
-                            </span>
-                          ))}
+                    <div key={sub.id} className="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-2xs space-y-2 flex flex-col justify-between">
+                      <div className="space-y-1.5">
+                        <div className="flex items-center gap-2">
+                          <span className="w-5 h-5 rounded-full bg-emerald-600 text-white text-[11px] font-bold flex items-center justify-center shrink-0">
+                            {sub.orderIndex}
+                          </span>
+                          <h4 className="text-xs sm:text-sm font-bold text-slate-900 font-bengali">{sub.titleBn}</h4>
                         </div>
-                      )}
+                        <p className="text-xs text-slate-600 font-bengali leading-relaxed pl-7">{sub.summaryBn}</p>
+                        {sub.keyConcepts && sub.keyConcepts.length > 0 && (
+                          <div className="flex flex-wrap gap-1 pl-7 pt-1">
+                            {sub.keyConcepts.map((kc, kIdx) => (
+                              <span key={kIdx} className="text-[10px] bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded-md font-bengali">
+                                {kc}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="pt-2 border-t border-slate-200/60 flex items-center justify-end pl-7">
+                        <button
+                          onClick={() => onLaunchPractice(currentChapter.subjectId, currentChapter.id)}
+                          className="px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 rounded-xl text-xs font-bold font-bengali flex items-center gap-1.5 transition-colors cursor-pointer"
+                        >
+                          <CheckSquare className="w-3.5 h-3.5 text-emerald-600" />
+                          <span>এই টপিকের MCQ প্র্যাকটিস</span>
+                        </button>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -528,6 +614,31 @@ export const StudyView: React.FC<StudyViewProps> = ({
           </div>
         </div>
 
+        {/* Direct MCQ Practice Callout Banner */}
+        <div className="bg-gradient-to-r from-emerald-700 via-teal-700 to-emerald-800 text-white rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 text-emerald-200 font-bold text-xs font-bengali">
+                <Sparkles className="w-4 h-4 text-emerald-300" />
+                <span>অধ্যায় ভিত্তিক স্ব-মূল্যায়ন ও কুইজ</span>
+              </div>
+              <h3 className="text-lg sm:text-xl font-bold font-bengali">
+                অধ্যায়টি পড়া শেষ? এখনই এই অধ্যায়ের সমস্ত MCQ অনুশীলন করুন!
+              </h3>
+              <p className="text-xs sm:text-sm text-emerald-100/90 font-bengali max-w-xl">
+                থিওরি পড়ার পর সাথে সাথে অধ্যায়ভিত্তিক প্রশ্ন সমাধান করলে ভুল ত্রুটি সংশোধন হয় এবং তথ্য দীর্ঘস্থায়ী মনে থাকে।
+              </p>
+            </div>
+            <button
+              onClick={() => onLaunchPractice(currentChapter.subjectId, currentChapter.id)}
+              className="px-6 py-3.5 bg-white text-emerald-950 hover:bg-emerald-50 rounded-2xl font-bold text-sm font-bengali shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer"
+            >
+              <CheckSquare className="w-4 h-4 text-emerald-700" />
+              <span>সরাসরি MCQ প্র্যাকটিস শুরু করুন →</span>
+            </button>
+          </div>
+        </div>
+
         {/* Bottom Navigation */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6 bg-white border border-slate-200 rounded-3xl shadow-xs">
           <button
@@ -566,6 +677,8 @@ export const StudyView: React.FC<StudyViewProps> = ({
         <Gk5000SaqExplorer
           initialCategory={activeGkCat !== "all" ? (activeGkCat as any) : "history"}
           onClose={() => setShow5000Explorer(false)}
+          user={user}
+          onOpenAuth={onOpenAuth}
         />
       </div>
     );
@@ -720,25 +833,38 @@ export const StudyView: React.FC<StudyViewProps> = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {filteredChapters.map((chapter) => {
           const isDone = progress.completedChapters.includes(chapter.id);
+          const isAccessible = isChapterAccessibleInDemo(chapter, user);
           const oneLinersCount = chapter.content.oneLiners?.length || chapter.content.quickRevisionPoints.length;
           const saqCount = chapter.content.saqs?.length || chapter.content.examTips.length;
 
           return (
             <div
               key={chapter.id}
-              className={`bg-white border rounded-3xl p-5 sm:p-6 space-y-4 transition-all hover:border-emerald-300 shadow-xs flex flex-col justify-between ${
-                isDone ? "border-emerald-300 bg-emerald-50/20" : "border-slate-200"
+              className={`bg-white border rounded-3xl p-5 sm:p-6 space-y-4 transition-all shadow-xs flex flex-col justify-between ${
+                !isAccessible
+                  ? "border-amber-200/80 bg-amber-50/15"
+                  : isDone
+                  ? "border-emerald-300 bg-emerald-50/20 hover:border-emerald-400"
+                  : "border-slate-200 hover:border-emerald-300"
               }`}
             >
               <div className="space-y-2.5">
                 <div className="flex items-center justify-between flex-wrap gap-2">
-                  <span className="text-[10px] font-bold bg-emerald-50 text-emerald-800 px-2.5 py-0.5 rounded-full border border-emerald-200 font-bengali">
-                    {chapter.subjectId === "panchayat" && "পঞ্চায়েত ব্যবস্থা (ভলিউম ১)"}
-                    {chapter.subjectId === "bengali" && "বাংলা ব্যাকরণ ও সাহিত্য (ভলিউম ২)"}
-                    {chapter.subjectId === "english" && "English Grammar"}
-                    {chapter.subjectId === "math" && "পাটিগণিত"}
-                    {chapter.subjectId === "gk" && "সাধারণ জ্ঞান"}
-                  </span>
+                  <div className="flex items-center gap-1.5 flex-wrap">
+                    <span className="text-[10px] font-bold bg-emerald-50 text-emerald-800 px-2.5 py-0.5 rounded-full border border-emerald-200 font-bengali">
+                      {chapter.subjectId === "panchayat" && "পঞ্চায়েত ব্যবস্থা (ভলিউম ১)"}
+                      {chapter.subjectId === "bengali" && "বাংলা ব্যাকরণ ও সাহিত্য (ভলিউম ২)"}
+                      {chapter.subjectId === "english" && "English Grammar"}
+                      {chapter.subjectId === "math" && "পাটিগণিত"}
+                      {chapter.subjectId === "gk" && "সাধারণ জ্ঞান"}
+                    </span>
+                    {!isAccessible && (
+                      <span className="text-[10px] font-bold bg-amber-100 text-amber-900 px-2 py-0.5 rounded-full border border-amber-300 font-bengali flex items-center gap-1">
+                        <Lock className="w-2.5 h-2.5 text-amber-700" />
+                        <span>ডেমো লক</span>
+                      </span>
+                    )}
+                  </div>
                   <div className="flex items-center gap-2">
                     <span className="text-[11px] text-slate-500 flex items-center gap-1 font-medium">
                       <Clock className="w-3 h-3 text-slate-400" />
@@ -774,29 +900,58 @@ export const StudyView: React.FC<StudyViewProps> = ({
               </div>
 
               <div className="flex items-center justify-between pt-3 border-t border-slate-100 gap-3">
-                <button
-                  onClick={() => toggleChapterDone(chapter.id)}
-                  className={`text-xs font-semibold font-bengali flex items-center gap-1.5 transition-colors cursor-pointer ${
-                    isDone ? "text-emerald-700 font-bold" : "text-slate-500 hover:text-slate-800"
-                  }`}
-                >
-                  <div className={`w-4 h-4 rounded border flex items-center justify-center ${isDone ? "bg-emerald-600 border-emerald-600 text-white" : "border-slate-300"}`}>
-                    {isDone && <Check className="w-3 h-3" />}
-                  </div>
-                  <span>{isDone ? "পড়া শেষ" : "পড়া শেষ চিহ্নিত করুন"}</span>
-                </button>
+                {isAccessible ? (
+                  <>
+                    <button
+                      onClick={() => toggleChapterDone(chapter.id)}
+                      className={`text-xs font-semibold font-bengali flex items-center gap-1.5 transition-colors cursor-pointer ${
+                        isDone ? "text-emerald-700 font-bold" : "text-slate-500 hover:text-slate-800"
+                      }`}
+                    >
+                      <div className={`w-4 h-4 rounded border flex items-center justify-center ${isDone ? "bg-emerald-600 border-emerald-600 text-white" : "border-slate-300"}`}>
+                        {isDone && <Check className="w-3 h-3" />}
+                      </div>
+                      <span>{isDone ? "পড়া শেষ" : "পড়া শেষ চিহ্নিত করুন"}</span>
+                    </button>
 
-                <button
-                  onClick={() => setSelectedChapterId(chapter.id)}
-                  className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl font-bengali transition-colors cursor-pointer shadow-xs"
-                >
-                  অধ্যায় পড়ুন →
-                </button>
+                    <button
+                      onClick={() => setSelectedChapterId(chapter.id)}
+                      className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl font-bengali transition-colors cursor-pointer shadow-xs"
+                    >
+                      অধ্যায় পড়ুন →
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <span className="text-xs text-amber-700 font-bengali flex items-center gap-1 font-medium">
+                      <ShieldAlert className="w-3.5 h-3.5" />
+                      <span>১ম অধ্যায় ব্যাতীত লক</span>
+                    </span>
+
+                    <button
+                      onClick={() => handleOpenLocked(chapter.titleBn)}
+                      className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white text-xs font-bold rounded-xl font-bengali transition-colors cursor-pointer shadow-xs flex items-center gap-1.5"
+                    >
+                      <Lock className="w-3 h-3" />
+                      <span>আনলক করুন</span>
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           );
         })}
       </div>
+
+      {/* Locked Feature Modal */}
+      <LockedFeatureModal
+        isOpen={lockedModalOpen}
+        onClose={() => setLockedModalOpen(false)}
+        onOpenAuth={onOpenAuth || (() => {})}
+        title={lockedModalTitle}
+        description={lockedModalDesc}
+        featureName={lockedFeatureName}
+      />
     </div>
   );
 };

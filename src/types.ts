@@ -265,6 +265,11 @@ export interface DailyStudyTask {
   chapterTitle: string;
   chapterId: string;
   subTopicId?: string;
+  secondaryChapterId?: string;
+  secondarySubjectId?: SubjectId;
+  secondaryTitle?: string;
+  dayType?: "study" | "revision" | "mock" | "final_review";
+  subTopicsList?: string[];
   targetMinutes: number;
   targetQuestions: number;
   targetStudyMaterialId?: string;
@@ -304,6 +309,7 @@ export interface CurrentAffairItem {
   titleBn: string;
   category: "পশ্চিমবঙ্গ প্রকল্প" | "প্রশাসন ও পঞ্চায়েত" | "জাতীয় ও আন্তর্জাতিক" | "পুরস্কার ও খেলাধুলা" | "বিজ্ঞান ও পরিবেশ";
   date: string;
+  monthYear?: string;
   summaryBn: string;
   bulletPoints: string[];
   practiceQuestion?: {
@@ -312,6 +318,8 @@ export interface CurrentAffairItem {
     correctIndex: number;
     explanation: string;
   };
+  isAiGenerated?: boolean;
+  tags?: string[];
 }
 
 // ==========================================
@@ -324,6 +332,7 @@ export interface UserProfile {
   joinedDate: string;
   isVerified: boolean;
   avatarId?: number;
+  isDemo?: boolean;
 }
 
 export interface SubjectMastery {

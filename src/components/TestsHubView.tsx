@@ -14,18 +14,23 @@ import {
   Eye,
   Calendar,
   ChevronRight,
+  Lock,
 } from "lucide-react";
-import { MockTestAttempt, SubjectId, UserProgress } from "../types";
+import { MockTestAttempt, SubjectId, UserProgress, UserProfile } from "../types";
 import { FullMockTestView } from "./FullMockTestView";
 import { ShortMockTestView } from "./ShortMockTestView";
 import { QuizView } from "./QuizView";
 import { AnswerSheetModal } from "./AnswerSheetModal";
+import { isDemoUser } from "../utils/demoHelper";
+import { LockedFeatureModal } from "./LockedFeatureModal";
 
 interface TestsHubViewProps {
   progress: UserProgress;
   setProgress: React.Dispatch<React.SetStateAction<UserProgress>>;
   initialSubTab?: "full_mock" | "short_mock" | "quiz" | "history";
   initialTestId?: string | null;
+  user?: UserProfile | null;
+  onOpenAuth?: (mode?: "login" | "register") => void;
 }
 
 export const TestsHubView: React.FC<TestsHubViewProps> = ({
@@ -33,10 +38,24 @@ export const TestsHubView: React.FC<TestsHubViewProps> = ({
   setProgress,
   initialSubTab = "full_mock",
   initialTestId,
+  user,
+  onOpenAuth,
 }) => {
+  const isDemo = isDemoUser(user);
   const [activeSubTab, setActiveSubTab] = useState<"full_mock" | "short_mock" | "quiz" | "history">(initialSubTab);
   const [selectedAttemptForReview, setSelectedAttemptForReview] = useState<MockTestAttempt | null>(null);
   const [historySearch, setHistorySearch] = useState("");
+  const [lockedModalOpen, setLockedModalOpen] = useState(false);
+  const [lockedFeatureName, setLockedFeatureName] = useState("");
+
+  const handleSubTabClick = (tab: "full_mock" | "short_mock" | "quiz" | "history") => {
+    if (isDemo && (tab === "short_mock" || tab === "quiz")) {
+      setLockedFeatureName(tab === "short_mock" ? "শর্ট মক টেস্ট (৪০ নম্বর)" : "স্পিড কুইজ (১০ নম্বর)");
+      setLockedModalOpen(true);
+      return;
+    }
+    setActiveSubTab(tab);
+  };
 
   const attempts = progress?.mockTestAttempts || [];
 
@@ -82,7 +101,7 @@ export const TestsHubView: React.FC<TestsHubViewProps> = ({
       {/* Sub-Tab Navigation Bar */}
       <div className="bg-white border border-slate-200 rounded-2xl p-1.5 flex items-center gap-1 shadow-xs overflow-x-auto">
         <button
-          onClick={() => setActiveSubTab("full_mock")}
+          onClick={() => handleSubTabClick("full_mock")}
           className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs sm:text-sm font-bold font-bengali transition-all cursor-pointer ${
             activeSubTab === "full_mock"
               ? "bg-emerald-600 text-white shadow-sm"
@@ -94,7 +113,7 @@ export const TestsHubView: React.FC<TestsHubViewProps> = ({
         </button>
 
         <button
-          onClick={() => setActiveSubTab("short_mock")}
+          onClick={() => handleSubTabClick("short_mock")}
           className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs sm:text-sm font-bold font-bengali transition-all cursor-pointer ${
             activeSubTab === "short_mock"
               ? "bg-emerald-600 text-white shadow-sm"
@@ -103,10 +122,11 @@ export const TestsHubView: React.FC<TestsHubViewProps> = ({
         >
           <Clock className="w-4 h-4" />
           <span>শর্ট মক টেস্ট (৪০)</span>
+          {isDemo && <Lock className="w-3 h-3 text-amber-600 shrink-0" />}
         </button>
 
         <button
-          onClick={() => setActiveSubTab("quiz")}
+          onClick={() => handleSubTabClick("quiz")}
           className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs sm:text-sm font-bold font-bengali transition-all cursor-pointer ${
             activeSubTab === "quiz"
               ? "bg-emerald-600 text-white shadow-sm"
@@ -115,10 +135,11 @@ export const TestsHubView: React.FC<TestsHubViewProps> = ({
         >
           <Zap className="w-4 h-4" />
           <span>স্পিড কুইজ (১০)</span>
+          {isDemo && <Lock className="w-3 h-3 text-amber-600 shrink-0" />}
         </button>
 
         <button
-          onClick={() => setActiveSubTab("history")}
+          onClick={() => handleSubTabClick("history")}
           className={`flex-1 min-w-[150px] flex items-center justify-center gap-2 py-3 px-3 rounded-xl text-xs sm:text-sm font-bold font-bengali transition-all cursor-pointer ${
             activeSubTab === "history"
               ? "bg-emerald-600 text-white shadow-sm"
@@ -136,6 +157,8 @@ export const TestsHubView: React.FC<TestsHubViewProps> = ({
           progress={progress}
           setProgress={setProgress}
           initialTestId={initialTestId}
+          user={user}
+          onOpenAuth={onOpenAuth}
         />
       )}
 
@@ -284,6 +307,19 @@ export const TestsHubView: React.FC<TestsHubViewProps> = ({
           onClose={() => setSelectedAttemptForReview(null)}
         />
       )}
+
+      {/* Locked Feature Modal for Demo Users */}
+      <LockedFeatureModal
+        isOpen={lockedModalOpen}
+        onClose={() => setLockedModalOpen(false)}
+        title="টেস্ট ফিচারটি ডেমো মোডে লক করা আছে"
+        description="ডেমো অ্যাকাউন্টে ফুল মক টেস্টের প্রথম টেস্ট সেটটি সম্পূর্ণ বিনামূল্যে উন্মুক্ত রয়েছে। শর্ট মক টেস্ট, স্পিড কুইজ এবং সমস্ত মক টেস্ট আনলক করতে আপনার ফ্রি অ্যাকাউন্ট তৈরি করুন।"
+        featureName={lockedFeatureName}
+        onRegister={() => {
+          setLockedModalOpen(false);
+          if (onOpenAuth) onOpenAuth("register");
+        }}
+      />
     </div>
   );
 };

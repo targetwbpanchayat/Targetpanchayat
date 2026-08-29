@@ -796,53 +796,11 @@ export const HISTORY_SUBSECTIONS: GKSubSectionData[] = [
   }
 ];
 
-export const GK_HISTORY_CHAPTERS: StudyChapter[] = HISTORY_SUBSECTIONS.map((sub) => ({
-  id: sub.id,
-  subjectId: "gk",
-  chapterNumber: sub.subNumber,
-  titleBn: sub.titleBn,
-  titleEn: sub.titleEn,
-  estimatedMinutes: 20,
-  importantNotesCount: sub.oneLiners.length,
-  summary: sub.summaryBn,
-  subTopics: [
-    {
-      id: `${sub.id}_t1`,
-      chapterId: sub.id,
-      subjectId: "gk",
-      titleBn: sub.titleBn,
-      titleEn: sub.titleEn,
-      orderIndex: 1,
-      summaryBn: sub.summaryBn,
-      keyConcepts: sub.keyPoints,
-    }
-  ],
-  content: {
-    introduction: `${sub.titleBn}: পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার জন্য বিশেষ গুরুত্বপূর্ণ ইতিহাস নোটস ও ওয়ান-লাইনার্স।`,
-    sections: [
-      {
-        heading: "মূল ধারণাসমূহ ও পরীক্ষার পয়েন্ট",
-        subheading: "Conceptual Highlights",
-        body: sub.keyPoints,
-        keyPoints: sub.oneLiners.slice(0, 5),
-      }
-    ],
-    bulletSummary: sub.keyPoints,
-    examTips: sub.oneLiners.slice(0, 4),
-    quickRevisionPoints: sub.oneLiners.slice(0, 8),
-    oneLiners: sub.oneLiners,
-    saqs: sub.oneLiners.map((line, idx) => {
-      const parts = line.split(" - ");
-      const q = parts.length > 1 ? parts[0] : `প্রশ্ন ${idx + 1}`;
-      const a = parts.length > 1 ? parts[1] : line;
-      return {
-        id: `${sub.id}_saq_${idx + 1}`,
-        questionBn: q,
-        answerBn: a,
-      };
-    })
-  }
-}));
+import { buildEnhancedGkChapter } from "./buildGkChapter";
+
+export const GK_HISTORY_CHAPTERS: StudyChapter[] = HISTORY_SUBSECTIONS.map((sub) =>
+  buildEnhancedGkChapter(sub, "history")
+);
 
 export const GK_HISTORY_QUESTIONS: Question[] = HISTORY_SUBSECTIONS.flatMap((sub) =>
   sub.mcqs.map((mcq, qIdx) => ({

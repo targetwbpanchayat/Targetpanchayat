@@ -57,6 +57,7 @@ export default function App() {
   const [selectedChapterId, setSelectedChapterId] = useState<string | null>(null);
   const [selectedMockTestId, setSelectedMockTestId] = useState<string | null>(null);
   const [practiceInitialSubject, setPracticeInitialSubject] = useState<SubjectId | "all">("all");
+  const [practiceInitialChapterId, setPracticeInitialChapterId] = useState<string | null>(null);
 
   // Load user data on startup
   useEffect(() => {
@@ -121,8 +122,9 @@ export default function App() {
     setActiveTab("full_mock_test");
   };
 
-  const handleLaunchPracticeFromChapter = (subjectId: SubjectId) => {
+  const handleLaunchPracticeFromChapter = (subjectId: SubjectId, chapterId?: string) => {
     setPracticeInitialSubject(subjectId);
+    setPracticeInitialChapterId(chapterId || null);
     setActiveTab("practice");
   };
 
@@ -151,7 +153,7 @@ export default function App() {
         )}
 
         {/* Main Content Area */}
-        <main className="flex-1 min-w-0 pb-20 md:pb-8">
+        <main className={`flex-1 min-w-0 ${!user ? "pb-4 flex flex-col justify-center" : "pb-20 md:pb-8"}`}>
           {!user ? (
             <LandingPage onOpenAuth={handleOpenAuth} onLoginSuccess={handleAuthSuccess} />
           ) : (
@@ -173,6 +175,8 @@ export default function App() {
                   selectedChapterId={selectedChapterId}
                   setSelectedChapterId={setSelectedChapterId}
                   onLaunchPractice={handleLaunchPracticeFromChapter}
+                  user={user}
+                  onOpenAuth={handleOpenAuth}
                 />
               )}
 
@@ -181,6 +185,7 @@ export default function App() {
                   progress={progress}
                   setProgress={setProgress}
                   onOpenChapter={handleSelectChapterFromAnywhere}
+                  onLaunchPracticeForChapter={(chapId, subId) => handleLaunchPracticeFromChapter(subId, chapId)}
                 />
               )}
 
@@ -189,6 +194,9 @@ export default function App() {
                   progress={progress}
                   setProgress={setProgress}
                   initialSubject={practiceInitialSubject}
+                  initialChapterId={practiceInitialChapterId}
+                  user={user}
+                  onOpenAuth={handleOpenAuth}
                 />
               )}
 
@@ -198,6 +206,8 @@ export default function App() {
                   setProgress={setProgress}
                   initialSubTab="full_mock"
                   initialTestId={selectedMockTestId}
+                  user={user}
+                  onOpenAuth={handleOpenAuth}
                 />
               )}
 
@@ -207,6 +217,8 @@ export default function App() {
                   setProgress={setProgress}
                   initialSubTab="full_mock"
                   initialTestId={selectedMockTestId}
+                  user={user}
+                  onOpenAuth={handleOpenAuth}
                 />
               )}
 
@@ -215,6 +227,8 @@ export default function App() {
                   progress={progress}
                   setProgress={setProgress}
                   initialSubTab="short_mock"
+                  user={user}
+                  onOpenAuth={handleOpenAuth}
                 />
               )}
 
@@ -223,6 +237,8 @@ export default function App() {
                   progress={progress}
                   setProgress={setProgress}
                   initialSubTab="quiz"
+                  user={user}
+                  onOpenAuth={handleOpenAuth}
                 />
               )}
 
