@@ -12,10 +12,12 @@ import {
   BarChart3,
   Settings,
   HelpCircle,
+  Lock,
 } from "lucide-react";
 
 import { UserProfile } from "../types";
 import { STUDY_CHAPTERS } from "../data/studyData";
+import { isTabLocked, isDemoUser } from "../utils/demoAccess";
 
 interface SidebarProps {
   activeTab: string;
@@ -53,21 +55,25 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive = activeTab === item.id;
+          const locked = isTabLocked(item.id, user?.email);
           return (
             <button
               key={item.id}
-              onClick={() => setActiveTab(item.id)}
-              className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all text-left cursor-pointer ${
-                isActive
-                  ? "bg-emerald-600 text-white font-bold shadow-sm shadow-emerald-600/30"
-                  : "text-slate-600 hover:text-emerald-700 hover:bg-emerald-50/60"
+              onClick={() => !locked && setActiveTab(item.id)}
+              disabled={locked}
+              className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all text-left ${
+                locked
+                  ? "text-slate-300 cursor-not-allowed"
+                  : isActive
+                  ? "bg-emerald-600 text-white font-bold shadow-sm shadow-emerald-600/30 cursor-pointer"
+                  : "text-slate-600 hover:text-emerald-700 hover:bg-emerald-50/60 cursor-pointer"
               }`}
             >
               <div className="flex items-center gap-3">
-                <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-500"}`} />
+                {locked ? <Lock className="w-4 h-4 text-slate-300" /> : <Icon className={`w-4 h-4 ${isActive ? "text-white" : "text-slate-500"}`} />}
                 <span className="font-bengali">{item.label}</span>
               </div>
-              {item.badge && (
+              {item.badge && !locked && (
                 <span
                   className={`text-[10px] px-2 py-0.5 rounded-full font-mono-num font-semibold ${
                     isActive
