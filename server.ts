@@ -4,11 +4,23 @@ import { createServer as createViteServer } from "vite";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+
+// CORS — GitHub Pages frontend থেকে এই সার্ভারে API কল করার অনুমতি দেওয়া
+app.use(cors({
+  origin: [
+    "https://targetwbpanchayat.github.io",
+    "http://localhost:5173",
+    "http://localhost:3000",
+  ],
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
 
 app.use(express.json());
 
@@ -115,7 +127,7 @@ app.post("/api/auth/send-otp", async (req, res) => {
               
               <div style="margin-top: 24px; text-align: center; color: #64748b; font-size: 12px;">
                 <p style="margin: 0;">WB Gram Panchayat Examination Preparation Portal</p>
-                <p style="margin: 4px 0 0 0;">সরাসরি স্টাডি মেটেরিয়াল, প্র্যাকটিস ও মক টেস্টে যুক্ত হোন।</p>
+                <p style="margin: 4px 0 0 0;">সরাসরি স্টাডি মেটেরিয়াল, প্র্যাকটিস ও মক টেস্টে যুক্ত হোন।</p>
               </div>
             </div>
           `,
@@ -126,7 +138,7 @@ app.post("/api/auth/send-otp", async (req, res) => {
         deliveryMessage = "আপনার Gmail ইমেইলে ওটিপি পাঠানো হয়েছে। ইনবক্স অথবা স্প্যাম ফোল্ডার চেক করুন।";
       } catch (err: any) {
         console.error("Failed to send email via SMTP:", err);
-        deliveryMessage = "Gmail সার্ভিস কানেক্ট হতে পারেনি। প্রিভিউ কোড নিচে দেওয়া হলো।";
+        deliveryMessage = "Gmail সার্ভিস কানেক্ট হতে পারেনি। প্রিভিউ কোড নিচে দেওয়া হলো।";
       }
     }
 
