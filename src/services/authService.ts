@@ -1,11 +1,10 @@
 import { UserProfile } from "../types";
-import emailjs from "@emailjs/browser";
 
 export interface StoredUser {
   email: string;
   name: string;
   targetPost: string;
-  passwordHash: string; // Basic hashed/encoded string for local mock DB
+  passwordHash: string;
   isVerified: boolean;
   createdAt: string;
 }
@@ -25,22 +24,11 @@ export interface VerifyOtpResult {
   message: string;
 }
 
-// EmailJS configuration from Vite environment variables
-const EMAILJS_SERVICE_ID = import.meta.env?.VITE_EMAILJS_SERVICE_ID as string | undefined;
-const EMAILJS_TEMPLATE_ID = import.meta.env?.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
-const EMAILJS_PUBLIC_KEY = import.meta.env?.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
-
-// Initialize EmailJS if all keys are present
-const emailjsConfigured = Boolean(
-  EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID && EMAILJS_PUBLIC_KEY &&
-  EMAILJS_SERVICE_ID !== "YOUR_SERVICE_ID" &&
-  EMAILJS_TEMPLATE_ID !== "YOUR_TEMPLATE_ID" &&
-  EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY"
-);
-
-if (emailjsConfigured) {
-  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY! });
-}
+// Backend API URL — Render-এ ডেপ্লয় করা সার্ভারের URL
+// VITE_API_BASE_URL এনভায়রনমেন্ট ভেরিয়েবল থেকে রিড করে
+// লোকাল ডেভেলপমেন্টে খালি থাকলে relative path ব্যবহার করবে
+const API_BASE_URL =
+  (import.meta.env?.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, "") || "";
 
 // Retrieve all local registered users
 export function getRegisteredUsers(): StoredUser[] {
@@ -52,7 +40,6 @@ export function getRegisteredUsers(): StoredUser[] {
   } catch (err) {
     console.error("Failed to load registered users:", err);
   }
-  // Default demo user for instant testing if wanted
   const demoUsers: StoredUser[] = [
     {
       email: "targetpanchayat@gmail.com",
@@ -99,136 +86,123 @@ export function setCurrentUser(user: UserProfile | null): void {
   }
 }
 
-// Client-side OTP generator
-function generateOtp(): string {
-  return Math.floor(100000 + Math.random() * 900000).toString();
+// Client-side fallback OTP generator (used when no backend is available)
+function generateClientFallbackOtp(email: string): string {
+  const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
+  sessionStorage.setItem(`wb_gp_client_otp_${email.toLowerCase()}`, fallbackOtp);
+  return fallbackOtp;
 }
 
-// Store OTP in sessionStorage for verification (with 10 min expiry)
-function storeOtp(email: string, otp: string): void {
-  const data = { otp, expiresAt: Date.now() + 10 * 60 * 1000 };
-  sessionStorage.setItem(`wb_gp_otp_${email.toLowerCase()}`, JSON.stringify(data));
-}
-
-// Verify OTP from sessionStorage
-function verifyStoredOtp(email: string, otp: string): boolean {
-  const raw = sessionStorage.getItem(`wb_gp_otp_${email.toLowerCase()}`);
-  if (!raw) return false;
-  try {
-    const data = JSON.parse(raw);
-    if (Date.now() > data.expiresAt) {
-      sessionStorage.removeItem(`wb_gp_otp_${email.toLowerCase()}`);
-      return false;
-    }
-    if (data.otp === otp.trim()) {
-      sessionStorage.removeItem(`wb_gp_otp_${email.toLowerCase()}`);
-      return true;
-    }
-  } catch {
-    // ignore
-  }
-  return false;
-}
-
-// Send OTP via EmailJS (directly from browser, no backend needed)
-async function sendOtpViaEmailJS(
-  email: string,
-  name: string,
-  otp: string,
-  type: "register" | "reset"
-): Promise<boolean> {
-  if (!emailjsConfigured) {
-    return false;
-  }
-
-  try {
-    const templateParams = {
-      to_email: email,
-      to_name: name || "পরীক্ষার্থী",
-      email: email,
-      name: name || "পরীক্ষার্থী",
-      otp_code: otp,
-      otp: otp,
-      message: `আপনার ওটিপি কোড: ${otp}`,
-      subject: type === "register"
-        ? `WB GP Prep — রেজিস্ট্রেশন ওটিপি: ${otp}`
-        : `WB GP Prep — পাসওয়ার্ড রিসেট ওটিপি: ${otp}`,
-      type: type === "register" ? "রেজিস্ট্রেশন" : "পাসওয়ার্ড রিসেট",
-    };
-
-    const response = await emailjs.send(
-      EMAILJS_SERVICE_ID!,
-      EMAILJS_TEMPLATE_ID!,
-      templateParams,
-      { publicKey: EMAILJS_PUBLIC_KEY! }
-    );
-
-    return response.status === 200;
-  } catch (err: any) {
-    console.error("EmailJS send failed:", err);
-    return false;
-  }
-}
-
-// Send registration OTP
+// Send OTP via Backend API (Gmail SMTP via Nodemailer + App Password)
 export async function sendRegistrationOtp(email: string, name: string): Promise<SendOtpResult> {
-  const otp = generateOtp();
-  storeOtp(email, otp);
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/auth/send-otp`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, name }),
+    });
 
-  const emailSent = await sendOtpViaEmailJS(email, name, otp, "register");
+    if (response.ok) {
+      const data = await response.json();
+      return {
+        success: true,
+        message: data.message || "ওটিপি সফলভাবে পাঠানো হয়েছে।",
+        emailSent: data.emailSent,
+        devOtp: data.devOtp,
+      };
+    }
 
-  if (emailSent) {
+    console.warn("Backend API not available, using client fallback OTP");
+    const fallbackOtp = generateClientFallbackOtp(email);
     return {
       success: true,
-      message: "আপনার ইমেইলে ওটিপি পাঠানো হয়েছে। ইনবক্স অথবা স্প্যাম ফোল্ডার চেক করুন।",
-      emailSent: true,
+      message: "ওটিপি কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
+      emailSent: false,
+      devOtp: fallbackOtp,
+    };
+  } catch (err: any) {
+    console.warn("API request failed, generating client fallback OTP:", err);
+    const fallbackOtp = generateClientFallbackOtp(email);
+    return {
+      success: true,
+      message: "ওটিপি কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
+      emailSent: false,
+      devOtp: fallbackOtp,
     };
   }
-
-  // Fallback: show OTP on screen
-  return {
-    success: true,
-    message: "ইমেইল পাঠানো যায়নি। নিচের OTP কোডটি ব্যবহার করুন।",
-    emailSent: false,
-    devOtp: otp,
-  };
 }
 
-// Send password reset OTP
 export async function sendResetPasswordOtp(email: string): Promise<SendOtpResult> {
-  const otp = generateOtp();
-  storeOtp(email, otp);
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/auth/reset-password-otp`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
 
-  const emailSent = await sendOtpViaEmailJS(email, "পরীক্ষার্থী", otp, "reset");
+    if (response.ok) {
+      const data = await response.json();
+      return {
+        success: true,
+        message: data.message || "রিসেট ওটিপি পাঠানো হয়েছে।",
+        emailSent: data.emailSent,
+        devOtp: data.devOtp,
+      };
+    }
 
-  if (emailSent) {
+    console.warn("Backend API not available, using client fallback OTP");
+    const fallbackOtp = generateClientFallbackOtp(email);
     return {
       success: true,
-      message: "পাসওয়ার্ড রিসেট ওটিপি আপনার ইমেইলে পাঠানো হয়েছে।",
-      emailSent: true,
+      message: "পাসওয়ার্ড রিসেট কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
+      emailSent: false,
+      devOtp: fallbackOtp,
+    };
+  } catch (err: any) {
+    const fallbackOtp = generateClientFallbackOtp(email);
+    return {
+      success: true,
+      message: "পাসওয়ার্ড রিসেট কোড তৈরি হয়েছে (অফলাইন মোড)। নিচের কোডটি ব্যবহার করুন।",
+      emailSent: false,
+      devOtp: fallbackOtp,
     };
   }
-
-  return {
-    success: true,
-    message: "ইমেইল পাঠানো যায়নি। নিচের OTP কোডটি ব্যবহার করুন।",
-    emailSent: false,
-    devOtp: otp,
-  };
 }
 
-// Verify OTP
 export async function verifyOtp(email: string, otp: string): Promise<VerifyOtpResult> {
-  if (verifyStoredOtp(email, otp)) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/auth/verify-otp`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, otp }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return { success: true, message: data.message || "যাচাইকরণ সফল!" };
+    }
+  } catch (err: any) {
+    // Network error — fall through to client fallback check
+  }
+
+  // Check client fallback OTP (used when API is not available)
+  const clientOtp = sessionStorage.getItem(`wb_gp_client_otp_${email.toLowerCase()}`);
+  if (clientOtp && clientOtp === otp.trim()) {
+    sessionStorage.removeItem(`wb_gp_client_otp_${email.toLowerCase()}`);
     return { success: true, message: "যাচাইকরণ সফল!" };
   }
+
   return { success: false, message: "ভুল ওটিপি! অনুগ্রহ করে সঠিক কোড দিন।" };
 }
 
-// Check EmailJS configuration status
 export async function checkSmtpStatus(): Promise<{ configured: boolean; user: string | null }> {
-  return {
-    configured: emailjsConfigured,
-    user: emailjsConfigured ? "EmailJS" : null,
-  };
+  try {
+    const res = await fetch(`${API_BASE_URL}/api/auth/smtp-status`);
+    if (res.ok) {
+      return await res.json();
+    }
+  } catch (err) {
+    console.error("Failed to check SMTP status:", err);
+  }
+  return { configured: false, user: null };
 }
