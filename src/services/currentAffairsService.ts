@@ -1,6 +1,10 @@
 import { CurrentAffairItem } from "../types";
 import { CURRENT_AFFAIRS_ITEMS } from "../data/currentAffairs";
 
+// Backend API URL — Render বা অন্য ক্লাউড প্ল্যাটফর্মে ডেপ্লয় করা সার্ভারের URL
+const API_BASE_URL =
+  (import.meta.env?.VITE_API_BASE_URL as string | undefined)?.replace(/\/$/, "") || "";
+
 const STORAGE_KEY = "wb_gp_current_affairs_cache_v2";
 const LAST_SYNC_KEY = "wb_gp_ca_last_sync_date";
 const BOOKMARKS_KEY = "wb_gp_ca_bookmarked_ids";
@@ -9,7 +13,7 @@ const BOOKMARKS_KEY = "wb_gp_ca_bookmarked_ids";
 export function getTodayBengaliDate(): { dateBn: string; monthYearBn: string; isoDate: string } {
   const now = new Date();
   const months = [
-    "জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন",
+    "জানুয়ারি", "ফেব্রুয়ারি", "মার্চ", "এপ্রিল", "মে", "জুন",
     "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"
   ];
   
@@ -125,7 +129,7 @@ export async function syncDailyCurrentAffairs(force = false): Promise<{
   }
 
   try {
-    const response = await fetch("/api/current-affairs/generate-daily", {
+    const response = await fetch(`${API_BASE_URL}/api/current-affairs/generate-daily`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
