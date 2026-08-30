@@ -176,7 +176,52 @@ export async function loginUser(
   }
 }
 
-// ============ SUPABASE AUTH: PASSWORD RESET (send link) ============
+// ============ SUPABASE AUTH: SEND REGISTRATION OTP (via Edge Function — Gmail SMTP) ============
+
+export async function sendRegistrationOtp(
+  email: string,
+  name?: string
+): Promise<SendOtpResult> {
+  if (!SUPABASE_ENABLED || !supabase) {
+    const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    sessionStorage.setItem(
+      `wb_gp_client_otp_${email.toLowerCase()}`,
+      fallbackOtp
+    );
+    return {
+      success: true,
+      message: "Supabase কনফিগার নেই। অফলাইন OTP: " + fallbackOtp,
+      emailSent: false,
+      devOtp: fallbackOtp,
+    };
+  }
+
+  // Call the send-otp Edge Function (Gmail SMTP)
+  try {
+    const fnUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-otp`;
+    const res = await fetch(fnUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ email: email.trim(), purpose: "registration" }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) {
+      return { success: false, message: data?.error || "OTP পাঠাতে সমস্যা হয়েছে।" };
+    }
+    return {
+      success: true,
+      emailSent: true,
+      message: data.message || "OTP আপনার ইমেইলে পাঠানো হয়েছে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।",
+    };
+  } catch (err: any) {
+    return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
+  }
+}
+
+// ============ SUPABASE AUTH: PASSWORD RESET (send OTP via Edge Function) ============
 
 export async function sendResetPasswordOtp(
   email: string
