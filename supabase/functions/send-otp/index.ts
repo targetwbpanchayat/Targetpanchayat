@@ -1,21 +1,6 @@
 // =====================================================
 // Edge Function: send-otp
-// -----------------------------------------------------
-// Generates a 6-digit OTP, stores a hash in the otp_codes
-// table (via service role), and emails it to the user
-// using Gmail SMTP (App Password).
-//
-// Secrets (set in Supabase dashboard):
-//   SMTP_USER      e.g. targetpanchayat@gmail.com
-//   SMTP_PASSWORD  16-char App Password (no spaces)
-//   SMTP_FROM_NAME  e.g. "Target Panchayat"
-//
-// POST JSON body:
-//   { "email": "user@example.com", "purpose": "password_reset" }
-//
-// Returns:
-//   200 { success: true, message: "OTP sent" }
-//   400 { error: "..." }
+// Gmail SMTP দিয়ে ৬-অঙ্কের OTP ইমেইল পাঠায়
 // =====================================================
 
 const corsHeaders = {
@@ -24,14 +9,18 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
-// Minimal SMTP client over TLS socket for Gmail (smtp.gmail.com:465).
-// We avoid external deps so the function has zero import issues.
-import { connect } from "node:tls";
+function json(body: object, status = 200) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { ...corsHeaders, "Content-Type": "application/json" },
+  });
+}
 
 function base64encode(str: string): string {
   return btoa(str);
 }
 
+// SMTP client using Deno's native TLS support (no node:tls needed)
 async function sendGmailSmtp(
   fromName: string,
   fromEmail: string,
@@ -40,58 +29,64 @@ async function sendGmailSmtp(
   subject: string,
   htmlBody: string
 ): Promise<string> {
-  const host = "smtp.gmail.com";
-  const port = 465;
+  const conn = await Deno.connectTls({
+    hostname: "smtp.gmail.com",
+    port: 465,
+  });
 
-  const socket = await connect({ hostname: host, port });
+  const reader = conn.readable.getReader();
+  const writer = conn.writable.getWriter();
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
 
-  let buf = "";
-  const waitFor = async (expectCode: string) => {
-    while (!buf.includes("\r\n")) {
-      const chunk = new Uint8Array(4096);
-      const n = await socket.read(chunk);
-      if (n === null) break;
-      buf += new TextDecoder().decode(chunk.subarray(0, n));
-      if (buf.includes("\r\n")) break;
-    }
-    // Read any continuation lines (nnn-... until nnN<space>)
-    while (buf.match(/\r\n\d{3}-/)) {
-      const chunk = new Uint8Array(4096);
-      const n = await socket.read(chunk);
-      if (n === null) break;
-      buf += new TextDecoder().decode(chunk.subarray(0, n));
-    }
-    const line = buf.trim().split("\r\n").pop() || buf.trim();
-    if (!line.startsWith(expectCode)) {
-      socket.close();
-      throw new Error(`SMTP expected ${expectCode}, got: ${line}`);
-    }
-    buf = "";
-    return line;
-  };
+  let buffer = "";
 
-  const send = (cmd: string) => {
-    socket.write(new TextEncoder().encode(cmd + "\r\n"));
-    buf = "";
-  };
+  async function waitFor(expectCode: string): Promise<string> {
+    buffer = "";
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buffer += decoder.decode(value, { stream: true });
+      // Check if we have a complete response (ends with \r\n)
+      // and it's not a continuation line (nnn-)
+      if (buffer.includes("\r\n")) {
+        const lines = buffer.split("\r\n").filter(l => l.length > 0);
+        const lastLine = lines[lines.length - 1];
+        // If last line starts with code followed by space, it's the final line
+        if (/^\d{3} /.test(lastLine)) {
+          if (!lastLine.startsWith(expectCode)) {
+            conn.close();
+            throw new Error(`SMTP expected ${expectCode}, got: ${lastLine}`);
+          }
+          return lastLine;
+        }
+        // If it's a continuation (nnn-), keep reading
+      }
+    }
+    throw new Error(`SMTP connection closed while waiting for ${expectCode}`);
+  }
+
+  async function send(cmd: string) {
+    await writer.write(encoder.encode(cmd + "\r\n"));
+  }
 
   await waitFor("220");
-  send(`EHLO targetpanchayat`);
+  await send("EHLO targetpanchayat");
   await waitFor("250");
 
-  send(`AUTH LOGIN`);
+  await send("AUTH LOGIN");
   await waitFor("334");
-  send(base64encode(fromEmail));
+  await send(base64encode(fromEmail));
   await waitFor("334");
-  send(base64encode(appPassword));
+  await send(base64encode(appPassword));
   await waitFor("235");
 
-  send(`MAIL FROM:<${fromEmail}>`);
+  await send(`MAIL FROM:<${fromEmail}>`);
   await waitFor("250");
-  send(`RCPT TO:<${toEmail}>`);
+  await send(`RCPT TO:<${toEmail}>`);
   await waitFor("250");
 
-  send(`DATA`);
+  await send("DATA");
   await waitFor("354");
 
   const headers = [
@@ -104,20 +99,13 @@ async function sendGmailSmtp(
   ].join("\r\n");
 
   const body = headers + htmlBody + "\r\n.\r\n";
-  socket.write(new TextEncoder().encode(body));
+  await writer.write(encoder.encode(body));
   await waitFor("250");
 
-  send(`QUIT`);
-  socket.close();
+  await send("QUIT");
+  conn.close();
 
   return "ok";
-}
-
-function json(body: object, status = 200) {
-  return new Response(JSON.stringify(body), {
-    status,
-    headers: { ...corsHeaders, "Content-Type": "application/json" },
-  });
 }
 
 Deno.serve(async (req: Request) => {
@@ -155,19 +143,15 @@ Deno.serve(async (req: Request) => {
     return json({ error: "Server is not configured (SMTP)." }, 500);
   }
 
-  // Generate 6-digit OTP
   const otp = String(Math.floor(100000 + Math.random() * 900000));
 
-  // Hash the OTP with a simple SHA-256 before storing (so a DB leak
-  // does not expose codes). We compare hashes at verify time.
   const hashBuffer = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(otp));
   const codeHash = Array.from(new Uint8Array(hashBuffer))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
 
-  const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString(); // 10 min
+  const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
 
-  // Clean up old codes for this email/purpose, then insert the new one.
   try {
     await fetch(`${supabaseUrl}/rest/v1/otp_codes?email=eq.${encodeURIComponent(email)}&purpose=eq.${purpose}`, {
       method: "DELETE",
@@ -205,27 +189,14 @@ Deno.serve(async (req: Request) => {
     return json({ error: "Could not generate OTP. Please try again." }, 500);
   }
 
-  // Build the email HTML
   const subject = "আপনার OTP — Target Panchayat";
-  const htmlBody = [
-    `<div style="font-family:Segoe UI,Arial,sans-serif;max-width:480px;margin:0 auto;padding:24px;background:#f8fafc;border-radius:12px">`,
-    `<div style="text-align:center;margin-bottom:20px"><strong style="font-size:20px;color:#059669">Target Panchayat</strong></div>`,
-    `<p style="font-size:15px;color:#334155">আপনার ভেরিফিকেশন কোড (OTP):</p>`,
-    `<div style="text-align:center;margin:24px 0">`,
-    `<span style="display:inline-block;font-size:36px;letter-spacing:8px;font-weight:700;color:#059669;background:#ecfdf5;padding:16px 28px;border-radius:10px;border:1px solid #a7f3d0">${otp}</span>`,
-    `</div>`,
-    `<p style="font-size:13px;color:#64748b">এই OTP ১০ মিনিট পর মেয়াদোত্তীর্ণ হবে। আপনি যদি এই অনুরোধ না করে থাকেন, এই ইমেইলটি উপেক্ষা করুন।</p>`,
-    `<hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0">`,
-    `<p style="font-size:12px;color:#94a3b8">Target Panchayat — পঞ্চায়েত পরীক্ষার প্রস্তুতির অ্যাপ।</p>`,
-    `</div>`,
-  ].join("");
+  const htmlBody = `<div style="font-family:Segoe UI,Arial,sans-serif;max-width:480px;margin:0 auto;padding:24px;background:#f8fafc;border-radius:12px"><div style="text-align:center;margin-bottom:20px"><strong style="font-size:20px;color:#059669">Target Panchayat</strong></div><p style="font-size:15px;color:#334155">আপনার ভেরিফিকেশন কোড (OTP):</p><div style="text-align:center;margin:24px 0"><span style="display:inline-block;font-size:36px;letter-spacing:8px;font-weight:700;color:#059669;background:#ecfdf5;padding:16px 28px;border-radius:10px;border:1px solid #a7f3d0">${otp}</span></div><p style="font-size:13px;color:#64748b">এই OTP ১০ মিনিট পর মেয়াদোত্তীর্ণ হবে। আপনি যদি এই অনুরোধ না করে থাকেন, এই ইমেইলটি উপেক্ষা করুন।</p><hr style="border:none;border-top:1px solid #e2e8f0;margin:20px 0"><p style="font-size:12px;color:#94a3b8">Target Panchayat — পঞ্চায়েত পরীক্ষার প্রস্তুতির অ্যাপ।</p></div>`;
 
-  // Send the email via Gmail SMTP
   try {
     await sendGmailSmtp(smtpFromName, smtpUser, smtpPassword, email, subject, htmlBody);
   } catch (err) {
-    console.error("SMTP send error:", err);
-    return json({ error: "ইমেইল পাঠাতে সমস্যা হলো। একটু পরে আবার চেষ্টা করুন।" }, 500);
+    console.error("SMTP send error:", err?.message || err);
+    return json({ error: `ইমেইল পাঠাতে সমস্যা: ${err?.message || err}` }, 500);
   }
 
   return json({ success: true, message: "OTP আপনার ইমেইলে পাঠানো হয়েছে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।" });
