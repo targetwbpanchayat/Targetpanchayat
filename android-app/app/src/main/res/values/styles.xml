@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.TargetPanchayat" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:colorPrimary">#059669</item>
+        <item name="android:colorPrimaryDark">#047857</item>
+        <item name="android:colorAccent">#059669</item>
+        <item name="android:statusBarColor">#059669</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+</resources>
