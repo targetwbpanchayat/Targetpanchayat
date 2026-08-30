@@ -20,11 +20,12 @@ interface AuthModalProps {
 }
 
 export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess, onSuccess, initialMode = "login" }) => {
-  const [mode, setMode] = useState<"login" | "register" | "forgot" | "reset_link_sent" | "update_password">(initialMode);
+  const [mode, setMode] = useState<"login" | "register" | "forgot" | "otp_verify" | "update_password">(initialMode);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [otp, setOtp] = useState("");
   const [targetPost, setTargetPost] = useState("Gram Panchayat Karmee & Sahayak");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -114,12 +115,54 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
         if (res.devOtp) {
           setSuccessMsg(`[ডেভ OTP]: ${res.devOtp}`);
         }
-        setMode("reset_link_sent");
+        setMode("otp_verify");
       } else {
         setError(res.message);
       }
     } catch {
       setError("OTP পাঠাতে সমস্যা হয়েছে।");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 3b. Verify OTP — then go to set new password
+  const handleVerifyOtpSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    if (!otp.trim() || otp.trim().length !== 6) return setError("৬-অঙ্কের OTP লিখুন।");
+
+    setLoading(true);
+    try {
+      const res = await verifyOtp(email.trim(), otp.trim());
+      if (res.success) {
+        setSuccessMsg(res.message);
+        setOtp("");
+        setMode("update_password");
+      } else {
+        setError(res.message || "ভুল OTP।");
+      }
+    } catch {
+      setError("OTP যাচাইয়ে সমস্যা হয়েছে।");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 3c. Resend OTP
+  const handleResendOtp = async () => {
+    setError(null); setSuccessMsg(null);
+    setLoading(true);
+    try {
+      const res = await sendResetPasswordOtp(email.trim());
+      if (res.success) {
+        setSuccessMsg(res.message);
+        if (res.devOtp) setSuccessMsg(`[ডেভ OTP]: ${res.devOtp}`);
+      } else {
+        setError(res.message);
+      }
+    } catch {
+      setError("OTP পাঠাতে সমস্যা।");
     } finally {
       setLoading(false);
     }
@@ -134,7 +177,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
 
     setLoading(true);
     try {
-      const res = await updatePassword(password);
+      const res = await updatePassword(password, email.trim());
       if (res.success) {
         setSuccessMsg(res.message);
         setTimeout(() => { setMode("login"); setError(null); setPassword(""); setConfirmPassword(""); }, 2000);
@@ -178,14 +221,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
                 {mode === "register" && "নতুন অ্যাকাউন্ট তৈরি করুন"}
                 {mode === "login" && "লগইন করুন"}
                 {mode === "forgot" && "পাসওয়ার্ড রিসেট"}
-                {mode === "reset_link_sent" && "ইমেইল চেক করুন"}
+                {mode === "otp_verify" && "OTP যাচাই করুন"}
                 {mode === "update_password" && "নতুন পাসওয়ার্ড সেট করুন"}
               </h2>
               <p className="text-xs text-slate-500">
                 {mode === "register" && "ইমেইল ও পাসওয়ার্ড দিয়ে সহজে রেজিস্টার করুন"}
                 {mode === "login" && "আপনার অ্যাকাউন্টে লগইন করুন"}
                 {mode === "forgot" && "পাসওয়ার্ড ভুলে গেছেন?"}
-                {mode === "reset_link_sent" && "ইমেইলে পাঠানো লিংকে ক্লিক করুন"}
+                {mode === "otp_verify" && "ইমেইলে পাঠানো ৬-অঙ্কের OTP লিখুন"}
                 {mode === "update_password" && "নতুন পাসওয়ার্ড দিন"}
               </p>
             </div>
@@ -229,12 +272,16 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
             </form>
           )}
 
-          {mode === "reset_link_sent" && (
-            <div className="space-y-4 text-center">
-              <div className="w-14 h-14 mx-auto rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-3"><Mail className="w-7 h-7" /></div>
-              <p className="text-sm text-slate-600">ইমেইলে পাঠানো লিংকে ক্লিক করুন। লিংকে ক্লিক করলে এই সাইটে ফিরে এসে নতুন পাসওয়ার্ড সেট করতে পারবেন।</p>
-              <button type="button" onClick={() => { setMode("login"); setError(null); setSuccessMsg(null); }} className="w-full py-2.5 rounded-xl border border-slate-200 text-slate-700 font-medium hover:bg-slate-50 transition-colors">লগইন পেজে ফিরুন</button>
-            </div>
+          {mode === "otp_verify" && (
+            <form onSubmit={handleVerifyOtpSubmit} className="space-y-4">
+              <div className="text-center"><div className="w-14 h-14 mx-auto rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-3"><ShieldCheck className="w-7 h-7" /></div><p className="text-sm text-slate-600"><strong className="text-slate-900">{email}</strong> এ পাঠানো ৬-অঙ্কের OTP লিখুন।</p></div>
+              <div><label className="block text-sm font-medium text-slate-700 mb-1.5">OTP কোড</label><div className="relative"><KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" /><input type="text" inputMode="numeric" pattern="\d*" maxLength={6} value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))} placeholder="••••••" className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none text-sm tracking-[0.5em] text-center font-bold text-lg" required /></div></div>
+              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <>OTP যাচাই করুন <ArrowRight className="w-4 h-4" /></>}</button>
+              <div className="flex items-center justify-between text-sm">
+                <button type="button" onClick={handleResendOtp} disabled={loading} className="text-emerald-600 font-medium hover:underline disabled:opacity-50">আবার OTP পাঠান</button>
+                <button type="button" onClick={() => { setMode("login"); setError(null); setSuccessMsg(null); setOtp(""); }} className="text-slate-500 hover:text-slate-700">লগইন পেজে ফিরুন</button>
+              </div>
+            </form>
           )}
 
           {mode === "update_password" && (

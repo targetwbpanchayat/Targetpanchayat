@@ -195,47 +195,95 @@ export async function sendResetPasswordOtp(
     };
   }
 
+  // Call the send-otp Edge Function (Gmail SMTP)
   try {
-    const { error } = await supabase.auth.resetPasswordForEmail(
-      email.trim(),
-      {
-        redirectTo: SITE_URL,
-      }
-    );
-
-    if (error) {
-      return { success: false, message: mapSupabaseError(error) };
+    const fnUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-otp`;
+    const res = await fetch(fnUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ email: email.trim(), purpose: "password_reset" }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) {
+      return { success: false, message: data?.error || "OTP পাঠাতে সমস্যা হয়েছে।" };
     }
-
     return {
       success: true,
       emailSent: true,
-      message: "পাসওয়ার্ড রিসেট লিংক আপনার ইমেইলে পাঠানো হয়েছে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।",
+      message: data.message || "OTP আপনার ইমেইলে পাঠানো হয়েছে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।",
     };
   } catch (err: any) {
     return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
   }
 }
 
-// ============ SUPABASE AUTH: UPDATE PASSWORD ============
+// ============ VERIFY OTP (via Edge Function) ============
+
+export async function verifyOtp(
+  email: string,
+  code: string
+): Promise<VerifyOtpResult> {
+  if (!SUPABASE_ENABLED || !supabase) {
+    // Fallback (offline) — compare against sessionStorage value
+    const stored = sessionStorage.getItem(`wb_gp_client_otp_${email.toLowerCase()}`);
+    if (stored && stored === code.trim()) {
+      sessionStorage.removeItem(`wb_gp_client_otp_${email.toLowerCase()}`);
+      return { success: true, message: "OTP যাচাই সফল হয়েছে।" };
+    }
+    return { success: false, message: "ভুল OTP।" };
+  }
+
+  try {
+    const fnUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/verify-otp`;
+    const res = await fetch(fnUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ email: email.trim(), code: code.trim(), purpose: "password_reset" }),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) {
+      return { success: false, message: data?.error || "OTP যাচাই ব্যর্থ।" };
+    }
+    return { success: true, message: data.message || "OTP যাচাই সফল হয়েছে।" };
+  } catch (err: any) {
+    return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
+  }
+}
+
+// ============ SUPABASE AUTH: UPDATE PASSWORD (via Edge Function) ============
 
 export async function updatePassword(
-  newPassword: string
+  newPassword: string,
+  email?: string
 ): Promise<{ success: boolean; message: string }> {
   if (!SUPABASE_ENABLED || !supabase) {
     return { success: false, message: "Supabase কনফিগার করা হয়নি।" };
   }
+  if (!email) {
+    return { success: false, message: "ইমেইল পাওয়া যায়নি।" };
+  }
 
   try {
-    const { data, error } = await supabase.auth.updateUser({
-      password: newPassword,
+    const fnUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/reset-password`;
+    const res = await fetch(fnUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify({ email: email.trim(), new_password: newPassword }),
     });
-
-    if (error) {
-      return { success: false, message: mapSupabaseError(error) };
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || !data.success) {
+      return { success: false, message: data?.error || "পাসওয়ার্ড আপডেটে সমস্যা হয়েছে।" };
     }
-
-    return { success: true, message: "পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! এখন লগইন করুন।" };
+    return { success: true, message: data.message || "পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! এখন লগইন করুন।" };
   } catch (err: any) {
     return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
   }
