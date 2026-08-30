@@ -154,10 +154,16 @@ export async function registerWithEmail(
 
 // ============ SUPABASE AUTH: PASSWORD LOGIN ============
 
+export interface LoginResult {
+  success: boolean;
+  message: string;
+  profile?: { name: string; targetPost: string; email: string };
+}
+
 export async function loginUser(
   email: string,
   password: string
-): Promise<{ success: boolean; message: string }> {
+): Promise<LoginResult> {
   if (!SUPABASE_ENABLED || !supabase) {
     // ---- Offline fallback: check localStorage ----
     const users = getRegisteredUsers();
@@ -165,7 +171,11 @@ export async function loginUser(
       (u) => u.email.toLowerCase() === email.toLowerCase().trim()
     );
     if (user && user.passwordHash === btoa(password)) {
-      return { success: true, message: "লগইন সফল!" };
+      return {
+        success: true,
+        message: "লগইন সফল!",
+        profile: { name: user.name, targetPost: user.targetPost, email: user.email },
+      };
     }
     if (user) {
       return { success: false, message: "ভুল পাসওয়ার্ড।" };
@@ -183,7 +193,39 @@ export async function loginUser(
       return { success: false, message: mapSupabaseError(error) };
     }
 
-    return { success: true, message: "লগইন সফল!" };
+    // Fetch user profile from Supabase DB (user_profiles table)
+    let profileName = "পরীক্ষার্থী";
+    let profilePost = "Gram Panchayat Karmee & Sahayak";
+    let profileEmail = email.toLowerCase().trim();
+
+    if (data.user) {
+      // Try user_profiles table first
+      try {
+        const { data: profileData } = await supabase
+          .from("user_profiles")
+          .select("name, target_post, email")
+          .eq("id", data.user.id)
+          .single();
+
+        if (profileData) {
+          profileName = profileData.name || "পরীক্ষার্থী";
+          profilePost = profileData.target_post || "Gram Panchayat Karmee & Sahayak";
+          profileEmail = profileData.email || profileEmail;
+        }
+      } catch {}
+
+      // Fallback to auth metadata
+      if (profileName === "পরীক্ষার্থী" && data.user.user_metadata) {
+        profileName = data.user.user_metadata.name || profileName;
+        profilePost = data.user.user_metadata.targetPost || profilePost;
+      }
+    }
+
+    return {
+      success: true,
+      message: "লগইন সফল!",
+      profile: { name: profileName, targetPost: profilePost, email: profileEmail },
+    };
   } catch (err: any) {
     return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
   }
