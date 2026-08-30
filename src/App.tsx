@@ -74,13 +74,15 @@ export default function App() {
 
   const handleOpenAuth = (mode: "login" | "register" = "register") => { setAuthMode(mode); setIsAuthModalOpen(true); };
 
-  const handleAuthSuccess = (authenticatedUser: UserProfile) => {
+  const handleAuthSuccess = async (authenticatedUser: UserProfile) => {
     setUser(authenticatedUser);
     saveUserProfile(authenticatedUser);
     setIsAuthModalOpen(false);
-    const existingProgress = getUserProgress(authenticatedUser.email);
-    const updated = updateDailyStreak(existingProgress);
+    // Load progress from Supabase (cloud) — works across browsers
+    const cloudProgress = await getUserProgressAsync(authenticatedUser.email);
+    const updated = updateDailyStreak(cloudProgress);
     setProgress(updated);
+    saveUserProgress(updated);
   };
 
   const handleLogout = async () => { await logoutUser(); clearUserData(); setUser(null); setActiveTab("dashboard"); };
