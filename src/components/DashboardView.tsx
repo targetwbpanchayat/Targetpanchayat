@@ -314,38 +314,83 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 : "পরীক্ষার তারিখ সেট করে প্রতিদিনের পড়ার রুটিন তৈরি করুন।"}
             </p>
 
-            {/* Daily Checklist preview */}
+            {/* Daily Checklist preview — Today's tasks */}
             <div className="space-y-2 bg-slate-50 p-3.5 rounded-2xl border border-slate-200">
-              {progress.activeStudyPlan && progress.activeStudyPlan.tasks?.length > 0 ? (
-                progress.activeStudyPlan.tasks.slice(0, 3).map((task) => (
-                  <div key={task.id} className="flex items-center justify-between gap-2 text-xs font-semibold font-bengali">
-                    <div className="flex items-center gap-2 text-slate-800 min-w-0">
-                      {task.completed ? (
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      ) : (
-                        <div className="w-3.5 h-3.5 rounded-full border border-slate-400 shrink-0" />
+              {(() => {
+                const todayStr = new Date().toISOString().split("T")[0];
+                const plan = progress.activeStudyPlan;
+                if (plan && plan.tasks?.length > 0) {
+                  // Find today's task by date, fall back to first pending task
+                  const todayTask = plan.tasks.find((t) => t.dateStr === todayStr) ||
+                    plan.tasks.find((t) => !t.completed) ||
+                    plan.tasks[0];
+                  const isToday = todayTask.dateStr === todayStr;
+
+                  return (
+                    <>
+                      <div className="flex items-center justify-between gap-1 mb-1">
+                        <span className="text-[10px] font-bold text-emerald-700 font-bengali flex items-center gap-1">
+                          <CalendarCheck className="w-3 h-3" />
+                          {isToday ? "আজকের পড়ার প্ল্যান" : `দিন ${todayTask.dayNumber}`}
+                        </span>
+                        {todayTask.completed && (
+                          <span className="text-[10px] font-bold text-emerald-600 bg-emerald-100 px-2 py-0.5 rounded-full font-bengali">✓ সম্পন্ন</span>
+                        )}
+                      </div>
+
+                      {/* Primary subject */}
+                      <div className="flex items-center justify-between gap-2 text-xs font-semibold font-bengali">
+                        <div className="flex items-center gap-2 text-slate-800 min-w-0">
+                          {todayTask.completed ? (
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          ) : (
+                            <div className="w-3.5 h-3.5 rounded-full border border-slate-400 shrink-0" />
+                          )}
+                          <span className="truncate">{todayTask.chapterTitle}</span>
+                        </div>
+                        <span className="text-[10px] text-slate-500 font-mono-num shrink-0">{todayTask.targetMinutes} মি.</span>
+                      </div>
+
+                      {/* Secondary subject if exists */}
+                      {todayTask.secondaryTitle && (
+                        <div className="flex items-center justify-between gap-2 text-xs font-semibold font-bengali">
+                          <div className="flex items-center gap-2 text-slate-700 min-w-0">
+                            {todayTask.completed ? (
+                              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                            ) : (
+                              <div className="w-3.5 h-3.5 rounded-full border border-slate-400 shrink-0" />
+                            )}
+                            <span className="truncate text-teal-700">+ {todayTask.secondaryTitle}</span>
+                          </div>
+                        </div>
                       )}
-                      <span className="truncate">দিন {task.dayNumber}: {task.chapterTitle}</span>
-                    </div>
-                    <span className="text-[10px] text-slate-500 font-mono-num shrink-0">{task.targetMinutes} মি.</span>
-                  </div>
-                ))
-              ) : (
-                <>
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 font-bengali">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>পঞ্চায়েত আইন ও ধারা ১-১০ রিভিশন</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 font-bengali">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>বাংলা ব্যাকরণ ও সাহিত্যের প্রশ্ন সমাধান</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 font-bengali">
-                    <div className="w-3.5 h-3.5 rounded-full border border-slate-400 shrink-0" />
-                    <span>পাটিগণিত শতকরা ও অনুপাত প্র্যাকটিস</span>
-                  </div>
-                </>
-              )}
+
+                      {/* Progress indicator */}
+                      <div className="pt-1 border-t border-slate-200 flex items-center justify-between text-[10px] text-slate-500 font-bengali">
+                        <span>প্ল্যান: {plan.tasks.filter((t) => t.completed).length}/{plan.tasks.length} দিন সম্পন্ন</span>
+                        <span className="font-mono-num">{Math.round((plan.tasks.filter((t) => t.completed).length / plan.tasks.length) * 100)}%</span>
+                      </div>
+                    </>
+                  );
+                } else {
+                  return (
+                    <>
+                      <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 font-bengali">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span>পঞ্চায়েত আইন ও ধারা ১-১০ রিভিশন</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 font-bengali">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span>বাংলা ব্যাকরণ ও সাহিত্যের প্রশ্ন সমাধান</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 font-bengali">
+                        <div className="w-3.5 h-3.5 rounded-full border border-slate-400 shrink-0" />
+                        <span>পাটিগণিত শতকরা ও অনুপাত প্র্যাকটিস</span>
+                      </div>
+                    </>
+                  );
+                }
+              })()}
             </div>
           </div>
 

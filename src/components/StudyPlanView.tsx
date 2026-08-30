@@ -558,7 +558,7 @@ export const StudyPlanView: React.FC<StudyPlanViewProps> = ({
                         </div>
                       </div>
 
-                      {/* Action Buttons: Study & Direct Practice */}
+                      {/* Action Buttons: Study & Direct Practice for Primary Subject */}
                       <div className="flex items-center gap-2 pt-2 border-t border-slate-100">
                         <button
                           onClick={() => onOpenChapter(task.chapterId)}
@@ -566,7 +566,7 @@ export const StudyPlanView: React.FC<StudyPlanViewProps> = ({
                           title="অধ্যায়টির বিস্তারিত নোটস পড়ুন"
                         >
                           <BookOpen className="w-3.5 h-3.5 text-slate-600" />
-                          <span>অধ্যায় পড়ুন</span>
+                          <span>প্রথম বিষয় পড়ুন</span>
                         </button>
 
                         <button
@@ -578,6 +578,43 @@ export const StudyPlanView: React.FC<StudyPlanViewProps> = ({
                           <span>MCQ প্র্যাকটিস</span>
                         </button>
                       </div>
+
+                      {/* Secondary Subject Action Buttons */}
+                      {task.secondaryChapterId && task.secondaryTitle && (
+                        <div className="space-y-2 pt-2 border-t border-slate-100">
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-teal-100 text-teal-800 border border-teal-200 font-bengali">
+                              {task.secondarySubjectId === "panchayat" && "পঞ্চায়েত"}
+                              {task.secondarySubjectId === "bengali" && "বাংলা"}
+                              {task.secondarySubjectId === "english" && "ইংরেজি"}
+                              {task.secondarySubjectId === "math" && "গণিত"}
+                              {task.secondarySubjectId === "gk" && "জিকে"}
+                            </span>
+                            <h4 className="text-xs sm:text-sm font-bold font-bengali text-slate-700 leading-snug">
+                              {task.secondaryTitle}
+                            </h4>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => onOpenChapter(task.secondaryChapterId!)}
+                              className="flex-1 py-2 bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold rounded-xl font-bengali flex items-center justify-center gap-1.5 transition-colors cursor-pointer border border-teal-200"
+                              title="দ্বিতীয় অধ্যায়টির বিস্তারিত নোটস পড়ুন"
+                            >
+                              <BookOpen className="w-3.5 h-3.5 text-teal-600" />
+                              <span>পরের বিষয় পড়ুন</span>
+                            </button>
+
+                            <button
+                              onClick={() => onLaunchPracticeForChapter(task.secondaryChapterId!, task.secondarySubjectId!)}
+                              className="flex-1 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl font-bengali flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-xs"
+                              title="এই নির্দিষ্ট অধ্যায়ের প্রশ্ন সমাধান করুন"
+                            >
+                              <CheckSquare className="w-3.5 h-3.5" />
+                              <span>MCQ প্র্যাকটিস</span>
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   );
                 })}
