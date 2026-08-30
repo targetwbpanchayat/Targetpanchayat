@@ -98,7 +98,7 @@ async function sendGmailSmtp(
     "",
   ].join("\r\n");
 
-  const body = headers + htmlBody + "\r\n.\r\n";
+  const body = headers + "\r\n" + htmlBody + "\r\n.\r\n";
   await writer.write(encoder.encode(body));
   await waitFor("250");
 
