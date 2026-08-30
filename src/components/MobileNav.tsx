@@ -55,7 +55,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ activeTab, setActiveTab, u
   return (
     <>
       {/* Bottom Floating App Bar for Mobile */}
-      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-slate-200 px-2 py-2 flex items-center justify-around shadow-lg">
+      <nav className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-slate-200 px-2 py-2 flex items-center justify-around shadow-lg" style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}>
         {mainTabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;

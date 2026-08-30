@@ -6,12 +6,7 @@ import {
   Upload,
   Trash2,
   Mail,
-  Server,
-  Globe,
   Check,
-  AlertCircle,
-  Copy,
-  ExternalLink,
 } from "lucide-react";
 import { UserProfile, UserProgress } from "../types";
 import { clearUserData, saveUserProgress, saveUserProfile } from "../utils/storage";
@@ -31,7 +26,6 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   setProgress,
   onLogout,
 }) => {
-  const [copied, setCopied] = useState(false);
   const [importStatus, setImportStatus] = useState<string | null>(null);
 
   // Export progress as JSON file
@@ -92,17 +86,6 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
       setProgress(resetProgress);
       saveUserProgress(resetProgress);
     }
-  };
-
-  const sampleEnvConfig = `# .env Configuration for Gmail OTP
-GMAIL_USER=targetpanchayat@gmail.com
-GMAIL_APP_PASSWORD=your_16_character_app_password
-NODE_ENV=production`;
-
-  const copyConfig = () => {
-    navigator.clipboard.writeText(sampleEnvConfig);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -200,65 +183,6 @@ NODE_ENV=production`;
         </div>
       </div>
 
-      {/* Gmail SMTP Integration Guide */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 space-y-4 shadow-xs">
-        <div className="flex items-center justify-between">
-          <h2 className="text-base font-bold text-slate-900 font-bengali flex items-center gap-2">
-            <Mail className="w-4 h-4 text-amber-600" />
-            <span>Gmail OTP কনফিগারেশন নির্দেশিকা (Nodemailer Setup)</span>
-          </h2>
-          <button
-            onClick={copyConfig}
-            className="text-xs text-emerald-700 font-bold flex items-center gap-1 hover:underline font-bengali cursor-pointer"
-          >
-            <Copy className="w-3.5 h-3.5" />
-            <span>{copied ? "কপি হয়েছে!" : "কনফিগ কপি করুন"}</span>
-          </button>
-        </div>
-
-        <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2 text-xs font-bengali text-slate-700">
-          <p className="font-bold text-slate-900">
-            ✉️ জিমেইল থেকে ওটিপি পাঠানোর জন্য কীভাবে App Password তৈরি করবেন:
-          </p>
-          <ol className="list-decimal list-inside space-y-1.5 text-slate-600 pl-1">
-            <li>Google অ্যাকাউন্টে যান: <strong className="text-slate-800">myaccount.google.com/security</strong></li>
-            <li><strong className="text-slate-800">2-Step Verification</strong> চালু করুন।</li>
-            <li>নিচে <strong className="text-slate-800">App Passwords</strong> অপশনে ক্লিক করে একটি ১৬-সংখ্যার পাসওয়ার্ড জেনারেট করুন।</li>
-            <li>আপনার সার্ভারের <strong className="text-slate-800">.env</strong> ফাইলে <code className="text-emerald-700 font-mono font-bold">GMAIL_APP_PASSWORD</code> সেট করুন।</li>
-          </ol>
-        </div>
-
-        <pre className="bg-slate-900 p-4 rounded-2xl border border-slate-800 text-xs font-mono text-emerald-400 overflow-x-auto">
-          {sampleEnvConfig}
-        </pre>
-      </div>
-
-      {/* Production Deployment Instructions */}
-      <div className="bg-white border border-slate-200 rounded-3xl p-6 space-y-4 shadow-xs">
-        <h2 className="text-base font-bold text-slate-900 font-bengali flex items-center gap-2">
-          <Globe className="w-4 h-4 text-sky-600" />
-          <span>ওয়েবসাইট ডেপ্লয়মেন্ট নির্দেশিকা (Hosting Guide)</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-bengali">
-          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
-            <h3 className="font-bold text-sky-700">1. Render / Railway / Cloud Run (Full-Stack)</h3>
-            <p className="text-slate-600 leading-relaxed">
-              যেহেতু এই অ্যাপটিতে Express ব্যাকএন্ড এবং Gmail OTP সার্ভিস রয়েছে, তাই Render বা Railway-তে নোড সার্ভার হিসেবে ডেপ্লয় করুন।
-            </p>
-            <div className="text-[11px] font-mono text-slate-700 bg-white border border-slate-200 p-2 rounded-lg">
-              Build Command: npm run build<br />
-              Start Command: npm run start
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-2">
-            <h3 className="font-bold text-teal-700">2. Vercel / Netlify (Serverless Functions)</h3>
-            <p className="text-slate-600 leading-relaxed">
-              Vercel-এ ডেপ্লয় করার জন্য <code className="text-slate-800 font-semibold">/api</code> ফোল্ডারে সার্ভারলেস ফাংশন হিসেবে OTP হ্যান্ডলার যোগ করে খুব সহজেই ফ্রিতে হোস্টিং করা যায়।
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
