@@ -1,4 +1,15 @@
-import { UserProfile, UserProgress, StudyPlan, MockTestAttempt, SubjectId } from "../types";
+/**
+ * Storage Service — Supabase Database (cloud) + localStorage fallback
+ *
+ * User progress is stored in Supabase table: user_progress
+ * Each user's data is isolated by Row Level Security (RLS).
+ * Data survives app uninstall, device change, browser clear.
+ *
+ * localStorage is used as fast read-cache and offline fallback.
+ * Function signatures match the old version — all components work unchanged.
+ */
+import { UserProfile, UserProgress, SubjectId } from "../types";
+import { supabase, SUPABASE_ENABLED } from "../lib/supabase";
 
 const PROGRESS_KEY_PREFIX = "wb_gp_progress_v2_";
 const ACTIVE_USER_KEY = "wb_gp_active_user_v2";
@@ -43,6 +54,11 @@ export function saveUserProfile(user: UserProfile | null): void {
   }
 }
 
+/**
+ * Get user progress.
+ * Synchronous version — returns from localStorage (fast cache).
+ * Cloud sync happens asynchronously via syncProgressFromCloud().
+ */
 export function getUserProgress(userEmail: string): UserProgress {
   const email = userEmail || "guest";
   try {
@@ -57,17 +73,83 @@ export function getUserProgress(userEmail: string): UserProgress {
   return getInitialProgress(email);
 }
 
+/**
+ * Async version — loads from Supabase cloud first, then falls back to localStorage.
+ * Use this on app startup and after login.
+ */
+export async function getUserProgressAsync(userEmail: string): Promise<UserProgress> {
+  const email = userEmail || "guest";
+
+  if (SUPABASE_ENABLED && supabase) {
+    try {
+      const { data: authData } = await supabase.auth.getUser();
+      const uid = authData.user?.id;
+      if (uid) {
+        const { data, error } = await supabase
+          .from("user_progress")
+          .select("progress_data")
+          .eq("user_id", uid)
+          .single();
+
+        if (!error && data?.progress_data) {
+          const cloudProgress = data.progress_data as UserProgress;
+          const merged = { ...getInitialProgress(email), ...cloudProgress, userEmail: email };
+          // Cache locally
+          try {
+            localStorage.setItem(
+              `${PROGRESS_KEY_PREFIX}${email.toLowerCase()}`,
+              JSON.stringify(merged)
+            );
+          } catch {}
+          return merged;
+        }
+      }
+    } catch (err) {
+      console.error("Failed to load progress from Supabase:", err);
+    }
+  }
+
+  return getUserProgress(email);
+}
+
+/**
+ * Save progress to BOTH Supabase (cloud) and localStorage (cache).
+ * Cloud save is async and non-blocking.
+ */
 export function saveUserProgress(progress: UserProgress): boolean {
   if (!progress) return false;
   const email = progress.userEmail || "guest";
+
+  // 1. localStorage (fast cache)
   try {
-    const key = `${PROGRESS_KEY_PREFIX}${email.toLowerCase()}`;
-    localStorage.setItem(key, JSON.stringify(progress));
-    return true;
+    localStorage.setItem(
+      `${PROGRESS_KEY_PREFIX}${email.toLowerCase()}`,
+      JSON.stringify(progress)
+    );
   } catch (err) {
     console.error("Failed to save progress to localStorage:", err);
-    return false;
   }
+
+  // 2. Supabase (cloud — async, non-blocking)
+  if (SUPABASE_ENABLED && supabase) {
+    saveProgressToCloud(progress).catch((err) => {
+      console.error("Failed to save progress to Supabase:", err);
+    });
+  }
+
+  return true;
+}
+
+async function saveProgressToCloud(progress: UserProgress): Promise<void> {
+  const { data: authData } = await supabase!.auth.getUser();
+  const uid = authData.user?.id;
+  if (!uid) return;
+
+  await supabase!.from("user_progress").upsert({
+    user_id: uid,
+    progress_data: progress,
+    updated_at: new Date().toISOString(),
+  });
 }
 
 export function updateDailyStreak(progress: UserProgress): UserProgress {
@@ -85,8 +167,9 @@ export function updateDailyStreak(progress: UserProgress): UserProgress {
   if (lastActive) {
     const lastDate = new Date(lastActive);
     const currentDate = new Date(today);
-    const diffDays = Math.round((currentDate.getTime() - lastDate.getTime()) / (1000 * 3600 * 24));
-
+    const diffDays = Math.round(
+      (currentDate.getTime() - lastDate.getTime()) / (1000 * 3600 * 24)
+    );
     if (diffDays === 1) currentStreak += 1;
     else if (diffDays > 1) currentStreak = 1;
   } else {
