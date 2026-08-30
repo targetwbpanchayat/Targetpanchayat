@@ -28,16 +28,21 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Accept SDK Licenses
-        run: yes | sdkmanager --licenses || true
+      - name: Install SDK Components
+        run: |
+          sdkmanager "platforms;android-34" "build-tools;34.0.0" "platform-tools"
+          yes | sdkmanager --licenses
 
-      - name: Download and Install Gradle
+      - name: Create local.properties
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
+      - name: Download Gradle
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.2-bin.zip -O /tmp/gradle.zip
           unzip -q /tmp/gradle.zip -d /tmp/
 
       - name: Build Debug APK
-        run: /tmp/gradle-8.2/bin/gradle assembleDebug --no-daemon --stacktrace
+        run: /tmp/gradle-8.2/bin/gradle assembleDebug --no-daemon --stacktrace --info
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
