@@ -150,7 +150,7 @@ Deno.serve(async (req: Request) => {
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
 
-  const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+  const expiresAt = new Date(Date.now() + 30 * 60 * 1000).toISOString(); // 30 min
 
   try {
     await fetch(`${supabaseUrl}/rest/v1/otp_codes?email=eq.${encodeURIComponent(email)}&purpose=eq.${purpose}`, {

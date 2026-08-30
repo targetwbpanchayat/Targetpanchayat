@@ -269,7 +269,8 @@ export async function sendResetPasswordOtp(
 
 export async function verifyOtp(
   email: string,
-  code: string
+  code: string,
+  purpose: string = "password_reset"
 ): Promise<VerifyOtpResult> {
   if (!SUPABASE_ENABLED || !supabase) {
     // Fallback (offline) — compare against sessionStorage value
@@ -289,7 +290,7 @@ export async function verifyOtp(
         "Content-Type": "application/json",
         apikey: import.meta.env.VITE_SUPABASE_ANON_KEY,
       },
-      body: JSON.stringify({ email: email.trim(), code: code.trim(), purpose: "password_reset" }),
+      body: JSON.stringify({ email: email.trim(), code: code.trim(), purpose }),
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok || !data.success) {

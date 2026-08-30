@@ -224,7 +224,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
 
     setLoading(true);
     try {
-      const res = await verifyOtp(email.trim(), fullOtp);
+      const res = await verifyOtp(email.trim(), fullOtp, "registration");
       if (res.success) {
         // Create account in Supabase Auth
         const regRes = await registerWithEmail(email.trim(), password, name.trim(), targetPost);
