@@ -2,16 +2,21 @@
  * Authentication Service — Supabase Auth
  *
  * Supabase handles:
- *   - Email + Password sign up (signUp) — creates account, auto-signs in
+ *   - Email + Password sign up (signUp) — creates account
  *   - Email + Password login (signInWithPassword)
- *   - Password reset (resetPasswordForEmail) — sends secure link to email
- *   - Password update (updateUser) — sets new password after reset
+ *   - Password reset (OTP via Edge Function)
+ *   - Password update (Edge Function)
  *   - Session management (onAuthStateChange)
  *
  * User profiles + progress stored in Supabase Database (PostgreSQL)
  * with Row Level Security — each user sees only their own data.
  *
  * Setup: Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to GitHub Secrets.
+ *
+ * IMPORTANT for cross-browser login:
+ *   In Supabase Dashboard → Authentication → Providers → Email:
+ *   turn OFF "Confirm email" so signUp immediately creates a usable
+ *   account. Otherwise users must click an email link before login works.
  */
 import { supabase, SUPABASE_ENABLED } from "../lib/supabase";
 import { UserProfile } from "../types";
@@ -40,9 +45,6 @@ export interface VerifyOtpResult {
 const REGISTERED_USERS_KEY = "wb_gp_users_v2";
 const ACTIVE_SESSION_KEY = "wb_gp_current_user_v2";
 
-// The live site URL — password reset links will redirect here
-const SITE_URL = "https://targetwbpanchayat.github.io/Targetpanchayat/";
-
 // ============ LOCAL STORAGE HELPERS (fallback) ============
 
 export function getRegisteredUsers(): StoredUser[] {
@@ -52,20 +54,7 @@ export function getRegisteredUsers(): StoredUser[] {
   } catch (err) {
     console.error("Failed to load registered users:", err);
   }
-  const demoUsers: StoredUser[] = [
-    {
-      email: "targetpanchayat@gmail.com",
-      name: "রাহুল ব্যানার্জি",
-      targetPost: "Gram Panchayat Karmee & Sahayak",
-      passwordHash: btoa("panchayat2026"),
-      isVerified: true,
-      createdAt: new Date().toISOString(),
-    },
-  ];
-  try {
-    localStorage.setItem(REGISTERED_USERS_KEY, JSON.stringify(demoUsers));
-  } catch {}
-  return demoUsers;
+  return [];
 }
 
 export function saveRegisteredUsers(users: StoredUser[]): void {
@@ -103,7 +92,11 @@ export function setCurrentUser(user: UserProfile | null): void {
 /**
  * Register a new user with email + password.
  * Supabase creates the account and immediately signs them in.
- * No OTP or email link needed.
+ * After signUp, the account is usable from any browser.
+ *
+ * NOTE: If Supabase has "Confirm email" enabled, the user must
+ * click the link in the confirmation email before login works.
+ * Disable that in Supabase Dashboard → Auth → Providers → Email.
  */
 export async function registerWithEmail(
   email: string,
@@ -112,7 +105,24 @@ export async function registerWithEmail(
   targetPost: string
 ): Promise<{ success: boolean; message: string }> {
   if (!SUPABASE_ENABLED || !supabase) {
-    return { success: false, message: "Supabase কনফিগার করা হয়নি।" };
+    // ---- Offline fallback: store in localStorage ----
+    const users = getRegisteredUsers();
+    const exists = users.find(
+      (u) => u.email.toLowerCase() === email.toLowerCase().trim()
+    );
+    if (exists) {
+      return { success: false, message: "এই ইমেইল দিয়ে ইতিমধ্যে অ্যাকাউন্ট রয়েছে। লগইন করুন।" };
+    }
+    users.push({
+      email: email.toLowerCase().trim(),
+      name: name.trim(),
+      targetPost,
+      passwordHash: btoa(password),
+      isVerified: true,
+      createdAt: new Date().toISOString(),
+    });
+    saveRegisteredUsers(users);
+    return { success: true, message: "রেজিস্ট্রেশন সফল! আপনি এখন লগইন করতে পারেন।" };
   }
 
   try {
@@ -149,7 +159,7 @@ export async function loginUser(
   password: string
 ): Promise<{ success: boolean; message: string }> {
   if (!SUPABASE_ENABLED || !supabase) {
-    // Fallback to localStorage
+    // ---- Offline fallback: check localStorage ----
     const users = getRegisteredUsers();
     const user = users.find(
       (u) => u.email.toLowerCase() === email.toLowerCase().trim()
@@ -157,7 +167,10 @@ export async function loginUser(
     if (user && user.passwordHash === btoa(password)) {
       return { success: true, message: "লগইন সফল!" };
     }
-    return { success: false, message: "ভুল ইমেইল বা পাসওয়ার্ড।" };
+    if (user) {
+      return { success: false, message: "ভুল পাসওয়ার্ড।" };
+    }
+    return { success: false, message: "এই ইমেইলে কোনো অ্যাকাউন্ট পাওয়া যায়নি। অনুগ্রহ করে রেজিস্ট্রেশন করুন।" };
   }
 
   try {
@@ -309,7 +322,20 @@ export async function updatePassword(
   email?: string
 ): Promise<{ success: boolean; message: string }> {
   if (!SUPABASE_ENABLED || !supabase) {
-    return { success: false, message: "Supabase কনফিগার করা হয়নি।" };
+    // ---- Offline fallback: update localStorage ----
+    if (!email) {
+      return { success: false, message: "ইমেইল পাওয়া যায়নি।" };
+    }
+    const users = getRegisteredUsers();
+    const user = users.find(
+      (u) => u.email.toLowerCase() === email.toLowerCase().trim()
+    );
+    if (!user) {
+      return { success: false, message: "এই ইমেইলে কোনো অ্যাকাউন্ট পাওয়া যায়নি।" };
+    }
+    user.passwordHash = btoa(newPassword);
+    saveRegisteredUsers(users);
+    return { success: true, message: "পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! এখন লগইন করুন।" };
   }
   if (!email) {
     return { success: false, message: "ইমেইল পাওয়া যায়নি।" };
