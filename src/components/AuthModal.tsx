@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Mail, Lock, User, ShieldCheck, ArrowRight, RefreshCw, X,
   AlertCircle, CheckCircle2, KeyRound, Sparkles, Briefcase,
@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import { UserProfile } from "../types";
 import {
-  setCurrentUser, sendResetPasswordOtp, verifyOtp,
+  setCurrentUser, sendResetPasswordOtp, sendRegistrationOtp, verifyOtp,
   loginUser, registerWithEmail, updatePassword,
 } from "../services/authService";
 import { getUserProgressAsync, saveUserProgress, getInitialProgress, updateDailyStreak } from "../utils/storage";
@@ -19,8 +19,66 @@ interface AuthModalProps {
   initialMode?: "login" | "register" | "update_password";
 }
 
+// ---------------- 6-box OTP input ----------------
+const OtpInput: React.FC<{
+  value: string;
+  onChange: (v: string) => void;
+}> = ({ value, onChange }) => {
+  const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
+  const digits = (value + "      ").slice(0, 6).split("");
+
+  const focusNext = (idx: number) => {
+    const next = inputsRef.current[idx + 1];
+    if (next) next.focus();
+  };
+  const focusPrev = (idx: number) => {
+    const prev = inputsRef.current[idx - 1];
+    if (prev) prev.focus();
+  };
+
+  return (
+    <div className="flex justify-center gap-2 sm:gap-2.5" dir="ltr">
+      {digits.map((d, i) => (
+        <input
+          key={i}
+          ref={(el) => { inputsRef.current[i] = el; }}
+          type="text"
+          inputMode="numeric"
+          pattern="\d*"
+          maxLength={1}
+          value={d.trim()}
+          onChange={(e) => {
+            const ch = e.target.value.replace(/\D/g, "").slice(-1);
+            const arr = (value + "      ").slice(0, 6).split("");
+            arr[i] = ch;
+            const next = arr.join("").slice(0, 6).replace(/\s+$/, "");
+            onChange(next);
+            if (ch) focusNext(i);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Backspace" && !digits[i].trim()) focusPrev(i);
+            if (e.key === "ArrowLeft") focusPrev(i);
+            if (e.key === "ArrowRight") focusNext(i);
+          }}
+          onPaste={(e) => {
+            e.preventDefault();
+            const pasted = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, 6);
+            if (pasted) {
+              onChange(pasted);
+              const last = Math.min(pasted.length, 5);
+              inputsRef.current[last]?.focus();
+            }
+          }}
+          className="w-10 h-12 sm:w-11 sm:h-13 text-center text-xl font-bold rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none text-slate-900"
+        />
+      ))}
+    </div>
+  );
+};
+
 export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSuccess, onSuccess, initialMode = "login" }) => {
-  const [mode, setMode] = useState<"login" | "register" | "forgot" | "otp_verify" | "update_password">(initialMode);
+  type Mode = "login" | "register" | "register_otp" | "forgot" | "otp_verify" | "update_password";
+  const [mode, setMode] = useState<Mode>(initialMode);
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -44,7 +102,16 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
 
   if (!isOpen) return null;
 
-  // 1. Registration — email + password (no OTP)
+  // ----- countdown for resend -----
+  const [resendIn, setResendIn] = useState(0);
+  useEffect(() => {
+    if (resendIn <= 0) return;
+    const t = setTimeout(() => setResendIn((s) => s - 1), 1000);
+    return () => clearTimeout(t);
+  }, [resendIn]);
+  const startCountdown = () => setResendIn(34);
+
+  // 1. Registration form → send OTP (registration), then go to register_otp
   const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null); setSuccessMsg(null);
@@ -55,15 +122,67 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
 
     setLoading(true);
     try {
-      const res = await registerWithEmail(email.trim(), password, name.trim(), targetPost);
+      const res = await sendRegistrationOtp(email.trim(), name.trim());
       if (res.success) {
         setSuccessMsg(res.message);
-        setTimeout(() => { setMode("login"); setError(null); }, 2000);
+        if (res.devOtp) setSuccessMsg(`[ডেভ OTP]: ${res.devOtp}`);
+        setOtp("");
+        setMode("register_otp");
+        startCountdown();
       } else {
         setError(res.message);
       }
     } catch {
-      setError("কিছু সমস্যা হয়েছে। আবার চেষ্টা করুন।");
+      setError("OTP পাঠাতে সমস্যা হয়েছে।");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 1b. Verify registration OTP → then actually create account
+  const handleVerifyRegisterOtp = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    if (!otp.trim() || otp.trim().length !== 6) return setError("৬-অঙ্কের OTP লিখুন।");
+
+    setLoading(true);
+    try {
+      const res = await verifyOtp(email.trim(), otp.trim(), "registration");
+      if (res.success) {
+        // OTP verified — now create the account
+        const reg = await registerWithEmail(email.trim(), password, name.trim(), targetPost);
+        if (reg.success) {
+          setSuccessMsg(reg.message);
+          setOtp("");
+          setTimeout(() => { setMode("login"); setError(null); }, 2000);
+        } else {
+          setError(reg.message);
+        }
+      } else {
+        setError(res.message || "ভুল OTP।");
+      }
+    } catch {
+      setError("OTP যাচাইয়ে সমস্যা হয়েছে।");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 1c. Resend registration OTP
+  const handleResendRegisterOtp = async () => {
+    setError(null); setSuccessMsg(null);
+    setLoading(true);
+    try {
+      const res = await sendRegistrationOtp(email.trim(), name.trim());
+      if (res.success) {
+        setSuccessMsg(res.message);
+        if (res.devOtp) setSuccessMsg(`[ডেভ OTP]: ${res.devOtp}`);
+        startCountdown();
+      } else {
+        setError(res.message);
+      }
+    } catch {
+      setError("OTP পাঠাতে সমস্যা।");
     } finally {
       setLoading(false);
     }
@@ -101,7 +220,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
     }
   };
 
-  // 3. Forgot Password — send reset link
+  // 3. Forgot Password — send OTP
   const handleForgotSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -112,10 +231,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
       const res = await sendResetPasswordOtp(email.trim());
       if (res.success) {
         setSuccessMsg(res.message);
-        if (res.devOtp) {
-          setSuccessMsg(`[ডেভ OTP]: ${res.devOtp}`);
-        }
+        if (res.devOtp) setSuccessMsg(`[ডেভ OTP]: ${res.devOtp}`);
         setMode("otp_verify");
+        startCountdown();
       } else {
         setError(res.message);
       }
@@ -134,7 +252,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
 
     setLoading(true);
     try {
-      const res = await verifyOtp(email.trim(), otp.trim());
+      const res = await verifyOtp(email.trim(), otp.trim(), "password_reset");
       if (res.success) {
         setSuccessMsg(res.message);
         setOtp("");
@@ -143,13 +261,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
         setError(res.message || "ভুল OTP।");
       }
     } catch {
-      setError("OTP যাচাইয়ে সমস্যা হয়েছে।");
+      setError("OTP যাচাইয়ে সমস্যা হয়েছে।");
     } finally {
       setLoading(false);
     }
   };
 
-  // 3c. Resend OTP
+  // 3c. Resend reset OTP
   const handleResendOtp = async () => {
     setError(null); setSuccessMsg(null);
     setLoading(true);
@@ -158,6 +276,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
       if (res.success) {
         setSuccessMsg(res.message);
         if (res.devOtp) setSuccessMsg(`[ডেভ OTP]: ${res.devOtp}`);
+        startCountdown();
       } else {
         setError(res.message);
       }
@@ -168,7 +287,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
     }
   };
 
-  // 4. Update Password (after clicking reset link from email)
+  // 4. Update Password
   const handleUpdatePasswordSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -207,6 +326,47 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
     onClose();
   };
 
+  const titleMap: Record<Mode, string> = {
+    register: "নতুন অ্যাকাউন্ট তৈরি করুন",
+    login: "লগইন করুন",
+    forgot: "পাসওয়ার্ড রিসেট",
+    register_otp: "OTP যাচাই করুন",
+    otp_verify: "OTP যাচাই করুন",
+    update_password: "নতুন পাসওয়ার্ড সেট করুন",
+  };
+  const subtitleMap: Record<Mode, string> = {
+    register: "ইমেইল ও পাসওয়ার্ড দিয়ে সহজে রেজিস্টার করুন",
+    login: "আপনার অ্যাকাউন্টে লগইন করুন",
+    forgot: "পাসওয়ার্ড ভুলে গেছেন?",
+    register_otp: "ইমেইলে পাঠানো ৬-অঙ্কের OTP লিখুন",
+    otp_verify: "ইমেইলে পাঠানো ৬-অঙ্কের OTP লিখুন",
+    update_password: "নতুন পাসওয়ার্ড দিন",
+  };
+
+  const resendBtn = (
+    label: string,
+    onResend: () => void,
+    purpose: string
+  ) => (
+    <div className="flex items-center justify-between text-sm">
+      <button
+        type="button"
+        onClick={onResend}
+        disabled={loading || resendIn > 0}
+        className="text-emerald-600 font-medium hover:underline disabled:opacity-50 disabled:no-underline"
+      >
+        {resendIn > 0 ? `${resendIn} সেকেন্ড পর পুনরায় পাঠানো যাবে` : label}
+      </button>
+      <button
+        type="button"
+        onClick={() => { setMode(purpose === "registration" ? "register" : "login"); setError(null); setSuccessMsg(null); setOtp(""); }}
+        className="text-slate-500 hover:text-slate-700"
+      >
+        ← পিছনে যান
+      </button>
+    </div>
+  );
+
   return (
     <div className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 animate-in fade-in duration-200">
       <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden relative">
@@ -217,20 +377,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
           <div className="flex items-center gap-2.5 mb-2">
             <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold"><ShieldCheck className="w-5 h-5" /></div>
             <div>
-              <h2 className="text-lg font-bold text-slate-900">
-                {mode === "register" && "নতুন অ্যাকাউন্ট তৈরি করুন"}
-                {mode === "login" && "লগইন করুন"}
-                {mode === "forgot" && "পাসওয়ার্ড রিসেট"}
-                {mode === "otp_verify" && "OTP যাচাই করুন"}
-                {mode === "update_password" && "নতুন পাসওয়ার্ড সেট করুন"}
-              </h2>
-              <p className="text-xs text-slate-500">
-                {mode === "register" && "ইমেইল ও পাসওয়ার্ড দিয়ে সহজে রেজিস্টার করুন"}
-                {mode === "login" && "আপনার অ্যাকাউন্টে লগইন করুন"}
-                {mode === "forgot" && "পাসওয়ার্ড ভুলে গেছেন?"}
-                {mode === "otp_verify" && "ইমেইলে পাঠানো ৬-অঙ্কের OTP লিখুন"}
-                {mode === "update_password" && "নতুন পাসওয়ার্ড দিন"}
-              </p>
+              <h2 className="text-lg font-bold text-slate-900">{titleMap[mode]}</h2>
+              <p className="text-xs text-slate-500">{subtitleMap[mode]}</p>
             </div>
           </div>
         </div>
@@ -258,29 +406,42 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLoginSu
               <div><label className="block text-sm font-medium text-slate-700 mb-1.5">পাসওয়ার্ড</label><div className="relative"><Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" /><input type={showPassword ? "text" : "password"} value={password} onChange={(e) => setPassword(e.target.value)} placeholder="কমপক্ষে ৬ অক্ষর" className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none text-sm" required /><button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">{showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}</button></div></div>
               <div><label className="block text-sm font-medium text-slate-700 mb-1.5">পাসওয়ার্ড নিশ্চিত করুন</label><div className="relative"><Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" /><input type={showPassword ? "text" : "password"} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="পাসওয়ার্ড আবার লিখুন" className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none text-sm" required /></div></div>
               <div><label className="block text-sm font-medium text-slate-700 mb-1.5">টার্গেট পদ</label><div className="relative"><Briefcase className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" /><select value={targetPost} onChange={(e) => setTargetPost(e.target.value)} className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none text-sm appearance-none bg-white"><option>Gram Panchayat Karmee & Sahayak</option><option>Executive Assistant</option><option>Nirman Sahayak</option><option>Secretary</option></select></div></div>
-              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <> রেজিস্টার করুন <ArrowRight className="w-4 h-4" /></>}</button>
+              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <> OTP পাঠান <ArrowRight className="w-4 h-4" /></>}</button>
+              <p className="text-center text-xs text-slate-400">রেজিস্টার করার আগে আপনার ইমেইল OTP দিয়ে যাচাই হবে।</p>
               <p className="text-center text-sm text-slate-500">ইতিমধ্যে অ্যাকাউন্ট আছে? <button type="button" onClick={() => { setMode("login"); setError(null); setSuccessMsg(null); }} className="text-emerald-600 font-semibold hover:underline">লগইন করুন</button></p>
+            </form>
+          )}
+
+          {mode === "register_otp" && (
+            <form onSubmit={handleVerifyRegisterOtp} className="space-y-4">
+              <div className="text-center">
+                <div className="w-14 h-14 mx-auto rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-3"><ShieldCheck className="w-7 h-7" /></div>
+                <p className="text-sm text-slate-600"><strong className="text-slate-900">{email}</strong> ঠিকানায় ওটিপি কোড পাঠানো হয়েছে।</p>
+              </div>
+              <OtpInput value={otp} onChange={setOtp} />
+              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <>যাচাই সম্পূর্ণ করে প্রবেশ করুন <ArrowRight className="w-4 h-4" /></>}</button>
+              {resendBtn("আবার OTP পাঠান", handleResendRegisterOtp, "registration")}
             </form>
           )}
 
           {mode === "forgot" && (
             <form onSubmit={handleForgotSubmit} className="space-y-4">
-              <div className="text-center"><div className="w-14 h-14 mx-auto rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-3"><KeyRound className="w-7 h-3" /></div><p className="text-sm text-slate-600">আপনার ইমেইল <strong className="text-slate-900">{email}</strong> এ পাসওয়ার্ড রিসেট লিংক পাঠানো হবে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।</p></div>
+              <div className="text-center"><div className="w-14 h-14 mx-auto rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-3"><KeyRound className="w-7 h-3" /></div><p className="text-sm text-slate-600">আপনার ইমেইল <strong className="text-slate-900">{email}</strong> এ পাসওয়ার্ড রিসেট OTP পাঠানো হবে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।</p></div>
               <div><label className="block text-sm font-medium text-slate-700 mb-1.5">নিবন্ধিত ইমেইল ঠিকানা</label><div className="relative"><Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" /><input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="youremail@gmail.com" className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none text-sm" required /></div></div>
-              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <>রিসেট লিংক পাঠান <ArrowRight className="w-4 h-4" /></>}</button>
+              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-amber-600 text-white font-semibold hover:bg-amber-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <>OTP পাঠান <ArrowRight className="w-4 h-4" /></>}</button>
               <button type="button" onClick={() => { setMode("login"); setError(null); setSuccessMsg(null); }} className="w-full text-sm text-slate-500 hover:text-emerald-600">লগইন পেজে ফিরুন</button>
             </form>
           )}
 
           {mode === "otp_verify" && (
             <form onSubmit={handleVerifyOtpSubmit} className="space-y-4">
-              <div className="text-center"><div className="w-14 h-14 mx-auto rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-3"><ShieldCheck className="w-7 h-7" /></div><p className="text-sm text-slate-600"><strong className="text-slate-900">{email}</strong> এ পাঠানো ৬-অঙ্কের OTP লিখুন।</p></div>
-              <div><label className="block text-sm font-medium text-slate-700 mb-1.5">OTP কোড</label><div className="relative"><KeyRound className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" /><input type="text" inputMode="numeric" pattern="\d*" maxLength={6} value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))} placeholder="••••••" className="w-full pl-10 pr-3 py-2.5 rounded-xl border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 outline-none text-sm tracking-[0.5em] text-center font-bold text-lg" required /></div></div>
-              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <>OTP যাচাই করুন <ArrowRight className="w-4 h-4" /></>}</button>
-              <div className="flex items-center justify-between text-sm">
-                <button type="button" onClick={handleResendOtp} disabled={loading} className="text-emerald-600 font-medium hover:underline disabled:opacity-50">আবার OTP পাঠান</button>
-                <button type="button" onClick={() => { setMode("login"); setError(null); setSuccessMsg(null); setOtp(""); }} className="text-slate-500 hover:text-slate-700">লগইন পেজে ফিরুন</button>
+              <div className="text-center">
+                <div className="w-14 h-14 mx-auto rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center mb-3"><ShieldCheck className="w-7 h-7" /></div>
+                <p className="text-sm text-slate-600"><strong className="text-slate-900">{email}</strong> এ পাঠানো ৬-অঙ্কের OTP লিখুন।</p>
               </div>
+              <OtpInput value={otp} onChange={setOtp} />
+              <button type="submit" disabled={loading} className="w-full py-2.5 rounded-xl bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer">{loading ? <RefreshCw className="w-4 h-4 animate-spin" /> : <>OTP যাচাই করুন <ArrowRight className="w-4 h-4" /></>}</button>
+              {resendBtn("আবার OTP পাঠান", handleResendOtp, "password_reset")}
             </form>
           )}
 
