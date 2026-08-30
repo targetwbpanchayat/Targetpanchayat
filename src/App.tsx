@@ -13,6 +13,7 @@ import {
   clearUserData,
   saveUserProfile,
 } from "./utils/storage";
+import { onAuthChange, logoutUser } from "./services/authService";
 import { Navbar } from "./components/Navbar";
 import { Sidebar } from "./components/Sidebar";
 import { MobileNav } from "./components/MobileNav";
@@ -59,8 +60,9 @@ export default function App() {
   const [practiceInitialSubject, setPracticeInitialSubject] = useState<SubjectId | "all">("all");
   const [practiceInitialChapterId, setPracticeInitialChapterId] = useState<string | null>(null);
 
-  // Load user data on startup
+  // Load user data on startup — listen to Firebase auth state changes
   useEffect(() => {
+    // First check localStorage for instant load (cached user)
     const savedUser = getUserProfile();
     if (savedUser) {
       setUser(savedUser);
@@ -70,6 +72,22 @@ export default function App() {
         setProgress(streakUpdated);
       }
     }
+
+    // Subscribe to Firebase auth state changes
+    // This fires when: user logs in, registers, email verified, or logs out
+    const unsubscribe = onAuthChange((firebaseUser: UserProfile | null) => {
+      if (firebaseUser) {
+        setUser(firebaseUser);
+        saveUserProfile(firebaseUser);
+        const existingProgress = getUserProgress(firebaseUser.email);
+        const updated = updateDailyStreak(existingProgress);
+        setProgress(updated);
+      }
+      // If firebaseUser is null, keep the localStorage user (demo mode)
+      // The user will be set to null only on explicit logout
+    });
+
+    return () => unsubscribe();
   }, []);
 
   const handleOpenAuth = (mode: "login" | "register" = "register") => {
@@ -106,7 +124,8 @@ export default function App() {
     }
   };
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
+    await logoutUser();
     clearUserData();
     setUser(null);
     setActiveTab("dashboard");
@@ -274,7 +293,7 @@ export default function App() {
       {/* Mobile Bottom Navigation (only if logged in) */}
       {user && <MobileNav activeTab={activeTab} setActiveTab={setActiveTab} />}
 
-      {/* Gmail OTP Verification Authentication Modal */}
+      {/* Authentication Modal */}
       <AuthModal
         isOpen={isAuthModalOpen}
         initialMode={authMode}
