@@ -48,29 +48,29 @@ const PORTAL_HIGHLIGHTS = [
     tagColor: "bg-emerald-100 text-emerald-800 border-emerald-200",
     iconBg: "bg-emerald-500 text-white",
     Icon: BookOpen,
-    title: "পঞ্চায়েত সিলেবাস ভিত্তিক অধ্যায়ওয়ারি স্টাডি নোটস",
-    desc: "পঞ্চায়েত আইন ও প্রশাসনিক নিয়মাবলী, বাংলা ব্যাকরণ, ইংরেজি ব্যাকরণ, পার্টিগণিত এবং ইতিহাস-ভূগোল-সংবিধান-বিজ্ঞানের গভীর ধারণামূলক আলোচনা।",
-    stats: "৫টি মূল বিষয় • পুঙ্খানুপুঙ্খ থিওরি ও চার্ট",
+    title: "সম্পূর্ণ সিলেবাস ও স্টাডি মেটেরিয়াল এক জায়গায়",
+    desc: "গ্রাম পঞ্চায়েত কর্মী ও সহায়ক পদের জন্য সম্পূর্ণ সিলেবাস, বিষয়ভিত্তিক নোট, পূর্ববর্তী বছরের প্রশ্ন ও সম্ভাব্য প্রশ্নের সংগ্রহ। পড়াশোনা শুরু করুন আজ থেকেই, কারণ সফলতা আসে ধারাবাহিক প্রস্তুতি থেকে।",
+    stats: "৩০০+ টপিক • ৫০০০+ MCQ",
   },
   {
     id: "mock_test",
-    tag: "রিয়েল-টাইম পরীক্ষা",
+    tag: "মক-টেস্ট-সিরিজ",
     tagColor: "bg-indigo-100 text-indigo-800 border-indigo-200",
     iconBg: "bg-indigo-500 text-white",
     Icon: Award,
-    title: "ফুল-লেংথ মক টেস্ট ও রিয়েল-টাইম OMR অ্যানালাইসিস",
-    desc: "অফিশিয়াল ৮৫ নম্বরের পূর্ণাঙ্গ মক টেস্ট, নির্ধারিত ৮৫ মিনিট সময়সীমা, নেগেটিভ মার্কিং এবং পরীক্ষা শেষে তাৎক্ষণিক বিস্তারিত পারফরম্যান্স রিপোর্ট।",
-    stats: "৩০টি ফুল সেট • ওএমআর শিট মোড",
+    title: "বাস্তব পরীক্ষার মতো ফুল লেংথ ও শর্ট মক টেস্ট",
+    desc: "পশ্চিমবঙ্গ গ্রাম পঞ্চায়েত পরীক্ষার প্রশ্নপত্রের সাথে মিল রেখে তৈরি বিশেষ মডেল প্রশ্নপত্র। পরীক্ষার হলের অনুভূতি পান, সময় ব্যবস্থাপনা শিখুন, এবং প্রতিটি টেস্টে আপনার অগ্রগতি ট্র্যাক করুন।",
+    stats: "৫০+ মক টেস্ট • ৯০ মিনিট",
   },
   {
     id: "practice_bank",
-    tag: "অনুশীলন ব্যাংক",
+    tag: "প্র্যাকটিস ব্যাংক",
     tagColor: "bg-amber-100 text-amber-800 border-amber-200",
     iconBg: "bg-amber-500 text-white",
     Icon: CheckSquare,
-    title: "৫,০০০+ অধ্যায়ভিত্তিক MCQ ও সংক্ষিপ্ত প্রশ্নোত্তর (SAQ)",
-    desc: "প্রতিটি অধ্যায়ের সাথে তাত্ক্ষণিক এমসিকিউ প্র্যাকটিস, ভুল উত্তরের ব্যাখ্যা, বুকমার্কিং এবং আত্মবিশ্বাসের সাথে রিভিশনের জন্য সাজানো প্রশ্নমালা।",
-    stats: "তাত্ক্ষণিক সমাধান • গভীর ব্যাখ্যা",
+    title: "বিষয়ভিত্তিক MCQ ও সংক্ষিপ্ত উত্তর (SAQ)",
+    desc: "প্রতিটি অধ্যায় শেষে বিশাল প্রশ্ন ব্যাংক থেকে প্র্যাকটিস করুন। প্রতিটি MCQ-এর সঠিক উত্তর ও বিস্তারিত ব্যাখ্যা দেখে নিজের ভুল থেকে শিখুন। দুর্বল জায়গাগুলো চিহ্নিত করে সেগুলোতে বেশি সময় দিন।",
+    stats: "৫০০০+ MCQ • ২০০০+ SAQ",
   },
   {
     id: "pyq_archive",
@@ -79,18 +79,18 @@ const PORTAL_HIGHLIGHTS = [
     iconBg: "bg-blue-500 text-white",
     Icon: FileText,
     title: "বিগত বছরের প্রশ্নপত্র ও সম্ভাব্য মডেল টেস্ট সিরিজ",
-    desc: "২০১৮ সালের আসল পঞ্চায়েত প্রশ্নপত্র এবং সাম্প্রতিক পশ্চিমবঙ্গ পরীক্ষার মানদণ্ড অনুযায়ী তৈরি বিশেষজ্ঞ মডেল প্রশ্নপত্র সরাসরি সমাধান করুন।",
-    stats: "আসল প্রশ্নপত্র • সমাধান নির্দেশিকা",
+    desc: "২০১৮ সালের আসল পঞ্চায়েত প্রশ্নপত্র এবং সাম্প্রতিক পশ্চিমবঙ্গ পরীক্ষার মানদণ্ড অনুযায়ী তৈরি বিশেষ মডেল প্রশ্নপত্র সরাসরি সমাধান করুন।",
+    stats: "৫+ আসল প্রশ্ন • ১০+ মডেল",
   },
   {
     id: "daily_tracker",
-    tag: "স্মার্ট অ্যানালিটিক্স",
+    tag: "ডেইলি প্রোগ্রেস",
     tagColor: "bg-rose-100 text-rose-800 border-rose-200",
     iconBg: "bg-rose-500 text-white",
     Icon: Zap,
-    title: "দৈনিক কারেন্ট অ্যাফেয়ার্স ও স্মার্ট স্টাডি ট্র্যাকার",
-    desc: "প্রতিদিনের গুরুত্বপূর্ণ জাতীয় ও পশ্চিমবঙ্গ সংবাদ, দৈনিক অনুশীলনের স্ট্রিক ট্র্যাকিং ও পরীক্ষার প্রস্তুতি মূল্যায়নের স্মার্ট অগ্রগতি চার্ট।",
-    stats: "প্রতিদিনের আপডেট • স্ট্রিক ট্র্যাকিং",
+    title: "ডেইলি প্রোগ্রেস ট্র্যাকার ও স্মার্ট অ্যানালিটিক্স",
+    desc: "প্রতিদিনের পড়াশোনার অগ্রগতি ট্র্যাক করুন স্ট্রিক কাউন্টার ও পরীক্ষার প্রস্তুতি মূল্যায়নের স্মার্ট চার্টের মাধ্যমে। নিজের দুর্বলতা চিহ্নিত করে সেখানে বেশি মনোযোগ দিন। লক্ষ্য স্থির করে এগিয়ে যান।",
+    stats: "স্ট্রিক ট্র্যাকিং • প্রগ্রেস চার্ট",
   },
 ];
 
@@ -181,15 +181,15 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
     setError(null);
     setSuccessMsg(null);
 
-    if (!name.trim()) return setError("আপনার সম্পূর্ণ নাম লিখুন।");
+    if (!name.trim()) return setError("আপনার নাম লিখতে ভুলবেন না।");
     if (!email.trim() || !email.includes("@")) return setError("সঠিক ইমেইল ঠিকানা দিন (যেমন: yourname@gmail.com)।");
-    if (password.length < 6) return setError("পাসওয়ার্ড অন্তত ৬ অক্ষরের হতে হবে।");
-    if (password !== confirmPassword) return setError("পাসওয়ার্ড দুটি মিলছে না।");
+    if (password.length < 6) return setError("পাসওয়ার্ড অন্তত ৬ অক্ষরের হতে হবে এবং শক্তিশালী হওয়া বাঞ্ছনীয়।");
+    if (password !== confirmPassword) return setError("পাসওয়ার্ড দুটি মিলছে না! একই পাসওয়ার্ড আবার লিখুন।");
 
     const users = getRegisteredUsers();
     const existing = users.find((u) => u.email.toLowerCase() === email.toLowerCase().trim());
     if (existing && existing.isVerified) {
-      return setError("এই ইমেইল দিয়ে ইতিমধ্যে অ্যাকাউন্ট রয়েছে। অনুগ্রহ করে লগইন করুন।");
+      return setError("এই ইমেইল দিয়ে ইতিমধ্যে অ্যাকাউন্ট রয়েছে। দয়া করে লগইন করুন অথবা পাসওয়ার্ড ভুলে গেলে রিসেট করুন।");
     }
 
     setLoading(true);
@@ -198,7 +198,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
       if (res.success) {
         setSuccessMsg(res.message);
         if (res.devOtp) {
-          setDevOtpNotice(`[টেস্টিং ওটিপি]: ${res.devOtp}`);
+          setDevOtpNotice(`[ডেভ প্রিভিউ OTP]: ${res.devOtp}`);
         }
         setStep("otp");
         setOtpTimer(60);
@@ -207,7 +207,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
         setError(res.message);
       }
     } catch (err: any) {
-      setError("ওটিপি পাঠাতে সমস্যা হয়েছে। অনুগ্রহ করে পুনরায় চেষ্টা করুন।");
+      setError("ওটিপি পাঠাতে সমস্যা হয়েছে। কিছুক্ষণ পরে আবার চেষ্টা করুন অথবা ভিন্ন ইমেইল দিয়ে রেজিস্টার করুন।");
     } finally {
       setLoading(false);
     }
@@ -240,28 +240,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
           setCurrentUser(profile);
           onLoginSuccess(profile);
         } else {
-          // Fallback to localStorage if Supabase fails
-          const users = getRegisteredUsers().filter((u) => u.email.toLowerCase() !== email.toLowerCase().trim());
-          const newUser: StoredUser = {
-            email: email.toLowerCase().trim(),
-            name: name.trim() || "পরীক্ষার্থী",
-            targetPost,
-            passwordHash: btoa(password),
-            isVerified: true,
-            createdAt: new Date().toISOString(),
-          };
-          users.push(newUser);
-          saveRegisteredUsers(users);
-          const profile: UserProfile = {
-            email: newUser.email,
-            name: newUser.name,
-            targetPost: newUser.targetPost,
-            joinedDate: newUser.createdAt,
-            isVerified: true,
-            isDemo: false,
-          };
-          setCurrentUser(profile);
-          onLoginSuccess(profile);
+          // Supabase registration failed — show error, do NOT silently fall back to localStorage
+          setError(regRes.message || "অ্যাকাউন্ট তৈরিতে সমস্যা হয়েছে। আবার চেষ্টা করুন।");
         }
       } else {
         setError(res.message || "ভুল ওটিপি কোড!");
@@ -273,7 +253,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
     }
   };
 
-  // 3. Handle Regular Login (Supabase Auth + localStorage fallback)
+  // 3. Handle Regular Login (Supabase Auth only — no localStorage fallback)
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -283,7 +263,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
 
     setLoading(true);
     try {
-      // Try Supabase Auth first
+      // Supabase Auth only — errors are shown directly so cross-browser login works
       const res = await loginUser(email.trim(), password);
       if (res.success) {
         const profile: UserProfile = {
@@ -297,29 +277,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
         setCurrentUser(profile);
         onLoginSuccess(profile);
       } else {
-        // Fallback to localStorage
-        const users = getRegisteredUsers();
-        const cleanEmail = email.toLowerCase().trim();
-        const user = users.find((u) => u.email.toLowerCase() === cleanEmail);
-
-        if (!user) {
-          setError("এই ইমেইলে কোনো অ্যাকাউন্ট পাওয়া যায়নি। অনুগ্রহ করে রেজিস্ট্রেশন করুন।");
-        } else if (!user.isVerified) {
-          setError("আপনার অ্যাকাউন্টটি এখনো যাচাই করা হয়নি। রেজিস্ট্রেশন সম্পূর্ণ করুন।");
-        } else if (user.passwordHash !== btoa(password)) {
-          setError("ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড দিন অথবা পাসওয়ার্ড রিসেট করুন।");
-        } else {
-          const profile: UserProfile = {
-            email: user.email,
-            name: user.name,
-            targetPost: user.targetPost || "Gram Panchayat Karmee & Sahayak",
-            joinedDate: user.createdAt,
-            isVerified: true,
-            isDemo: false,
-          };
-          setCurrentUser(profile);
-          onLoginSuccess(profile);
-        }
+        // Show Supabase error directly — do NOT silently fall back to localStorage
+        setError(res.message || "লগইন ব্যর্থ হয়েছে। আবার চেষ্টা করুন।");
       }
     } catch {
       setError("লগইনে সমস্যা হয়েছে। আবার চেষ্টা করুন।");
@@ -332,7 +291,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
   const handleDemoLogin = () => {
     const demoProfile: UserProfile = {
       email: "demo@targetpanchayat.wb",
-      name: "অতিথি পরীক্ষার্থী (Demo User)",
+      name: "অতিথি ব্যবহারকারী (Demo User)",
       targetPost: "Gram Panchayat Karmee & Sahayak",
       joinedDate: new Date().toISOString(),
       isVerified: true,
@@ -347,7 +306,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
     e.preventDefault();
     setError(null);
     if (!email.trim() || !email.includes("@")) {
-      return setError("আপনার নিবন্ধিত ইমেইল ঠিকানা দিন।");
+      return setError("নিবন্ধিত ইমেইল ঠিকানা দিন।");
     }
 
     setLoading(true);
@@ -356,7 +315,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
       if (res.success) {
         setSuccessMsg(res.message);
         if (res.devOtp) {
-          setDevOtpNotice(`[রিসেট ওটিপি]: ${res.devOtp}`);
+          setDevOtpNotice(`[ডেভ প্রিভিউ OTP]: ${res.devOtp}`);
         }
         setStep("reset_otp");
         setOtpTimer(60);
@@ -365,13 +324,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
         setError(res.message);
       }
     } catch (err: any) {
-      setError("পাসওয়ার্ড রিসেট ওটিপি পাঠানো যায়নি।");
+      setError("পাসওয়ার্ড রিসেট ওটিপি পাঠাতে সমস্যা হয়েছে।");
     } finally {
       setLoading(false);
     }
   };
 
-  // 6. Handle Reset OTP Confirmation
+  // 6. Handle Reset OTP Confirmation (Supabase password update)
   const handleResetPasswordConfirm = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -383,24 +342,20 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
     try {
       const res = await verifyOtp(email.trim(), fullOtp);
       if (res.success) {
-        const users = getRegisteredUsers();
-        const userIndex = users.findIndex((u) => u.email.toLowerCase() === email.toLowerCase().trim());
-        if (userIndex !== -1) {
-          users[userIndex].passwordHash = btoa(password);
-          users[userIndex].isVerified = true;
-          saveRegisteredUsers(users);
-
-          const profile: UserProfile = {
-            email: users[userIndex].email,
-            name: users[userIndex].name,
-            targetPost: users[userIndex].targetPost,
-            joinedDate: users[userIndex].createdAt,
-            isVerified: true,
-          };
-          setCurrentUser(profile);
-          onLoginSuccess(profile);
+        // Use Supabase password update (works cross-browser)
+        const { updatePassword } = await import("../services/authService");
+        const updRes = await updatePassword(password, email.trim());
+        if (updRes.success) {
+          setSuccessMsg(updRes.message);
+          setTimeout(() => {
+            setAuthTab("login");
+            setStep("form");
+            setError(null);
+            setPassword("");
+            setOtp(["", "", "", "", "", ""]);
+          }, 2000);
         } else {
-          setError("ব্যবহারকারী খুঁজে পাওয়া যায়নি।");
+          setError(updRes.message || "পাসওয়ার্ড আপডেটে সমস্যা হয়েছে।");
         }
       } else {
         setError(res.message || "ভুল ওটিপি কোড!");
@@ -424,14 +379,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
 
       if (res.success) {
         setSuccessMsg("নতুন ওটিপি সফলভাবে পাঠানো হয়েছে।");
-        if (res.devOtp) setDevOtpNotice(`[নতুন ওটিপি]: ${res.devOtp}`);
+        if (res.devOtp) setDevOtpNotice(`[ডেভ প্রিভিউ OTP]: ${res.devOtp}`);
         setOtpTimer(60);
         setCanResend(false);
       } else {
         setError(res.message);
       }
     } catch {
-      setError("পুনরায় ওটিপি পাঠানো যায়নি।");
+      setError("ওটিপি পুনরায় পাঠাতে সমস্যা হয়েছে।");
     } finally {
       setLoading(false);
     }
@@ -443,13 +398,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
   return (
     <div className="w-full max-w-5xl mx-auto px-2 sm:px-4 py-2 sm:py-6 flex flex-col justify-center min-h-[calc(100vh-100px)]">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center">
-        {/* LEFT COLUMN: Important Portal Highlights (Auto-cycling in one single view, no scroll down) */}
+        {/* LEFT COLUMN: Important Portal Highlights (Auto-cycling in single view, no scroll down) */}
         <div className="lg:col-span-6 space-y-4">
           {/* Header Badge & Title */}
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 px-3.5 py-1 rounded-full text-emerald-800 text-xs font-bold font-bengali shadow-2xs">
+            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 px-3.5 py-1 rounded-full text-emerald-800 text-xs font-bold font-bengali shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-              <span>পশ্চিমবঙ্গ পঞ্চায়েত পরীক্ষা ২০২৬ • ডিজিটাল প্রস্তুতি প্ল্যাটফর্ম</span>
+              <span>পশ্চিমবঙ্গ পঞ্চায়েত পরীক্ষা ২০২৩ • ডিজিটাল প্রস্তুতি প্ল্যাটফর্ম</span>
             </div>
 
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 font-bengali tracking-tight leading-tight">
@@ -457,7 +412,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
             </h1>
 
             <p className="text-xs sm:text-sm text-slate-600 font-bengali leading-relaxed">
-              সচিব, সহায়ক ও এক্সিকিউটিভ অ্যাসিস্ট্যান্ট পদের পূর্ণাঙ্গ প্রস্তুতি নিন এক প্ল্যাটফর্মে।
+              সচিব, সহায়ক ও এক্সিকিউটিভ অ্যাসিস্ট্যান্ট পদের সম্পূর্ণ প্রস্তুতি নিন এক প্ল্যাটফর্মে।
             </p>
           </div>
 
@@ -466,7 +421,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
             id="portal-highlights-carousel"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-sm space-y-3 relative overflow-hidden transition-all"
+            className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-sm shadow-slate-200/60 space-y-3 relative overflow-hidden transition-all"
           >
             {/* Auto progress bar */}
             <div className="h-1 w-full bg-slate-100 rounded-full overflow-hidden absolute top-0 left-0 right-0">
@@ -485,7 +440,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                 <span className={`text-[11px] font-bold px-2.5 py-0.5 rounded-full border font-bengali ${currentItem.tagColor}`}>
                   {currentItem.tag}
                 </span>
-                <span className="text-[11px] text-slate-400 font-mono-num font-semibold">
+                <span className="text-[11px] text-slate-400 font-mono font-semibold">
                   {activeSlide + 1} / {PORTAL_HIGHLIGHTS.length}
                 </span>
               </div>
@@ -498,7 +453,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                     setActiveSlide((prev) => (prev === 0 ? PORTAL_HIGHLIGHTS.length - 1 : prev - 1))
                   }
                   className="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-all cursor-pointer"
-                  title="আগের পয়েন্ট"
+                  title="আগেরটি দেখুন"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
@@ -508,7 +463,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                     setActiveSlide((prev) => (prev + 1) % PORTAL_HIGHLIGHTS.length)
                   }
                   className="p-1 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-all cursor-pointer"
-                  title="পরের পয়েন্ট"
+                  title="পরবর্তীটি দেখুন"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -575,7 +530,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
             </div>
             <div className="bg-slate-50/80 border border-slate-200/80 rounded-xl py-2 px-1 text-slate-700">
               <span className="text-[11px] font-bold font-bengali block">বাংলা ও ইংরেজি</span>
-              <span className="text-[10px] text-slate-500 font-bengali">দ্বিভাষিক প্রশ্নাবলী</span>
+              <span className="text-[10px] text-slate-500 font-bengali">দ্বিভাষিক প্রভাবশালী</span>
             </div>
             <div className="bg-slate-50/80 border border-slate-200/80 rounded-xl py-2 px-1 text-slate-700">
               <span className="text-[11px] font-bold font-bengali block">মোবাইল ফ্রেন্ডলি</span>
@@ -655,7 +610,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
             )}
 
             {devOtpNotice && (
-              <div className="p-2.5 bg-amber-50 border border-amber-200 text-amber-900 text-xs rounded-xl font-mono-num">
+              <div className="p-2.5 bg-amber-50 border border-amber-200 text-amber-900 text-xs rounded-xl font-mono">
                 {devOtpNotice}
               </div>
             )}
@@ -674,7 +629,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="yourname@gmail.com"
-                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-2xs"
+                    className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
                   />
                 </div>
 
@@ -698,8 +653,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                       required
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder="আপনার পাসওয়ার্ড দিন"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 pr-10 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-2xs"
+                      placeholder="আপনার পাসওয়ার্ড লিখুন"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 pr-10 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
                     />
                     <button
                       type="button"
@@ -754,8 +709,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
-                      placeholder="আপনার পুরো নাম"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-2xs"
+                      placeholder="আপনার নাম লিখুন"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
                     />
                   </div>
 
@@ -770,7 +725,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Gmail ID"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-2xs"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
                     />
                   </div>
                 </div>
@@ -786,8 +741,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                     className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-emerald-600 focus:bg-white font-bengali"
                   >
                     <option value="Gram Panchayat Karmee & Sahayak">গ্রাম পঞ্চায়েত কর্মী ও সহায়ক (Karmee & Sahayak)</option>
-                    <option value="Executive Assistant">এক্সিকিউটিভ অ্যাসিস্ট্যান্ট (Executive Assistant)</option>
-                    <option value="Panchayat Secretary">গ্রাম পঞ্চায়েত সচিব (Panchayat Secretary)</option>
+                    <option value="Executive Assistant">নির্বাহী সহকারী (Executive Assistant)</option>
+                    <option value="Panchayat Secretary">পঞ্চায়েত সচিব (Panchayat Secretary)</option>
                     <option value="Nirman Sahayak">নির্মাণ সহায়ক (Nirman Sahayak)</option>
                   </select>
                 </div>
@@ -801,18 +756,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="কমপক্ষে ৬ অক্ষর"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-2xs"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
                     />
                   </div>
                   <div className="space-y-1">
-                    <label className="text-xs font-bold text-slate-700 font-bengali">পুনরায় পাসওয়ার্ড</label>
+                    <label className="text-xs font-bold text-slate-700 font-bengali">কনফার্ম পাসওয়ার্ড</label>
                     <input
                       type="password"
                       required
                       value={confirmPassword}
                       onChange={(e) => setConfirmPassword(e.target.value)}
-                      placeholder="পুনরায় লিখুন"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-2xs"
+                      placeholder="একই পাসওয়ার্ড পুনরায় লিখুন"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
                     />
                   </div>
                 </div>
@@ -826,7 +781,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                     <RefreshCw className="w-4 h-4 animate-spin" />
                   ) : (
                     <>
-                      <span>ওটিপি পাঠান ও ভেরিফাই করুন</span>
+                      <span>ওটিপি পাঠান</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
@@ -834,7 +789,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
               </form>
             )}
 
-            {/* 3. OTP VERIFICATION STEP */}
+            {/* 3. OTP VERIFICATION SETUP */}
             {(step === "otp" || step === "reset_otp") && (
               <form
                 onSubmit={step === "otp" ? handleVerifyOtpSubmit : handleResetPasswordConfirm}
@@ -846,7 +801,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                   </div>
                   <h3 className="text-sm font-bold text-slate-900 font-bengali">৬-সংখ্যার ওটিপি কোড লিখুন</h3>
                   <p className="text-xs text-slate-500 font-bengali truncate max-w-xs mx-auto">
-                    {email} ঠিকানায় ওটিপি কোড পাঠানো হয়েছে
+                    {email} ঠিকানায় ওটিপি পাঠানো হয়েছে।
                   </p>
                 </div>
 
@@ -862,7 +817,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                       value={digit}
                       onChange={(e) => handleOtpChange(index, e.target.value)}
                       onKeyDown={(e) => handleOtpKeyDown(index, e)}
-                      className="w-9 sm:w-10 h-11 text-center text-base sm:text-lg font-bold font-mono-num bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-600 focus:bg-white"
+                      className="w-9 sm:w-10 h-11 text-center text-base font-bold bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:border-emerald-600 focus:bg-white"
                     />
                   ))}
                 </div>
@@ -875,8 +830,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                       required
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      placeholder="কমপক্ষে ৬ অক্ষরের পাসওয়ার্ড"
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white"
+                      placeholder="নতুন পাসওয়ার্ড (কমপক্ষে ৬ অক্ষর)"
+                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition-all shadow-xs"
                     />
                   </div>
                 )}
@@ -889,7 +844,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                   {loading ? (
                     <RefreshCw className="w-4 h-4 animate-spin" />
                   ) : (
-                    <span>যাচাই সম্পন্ন করে প্রবেশ করুন</span>
+                    <span>যাচাই করে প্রবেশ করুন</span>
                   )}
                 </button>
 
@@ -907,10 +862,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                       onClick={handleResendOtp}
                       className="text-emerald-700 font-bold hover:underline cursor-pointer"
                     >
-                      পুনরায় ওটিপি পাঠান
+                      আবার ওটিপি পাঠান
                     </button>
                   ) : (
-                    <span>{otpTimer} সেক পর পুনরায় পাঠানো যাবে</span>
+                    <span>{otpTimer} সেকেন্ড পর পুনরায় পাঠানো যাবে</span>
                   )}
                 </div>
               </form>
@@ -922,7 +877,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                 <div className="space-y-1">
                   <label className="text-xs font-bold text-slate-700 font-bengali flex items-center gap-1.5">
                     <Mail className="w-3.5 h-3.5 text-slate-400" />
-                    <span>নিবন্ধিত ইমেইল আইডি (Gmail ID)</span>
+                    <span>নিবন্ধিত ইমেইল ঠিকানা (Gmail ID)</span>
                   </label>
                   <input
                     type="email"
@@ -943,7 +898,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
                     <RefreshCw className="w-4 h-4 animate-spin" />
                   ) : (
                     <>
-                      <span>রিসেট ওটিপি পাঠান</span>
+                      <span>ওটিপি পাঠান</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
