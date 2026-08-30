@@ -66,6 +66,7 @@ export default function App() {
         const cloudProgress = await getUserProgressAsync(authUser.email);
         const updated = updateDailyStreak(cloudProgress);
         setProgress(updated);
+        saveUserProgress(updated);
       }
     });
 
