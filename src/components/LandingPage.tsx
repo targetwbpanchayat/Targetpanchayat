@@ -30,6 +30,8 @@ import {
   sendRegistrationOtp,
   sendResetPasswordOtp,
   verifyOtp,
+  registerWithEmail,
+  loginUser,
   StoredUser,
 } from "../services/authService";
 
@@ -224,28 +226,43 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
     try {
       const res = await verifyOtp(email.trim(), fullOtp);
       if (res.success) {
-        const users = getRegisteredUsers().filter((u) => u.email.toLowerCase() !== email.toLowerCase().trim());
-        const newUser: StoredUser = {
-          email: email.toLowerCase().trim(),
-          name: name.trim() || "পরীক্ষার্থী",
-          targetPost,
-          passwordHash: btoa(password),
-          isVerified: true,
-          createdAt: new Date().toISOString(),
-        };
-        users.push(newUser);
-        saveRegisteredUsers(users);
-
-        const profile: UserProfile = {
-          email: newUser.email,
-          name: newUser.name,
-          targetPost: newUser.targetPost,
-          joinedDate: newUser.createdAt,
-          isVerified: true,
-          isDemo: false,
-        };
-        setCurrentUser(profile);
-        onLoginSuccess(profile);
+        // Create account in Supabase Auth
+        const regRes = await registerWithEmail(email.trim(), password, name.trim(), targetPost);
+        if (regRes.success) {
+          const profile: UserProfile = {
+            email: email.toLowerCase().trim(),
+            name: name.trim() || "পরীক্ষার্থী",
+            targetPost,
+            joinedDate: new Date().toISOString(),
+            isVerified: true,
+            isDemo: false,
+          };
+          setCurrentUser(profile);
+          onLoginSuccess(profile);
+        } else {
+          // Fallback to localStorage if Supabase fails
+          const users = getRegisteredUsers().filter((u) => u.email.toLowerCase() !== email.toLowerCase().trim());
+          const newUser: StoredUser = {
+            email: email.toLowerCase().trim(),
+            name: name.trim() || "পরীক্ষার্থী",
+            targetPost,
+            passwordHash: btoa(password),
+            isVerified: true,
+            createdAt: new Date().toISOString(),
+          };
+          users.push(newUser);
+          saveRegisteredUsers(users);
+          const profile: UserProfile = {
+            email: newUser.email,
+            name: newUser.name,
+            targetPost: newUser.targetPost,
+            joinedDate: newUser.createdAt,
+            isVerified: true,
+            isDemo: false,
+          };
+          setCurrentUser(profile);
+          onLoginSuccess(profile);
+        }
       } else {
         setError(res.message || "ভুল ওটিপি কোড!");
       }
@@ -256,40 +273,59 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
     }
   };
 
-  // 3. Handle Regular Login
-  const handleLoginSubmit = (e: React.FormEvent) => {
+  // 3. Handle Regular Login (Supabase Auth + localStorage fallback)
+  const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
     if (!email.trim()) return setError("আপনার ইমেইল ঠিকানা দিন।");
     if (!password) return setError("পাসওয়ার্ড দিন।");
 
-    const users = getRegisteredUsers();
-    const cleanEmail = email.toLowerCase().trim();
-    const user = users.find((u) => u.email.toLowerCase() === cleanEmail);
+    setLoading(true);
+    try {
+      // Try Supabase Auth first
+      const res = await loginUser(email.trim(), password);
+      if (res.success) {
+        const profile: UserProfile = {
+          email: email.toLowerCase().trim(),
+          name: name.trim() || "পরীক্ষার্থী",
+          targetPost,
+          joinedDate: new Date().toISOString(),
+          isVerified: true,
+          isDemo: false,
+        };
+        setCurrentUser(profile);
+        onLoginSuccess(profile);
+      } else {
+        // Fallback to localStorage
+        const users = getRegisteredUsers();
+        const cleanEmail = email.toLowerCase().trim();
+        const user = users.find((u) => u.email.toLowerCase() === cleanEmail);
 
-    if (!user) {
-      return setError("এই ইমেইলে কোনো অ্যাকাউন্ট পাওয়া যায়নি। অনুগ্রহ করে রেজিস্ট্রেশন করুন।");
+        if (!user) {
+          setError("এই ইমেইলে কোনো অ্যাকাউন্ট পাওয়া যায়নি। অনুগ্রহ করে রেজিস্ট্রেশন করুন।");
+        } else if (!user.isVerified) {
+          setError("আপনার অ্যাকাউন্টটি এখনো যাচাই করা হয়নি। রেজিস্ট্রেশন সম্পূর্ণ করুন।");
+        } else if (user.passwordHash !== btoa(password)) {
+          setError("ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড দিন অথবা পাসওয়ার্ড রিসেট করুন।");
+        } else {
+          const profile: UserProfile = {
+            email: user.email,
+            name: user.name,
+            targetPost: user.targetPost || "Gram Panchayat Karmee & Sahayak",
+            joinedDate: user.createdAt,
+            isVerified: true,
+            isDemo: false,
+          };
+          setCurrentUser(profile);
+          onLoginSuccess(profile);
+        }
+      }
+    } catch {
+      setError("লগইনে সমস্যা হয়েছে। আবার চেষ্টা করুন।");
+    } finally {
+      setLoading(false);
     }
-
-    if (!user.isVerified) {
-      return setError("আপনার অ্যাকাউন্টটি এখনো যাচাই করা হয়নি। রেজিস্ট্রেশন সম্পন্ন করুন।");
-    }
-
-    if (user.passwordHash !== btoa(password)) {
-      return setError("ভুল পাসওয়ার্ড! সঠিক পাসওয়ার্ড দিন অথবা পাসওয়ার্ড রিসেট করুন।");
-    }
-
-    const profile: UserProfile = {
-      email: user.email,
-      name: user.name,
-      targetPost: user.targetPost || "Gram Panchayat Karmee & Sahayak",
-      joinedDate: user.createdAt,
-      isVerified: true,
-      isDemo: false,
-    };
-    setCurrentUser(profile);
-    onLoginSuccess(profile);
   };
 
   // 4. Quick Demo Login for preview testing
