@@ -267,9 +267,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onLoginSuccess }) => {
       const res = await loginUser(email.trim(), password);
       if (res.success) {
         const profile: UserProfile = {
-          email: email.toLowerCase().trim(),
-          name: name.trim() || "পরীক্ষার্থী",
-          targetPost,
+          email: res.profile?.email || email.toLowerCase().trim(),
+          name: res.profile?.name || "পরীক্ষার্থী",
+          targetPost: res.profile?.targetPost || targetPost,
           joinedDate: new Date().toISOString(),
           isVerified: true,
           isDemo: false,
