@@ -145,11 +145,15 @@ async function saveProgressToCloud(progress: UserProgress): Promise<void> {
   const uid = authData.user?.id;
   if (!uid) return;
 
-  await supabase!.from("user_progress").upsert({
+  const { error } = await supabase!.from("user_progress").upsert({
     user_id: uid,
     progress_data: progress,
     updated_at: new Date().toISOString(),
-  });
+  }, { onConflict: 'user_id' });
+
+  if (error) {
+    console.error("Failed to save progress to Supabase:", error.message);
+  }
 }
 
 export function updateDailyStreak(progress: UserProgress): UserProgress {
