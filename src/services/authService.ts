@@ -2,10 +2,10 @@
  * Authentication Service — Supabase Auth
  *
  * Supabase handles:
- *   - Email OTP (signInWithOtp) — sends 6-digit code to email
- *   - OTP verification (verifyOtp)
- *   - Password login (signInWithPassword)
- *   - Password reset (resetPasswordForEmail)
+ *   - Email + Password sign up (signUp) — creates account, auto-signs in
+ *   - Email + Password login (signInWithPassword)
+ *   - Password reset (resetPasswordForEmail) — sends secure link to email
+ *   - Password update (updateUser) — sets new password after reset
  *   - Session management (onAuthStateChange)
  *
  * User profiles + progress stored in Supabase Database (PostgreSQL)
@@ -39,6 +39,9 @@ export interface VerifyOtpResult {
 
 const REGISTERED_USERS_KEY = "wb_gp_users_v2";
 const ACTIVE_SESSION_KEY = "wb_gp_current_user_v2";
+
+// The live site URL — password reset links will redirect here
+const SITE_URL = "https://targetwbpanchayat.github.io/Targetpanchayat/";
 
 // ============ LOCAL STORAGE HELPERS (fallback) ============
 
@@ -95,36 +98,29 @@ export function setCurrentUser(user: UserProfile | null): void {
   }
 }
 
-// ============ SUPABASE AUTH: SEND OTP ============
+// =========== SUPABASE AUTH: REGISTER WITH PASSWORD ============
 
 /**
- * Send OTP to email. Supabase sends a 6-digit code via email.
- * No App Password or SMTP needed — Supabase handles it.
+ * Register a new user with email + password.
+ * Supabase creates the account and immediately signs them in.
+ * No OTP or email link needed.
  */
-export async function sendRegistrationOtp(
+export async function registerWithEmail(
   email: string,
-  name: string
-): Promise<SendOtpResult> {
+  password: string,
+  name: string,
+  targetPost: string
+): Promise<{ success: boolean; message: string }> {
   if (!SUPABASE_ENABLED || !supabase) {
-    const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    sessionStorage.setItem(
-      `wb_gp_client_otp_${email.toLowerCase()}`,
-      fallbackOtp
-    );
-    return {
-      success: true,
-      message: "Supabase কনফিগার নেই। অফলাইন OTP: " + fallbackOtp,
-      emailSent: false,
-      devOtp: fallbackOtp,
-    };
+    return { success: false, message: "Supabase কনফিগার করা হয়নি।" };
   }
 
   try {
-    const { error } = await supabase.auth.signInWithOtp({
+    const { data, error } = await supabase.auth.signUp({
       email: email.trim(),
+      password,
       options: {
-        shouldCreateUser: true,
-        data: { name: name.trim() },
+        data: { name: name.trim(), targetPost },
       },
     });
 
@@ -132,108 +128,14 @@ export async function sendRegistrationOtp(
       return { success: false, message: mapSupabaseError(error) };
     }
 
-    return {
-      success: true,
-      emailSent: true,
-      message:
-        "আপনার ইমেইলে ৬-সংখ্যার ওটিপি পাঠানো হয়েছে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।",
-    };
-  } catch (err: any) {
-    console.error("Send OTP error:", err);
-    const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    sessionStorage.setItem(
-      `wb_gp_client_otp_${email.toLowerCase()}`,
-      fallbackOtp
-    );
-    return {
-      success: true,
-      message: "নেটওয়ার্ক সমস্যা। অফলাইন OTP: " + fallbackOtp,
-      emailSent: false,
-      devOtp: fallbackOtp,
-    };
-  }
-}
-
-// ============ SUPABASE AUTH: VERIFY OTP ============
-
-export async function verifyOtp(
-  email: string,
-  otp: string
-): Promise<VerifyOtpResult> {
-  if (!SUPABASE_ENABLED || !supabase) {
-    const clientOtp = sessionStorage.getItem(
-      `wb_gp_client_otp_${email.toLowerCase()}`
-    );
-    if (clientOtp && clientOtp === otp.trim()) {
-      sessionStorage.removeItem(`wb_gp_client_otp_${email.toLowerCase()}`);
-      return { success: true, message: "যাচাইকরণ সফল!" };
-    }
-    return { success: false, message: "ভুল OTP!" };
-  }
-
-  try {
-    const { data, error } = await supabase.auth.verifyOtp({
-      email: email.trim(),
-      token: otp.trim(),
-      type: "email",
-    });
-
-    if (error) {
-      return { success: false, message: mapSupabaseError(error) };
-    }
-
-    // OTP verified! Save user profile to database
+    // Save profile to database
     if (data.user) {
-      await saveUserProfileToDb(data.user);
-    }
-
-    return { success: true, message: "ইমেইল সফলভাবে যাচাই হয়েছে!" };
-  } catch (err: any) {
-    const clientOtp = sessionStorage.getItem(
-      `wb_gp_client_otp_${email.toLowerCase()}`
-    );
-    if (clientOtp && clientOtp === otp.trim()) {
-      sessionStorage.removeItem(`wb_gp_client_otp_${email.toLowerCase()}`);
-      return { success: true, message: "যাচাইকরণ সফল!" };
-    }
-    return { success: false, message: "ভুল OTP!" };
-  }
-}
-
-// ============ SUPABASE AUTH: PASSWORD RESET ============
-
-export async function sendResetPasswordOtp(
-  email: string
-): Promise<SendOtpResult> {
-  if (!SUPABASE_ENABLED || !supabase) {
-    const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
-    sessionStorage.setItem(
-      `wb_gp_client_otp_${email.toLowerCase()}`,
-      fallbackOtp
-    );
-    return {
-      success: true,
-      message: "Supabase কনফিগার নেই। অফলাইন OTP: " + fallbackOtp,
-      emailSent: false,
-      devOtp: fallbackOtp,
-    };
-  }
-
-  try {
-    // Send OTP for password recovery
-    const { error } = await supabase.auth.signInWithOtp({
-      email: email.trim(),
-      options: { shouldCreateUser: false },
-    });
-
-    if (error) {
-      return { success: false, message: mapSupabaseError(error) };
+      await saveUserProfileToDb(data.user, name, targetPost);
     }
 
     return {
       success: true,
-      emailSent: true,
-      message: "পাসওয়ার্ড রিসেট OTP আপনার ইমেইলে পাঠানো হয়েছে।",
+      message: "রেজিস্ট্রেশন সফল! আপনি এখন লগইন করতে পারেন।",
     };
   } catch (err: any) {
     return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
@@ -274,41 +176,66 @@ export async function loginUser(
   }
 }
 
-// ============ SUPABASE AUTH: SIGN UP WITH PASSWORD ============
+// ============ SUPABASE AUTH: PASSWORD RESET (send link) ============
 
-export async function signUpWithPassword(
-  email: string,
-  password: string,
-  name: string,
-  targetPost: string
+export async function sendResetPasswordOtp(
+  email: string
+): Promise<SendOtpResult> {
+  if (!SUPABASE_ENABLED || !supabase) {
+    const fallbackOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    sessionStorage.setItem(
+      `wb_gp_client_otp_${email.toLowerCase()}`,
+      fallbackOtp
+    );
+    return {
+      success: true,
+      message: "Supabase কনফিগার নেই। অফলাইন OTP: " + fallbackOtp,
+      emailSent: false,
+      devOtp: fallbackOtp,
+    };
+  }
+
+  try {
+    const { error } = await supabase.auth.resetPasswordForEmail(
+      email.trim(),
+      {
+        redirectTo: SITE_URL,
+      }
+    );
+
+    if (error) {
+      return { success: false, message: mapSupabaseError(error) };
+    }
+
+    return {
+      success: true,
+      emailSent: true,
+      message: "পাসওয়ার্ড রিসেট লিংক আপনার ইমেইলে পাঠানো হয়েছে। ইনবক্স বা স্প্যাম ফোল্ডার চেক করুন।",
+    };
+  } catch (err: any) {
+    return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
+  }
+}
+
+// ============ SUPABASE AUTH: UPDATE PASSWORD ============
+
+export async function updatePassword(
+  newPassword: string
 ): Promise<{ success: boolean; message: string }> {
   if (!SUPABASE_ENABLED || !supabase) {
     return { success: false, message: "Supabase কনফিগার করা হয়নি।" };
   }
 
   try {
-    const { data, error } = await supabase.auth.signUp({
-      email: email.trim(),
-      password,
-      options: {
-        data: { name: name.trim(), targetPost },
-      },
+    const { data, error } = await supabase.auth.updateUser({
+      password: newPassword,
     });
 
     if (error) {
       return { success: false, message: mapSupabaseError(error) };
     }
 
-    // Save profile to database
-    if (data.user) {
-      await saveUserProfileToDb(data.user, name, targetPost);
-    }
-
-    return {
-      success: true,
-      message:
-        "রেজিস্ট্রেশন সফল! আপনার ইমেইলে ভেরিফিকেশন OTP পাঠানো হয়েছে।",
-    };
+    return { success: true, message: "পাসওয়ার্ড সফলভাবে পরিবর্তন হয়েছে! এখন লগইন করুন।" };
   } catch (err: any) {
     return { success: false, message: "নেটওয়ার্ক সমস্যা।" };
   }
@@ -434,16 +361,19 @@ function mapSupabaseError(error: any): string {
     return "ভুল ইমেইল বা পাসওয়ার্ড।";
   }
   if (msg.includes("User already registered")) {
-    return "এই ইমেইল দিয়ে ইতিমধ্যে অ্যাকাউন্ট রয়েছে। লগইন করুন।";
+    return "এই ইমেইল দিয়ে ইতামধ্যে অ্যাকাউন্ট রয়েছে। লগইন করুন।";
   }
   if (msg.includes("Email not confirmed")) {
-    return "ইমেইল ভেরিফাই করা হয়নি। OTP যাচাই করুন।";
+    return "ইমেইল ভেরিফাই করা হয়নি।";
   }
   if (msg.includes("rate limit") || msg.includes("too many")) {
     return "অনেকবার চেষ্টা হয়েছে। কিছুক্ষণ পরে চেষ্টা করুন।";
   }
   if (msg.includes("Token has expired") || msg.includes("invalid token")) {
-    return "OTP এর মেয়াদ শেষ বা ভুল। পুনরায় OTP পাঠান।";
+    return "লিংক এর মেয়াদ শেষ। পুনরায় রিসেট লিংক পাঠান।";
+  }
+  if (msg.includes("Password should be at least")) {
+    return "পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।";
   }
   return msg || "কিছু সমস্যা হয়েছে। আবার চেষ্টা করুন।";
 }
