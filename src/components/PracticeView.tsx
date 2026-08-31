@@ -23,7 +23,7 @@ import { SUBJECTS } from "../data/subjects";
 import { QUESTION_SETS } from "../data/questionSets";
 import { STUDY_CHAPTERS } from "../data/studyData";
 import { saveUserProgress } from "../utils/storage";
-import { cleanQuestionText } from "../utils/testGenerator";
+import { cleanQuestionText, shuffleOptionsKeepId } from "../utils/testGenerator";
 import { isDemoUser, DEMO_MAX_MCQ_PER_VOLUME } from "../utils/demoHelper";
 import { LockedFeatureModal } from "./LockedFeatureModal";
 
@@ -211,9 +211,16 @@ export const PracticeView: React.FC<PracticeViewProps> = ({
 
   // Pagination calculation
   const totalPages = Math.ceil(filteredQuestions.length / pageSize) || 1;
-  const paginatedQuestions = filteredQuestions.slice(
-    (currentPage - 1) * pageSize,
-    currentPage * pageSize
+  // Shuffle options once per page change so answers don't move on re-render
+  const paginatedQuestions = useMemo(
+    () =>
+      filteredQuestions
+        .slice(
+          (currentPage - 1) * pageSize,
+          currentPage * pageSize
+        )
+        .map(shuffleOptionsKeepId),
+    [filteredQuestions, currentPage, pageSize]
   );
 
   const handleJumpPage = (e: React.FormEvent) => {

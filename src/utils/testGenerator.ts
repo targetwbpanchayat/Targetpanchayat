@@ -216,6 +216,31 @@ export function shuffleQuestionOptions(q: Question): Question {
   };
 }
 
+// Shuffle options WITHOUT changing the question ID (for practice mode)
+export function shuffleOptionsKeepId(q: Question): Question {
+  const cleaned = cleanQuestion(q);
+  const correctIdx = cleaned.correctIndex >= 0 && cleaned.correctIndex < cleaned.options.length ? cleaned.correctIndex : 0;
+
+  const pairs = cleaned.options.map((opt, idx) => ({
+    opt,
+    optBn: cleaned.optionsBn && cleaned.optionsBn[idx] ? cleaned.optionsBn[idx] : opt,
+    isCorrect: idx === correctIdx
+  }));
+
+  const shuffledPairs = shuffleArray(pairs);
+  const newOptions = shuffledPairs.map(p => p.opt);
+  const newOptionsBn = shuffledPairs.map(p => p.optBn);
+  const newCorrectIndex = Math.max(0, shuffledPairs.findIndex(p => p.isCorrect));
+
+  return {
+    ...cleaned,
+    options: newOptions,
+    optionsBn: newOptionsBn,
+    correctIndex: newCorrectIndex,
+    correctOptionIndex: newCorrectIndex,
+  };
+}
+
 // Helper to safely pick N random items with fresh shuffle
 export function pickRandom<T>(array: T[], count: number): T[] {
   if (!array || array.length === 0) return [];
