@@ -8,6 +8,9 @@ const API_BASE_URL =
 const STORAGE_KEY = "wb_gp_current_affairs_cache_v2";
 const LAST_SYNC_KEY = "wb_gp_ca_last_sync_date";
 const BOOKMARKS_KEY = "wb_gp_ca_bookmarked_ids";
+const SEED_VERSION_KEY = "wb_gp_ca_seed_version";
+// Bump this when currentAffairs.ts changes to force-refresh localStorage
+const SEED_VERSION = "2026-08-31-v1";
 
 // Helper to get formatted today date in Bengali
 export function getTodayBengaliDate(): { dateBn: string; monthYearBn: string; isoDate: string } {
@@ -40,29 +43,50 @@ export function getTodayBengaliDate(): { dateBn: string; monthYearBn: string; is
 
 export function getAllCurrentAffairs(): CurrentAffairItem[] {
   try {
+    const savedVersion = localStorage.getItem(SEED_VERSION_KEY);
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) {
+
+    // If seed version changed (new deploy with updated currentAffairs.ts),
+    // rebuild cache from seed data + any user-added items
+    if (saved && savedVersion === SEED_VERSION) {
       const parsed: CurrentAffairItem[] = JSON.parse(saved);
       // Merge with default seed items if any new seed items exist
       const existingIds = new Set(parsed.map((item) => item.id));
       const newSeedItems = CURRENT_AFFAIRS_ITEMS.filter((item) => !existingIds.has(item.id));
       if (newSeedItems.length > 0) {
-        const combined = [...parsed, ...newSeedItems];
+        const combined = [...newSeedItems, ...parsed];
         localStorage.setItem(STORAGE_KEY, JSON.stringify(combined));
         return combined;
       }
       return parsed;
     }
+
+    // Seed version mismatch or first time — rebuild from seed
+    // Keep any user-added items (AI-generated, bookmarks) that aren't in seed
+    let userItems: CurrentAffairItem[] = [];
+    if (saved) {
+      try {
+        const parsed: CurrentAffairItem[] = JSON.parse(saved);
+        const seedIds = new Set(CURRENT_AFFAIRS_ITEMS.map((item) => item.id));
+        userItems = parsed.filter((item) => !seedIds.has(item.id));
+      } catch {
+        // ignore parse errors
+      }
+    }
+
+    const combined = [...CURRENT_AFFAIRS_ITEMS, ...userItems];
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(combined));
+      localStorage.setItem(SEED_VERSION_KEY, SEED_VERSION);
+    } catch (e) {
+      // Ignore storage quota
+    }
+    return combined;
   } catch (e) {
     console.error("Failed to read current affairs from storage", e);
   }
 
-  // First time initialization
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(CURRENT_AFFAIRS_ITEMS));
-  } catch (e) {
-    // Ignore storage quota
-  }
+  // Fallback: just return seed data
   return CURRENT_AFFAIRS_ITEMS;
 }
 
@@ -192,8 +216,8 @@ export async function syncDailyCurrentAffairs(force = false): Promise<{
   } catch (error: any) {
     console.warn("AI Daily sync fetch failed, falling back to local latest:", error);
 
-    // Fallback: Check if we have today's items seeded
-    setLastSyncDate(isoDate);
+    // Don't set lastSyncDate on failure — so next visit will retry
+    // getAllCurrentAffairs() already merged any new seed items
     return {
       success: true,
       isNew: false,
