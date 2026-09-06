@@ -1759,6 +1759,40 @@ export const CURRENT_AFFAIRS_ITEMS: CurrentAffairItem[] = [
   },
 
 
+  // --- kolom.in auto-synced items ---
+  {
+    id: "kolom_monthly_2026_9",
+    titleBn: "August 2026 Monthly Current Affairs in Bengali PDF",
+    category: "জাতীয় ও আন্তর্জাতিক",
+    date: "৫ সেপ্টেম্বর ২০২৬",
+    monthYear: "সেপ্টেম্বর ২০২৬",
+    summaryBn: "আগস্ট ২০২৬ মাসিক কারেন্ট অ্যাফেয়ার্স PDF Download | Free August 2026 Monthly Current Affairs in Bengali PDF কলম&nbsp; ✏ প্রিয় পাঠক, আজকের পোস্টে August 2026 Monthly Current Affairs in Bengali PDF &nbsp;শেয়ার করা হলো। এই পিডিএফটিতে ২০২৬ সালের আগস্ট মাসের সমস্ত গুরুত্বপূর্ণ কারেন্ট অ্যাফেয়ার্সগুলি বি...",
+    bulletPoints: [
+      "সেপ্টেম্বর ২০২৬ মাসের গুরুত্বপূর্ণ ঘটনাবলি",
+      "উৎস: kolom.in থেকে সংকলিত",
+      "WBCS, PSC, SSC, Railway সহ সব পরীক্ষার জন্য উপযোগী",
+    ],
+    isAiGenerated: false,
+    tags: ["kolom.in","monthly"],
+  },
+
+  {
+    id: "kolom_monthly_2026_9",
+    titleBn: "Current Affairs 2026 in Bengali PDF",
+    category: "জাতীয় ও আন্তর্জাতিক",
+    date: "৫ সেপ্টেম্বর ২০২৬",
+    monthYear: "সেপ্টেম্বর ২০২৬",
+    summaryBn: "2026 Current Affairs in Bengali PDF - Free Download Current Affairs 2026 in Bengali PDF | কারেন্ট অ্যাফেয়ার্স 2026 PDF কলম&nbsp; ✏ সুপ্রিয় বন্ধুরা, আজকের এই পোস্টে আমরা শেয়ার করেছি Current Affairs 2026 in Bengali PDF , যেখানে ২০২৬ সালের জানুয়ারি থেকে ডিসেম্বর পর্যন্ত সমস্ত মাসের কারেন্ট অ্যাফেয়ার্স...",
+    bulletPoints: [
+      "সেপ্টেম্বর ২০২৬ মাসের গুরুত্বপূর্ণ ঘটনাবলি",
+      "উৎস: kolom.in থেকে সংকলিত",
+      "WBCS, PSC, SSC, Railway সহ সব পরীক্ষার জন্য উপযোগী",
+    ],
+    isAiGenerated: false,
+    tags: ["kolom.in","monthly"],
+  },
+
+
 export const MONTH_LIST = [
   "সব সময় (বিগত ১ বছর)",
   "আগস্ট ২০২৬",
