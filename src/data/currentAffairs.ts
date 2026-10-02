@@ -1793,6 +1793,24 @@ export const CURRENT_AFFAIRS_ITEMS: CurrentAffairItem[] = [
   },
 
 
+  // --- kolom.in auto-synced items ---
+  {
+    id: "kolom_monthly_2026_10",
+    titleBn: "বিভিন্ন কোম্পানির CEO তালিকা PDF",
+    category: "জাতীয় ও আন্তর্জাতিক",
+    date: "১ অক্টোবর ২০২৬",
+    monthYear: "অক্টোবর ২০২৬",
+    summaryBn: "বিভিন্ন কোম্পানির বর্তমান CEO তালিকা PDF | Important Companies CEO List 2026 PDF | Current Affairs বিভিন্ন কোম্পানির CEO তালিকা PDF | Important Companies CEO List 2026 কলম ✏ সুপ্রিয় বন্ধুরা, আজকের পোস্টে কারেন্ট অ্যাফেয়ার্সের একটি গুরুত্বপূর্ণ টপিক হিসাবে&nbsp; বিভিন্ন কোম্পানির CEO তালিকা PDF শেয়ার...",
+    bulletPoints: [
+      "অক্টোবর ২০২৬ মাসের গুরুত্বপূর্ণ ঘটনাবলি",
+      "উৎস: kolom.in থেকে সংকলিত",
+      "WBCS, PSC, SSC, Railway সহ সব পরীক্ষার জন্য উপযোগী",
+    ],
+    isAiGenerated: false,
+    tags: ["kolom.in","monthly"],
+  },
+
+
 export const MONTH_LIST = [
   "সব সময় (বিগত ১ বছর)",
   "আগস্ট ২০২৬",
