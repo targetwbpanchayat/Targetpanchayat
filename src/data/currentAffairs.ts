@@ -1811,6 +1811,40 @@ export const CURRENT_AFFAIRS_ITEMS: CurrentAffairItem[] = [
   },
 
 
+  // --- kolom.in auto-synced items ---
+  {
+    id: "kolom_monthly_2026_11",
+    titleBn: "September 2026 Monthly Current Affairs in English PDF",
+    category: "জাতীয় ও আন্তর্জাতিক",
+    date: "৭ নভেম্বর ২০২৬",
+    monthYear: "নভেম্বর ২০২৬",
+    summaryBn: "September 2026 Monthly Current Affairs in English PDF Download September 2026 Monthly Current Affairs in English PDF কলম&nbsp; ✏ সুপ্রিয় বন্ধুরা, আজকের পোস্টে September 2026 Monthly Current Affairs in English PDF শেয়ার করলাম। পিডিএফটিতে ২০২৬ সালের সেপ্টেম্বর মাসের গুরুত্বপূর্ণ কারেন্ট অ্যাফেয়ার্সগুল...",
+    bulletPoints: [
+      "নভেম্বর ২০২৬ মাসের গুরুত্বপূর্ণ ঘটনাবলি",
+      "উৎস: kolom.in থেকে সংকলিত",
+      "WBCS, PSC, SSC, Railway সহ সব পরীক্ষার জন্য উপযোগী",
+    ],
+    isAiGenerated: false,
+    tags: ["kolom.in","monthly"],
+  },
+
+  {
+    id: "kolom_monthly_2026_11",
+    titleBn: "August 2026 Monthly Current Affairs in English PDF",
+    category: "জাতীয় ও আন্তর্জাতিক",
+    date: "৭ নভেম্বর ২০২৬",
+    monthYear: "নভেম্বর ২০২৬",
+    summaryBn: "August 2026 Monthly Current Affairs in English PDF Download August 2026 Monthly Current Affairs in English PDF কলম&nbsp; ✏ সুপ্রিয় বন্ধুরা, আজকের পোস্টে August 2026 Monthly Current Affairs in English PDF শেয়ার করলাম। পিডিএফটিতে ২০২৬ সালের আগস্ট মাসের গুরুত্বপূর্ণ কারেন্ট অ্যাফেয়ার্সগুলি&nbsp;বিভাগ অ...",
+    bulletPoints: [
+      "নভেম্বর ২০২৬ মাসের গুরুত্বপূর্ণ ঘটনাবলি",
+      "উৎস: kolom.in থেকে সংকলিত",
+      "WBCS, PSC, SSC, Railway সহ সব পরীক্ষার জন্য উপযোগী",
+    ],
+    isAiGenerated: false,
+    tags: ["kolom.in","monthly"],
+  },
+
+
 export const MONTH_LIST = [
   "সব সময় (বিগত ১ বছর)",
   "আগস্ট ২০২৬",
